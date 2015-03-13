@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2FDE7C2D-30B1-4112-BF23-AD8F4744353B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FEngine</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>38A8565BF4453F4B16B445E1D8182E232BFA731B</key>
+		<string>https://github.com/fakhirsh/FEngine.git</string>
+		<key>A95242DEF8B930545DEE95B48808518E4B78842E</key>
+		<string>https://bitbucket.org/fakhirshaheen/zombietreat.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Projects/MacOS/FEngine/FEngine.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>38A8565BF4453F4B16B445E1D8182E232BFA731B</key>
+		<string>../../../../..</string>
+		<key>A95242DEF8B930545DEE95B48808518E4B78842E</key>
+		<string>../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fakhirsh/FEngine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>38A8565BF4453F4B16B445E1D8182E232BFA731B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A95242DEF8B930545DEE95B48808518E4B78842E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38A8565BF4453F4B16B445E1D8182E232BFA731B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GameEngine</string>
+		</dict>
+	</array>
+</dict>
+</plist>
