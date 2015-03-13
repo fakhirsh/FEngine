@@ -22,7 +22,7 @@
 		<key>38A8565BF4453F4B16B445E1D8182E232BFA731B</key>
 		<string>../../../../..</string>
 		<key>A95242DEF8B930545DEE95B48808518E4B78842E</key>
-		<string>../../../../../../..</string>
+		<string>../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/fakhirsh/FEngine.git</string>
@@ -38,7 +38,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A95242DEF8B930545DEE95B48808518E4B78842E</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
