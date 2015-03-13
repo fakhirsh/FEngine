@@ -9,12 +9,79 @@
 /* Begin PBXBuildFile section */
 		0C19AECE1AB375920078C394 /* SmartPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19AECC1AB375920078C394 /* SmartPtr.cpp */; };
 		0C19AECF1AB375920078C394 /* SmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C19AECD1AB375920078C394 /* SmartPtr.h */; };
+		0C19B0191AB383AA0078C394 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C19AEEE1AB37F580078C394 /* libpng.a */; };
+		0C19B01A1AB383AE0078C394 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C19AF5D1AB380740078C394 /* libvorbis.a */; };
+		0C19B07C1AB3850B0078C394 /* libtinyxml2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C19B05D1AB384980078C394 /* libtinyxml2.a */; };
+		0C19B07D1AB3850D0078C394 /* libPennerEasing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C19B0301AB384420078C394 /* libPennerEasing.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C19AEED1AB37F580078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19AEE91AB37F570078C394 /* png.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C19AEE21AB37F570078C394;
+			remoteInfo = png;
+		};
+		0C19AF5C1AB380740078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19AF581AB380730078C394 /* vorbis.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C19AF511AB380730078C394;
+			remoteInfo = vorbis;
+		};
+		0C19B0151AB383A00078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19AEE91AB37F570078C394 /* png.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C19AEE11AB37F570078C394;
+			remoteInfo = png;
+		};
+		0C19B0171AB383A30078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19AF581AB380730078C394 /* vorbis.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C19AF501AB380730078C394;
+			remoteInfo = vorbis;
+		};
+		0C19B02F1AB384420078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19B02B1AB384410078C394 /* PennerEasing.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C19B0241AB384410078C394;
+			remoteInfo = PennerEasing;
+		};
+		0C19B05C1AB384980078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19B0581AB384970078C394 /* tinyxml2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C19B0511AB384970078C394;
+			remoteInfo = tinyxml2;
+		};
+		0C19B0781AB385060078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19B02B1AB384410078C394 /* PennerEasing.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C19B0231AB384410078C394;
+			remoteInfo = PennerEasing;
+		};
+		0C19B07A1AB385080078C394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C19B0581AB384970078C394 /* tinyxml2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C19B0501AB384970078C394;
+			remoteInfo = tinyxml2;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C19AEC21AB3729F0078C394 /* libFEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C19AECC1AB375920078C394 /* SmartPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SmartPtr.cpp; path = ../../../FEngine/Utility/SmartPtr.cpp; sourceTree = "<group>"; };
 		0C19AECD1AB375920078C394 /* SmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmartPtr.h; path = ../../../FEngine/Utility/SmartPtr.h; sourceTree = "<group>"; };
+		0C19AEE91AB37F570078C394 /* png.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = png.xcodeproj; path = 3rdParty/png/png.xcodeproj; sourceTree = "<group>"; };
+		0C19AF581AB380730078C394 /* vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vorbis.xcodeproj; path = 3rdParty/vorbis/vorbis.xcodeproj; sourceTree = "<group>"; };
+		0C19B02B1AB384410078C394 /* PennerEasing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PennerEasing.xcodeproj; path = 3rdParty/PennerEasing/PennerEasing.xcodeproj; sourceTree = "<group>"; };
+		0C19B0581AB384970078C394 /* tinyxml2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = tinyxml2.xcodeproj; path = 3rdParty/tinyxml2/tinyxml2.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22,6 +89,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C19B07D1AB3850D0078C394 /* libPennerEasing.a in Frameworks */,
+				0C19B07C1AB3850B0078C394 /* libtinyxml2.a in Frameworks */,
+				0C19B01A1AB383AE0078C394 /* libvorbis.a in Frameworks */,
+				0C19B0191AB383AA0078C394 /* libpng.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +119,10 @@
 		0C19AEC91AB373FA0078C394 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				0C19AEE91AB37F570078C394 /* png.xcodeproj */,
+				0C19AF581AB380730078C394 /* vorbis.xcodeproj */,
+				0C19B02B1AB384410078C394 /* PennerEasing.xcodeproj */,
+				0C19B0581AB384970078C394 /* tinyxml2.xcodeproj */,
 			);
 			name = 3rdParty;
 			sourceTree = "<group>";
@@ -67,6 +142,38 @@
 				0C19AECD1AB375920078C394 /* SmartPtr.h */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		0C19AEEA1AB37F570078C394 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C19AEEE1AB37F580078C394 /* libpng.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C19AF591AB380730078C394 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C19AF5D1AB380740078C394 /* libvorbis.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C19B02C1AB384410078C394 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C19B0301AB384420078C394 /* libPennerEasing.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C19B0591AB384970078C394 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C19B05D1AB384980078C394 /* libtinyxml2.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +201,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				0C19B07B1AB385080078C394 /* PBXTargetDependency */,
+				0C19B0791AB385060078C394 /* PBXTargetDependency */,
+				0C19B0181AB383A30078C394 /* PBXTargetDependency */,
+				0C19B0161AB383A00078C394 /* PBXTargetDependency */,
 			);
 			name = FEngine;
 			productName = FEngine;
@@ -124,12 +235,61 @@
 			mainGroup = 0C19AEB91AB3729F0078C394;
 			productRefGroup = 0C19AEC31AB3729F0078C394 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0C19B02C1AB384410078C394 /* Products */;
+					ProjectRef = 0C19B02B1AB384410078C394 /* PennerEasing.xcodeproj */;
+				},
+				{
+					ProductGroup = 0C19AEEA1AB37F570078C394 /* Products */;
+					ProjectRef = 0C19AEE91AB37F570078C394 /* png.xcodeproj */;
+				},
+				{
+					ProductGroup = 0C19B0591AB384970078C394 /* Products */;
+					ProjectRef = 0C19B0581AB384970078C394 /* tinyxml2.xcodeproj */;
+				},
+				{
+					ProductGroup = 0C19AF591AB380730078C394 /* Products */;
+					ProjectRef = 0C19AF581AB380730078C394 /* vorbis.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0C19AEC11AB3729F0078C394 /* FEngine */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0C19AEEE1AB37F580078C394 /* libpng.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpng.a;
+			remoteRef = 0C19AEED1AB37F580078C394 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C19AF5D1AB380740078C394 /* libvorbis.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libvorbis.a;
+			remoteRef = 0C19AF5C1AB380740078C394 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C19B0301AB384420078C394 /* libPennerEasing.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPennerEasing.a;
+			remoteRef = 0C19B02F1AB384420078C394 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C19B05D1AB384980078C394 /* libtinyxml2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyxml2.a;
+			remoteRef = 0C19B05C1AB384980078C394 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C19AEBE1AB3729F0078C394 /* Sources */ = {
@@ -141,6 +301,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C19B0161AB383A00078C394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = png;
+			targetProxy = 0C19B0151AB383A00078C394 /* PBXContainerItemProxy */;
+		};
+		0C19B0181AB383A30078C394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = vorbis;
+			targetProxy = 0C19B0171AB383A30078C394 /* PBXContainerItemProxy */;
+		};
+		0C19B0791AB385060078C394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PennerEasing;
+			targetProxy = 0C19B0781AB385060078C394 /* PBXContainerItemProxy */;
+		};
+		0C19B07B1AB385080078C394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyxml2;
+			targetProxy = 0C19B07A1AB385080078C394 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0C19AEC41AB3729F0078C394 /* Debug */ = {

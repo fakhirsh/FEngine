@@ -1,0 +1,279 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C19B03D1AB3846C0078C394 /* Back.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0321AB3846C0078C394 /* Back.cpp */; };
+		0C19B03E1AB3846C0078C394 /* Bounce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0331AB3846C0078C394 /* Bounce.cpp */; };
+		0C19B03F1AB3846C0078C394 /* Circ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0341AB3846C0078C394 /* Circ.cpp */; };
+		0C19B0401AB3846C0078C394 /* Cubic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0351AB3846C0078C394 /* Cubic.cpp */; };
+		0C19B0411AB3846C0078C394 /* Elastic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0361AB3846C0078C394 /* Elastic.cpp */; };
+		0C19B0421AB3846C0078C394 /* Expo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0371AB3846C0078C394 /* Expo.cpp */; };
+		0C19B0431AB3846C0078C394 /* Linear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0381AB3846C0078C394 /* Linear.cpp */; };
+		0C19B0441AB3846C0078C394 /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B0391AB3846C0078C394 /* Quad.cpp */; };
+		0C19B0451AB3846C0078C394 /* Quart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B03A1AB3846C0078C394 /* Quart.cpp */; };
+		0C19B0461AB3846C0078C394 /* Quint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B03B1AB3846C0078C394 /* Quint.cpp */; };
+		0C19B0471AB3846C0078C394 /* Sine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B03C1AB3846C0078C394 /* Sine.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C19B0241AB384410078C394 /* libPennerEasing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPennerEasing.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C19B0321AB3846C0078C394 /* Back.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Back.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Back.cpp; sourceTree = "<group>"; };
+		0C19B0331AB3846C0078C394 /* Bounce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bounce.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Bounce.cpp; sourceTree = "<group>"; };
+		0C19B0341AB3846C0078C394 /* Circ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Circ.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Circ.cpp; sourceTree = "<group>"; };
+		0C19B0351AB3846C0078C394 /* Cubic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cubic.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Cubic.cpp; sourceTree = "<group>"; };
+		0C19B0361AB3846C0078C394 /* Elastic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Elastic.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Elastic.cpp; sourceTree = "<group>"; };
+		0C19B0371AB3846C0078C394 /* Expo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Expo.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Expo.cpp; sourceTree = "<group>"; };
+		0C19B0381AB3846C0078C394 /* Linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Linear.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Linear.cpp; sourceTree = "<group>"; };
+		0C19B0391AB3846C0078C394 /* Quad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quad.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Quad.cpp; sourceTree = "<group>"; };
+		0C19B03A1AB3846C0078C394 /* Quart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quart.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Quart.cpp; sourceTree = "<group>"; };
+		0C19B03B1AB3846C0078C394 /* Quint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quint.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Quint.cpp; sourceTree = "<group>"; };
+		0C19B03C1AB3846C0078C394 /* Sine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sine.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Sine.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C19B0211AB384410078C394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C19B01B1AB384410078C394 = {
+			isa = PBXGroup;
+			children = (
+				0C19B0311AB384460078C394 /* Source */,
+				0C19B0251AB384410078C394 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C19B0251AB384410078C394 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C19B0241AB384410078C394 /* libPennerEasing.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C19B0311AB384460078C394 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0C19B0321AB3846C0078C394 /* Back.cpp */,
+				0C19B0331AB3846C0078C394 /* Bounce.cpp */,
+				0C19B0341AB3846C0078C394 /* Circ.cpp */,
+				0C19B0351AB3846C0078C394 /* Cubic.cpp */,
+				0C19B0361AB3846C0078C394 /* Elastic.cpp */,
+				0C19B0371AB3846C0078C394 /* Expo.cpp */,
+				0C19B0381AB3846C0078C394 /* Linear.cpp */,
+				0C19B0391AB3846C0078C394 /* Quad.cpp */,
+				0C19B03A1AB3846C0078C394 /* Quart.cpp */,
+				0C19B03B1AB3846C0078C394 /* Quint.cpp */,
+				0C19B03C1AB3846C0078C394 /* Sine.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0C19B0221AB384410078C394 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0C19B0231AB384410078C394 /* PennerEasing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C19B0281AB384410078C394 /* Build configuration list for PBXNativeTarget "PennerEasing" */;
+			buildPhases = (
+				0C19B0201AB384410078C394 /* Sources */,
+				0C19B0211AB384410078C394 /* Frameworks */,
+				0C19B0221AB384410078C394 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PennerEasing;
+			productName = PennerEasing;
+			productReference = 0C19B0241AB384410078C394 /* libPennerEasing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C19B01C1AB384410078C394 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Fakhir Shaheen";
+				TargetAttributes = {
+					0C19B0231AB384410078C394 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 0C19B01F1AB384410078C394 /* Build configuration list for PBXProject "PennerEasing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0C19B01B1AB384410078C394;
+			productRefGroup = 0C19B0251AB384410078C394 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C19B0231AB384410078C394 /* PennerEasing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C19B0201AB384410078C394 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C19B0401AB3846C0078C394 /* Cubic.cpp in Sources */,
+				0C19B0431AB3846C0078C394 /* Linear.cpp in Sources */,
+				0C19B03F1AB3846C0078C394 /* Circ.cpp in Sources */,
+				0C19B0461AB3846C0078C394 /* Quint.cpp in Sources */,
+				0C19B0471AB3846C0078C394 /* Sine.cpp in Sources */,
+				0C19B0451AB3846C0078C394 /* Quart.cpp in Sources */,
+				0C19B03D1AB3846C0078C394 /* Back.cpp in Sources */,
+				0C19B0441AB3846C0078C394 /* Quad.cpp in Sources */,
+				0C19B0421AB3846C0078C394 /* Expo.cpp in Sources */,
+				0C19B03E1AB3846C0078C394 /* Bounce.cpp in Sources */,
+				0C19B0411AB3846C0078C394 /* Elastic.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0C19B0261AB384410078C394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0C19B0271AB384410078C394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0C19B0291AB384410078C394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0C19B02A1AB384410078C394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C19B01F1AB384410078C394 /* Build configuration list for PBXProject "PennerEasing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C19B0261AB384410078C394 /* Debug */,
+				0C19B0271AB384410078C394 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C19B0281AB384410078C394 /* Build configuration list for PBXNativeTarget "PennerEasing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C19B0291AB384410078C394 /* Debug */,
+				0C19B02A1AB384410078C394 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C19B01C1AB384410078C394 /* Project object */;
+}
