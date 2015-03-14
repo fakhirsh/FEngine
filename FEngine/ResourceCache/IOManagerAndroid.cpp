@@ -11,7 +11,7 @@
 #include <jni.h>
 
 
-namespace Fakhir
+namespace FEngine
 {
 
     AAssetManager * IOManagerAndroid::assetManager = NULL;

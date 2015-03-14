@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __Game__IOManagerAndroid__
-#define __Game__IOManagerAndroid__
+#pragma once
 
 #include "IOManager.h"
 
@@ -15,7 +14,7 @@
 #include <android/asset_manager_jni.h>
 #include <android/log.h>
 
-namespace Fakhir
+namespace FEngine
 {
     /**
      * This is the default file manager using standard C+ fstream libraries for reading files
@@ -44,4 +43,3 @@ namespace Fakhir
 };
 
 
-#endif /* defined(__Game__IOManagerAndroid__) */

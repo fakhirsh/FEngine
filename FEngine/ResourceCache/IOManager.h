@@ -6,15 +6,14 @@
 //  Copyright (c) 2014 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __Game__IOManager__
-#define __Game__IOManager__
+#pragma once
 
 
 #include <string>
 #include <vector>
 
 
-namespace Fakhir
+namespace FEngine
 {
     /**
      * Abstract class for handing os dependent files
@@ -41,4 +40,3 @@ namespace Fakhir
 
 };
 
-#endif /* defined(__Game__IOManager__) */

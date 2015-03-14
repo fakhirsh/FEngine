@@ -12,7 +12,7 @@
 #include "../Renderer/GLES20/Program.h"
 //#include "../Renderer/VBO.h"
 
-namespace Fakhir
+namespace FEngine
 {
     
     ResourceCache * ResourceCache::_instance = NULL;

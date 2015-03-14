@@ -11,7 +11,7 @@
 
 #include "IOManager.h"
 
-namespace Fakhir
+namespace FEngine
 {
     /**
      * Concrete class for handing files on iOS

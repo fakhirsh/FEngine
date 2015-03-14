@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __WordGame__ResourceCache__
-#define __WordGame__ResourceCache__
+#pragma once
 
 
 #include <string>
 #include <map>
 
-namespace Fakhir
+namespace FEngine
 {
     // PLEASE ADD COMMENTS About how to use this class
 
@@ -69,4 +68,3 @@ namespace Fakhir
 
 };
 
-#endif /* defined(__WordGame__ResourceCache__) */

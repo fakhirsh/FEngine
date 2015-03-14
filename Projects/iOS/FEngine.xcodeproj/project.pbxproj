@@ -15,6 +15,12 @@
 		0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A2C1AB4125900F18283 /* libPennerEasing.a */; };
 		0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A491AB4140900F18283 /* OpenGLES.framework */; };
 		0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A4B1AB4141000F18283 /* OpenAL.framework */; };
+		0CF02B891AB41F080004BD46 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02B851AB41F080004BD46 /* App.cpp */; };
+		0CF02B8A1AB41F080004BD46 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02B871AB41F080004BD46 /* SystemConfig.cpp */; };
+		0CF02BC61AB43DF40004BD46 /* IOManagerHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BB61AB43DD00004BD46 /* IOManagerHelper.cpp */; };
+		0CF02BC71AB43FCD0004BD46 /* IOManagerDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BB41AB43DD00004BD46 /* IOManagerDefault.cpp */; };
+		0CF02BEB1AB44E0B0004BD46 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BE71AB44E0B0004BD46 /* State.cpp */; };
+		0CF02BEC1AB44E0B0004BD46 /* StateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BE91AB44E0B0004BD46 /* StateManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +141,27 @@
 		0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PennerEasing.xcodeproj; path = 3rdParty/PennerEasing/PennerEasing.xcodeproj; sourceTree = "<group>"; };
 		0C275A491AB4140900F18283 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0C275A4B1AB4141000F18283 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		0CF02B851AB41F080004BD46 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
+		0CF02B861AB41F080004BD46 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		0CF02B871AB41F080004BD46 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemConfig.cpp; sourceTree = "<group>"; };
+		0CF02B881AB41F080004BD46 /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemConfig.h; sourceTree = "<group>"; };
+		0CF02B8F1AB41F1C0004BD46 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Common.h; path = ../../../FEngine/Common.h; sourceTree = "<group>"; };
+		0CF02BAA1AB43AA40004BD46 /* Math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
+		0CF02BB11AB43DD00004BD46 /* IOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManager.h; sourceTree = "<group>"; };
+		0CF02BB21AB43DD00004BD46 /* IOManagerAndroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOManagerAndroid.cpp; sourceTree = "<group>"; };
+		0CF02BB31AB43DD00004BD46 /* IOManagerAndroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerAndroid.h; sourceTree = "<group>"; };
+		0CF02BB41AB43DD00004BD46 /* IOManagerDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOManagerDefault.cpp; sourceTree = "<group>"; };
+		0CF02BB51AB43DD00004BD46 /* IOManagerDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerDefault.h; sourceTree = "<group>"; };
+		0CF02BB61AB43DD00004BD46 /* IOManagerHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOManagerHelper.cpp; sourceTree = "<group>"; };
+		0CF02BB71AB43DD00004BD46 /* IOManagerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerHelper.h; sourceTree = "<group>"; };
+		0CF02BB81AB43DD00004BD46 /* IOManageriOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManageriOS.h; sourceTree = "<group>"; };
+		0CF02BB91AB43DD00004BD46 /* IOManageriOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOManageriOS.mm; sourceTree = "<group>"; };
+		0CF02BBA1AB43DD00004BD46 /* ResourceCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceCache.cpp; sourceTree = "<group>"; };
+		0CF02BBB1AB43DD00004BD46 /* ResourceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceCache.h; sourceTree = "<group>"; };
+		0CF02BE71AB44E0B0004BD46 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
+		0CF02BE81AB44E0B0004BD46 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		0CF02BE91AB44E0B0004BD46 /* StateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateManager.cpp; sourceTree = "<group>"; };
+		0CF02BEA1AB44E0B0004BD46 /* StateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +212,15 @@
 		0C2758481AB40DEE00F18283 /* FEngine */ = {
 			isa = PBXGroup;
 			children = (
+				0CF02B8F1AB41F1C0004BD46 /* Common.h */,
+				0CF02BDA1AB444290004BD46 /* EventManager */,
+				0CF02BDF1AB444380004BD46 /* Graphics2D */,
+				0CF02BE01AB444380004BD46 /* ProcessManager */,
+				0CF02BE11AB444380004BD46 /* Renderer */,
+				0CF02BB01AB43DD00004BD46 /* ResourceCache */,
+				0CF02BE21AB444460004BD46 /* SoundManager */,
+				0CF02BE31AB444460004BD46 /* StateManager */,
+				0CF02B841AB41F080004BD46 /* System */,
 				0C2758601AB40E1E00F18283 /* Utility */,
 			);
 			path = FEngine;
@@ -211,6 +247,7 @@
 			children = (
 				0C2758611AB40E1E00F18283 /* SmartPtr.cpp */,
 				0C2758621AB40E1E00F18283 /* SmartPtr.h */,
+				0CF02BAA1AB43AA40004BD46 /* Math.h */,
 			);
 			name = Utility;
 			path = ../../../FEngine/Utility;
@@ -270,6 +307,89 @@
 				0C275A491AB4140900F18283 /* OpenGLES.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0CF02B841AB41F080004BD46 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				0CF02B851AB41F080004BD46 /* App.cpp */,
+				0CF02B861AB41F080004BD46 /* App.h */,
+				0CF02B871AB41F080004BD46 /* SystemConfig.cpp */,
+				0CF02B881AB41F080004BD46 /* SystemConfig.h */,
+			);
+			name = System;
+			path = ../../../FEngine/System;
+			sourceTree = "<group>";
+		};
+		0CF02BB01AB43DD00004BD46 /* ResourceCache */ = {
+			isa = PBXGroup;
+			children = (
+				0CF02BB11AB43DD00004BD46 /* IOManager.h */,
+				0CF02BB21AB43DD00004BD46 /* IOManagerAndroid.cpp */,
+				0CF02BB31AB43DD00004BD46 /* IOManagerAndroid.h */,
+				0CF02BB41AB43DD00004BD46 /* IOManagerDefault.cpp */,
+				0CF02BB51AB43DD00004BD46 /* IOManagerDefault.h */,
+				0CF02BB61AB43DD00004BD46 /* IOManagerHelper.cpp */,
+				0CF02BB71AB43DD00004BD46 /* IOManagerHelper.h */,
+				0CF02BB81AB43DD00004BD46 /* IOManageriOS.h */,
+				0CF02BB91AB43DD00004BD46 /* IOManageriOS.mm */,
+				0CF02BBA1AB43DD00004BD46 /* ResourceCache.cpp */,
+				0CF02BBB1AB43DD00004BD46 /* ResourceCache.h */,
+			);
+			name = ResourceCache;
+			path = ../../../FEngine/ResourceCache;
+			sourceTree = "<group>";
+		};
+		0CF02BDA1AB444290004BD46 /* EventManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EventManager;
+			path = ../../../FEngine/EventManager;
+			sourceTree = "<group>";
+		};
+		0CF02BDF1AB444380004BD46 /* Graphics2D */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Graphics2D;
+			path = ../../../FEngine/Graphics2D;
+			sourceTree = "<group>";
+		};
+		0CF02BE01AB444380004BD46 /* ProcessManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ProcessManager;
+			path = ../../../FEngine/ProcessManager;
+			sourceTree = "<group>";
+		};
+		0CF02BE11AB444380004BD46 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Renderer;
+			path = ../../../FEngine/Renderer;
+			sourceTree = "<group>";
+		};
+		0CF02BE21AB444460004BD46 /* SoundManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SoundManager;
+			path = ../../../FEngine/SoundManager;
+			sourceTree = "<group>";
+		};
+		0CF02BE31AB444460004BD46 /* StateManager */ = {
+			isa = PBXGroup;
+			children = (
+				0CF02BE71AB44E0B0004BD46 /* State.cpp */,
+				0CF02BE81AB44E0B0004BD46 /* State.h */,
+				0CF02BE91AB44E0B0004BD46 /* StateManager.cpp */,
+				0CF02BEA1AB44E0B0004BD46 /* StateManager.h */,
+			);
+			name = StateManager;
+			path = ../../../FEngine/Statemanager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +562,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C2758631AB40E1E00F18283 /* SmartPtr.cpp in Sources */,
+				0CF02BC61AB43DF40004BD46 /* IOManagerHelper.cpp in Sources */,
+				0CF02B891AB41F080004BD46 /* App.cpp in Sources */,
+				0CF02BC71AB43FCD0004BD46 /* IOManagerDefault.cpp in Sources */,
+				0CF02B8A1AB41F080004BD46 /* SystemConfig.cpp in Sources */,
+				0CF02BEB1AB44E0B0004BD46 /* State.cpp in Sources */,
+				0CF02BEC1AB44E0B0004BD46 /* StateManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +686,16 @@
 		0C27585B1AB40DEF00F18283 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../3rdParty/glm-0.9.6.3",
+					../../3rdParty/FastDelegate,
+					"../../3rdParty/tinyxml2-master",
+					../../3rdParty/boost_1_56_0,
+					"../../3rdParty/libpng-1.6.15",
+					../../../,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -569,6 +705,16 @@
 		0C27585C1AB40DEF00F18283 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../3rdParty/glm-0.9.6.3",
+					../../3rdParty/FastDelegate,
+					"../../3rdParty/tinyxml2-master",
+					../../3rdParty/boost_1_56_0,
+					"../../3rdParty/libpng-1.6.15",
+					../../../,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

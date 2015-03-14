@@ -16,14 +16,17 @@
  **********************************************************************************/
 
 #include <string>
-#include <glm/glm.hpp>
 
-#include "SystemConfig.h"
+#include "../Utility/Math.h"
+//#include "SystemConfig.h"
 
-namespace Fakhir
+namespace FEngine
 {
     class IOManager;
     class IRenderer;
+    class Point;
+    class Rect;
+    class SystemConfig;
     
     class App
     {
@@ -67,14 +70,14 @@ namespace Fakhir
         float   GetFPS();
         float   GetMaxFPS();
         
-        glm::vec2   GetOrigin();
+        Point2D     GetOrigin();
         float       GetSafeWidth();
         float       GetSafeHeight();
         
-        glm::vec2   DesignSpaceToViewportSpace(const glm::vec2 & designSpace);
-        glm::vec2   ViewportSpaceToDesignSpace(const glm::vec2 & vpSpace);
-        glm::vec2   DesignSpaceToSafeZone(const glm::vec2 & designSpace);
-        glm::vec2   SafeZoneToDesignSpace(const glm::vec2 & safeZone);
+        Point2D   DesignSpaceToViewportSpace(const Point2D & designSpace);
+        Point2D   ViewportSpaceToDesignSpace(const Point2D & vpSpace);
+        Point2D   DesignSpaceToSafeZone(const Point2D & designSpace);
+        Point2D   SafeZoneToDesignSpace(const Point2D & safeZone);
 
         //void    SetResourceLoader(FIResourceLoader * resourceLoader);
         
@@ -121,7 +124,7 @@ namespace Fakhir
         float   _assetDesignWidth;
         float   _assetDesignHeight;
         
-        glm::vec2   _origin;
+        Point2D   _origin;
         // The "safe zone" within which you can draw sprites without any fear of being cropped.
         struct RECT
         {
@@ -148,6 +151,10 @@ namespace Fakhir
         
     /////////////////////////////////////////
 
+        
+        
+        class TEST * _testLevel;
+        
     };
         
 };

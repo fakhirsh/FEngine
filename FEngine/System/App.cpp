@@ -9,15 +9,21 @@
 #include "../Common.h"
 
 #include "App.h"
+#include "SystemConfig.h"
+
 #include "../StateManager/StateManager.h"
 //#include "../SoundManager/SoundManager.h"
-#include "../EventManager/DefaultEvents.h"
-#include "../EventManager/EventManager.h"
-#include "../Renderer/IRenderer.h"
+//#include "../EventManager/DefaultEvents.h"
+//#include "../EventManager/EventManager.h"
+//#include "../Renderer/IRenderer.h"
 
-#include "../GameLogic/Screens/Test/Test.h"
 
-namespace Fakhir
+
+
+#include <GameLogic/Screens/Test/Test.h>
+
+
+namespace FEngine
 {
     
     App::App()
@@ -58,10 +64,10 @@ namespace Fakhir
     {
         
         // Renderer MUST be set BEFORE calling Init
-        _renderer = sysConfig->renderer;
-        if (_renderer == NULL) {
-            return false;
-        }
+        //_renderer = sysConfig->renderer;
+        //if (_renderer == NULL) {
+        //    return false;
+        //}
         
         _ioManager = sysConfig->ioManager;
         
@@ -91,13 +97,17 @@ namespace Fakhir
         
         ComputeLetterBoxPolicy();
         
-        _renderer->EnableBlend();
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         
-        _renderer->ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        //_renderer->EnableBlend();
+        
+        //_renderer->ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         
         // Initialize the singleton Game state manager class. Also change State.
         StatePtr statePtr = boost::make_shared<Test>();
-        Fakhir::StateManager::Get()->ChangeState(statePtr);
+        StateManager::Get()->ChangeState(statePtr);
         
         // Initialize the singleton Sound manager class.
         //SoundManager::Get();
@@ -131,15 +141,15 @@ namespace Fakhir
     void App::Update(float dt)
     {
         StateManager::Get()->Update(dt);
-        
     }
 
     void App::Render(float dt)
     {
-        
-        _renderer->Clear();
+        glClear(GL_COLOR_BUFFER_BIT);
+        //_renderer->Clear();
 
         StateManager::Get()->Render(dt);
+
     }
 
     //////////////////////////////////////////////////////////////////
@@ -147,7 +157,7 @@ namespace Fakhir
 
     void App::TouchDown(int x, int y)
     {
-        
+        /*
         boost::shared_ptr<Fakhir::EventTouchDown> touchDownEvent = boost::make_shared<Fakhir::EventTouchDown>();
         // Adjust coordinates according to new viewport origin
         glm::vec2 viewportSpace(x - _origin.x, y - _origin.y);
@@ -157,12 +167,12 @@ namespace Fakhir
         
         EventManagerPtr eventMgr = StateManager::Get()->GetEventManager();
         eventMgr->TriggetEvent(touchDownEvent);
-        
+        */
     }
 
     void App::TouchUp(int x, int y)
     {
-        
+        /*
         boost::shared_ptr<Fakhir::EventTouchUp> touchUpEvent = boost::make_shared<Fakhir::EventTouchUp>();
         // Adjust coordinates according to new viewport origin
         glm::vec2 viewportSpace(x - _origin.x, y - _origin.y);
@@ -172,12 +182,12 @@ namespace Fakhir
         
         EventManagerPtr eventMgr = StateManager::Get()->GetEventManager();
         eventMgr->TriggetEvent(touchUpEvent);
-        
+        */
     }
 
     void App::TouchMoved(int x, int y)
     {
-        
+        /*
         boost::shared_ptr<Fakhir::EventTouchMoved> touchMovedEvent = boost::make_shared<Fakhir::EventTouchMoved>();
         // Adjust coordinates according to new viewport origin
         glm::vec2 viewportSpace(x - _origin.x, y - _origin.y);
@@ -187,7 +197,7 @@ namespace Fakhir
         
         EventManagerPtr eventMgr = StateManager::Get()->GetEventManager();
         eventMgr->TriggetEvent(touchMovedEvent);
-        
+        */
     }
 
     void App::TouchCancelled(int x, int y)
@@ -256,19 +266,25 @@ namespace Fakhir
                     << "\nSafe Zone Width: " << _safeZoneRect.width
                     << "\nSafe Zone Height: " << _safeZoneRect.height
                     << "\nCSF: " << _contentScaleFactor << std::endl;
+        
+        
+        if(_contentScaleFactor < 0)
+        {
+            int g = 0.0f;
+        }
 
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
 
-    glm::vec2 App::DesignSpaceToViewportSpace(const glm::vec2 & designSpace)
+    Point2D App::DesignSpaceToViewportSpace(const Point2D & designSpace)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        glm::vec2 vpSpace;
+        Point2D vpSpace;
         BOX V, D;
         
         V.l = 0.0f;
@@ -287,14 +303,14 @@ namespace Fakhir
         return vpSpace;
     }
 
-    glm::vec2 App::ViewportSpaceToDesignSpace(const glm::vec2 & vpSpace)
+    Point2D App::ViewportSpaceToDesignSpace(const Point2D & vpSpace)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        glm::vec2 designSpace;
+        Point2D designSpace;
         BOX V, D;
         
         V.l = 0.0f;
@@ -321,14 +337,14 @@ namespace Fakhir
      
      */
     
-    glm::vec2 App::DesignSpaceToSafeZone(const glm::vec2 & designSpace)
+    Point2D App::DesignSpaceToSafeZone(const Point2D & designSpace)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        glm::vec2 safeZone;
+        Point2D safeZone;
         BOX V, D;
         
         V.l = _safeZoneRect.x;
@@ -350,14 +366,14 @@ namespace Fakhir
     
     /// BUGGY... PLEASE FIX.....
     
-    glm::vec2 App::SafeZoneToDesignSpace(const glm::vec2 & safeZone)
+    Point2D App::SafeZoneToDesignSpace(const Point2D & safeZone)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        glm::vec2 designSpace;
+        Point2D designSpace;
         BOX V, D;
         
         V.l = _safeZoneRect.x;
@@ -491,7 +507,7 @@ namespace Fakhir
         return _contentScaleFactor;
     }
 
-    glm::vec2 App::GetOrigin()
+    Point2D App::GetOrigin()
     {
         return _origin;
     }

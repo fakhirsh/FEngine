@@ -12,7 +12,7 @@
 #include <fstream>
 
 
-namespace Fakhir
+namespace FEngine
 {
     IOManagerDefault::IOManagerDefault()
     {

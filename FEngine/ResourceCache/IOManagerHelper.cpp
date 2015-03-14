@@ -8,7 +8,7 @@
 
 #include "IOManagerHelper.h"
 
-namespace Fakhir
+namespace FEngine
 {
     /**
      * Common OS independent helper IO functions

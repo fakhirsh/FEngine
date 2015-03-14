@@ -6,13 +6,12 @@
 //  Copyright (c) 2014 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __Game__IOManagerHelper__
-#define __Game__IOManagerHelper__
+#pragma once
 
 #include <string>
 #include <fstream>
 
-namespace Fakhir
+namespace FEngine
 {
     /**
      * Common OS independent helper IO functions
@@ -26,4 +25,3 @@ namespace Fakhir
     
 };
 
-#endif /* defined(__Game__IOManagerHelper__) */

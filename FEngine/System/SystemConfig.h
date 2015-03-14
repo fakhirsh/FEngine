@@ -20,7 +20,7 @@ using namespace std;
  *    instead of having million parameters in the "Init" function.
  ***********************************************************************/
 
-namespace Fakhir
+namespace FEngine
 {
     class IOManager;
     class IRenderer;

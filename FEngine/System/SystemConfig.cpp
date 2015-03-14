@@ -13,7 +13,7 @@
 
 //using namespace tinyxml2;
 
-namespace Fakhir
+namespace FEngine
 {
 
     SystemConfig::SystemConfig()
