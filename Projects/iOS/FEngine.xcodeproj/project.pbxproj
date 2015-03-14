@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C2758521AB40DEF00F18283 /* libFEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758461AB40DEE00F18283 /* libFEngine.a */; };
+		0C2758631AB40E1E00F18283 /* SmartPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2758611AB40E1E00F18283 /* SmartPtr.cpp */; };
+		0C275A001AB4123900F18283 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758E61AB410D400F18283 /* libvorbis.a */; };
+		0C275A011AB4123D00F18283 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C27588E1AB410B600F18283 /* libpng.a */; };
+		0C275A021AB4123F00F18283 /* libtinyxml2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C27593E1AB410F100F18283 /* libtinyxml2.a */; };
+		0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A2C1AB4125900F18283 /* libPennerEasing.a */; };
+		0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A491AB4140900F18283 /* OpenGLES.framework */; };
+		0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A4B1AB4141000F18283 /* OpenAL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C2758531AB40DEF00F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C27583E1AB40DEE00F18283 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C2758451AB40DEE00F18283;
+			remoteInfo = FEngine;
+		};
+		0C27588D1AB410B600F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2758881AB410B500F18283 /* png.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C27586E1AB410B500F18283;
+			remoteInfo = png;
+		};
+		0C27588F1AB410B600F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2758881AB410B500F18283 /* png.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C2758791AB410B500F18283;
+			remoteInfo = pngTests;
+		};
+		0C2758E51AB410D400F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2758E01AB410D300F18283 /* vorbis.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C2758C61AB410D300F18283;
+			remoteInfo = vorbis;
+		};
+		0C2758E71AB410D400F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2758E01AB410D300F18283 /* vorbis.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C2758D11AB410D300F18283;
+			remoteInfo = vorbisTests;
+		};
+		0C27593D1AB410F100F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C27591E1AB410EF00F18283;
+			remoteInfo = tinyxml2;
+		};
+		0C27593F1AB410F100F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C2759291AB410EF00F18283;
+			remoteInfo = tinyxml2Tests;
+		};
+		0C2759FA1AB4122E00F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2758881AB410B500F18283 /* png.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C27586D1AB410B500F18283;
+			remoteInfo = png;
+		};
+		0C2759FC1AB4123100F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2758E01AB410D300F18283 /* vorbis.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C2758C51AB410D300F18283;
+			remoteInfo = vorbis;
+		};
+		0C2759FE1AB4123400F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C27591D1AB410EF00F18283;
+			remoteInfo = tinyxml2;
+		};
+		0C275A2B1AB4125900F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C275A0C1AB4125700F18283;
+			remoteInfo = PennerEasing;
+		};
+		0C275A2D1AB4125900F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C275A171AB4125700F18283;
+			remoteInfo = PennerEasingTests;
+		};
+		0C275A451AB4128500F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C275A0B1AB4125700F18283;
+			remoteInfo = PennerEasing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0C2758441AB40DEE00F18283 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0C2758461AB40DEE00F18283 /* libFEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2758511AB40DEF00F18283 /* FEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2758571AB40DEF00F18283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C2758611AB40E1E00F18283 /* SmartPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartPtr.cpp; sourceTree = "<group>"; };
+		0C2758621AB40E1E00F18283 /* SmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPtr.h; sourceTree = "<group>"; };
+		0C2758881AB410B500F18283 /* png.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = png.xcodeproj; path = 3rdParty/png/png.xcodeproj; sourceTree = "<group>"; };
+		0C2758E01AB410D300F18283 /* vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vorbis.xcodeproj; path = 3rdParty/vorbis/vorbis.xcodeproj; sourceTree = "<group>"; };
+		0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = tinyxml2.xcodeproj; path = 3rdParty/tinyxml2/tinyxml2.xcodeproj; sourceTree = "<group>"; };
+		0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PennerEasing.xcodeproj; path = 3rdParty/PennerEasing/PennerEasing.xcodeproj; sourceTree = "<group>"; };
+		0C275A491AB4140900F18283 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		0C275A4B1AB4141000F18283 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C2758431AB40DEE00F18283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */,
+				0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */,
+				0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */,
+				0C275A021AB4123F00F18283 /* libtinyxml2.a in Frameworks */,
+				0C275A011AB4123D00F18283 /* libpng.a in Frameworks */,
+				0C275A001AB4123900F18283 /* libvorbis.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C27584E1AB40DEF00F18283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C2758521AB40DEF00F18283 /* libFEngine.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C27583D1AB40DEE00F18283 = {
+			isa = PBXGroup;
+			children = (
+				0C2758641AB40FD400F18283 /* 3rdParty */,
+				0C2758481AB40DEE00F18283 /* FEngine */,
+				0C2758551AB40DEF00F18283 /* FEngineTests */,
+				0C275A481AB413F700F18283 /* Frameworks */,
+				0C2758471AB40DEE00F18283 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C2758471AB40DEE00F18283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C2758461AB40DEE00F18283 /* libFEngine.a */,
+				0C2758511AB40DEF00F18283 /* FEngineTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C2758481AB40DEE00F18283 /* FEngine */ = {
+			isa = PBXGroup;
+			children = (
+				0C2758601AB40E1E00F18283 /* Utility */,
+			);
+			path = FEngine;
+			sourceTree = "<group>";
+		};
+		0C2758551AB40DEF00F18283 /* FEngineTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C2758561AB40DEF00F18283 /* Supporting Files */,
+			);
+			path = FEngineTests;
+			sourceTree = "<group>";
+		};
+		0C2758561AB40DEF00F18283 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C2758571AB40DEF00F18283 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C2758601AB40E1E00F18283 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0C2758611AB40E1E00F18283 /* SmartPtr.cpp */,
+				0C2758621AB40E1E00F18283 /* SmartPtr.h */,
+			);
+			name = Utility;
+			path = ../../../FEngine/Utility;
+			sourceTree = "<group>";
+		};
+		0C2758641AB40FD400F18283 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				0C2758881AB410B500F18283 /* png.xcodeproj */,
+				0C2758E01AB410D300F18283 /* vorbis.xcodeproj */,
+				0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */,
+				0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */,
+			);
+			name = 3rdParty;
+			sourceTree = "<group>";
+		};
+		0C2758891AB410B500F18283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C27588E1AB410B600F18283 /* libpng.a */,
+				0C2758901AB410B600F18283 /* pngTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C2758E11AB410D300F18283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C2758E61AB410D400F18283 /* libvorbis.a */,
+				0C2758E81AB410D400F18283 /* vorbisTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C2759391AB410EF00F18283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C27593E1AB410F100F18283 /* libtinyxml2.a */,
+				0C2759401AB410F100F18283 /* tinyxml2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C275A271AB4125800F18283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C275A2C1AB4125900F18283 /* libPennerEasing.a */,
+				0C275A2E1AB4125900F18283 /* PennerEasingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C275A481AB413F700F18283 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C275A4B1AB4141000F18283 /* OpenAL.framework */,
+				0C275A491AB4140900F18283 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C2758451AB40DEE00F18283 /* FEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C27585A1AB40DEF00F18283 /* Build configuration list for PBXNativeTarget "FEngine" */;
+			buildPhases = (
+				0C2758421AB40DEE00F18283 /* Sources */,
+				0C2758431AB40DEE00F18283 /* Frameworks */,
+				0C2758441AB40DEE00F18283 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C275A461AB4128500F18283 /* PBXTargetDependency */,
+				0C2759FF1AB4123400F18283 /* PBXTargetDependency */,
+				0C2759FD1AB4123100F18283 /* PBXTargetDependency */,
+				0C2759FB1AB4122E00F18283 /* PBXTargetDependency */,
+			);
+			name = FEngine;
+			productName = FEngine;
+			productReference = 0C2758461AB40DEE00F18283 /* libFEngine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		0C2758501AB40DEF00F18283 /* FEngineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C27585D1AB40DEF00F18283 /* Build configuration list for PBXNativeTarget "FEngineTests" */;
+			buildPhases = (
+				0C27584D1AB40DEF00F18283 /* Sources */,
+				0C27584E1AB40DEF00F18283 /* Frameworks */,
+				0C27584F1AB40DEF00F18283 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C2758541AB40DEF00F18283 /* PBXTargetDependency */,
+			);
+			name = FEngineTests;
+			productName = FEngineTests;
+			productReference = 0C2758511AB40DEF00F18283 /* FEngineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C27583E1AB40DEE00F18283 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Fakhir Shaheen";
+				TargetAttributes = {
+					0C2758451AB40DEE00F18283 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					0C2758501AB40DEF00F18283 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 0C2758411AB40DEE00F18283 /* Build configuration list for PBXProject "FEngine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0C27583D1AB40DEE00F18283;
+			productRefGroup = 0C2758471AB40DEE00F18283 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0C275A271AB4125800F18283 /* Products */;
+					ProjectRef = 0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */;
+				},
+				{
+					ProductGroup = 0C2758891AB410B500F18283 /* Products */;
+					ProjectRef = 0C2758881AB410B500F18283 /* png.xcodeproj */;
+				},
+				{
+					ProductGroup = 0C2759391AB410EF00F18283 /* Products */;
+					ProjectRef = 0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */;
+				},
+				{
+					ProductGroup = 0C2758E11AB410D300F18283 /* Products */;
+					ProjectRef = 0C2758E01AB410D300F18283 /* vorbis.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0C2758451AB40DEE00F18283 /* FEngine */,
+				0C2758501AB40DEF00F18283 /* FEngineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0C27588E1AB410B600F18283 /* libpng.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpng.a;
+			remoteRef = 0C27588D1AB410B600F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C2758901AB410B600F18283 /* pngTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = pngTests.xctest;
+			remoteRef = 0C27588F1AB410B600F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C2758E61AB410D400F18283 /* libvorbis.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libvorbis.a;
+			remoteRef = 0C2758E51AB410D400F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C2758E81AB410D400F18283 /* vorbisTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = vorbisTests.xctest;
+			remoteRef = 0C2758E71AB410D400F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C27593E1AB410F100F18283 /* libtinyxml2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyxml2.a;
+			remoteRef = 0C27593D1AB410F100F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C2759401AB410F100F18283 /* tinyxml2Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = tinyxml2Tests.xctest;
+			remoteRef = 0C27593F1AB410F100F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C275A2C1AB4125900F18283 /* libPennerEasing.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPennerEasing.a;
+			remoteRef = 0C275A2B1AB4125900F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C275A2E1AB4125900F18283 /* PennerEasingTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PennerEasingTests.xctest;
+			remoteRef = 0C275A2D1AB4125900F18283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C27584F1AB40DEF00F18283 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C2758421AB40DEE00F18283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C2758631AB40E1E00F18283 /* SmartPtr.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C27584D1AB40DEF00F18283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C2758541AB40DEF00F18283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C2758451AB40DEE00F18283 /* FEngine */;
+			targetProxy = 0C2758531AB40DEF00F18283 /* PBXContainerItemProxy */;
+		};
+		0C2759FB1AB4122E00F18283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = png;
+			targetProxy = 0C2759FA1AB4122E00F18283 /* PBXContainerItemProxy */;
+		};
+		0C2759FD1AB4123100F18283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = vorbis;
+			targetProxy = 0C2759FC1AB4123100F18283 /* PBXContainerItemProxy */;
+		};
+		0C2759FF1AB4123400F18283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyxml2;
+			targetProxy = 0C2759FE1AB4123400F18283 /* PBXContainerItemProxy */;
+		};
+		0C275A461AB4128500F18283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PennerEasing;
+			targetProxy = 0C275A451AB4128500F18283 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C2758581AB40DEF00F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0C2758591AB40DEF00F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C27585B1AB40DEF00F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0C27585C1AB40DEF00F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0C27585E1AB40DEF00F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FEngineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0C27585F1AB40DEF00F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FEngineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C2758411AB40DEE00F18283 /* Build configuration list for PBXProject "FEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C2758581AB40DEF00F18283 /* Debug */,
+				0C2758591AB40DEF00F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C27585A1AB40DEF00F18283 /* Build configuration list for PBXNativeTarget "FEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C27585B1AB40DEF00F18283 /* Debug */,
+				0C27585C1AB40DEF00F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C27585D1AB40DEF00F18283 /* Build configuration list for PBXNativeTarget "FEngineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C27585E1AB40DEF00F18283 /* Debug */,
+				0C27585F1AB40DEF00F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C27583E1AB40DEE00F18283 /* Project object */;
+}

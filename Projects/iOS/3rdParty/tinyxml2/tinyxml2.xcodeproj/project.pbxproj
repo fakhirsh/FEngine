@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C27592A1AB410EF00F18283 /* libtinyxml2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C27591E1AB410EF00F18283 /* libtinyxml2.a */; };
+		0C2759831AB4119200F18283 /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2759821AB4119200F18283 /* tinyxml2.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C27592B1AB410EF00F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2759161AB410EF00F18283 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C27591D1AB410EF00F18283;
+			remoteInfo = tinyxml2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0C27591C1AB410EF00F18283 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0C27591E1AB410EF00F18283 /* libtinyxml2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyxml2.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2759291AB410EF00F18283 /* tinyxml2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tinyxml2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C27592F1AB410EF00F18283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C2759821AB4119200F18283 /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml2.cpp; path = "../../../../../3rdParty/tinyxml2-master/tinyxml2.cpp"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C27591B1AB410EF00F18283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C2759261AB410EF00F18283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C27592A1AB410EF00F18283 /* libtinyxml2.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C2759151AB410EF00F18283 = {
+			isa = PBXGroup;
+			children = (
+				0C2759201AB410EF00F18283 /* Source */,
+				0C27592D1AB410EF00F18283 /* tinyxml2Tests */,
+				0C27591F1AB410EF00F18283 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C27591F1AB410EF00F18283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C27591E1AB410EF00F18283 /* libtinyxml2.a */,
+				0C2759291AB410EF00F18283 /* tinyxml2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C2759201AB410EF00F18283 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0C2759821AB4119200F18283 /* tinyxml2.cpp */,
+			);
+			name = Source;
+			path = tinyxml2;
+			sourceTree = "<group>";
+		};
+		0C27592D1AB410EF00F18283 /* tinyxml2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0C27592E1AB410EF00F18283 /* Supporting Files */,
+			);
+			path = tinyxml2Tests;
+			sourceTree = "<group>";
+		};
+		0C27592E1AB410EF00F18283 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C27592F1AB410EF00F18283 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C27591D1AB410EF00F18283 /* tinyxml2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C2759321AB410EF00F18283 /* Build configuration list for PBXNativeTarget "tinyxml2" */;
+			buildPhases = (
+				0C27591A1AB410EF00F18283 /* Sources */,
+				0C27591B1AB410EF00F18283 /* Frameworks */,
+				0C27591C1AB410EF00F18283 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tinyxml2;
+			productName = tinyxml2;
+			productReference = 0C27591E1AB410EF00F18283 /* libtinyxml2.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		0C2759281AB410EF00F18283 /* tinyxml2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C2759351AB410EF00F18283 /* Build configuration list for PBXNativeTarget "tinyxml2Tests" */;
+			buildPhases = (
+				0C2759251AB410EF00F18283 /* Sources */,
+				0C2759261AB410EF00F18283 /* Frameworks */,
+				0C2759271AB410EF00F18283 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C27592C1AB410EF00F18283 /* PBXTargetDependency */,
+			);
+			name = tinyxml2Tests;
+			productName = tinyxml2Tests;
+			productReference = 0C2759291AB410EF00F18283 /* tinyxml2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C2759161AB410EF00F18283 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Fakhir Shaheen";
+				TargetAttributes = {
+					0C27591D1AB410EF00F18283 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					0C2759281AB410EF00F18283 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 0C2759191AB410EF00F18283 /* Build configuration list for PBXProject "tinyxml2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0C2759151AB410EF00F18283;
+			productRefGroup = 0C27591F1AB410EF00F18283 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C27591D1AB410EF00F18283 /* tinyxml2 */,
+				0C2759281AB410EF00F18283 /* tinyxml2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C2759271AB410EF00F18283 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C27591A1AB410EF00F18283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C2759831AB4119200F18283 /* tinyxml2.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C2759251AB410EF00F18283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C27592C1AB410EF00F18283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C27591D1AB410EF00F18283 /* tinyxml2 */;
+			targetProxy = 0C27592B1AB410EF00F18283 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C2759301AB410EF00F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0C2759311AB410EF00F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C2759331AB410EF00F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0C2759341AB410EF00F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0C2759361AB410EF00F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = tinyxml2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0C2759371AB410EF00F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = tinyxml2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C2759191AB410EF00F18283 /* Build configuration list for PBXProject "tinyxml2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C2759301AB410EF00F18283 /* Debug */,
+				0C2759311AB410EF00F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C2759321AB410EF00F18283 /* Build configuration list for PBXNativeTarget "tinyxml2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C2759331AB410EF00F18283 /* Debug */,
+				0C2759341AB410EF00F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0C2759351AB410EF00F18283 /* Build configuration list for PBXNativeTarget "tinyxml2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C2759361AB410EF00F18283 /* Debug */,
+				0C2759371AB410EF00F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C2759161AB410EF00F18283 /* Project object */;
+}

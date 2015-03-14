@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C275A181AB4125700F18283 /* libPennerEasing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A0C1AB4125700F18283 /* libPennerEasing.a */; };
+		0C275A3A1AB4127D00F18283 /* Back.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A2F1AB4127D00F18283 /* Back.cpp */; };
+		0C275A3B1AB4127D00F18283 /* Bounce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A301AB4127D00F18283 /* Bounce.cpp */; };
+		0C275A3C1AB4127D00F18283 /* Circ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A311AB4127D00F18283 /* Circ.cpp */; };
+		0C275A3D1AB4127D00F18283 /* Cubic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A321AB4127D00F18283 /* Cubic.cpp */; };
+		0C275A3E1AB4127D00F18283 /* Elastic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A331AB4127D00F18283 /* Elastic.cpp */; };
+		0C275A3F1AB4127D00F18283 /* Expo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A341AB4127D00F18283 /* Expo.cpp */; };
+		0C275A401AB4127D00F18283 /* Linear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A351AB4127D00F18283 /* Linear.cpp */; };
+		0C275A411AB4127D00F18283 /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A361AB4127D00F18283 /* Quad.cpp */; };
+		0C275A421AB4127D00F18283 /* Quart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A371AB4127D00F18283 /* Quart.cpp */; };
+		0C275A431AB4127D00F18283 /* Quint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A381AB4127D00F18283 /* Quint.cpp */; };
+		0C275A441AB4127D00F18283 /* Sine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C275A391AB4127D00F18283 /* Sine.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C275A191AB4125700F18283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C275A041AB4125700F18283 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C275A0B1AB4125700F18283;
+			remoteInfo = PennerEasing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0C275A0A1AB4125700F18283 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0C275A0C1AB4125700F18283 /* libPennerEasing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPennerEasing.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C275A171AB4125700F18283 /* PennerEasingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PennerEasingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C275A1D1AB4125700F18283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C275A2F1AB4127D00F18283 /* Back.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Back.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Back.cpp; sourceTree = "<group>"; };
+		0C275A301AB4127D00F18283 /* Bounce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bounce.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Bounce.cpp; sourceTree = "<group>"; };
+		0C275A311AB4127D00F18283 /* Circ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Circ.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Circ.cpp; sourceTree = "<group>"; };
+		0C275A321AB4127D00F18283 /* Cubic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cubic.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Cubic.cpp; sourceTree = "<group>"; };
+		0C275A331AB4127D00F18283 /* Elastic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Elastic.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Elastic.cpp; sourceTree = "<group>"; };
+		0C275A341AB4127D00F18283 /* Expo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Expo.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Expo.cpp; sourceTree = "<group>"; };
+		0C275A351AB4127D00F18283 /* Linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Linear.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Linear.cpp; sourceTree = "<group>"; };
+		0C275A361AB4127D00F18283 /* Quad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quad.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Quad.cpp; sourceTree = "<group>"; };
+		0C275A371AB4127D00F18283 /* Quart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quart.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Quart.cpp; sourceTree = "<group>"; };
+		0C275A381AB4127D00F18283 /* Quint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quint.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Quint.cpp; sourceTree = "<group>"; };
+		0C275A391AB4127D00F18283 /* Sine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sine.cpp; path = ../../../../../3rdParty/PennerEasing/PennerEasing/Sine.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C275A091AB4125700F18283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C275A141AB4125700F18283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C275A181AB4125700F18283 /* libPennerEasing.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C275A031AB4125700F18283 = {
+			isa = PBXGroup;
+			children = (
+				0C275A0E1AB4125700F18283 /* Source */,
+				0C275A1B1AB4125700F18283 /* PennerEasingTests */,
+				0C275A0D1AB4125700F18283 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C275A0D1AB4125700F18283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C275A0C1AB4125700F18283 /* libPennerEasing.a */,
+				0C275A171AB4125700F18283 /* PennerEasingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C275A0E1AB4125700F18283 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0C275A2F1AB4127D00F18283 /* Back.cpp */,
+				0C275A301AB4127D00F18283 /* Bounce.cpp */,
+				0C275A311AB4127D00F18283 /* Circ.cpp */,
+				0C275A321AB4127D00F18283 /* Cubic.cpp */,
+				0C275A331AB4127D00F18283 /* Elastic.cpp */,
+				0C275A341AB4127D00F18283 /* Expo.cpp */,
+				0C275A351AB4127D00F18283 /* Linear.cpp */,
+				0C275A361AB4127D00F18283 /* Quad.cpp */,
+				0C275A371AB4127D00F18283 /* Quart.cpp */,
+				0C275A381AB4127D00F18283 /* Quint.cpp */,
+				0C275A391AB4127D00F18283 /* Sine.cpp */,
+			);
+			name = Source;
+			path = PennerEasing;
+			sourceTree = "<group>";
+		};
+		0C275A1B1AB4125700F18283 /* PennerEasingTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C275A1C1AB4125700F18283 /* Supporting Files */,
+			);
+			path = PennerEasingTests;
+			sourceTree = "<group>";
+		};
+		0C275A1C1AB4125700F18283 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C275A1D1AB4125700F18283 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C275A0B1AB4125700F18283 /* PennerEasing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C275A201AB4125700F18283 /* Build configuration list for PBXNativeTarget "PennerEasing" */;
+			buildPhases = (
+				0C275A081AB4125700F18283 /* Sources */,
+				0C275A091AB4125700F18283 /* Frameworks */,
+				0C275A0A1AB4125700F18283 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PennerEasing;
+			productName = PennerEasing;
+			productReference = 0C275A0C1AB4125700F18283 /* libPennerEasing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		0C275A161AB4125700F18283 /* PennerEasingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C275A231AB4125700F18283 /* Build configuration list for PBXNativeTarget "PennerEasingTests" */;
+			buildPhases = (
+				0C275A131AB4125700F18283 /* Sources */,
+				0C275A141AB4125700F18283 /* Frameworks */,
+				0C275A151AB4125700F18283 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C275A1A1AB4125700F18283 /* PBXTargetDependency */,
+			);
+			name = PennerEasingTests;
+			productName = PennerEasingTests;
+			productReference = 0C275A171AB4125700F18283 /* PennerEasingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C275A041AB4125700F18283 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Fakhir Shaheen";
+				TargetAttributes = {
+					0C275A0B1AB4125700F18283 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					0C275A161AB4125700F18283 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 0C275A071AB4125700F18283 /* Build configuration list for PBXProject "PennerEasing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0C275A031AB4125700F18283;
+			productRefGroup = 0C275A0D1AB4125700F18283 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C275A0B1AB4125700F18283 /* PennerEasing */,
+				0C275A161AB4125700F18283 /* PennerEasingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C275A151AB4125700F18283 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C275A081AB4125700F18283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C275A3D1AB4127D00F18283 /* Cubic.cpp in Sources */,
+				0C275A401AB4127D00F18283 /* Linear.cpp in Sources */,
+				0C275A3C1AB4127D00F18283 /* Circ.cpp in Sources */,
+				0C275A431AB4127D00F18283 /* Quint.cpp in Sources */,
+				0C275A441AB4127D00F18283 /* Sine.cpp in Sources */,
+				0C275A421AB4127D00F18283 /* Quart.cpp in Sources */,
+				0C275A3A1AB4127D00F18283 /* Back.cpp in Sources */,
+				0C275A411AB4127D00F18283 /* Quad.cpp in Sources */,
+				0C275A3F1AB4127D00F18283 /* Expo.cpp in Sources */,
+				0C275A3B1AB4127D00F18283 /* Bounce.cpp in Sources */,
+				0C275A3E1AB4127D00F18283 /* Elastic.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C275A131AB4125700F18283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C275A1A1AB4125700F18283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C275A0B1AB4125700F18283 /* PennerEasing */;
+			targetProxy = 0C275A191AB4125700F18283 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C275A1E1AB4125700F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0C275A1F1AB4125700F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C275A211AB4125700F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0C275A221AB4125700F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0C275A241AB4125700F18283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PennerEasingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0C275A251AB4125700F18283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PennerEasingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C275A071AB4125700F18283 /* Build configuration list for PBXProject "PennerEasing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C275A1E1AB4125700F18283 /* Debug */,
+				0C275A1F1AB4125700F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C275A201AB4125700F18283 /* Build configuration list for PBXNativeTarget "PennerEasing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C275A211AB4125700F18283 /* Debug */,
+				0C275A221AB4125700F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0C275A231AB4125700F18283 /* Build configuration list for PBXNativeTarget "PennerEasingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C275A241AB4125700F18283 /* Debug */,
+				0C275A251AB4125700F18283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C275A041AB4125700F18283 /* Project object */;
+}
