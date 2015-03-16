@@ -213,8 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				0CF02B8F1AB41F1C0004BD46 /* Common.h */,
+				0CF02BDF1AB444380004BD46 /* 2D */,
+				0CD54A031AB45E2B00FDF0CF /* 3D */,
 				0CF02BDA1AB444290004BD46 /* EventManager */,
-				0CF02BDF1AB444380004BD46 /* Graphics2D */,
 				0CF02BE01AB444380004BD46 /* ProcessManager */,
 				0CF02BE11AB444380004BD46 /* Renderer */,
 				0CF02BB01AB43DD00004BD46 /* ResourceCache */,
@@ -309,6 +310,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0CD54A031AB45E2B00FDF0CF /* 3D */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = 3D;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		0CF02B841AB41F080004BD46 /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,11 +357,11 @@
 			path = ../../../FEngine/EventManager;
 			sourceTree = "<group>";
 		};
-		0CF02BDF1AB444380004BD46 /* Graphics2D */ = {
+		0CF02BDF1AB444380004BD46 /* 2D */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Graphics2D;
+			name = 2D;
 			path = ../../../FEngine/Graphics2D;
 			sourceTree = "<group>";
 		};
