@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0C2758521AB40DEF00F18283 /* libFEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758461AB40DEE00F18283 /* libFEngine.a */; };
-		0C2758631AB40E1E00F18283 /* SmartPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2758611AB40E1E00F18283 /* SmartPtr.cpp */; };
 		0C275A001AB4123900F18283 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758E61AB410D400F18283 /* libvorbis.a */; };
 		0C275A011AB4123D00F18283 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C27588E1AB410B600F18283 /* libpng.a */; };
 		0C275A021AB4123F00F18283 /* libtinyxml2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C27593E1AB410F100F18283 /* libtinyxml2.a */; };
 		0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A2C1AB4125900F18283 /* libPennerEasing.a */; };
 		0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A491AB4140900F18283 /* OpenGLES.framework */; };
 		0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A4B1AB4141000F18283 /* OpenAL.framework */; };
-		0CF02B891AB41F080004BD46 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02B851AB41F080004BD46 /* App.cpp */; };
-		0CF02B8A1AB41F080004BD46 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02B871AB41F080004BD46 /* SystemConfig.cpp */; };
-		0CF02BC61AB43DF40004BD46 /* IOManagerHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BB61AB43DD00004BD46 /* IOManagerHelper.cpp */; };
-		0CF02BC71AB43FCD0004BD46 /* IOManagerDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BB41AB43DD00004BD46 /* IOManagerDefault.cpp */; };
-		0CF02BEB1AB44E0B0004BD46 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BE71AB44E0B0004BD46 /* State.cpp */; };
-		0CF02BEC1AB44E0B0004BD46 /* StateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CF02BE91AB44E0B0004BD46 /* StateManager.cpp */; };
+		0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */; };
+		0C7951671AB85EF80010DA81 /* Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951461AB85EF80010DA81 /* Process.cpp */; };
+		0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951481AB85EF80010DA81 /* ProcessScheduler.cpp */; };
+		0C79516A1AB85EF80010DA81 /* IOManagerDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C79514F1AB85EF80010DA81 /* IOManagerDefault.cpp */; };
+		0C79516E1AB85EF80010DA81 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951591AB85EF80010DA81 /* State.cpp */; };
+		0C79516F1AB85EF80010DA81 /* StateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C79515B1AB85EF80010DA81 /* StateManager.cpp */; };
+		0C7951701AB85EF80010DA81 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C79515E1AB85EF80010DA81 /* App.cpp */; };
+		0C7951711AB85EF80010DA81 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951601AB85EF80010DA81 /* SystemConfig.cpp */; };
+		0C7951721AB85EF80010DA81 /* SmartPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951641AB85EF80010DA81 /* SmartPtr.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,35 +135,34 @@
 		0C2758461AB40DEE00F18283 /* libFEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2758511AB40DEF00F18283 /* FEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2758571AB40DEF00F18283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C2758611AB40E1E00F18283 /* SmartPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartPtr.cpp; sourceTree = "<group>"; };
-		0C2758621AB40E1E00F18283 /* SmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPtr.h; sourceTree = "<group>"; };
 		0C2758881AB410B500F18283 /* png.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = png.xcodeproj; path = 3rdParty/png/png.xcodeproj; sourceTree = "<group>"; };
 		0C2758E01AB410D300F18283 /* vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vorbis.xcodeproj; path = 3rdParty/vorbis/vorbis.xcodeproj; sourceTree = "<group>"; };
 		0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = tinyxml2.xcodeproj; path = 3rdParty/tinyxml2/tinyxml2.xcodeproj; sourceTree = "<group>"; };
 		0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PennerEasing.xcodeproj; path = 3rdParty/PennerEasing/PennerEasing.xcodeproj; sourceTree = "<group>"; };
 		0C275A491AB4140900F18283 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0C275A4B1AB4141000F18283 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
-		0CF02B851AB41F080004BD46 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
-		0CF02B861AB41F080004BD46 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
-		0CF02B871AB41F080004BD46 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemConfig.cpp; sourceTree = "<group>"; };
-		0CF02B881AB41F080004BD46 /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemConfig.h; sourceTree = "<group>"; };
-		0CF02B8F1AB41F1C0004BD46 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Common.h; path = ../../../FEngine/Common.h; sourceTree = "<group>"; };
-		0CF02BAA1AB43AA40004BD46 /* Math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
-		0CF02BB11AB43DD00004BD46 /* IOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManager.h; sourceTree = "<group>"; };
-		0CF02BB21AB43DD00004BD46 /* IOManagerAndroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOManagerAndroid.cpp; sourceTree = "<group>"; };
-		0CF02BB31AB43DD00004BD46 /* IOManagerAndroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerAndroid.h; sourceTree = "<group>"; };
-		0CF02BB41AB43DD00004BD46 /* IOManagerDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOManagerDefault.cpp; sourceTree = "<group>"; };
-		0CF02BB51AB43DD00004BD46 /* IOManagerDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerDefault.h; sourceTree = "<group>"; };
-		0CF02BB61AB43DD00004BD46 /* IOManagerHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOManagerHelper.cpp; sourceTree = "<group>"; };
-		0CF02BB71AB43DD00004BD46 /* IOManagerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerHelper.h; sourceTree = "<group>"; };
-		0CF02BB81AB43DD00004BD46 /* IOManageriOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManageriOS.h; sourceTree = "<group>"; };
-		0CF02BB91AB43DD00004BD46 /* IOManageriOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOManageriOS.mm; sourceTree = "<group>"; };
-		0CF02BBA1AB43DD00004BD46 /* ResourceCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceCache.cpp; sourceTree = "<group>"; };
-		0CF02BBB1AB43DD00004BD46 /* ResourceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceCache.h; sourceTree = "<group>"; };
-		0CF02BE71AB44E0B0004BD46 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
-		0CF02BE81AB44E0B0004BD46 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
-		0CF02BE91AB44E0B0004BD46 /* StateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateManager.cpp; sourceTree = "<group>"; };
-		0CF02BEA1AB44E0B0004BD46 /* StateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateManager.h; sourceTree = "<group>"; };
+		0C79513F1AB85EF80010DA81 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		0C7951421AB85EF80010DA81 /* PointerDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerDefs.h; sourceTree = "<group>"; };
+		0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultProcesses.cpp; sourceTree = "<group>"; };
+		0C7951451AB85EF80010DA81 /* DefaultProcesses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultProcesses.h; sourceTree = "<group>"; };
+		0C7951461AB85EF80010DA81 /* Process.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Process.cpp; sourceTree = "<group>"; };
+		0C7951471AB85EF80010DA81 /* Process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Process.h; sourceTree = "<group>"; };
+		0C7951481AB85EF80010DA81 /* ProcessScheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProcessScheduler.cpp; sourceTree = "<group>"; };
+		0C7951491AB85EF80010DA81 /* ProcessScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessScheduler.h; sourceTree = "<group>"; };
+		0C79514C1AB85EF80010DA81 /* IOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManager.h; sourceTree = "<group>"; };
+		0C79514F1AB85EF80010DA81 /* IOManagerDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOManagerDefault.cpp; sourceTree = "<group>"; };
+		0C7951501AB85EF80010DA81 /* IOManagerDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerDefault.h; sourceTree = "<group>"; };
+		0C7951591AB85EF80010DA81 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
+		0C79515A1AB85EF80010DA81 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		0C79515B1AB85EF80010DA81 /* StateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateManager.cpp; sourceTree = "<group>"; };
+		0C79515C1AB85EF80010DA81 /* StateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateManager.h; sourceTree = "<group>"; };
+		0C79515E1AB85EF80010DA81 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
+		0C79515F1AB85EF80010DA81 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		0C7951601AB85EF80010DA81 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemConfig.cpp; sourceTree = "<group>"; };
+		0C7951611AB85EF80010DA81 /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemConfig.h; sourceTree = "<group>"; };
+		0C7951631AB85EF80010DA81 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
+		0C7951641AB85EF80010DA81 /* SmartPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartPtr.cpp; sourceTree = "<group>"; };
+		0C7951651AB85EF80010DA81 /* SmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPtr.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				0C2758641AB40FD400F18283 /* 3rdParty */,
-				0C2758481AB40DEE00F18283 /* FEngine */,
+				0C79513C1AB85EF80010DA81 /* FEngine */,
 				0C2758551AB40DEF00F18283 /* FEngineTests */,
 				0C275A481AB413F700F18283 /* Frameworks */,
 				0C2758471AB40DEE00F18283 /* Products */,
@@ -207,24 +208,6 @@
 				0C2758511AB40DEF00F18283 /* FEngineTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0C2758481AB40DEE00F18283 /* FEngine */ = {
-			isa = PBXGroup;
-			children = (
-				0CF02B8F1AB41F1C0004BD46 /* Common.h */,
-				0CF02BDF1AB444380004BD46 /* 2D */,
-				0CD54A031AB45E2B00FDF0CF /* 3D */,
-				0CF02BDA1AB444290004BD46 /* EventManager */,
-				0CF02BE01AB444380004BD46 /* ProcessManager */,
-				0CF02BE11AB444380004BD46 /* Renderer */,
-				0CF02BB01AB43DD00004BD46 /* ResourceCache */,
-				0CF02BE21AB444460004BD46 /* SoundManager */,
-				0CF02BE31AB444460004BD46 /* StateManager */,
-				0CF02B841AB41F080004BD46 /* System */,
-				0C2758601AB40E1E00F18283 /* Utility */,
-			);
-			path = FEngine;
 			sourceTree = "<group>";
 		};
 		0C2758551AB40DEF00F18283 /* FEngineTests */ = {
@@ -241,17 +224,6 @@
 				0C2758571AB40DEF00F18283 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0C2758601AB40E1E00F18283 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				0C2758611AB40E1E00F18283 /* SmartPtr.cpp */,
-				0C2758621AB40E1E00F18283 /* SmartPtr.h */,
-				0CF02BAA1AB43AA40004BD46 /* Math.h */,
-			);
-			name = Utility;
-			path = ../../../FEngine/Utility;
 			sourceTree = "<group>";
 		};
 		0C2758641AB40FD400F18283 /* 3rdParty */ = {
@@ -310,95 +282,122 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0CD54A031AB45E2B00FDF0CF /* 3D */ = {
+		0C79513C1AB85EF80010DA81 /* FEngine */ = {
 			isa = PBXGroup;
 			children = (
+				0C79513D1AB85EF80010DA81 /* 2D */,
+				0C79513E1AB85EF80010DA81 /* 3D */,
+				0C79513F1AB85EF80010DA81 /* Common.h */,
+				0C7951401AB85EF80010DA81 /* Docs */,
+				0C7951411AB85EF80010DA81 /* EventDispatcher */,
+				0C7951421AB85EF80010DA81 /* PointerDefs.h */,
+				0C7951431AB85EF80010DA81 /* ProcessScheduler */,
+				0C79514A1AB85EF80010DA81 /* Renderer */,
+				0C79514B1AB85EF80010DA81 /* ResourceCache */,
+				0C7951571AB85EF80010DA81 /* SoundManager */,
+				0C7951581AB85EF80010DA81 /* StateManager */,
+				0C79515D1AB85EF80010DA81 /* System */,
+				0C7951621AB85EF80010DA81 /* Utility */,
 			);
-			name = 3D;
-			path = ..;
+			name = FEngine;
+			path = ../../FEngine;
 			sourceTree = "<group>";
 		};
-		0CF02B841AB41F080004BD46 /* System */ = {
+		0C79513D1AB85EF80010DA81 /* 2D */ = {
 			isa = PBXGroup;
 			children = (
-				0CF02B851AB41F080004BD46 /* App.cpp */,
-				0CF02B861AB41F080004BD46 /* App.h */,
-				0CF02B871AB41F080004BD46 /* SystemConfig.cpp */,
-				0CF02B881AB41F080004BD46 /* SystemConfig.h */,
 			);
-			name = System;
-			path = ../../../FEngine/System;
+			path = 2D;
 			sourceTree = "<group>";
 		};
-		0CF02BB01AB43DD00004BD46 /* ResourceCache */ = {
+		0C79513E1AB85EF80010DA81 /* 3D */ = {
 			isa = PBXGroup;
 			children = (
-				0CF02BB11AB43DD00004BD46 /* IOManager.h */,
-				0CF02BB21AB43DD00004BD46 /* IOManagerAndroid.cpp */,
-				0CF02BB31AB43DD00004BD46 /* IOManagerAndroid.h */,
-				0CF02BB41AB43DD00004BD46 /* IOManagerDefault.cpp */,
-				0CF02BB51AB43DD00004BD46 /* IOManagerDefault.h */,
-				0CF02BB61AB43DD00004BD46 /* IOManagerHelper.cpp */,
-				0CF02BB71AB43DD00004BD46 /* IOManagerHelper.h */,
-				0CF02BB81AB43DD00004BD46 /* IOManageriOS.h */,
-				0CF02BB91AB43DD00004BD46 /* IOManageriOS.mm */,
-				0CF02BBA1AB43DD00004BD46 /* ResourceCache.cpp */,
-				0CF02BBB1AB43DD00004BD46 /* ResourceCache.h */,
 			);
-			name = ResourceCache;
-			path = ../../../FEngine/ResourceCache;
+			path = 3D;
 			sourceTree = "<group>";
 		};
-		0CF02BDA1AB444290004BD46 /* EventManager */ = {
+		0C7951401AB85EF80010DA81 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = EventManager;
-			path = ../../../FEngine/EventManager;
+			path = Docs;
 			sourceTree = "<group>";
 		};
-		0CF02BDF1AB444380004BD46 /* 2D */ = {
+		0C7951411AB85EF80010DA81 /* EventDispatcher */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = 2D;
-			path = ../../../FEngine/Graphics2D;
+			path = EventDispatcher;
 			sourceTree = "<group>";
 		};
-		0CF02BE01AB444380004BD46 /* ProcessManager */ = {
+		0C7951431AB85EF80010DA81 /* ProcessScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */,
+				0C7951451AB85EF80010DA81 /* DefaultProcesses.h */,
+				0C7951461AB85EF80010DA81 /* Process.cpp */,
+				0C7951471AB85EF80010DA81 /* Process.h */,
+				0C7951481AB85EF80010DA81 /* ProcessScheduler.cpp */,
+				0C7951491AB85EF80010DA81 /* ProcessScheduler.h */,
 			);
-			name = ProcessManager;
-			path = ../../../FEngine/ProcessManager;
+			path = ProcessScheduler;
 			sourceTree = "<group>";
 		};
-		0CF02BE11AB444380004BD46 /* Renderer */ = {
+		0C79514A1AB85EF80010DA81 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Renderer;
-			path = ../../../FEngine/Renderer;
+			path = Renderer;
 			sourceTree = "<group>";
 		};
-		0CF02BE21AB444460004BD46 /* SoundManager */ = {
+		0C79514B1AB85EF80010DA81 /* ResourceCache */ = {
 			isa = PBXGroup;
 			children = (
+				0C79514C1AB85EF80010DA81 /* IOManager.h */,
+				0C79514F1AB85EF80010DA81 /* IOManagerDefault.cpp */,
+				0C7951501AB85EF80010DA81 /* IOManagerDefault.h */,
 			);
-			name = SoundManager;
-			path = ../../../FEngine/SoundManager;
+			path = ResourceCache;
 			sourceTree = "<group>";
 		};
-		0CF02BE31AB444460004BD46 /* StateManager */ = {
+		0C7951571AB85EF80010DA81 /* SoundManager */ = {
 			isa = PBXGroup;
 			children = (
-				0CF02BE71AB44E0B0004BD46 /* State.cpp */,
-				0CF02BE81AB44E0B0004BD46 /* State.h */,
-				0CF02BE91AB44E0B0004BD46 /* StateManager.cpp */,
-				0CF02BEA1AB44E0B0004BD46 /* StateManager.h */,
 			);
-			name = StateManager;
-			path = ../../../FEngine/Statemanager;
+			path = SoundManager;
+			sourceTree = "<group>";
+		};
+		0C7951581AB85EF80010DA81 /* StateManager */ = {
+			isa = PBXGroup;
+			children = (
+				0C7951591AB85EF80010DA81 /* State.cpp */,
+				0C79515A1AB85EF80010DA81 /* State.h */,
+				0C79515B1AB85EF80010DA81 /* StateManager.cpp */,
+				0C79515C1AB85EF80010DA81 /* StateManager.h */,
+			);
+			path = StateManager;
+			sourceTree = "<group>";
+		};
+		0C79515D1AB85EF80010DA81 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				0C79515E1AB85EF80010DA81 /* App.cpp */,
+				0C79515F1AB85EF80010DA81 /* App.h */,
+				0C7951601AB85EF80010DA81 /* SystemConfig.cpp */,
+				0C7951611AB85EF80010DA81 /* SystemConfig.h */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		0C7951621AB85EF80010DA81 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0C7951631AB85EF80010DA81 /* Math.h */,
+				0C7951641AB85EF80010DA81 /* SmartPtr.cpp */,
+				0C7951651AB85EF80010DA81 /* SmartPtr.h */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,13 +569,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C2758631AB40E1E00F18283 /* SmartPtr.cpp in Sources */,
-				0CF02BC61AB43DF40004BD46 /* IOManagerHelper.cpp in Sources */,
-				0CF02B891AB41F080004BD46 /* App.cpp in Sources */,
-				0CF02BC71AB43FCD0004BD46 /* IOManagerDefault.cpp in Sources */,
-				0CF02B8A1AB41F080004BD46 /* SystemConfig.cpp in Sources */,
-				0CF02BEB1AB44E0B0004BD46 /* State.cpp in Sources */,
-				0CF02BEC1AB44E0B0004BD46 /* StateManager.cpp in Sources */,
+				0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */,
+				0C7951671AB85EF80010DA81 /* Process.cpp in Sources */,
+				0C7951701AB85EF80010DA81 /* App.cpp in Sources */,
+				0C79516A1AB85EF80010DA81 /* IOManagerDefault.cpp in Sources */,
+				0C7951721AB85EF80010DA81 /* SmartPtr.cpp in Sources */,
+				0C7951711AB85EF80010DA81 /* SystemConfig.cpp in Sources */,
+				0C79516F1AB85EF80010DA81 /* StateManager.cpp in Sources */,
+				0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */,
+				0C79516E1AB85EF80010DA81 /* State.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,10 +27,10 @@ namespace FEngine
     {
         _time += dt;
         
-        if(_time >= 0.5)
+        if(_time >= 3.5)
         {
-            std::cout << "Process Finished with ID: " << GetID() << std::endl;
-
+            std::cout << "Process Finished with ID: " << GetID() << " after " << _time << " seconds..." << std::endl;
+            
             Succeed();
         }
     }
@@ -53,6 +53,8 @@ namespace FEngine
     void ProcessPrint::Update(float dt)
     {
         std::cout << "Printing a message..." << std::endl;
+        
+        Succeed();
     }
     
     

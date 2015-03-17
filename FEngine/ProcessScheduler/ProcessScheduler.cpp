@@ -51,7 +51,7 @@ namespace FEngine
     {
         std::list<ProcessPtr>::iterator i = _processList.begin();
         
-        for(; i != _processList.end(); i++)
+        for(; i != _processList.end(); )
         {
             // Get current process in process list
             ProcessPtr p = *i;
@@ -99,6 +99,11 @@ namespace FEngine
                 default:
                     break;
             }
+            
+            // Incrementing the iterator outside for loop so that it
+            //    properly updates BEFORE checking the terminating condition...
+            i++;
+            
         }
         
     }
