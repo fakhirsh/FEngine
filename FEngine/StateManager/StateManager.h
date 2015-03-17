@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __WordGame__StateManager__
-#define __WordGame__StateManager__
 
+#pragma once
 
-#include "../Common.h"
+#include <vector>
 
+#include "../PointerDefs.h"
 
 namespace FEngine
 {
@@ -19,7 +19,7 @@ namespace FEngine
     // PLEASE ADD COMMENTS About how to use this class
     
     /**
-     *    Every State has its OWN Process Manager, Event Manager and SceneGraph.
+     *    Every State has its OWN Process Scheduler, Event Dispatcher and SceneGraph.
      */
     
     class StateManager
@@ -39,14 +39,10 @@ namespace FEngine
         void    Update(float dt);
         void    Render(float dt = 0.0f);
         
-        //ProcessManagerPtr  GetProcessManager();
+        ProcessSchedulerPtr  GetProcessScheduler();
         //EventManagerPtr    GetEventManager();
         //class SceneNode *    GetRootSceneNode();
-        
-        //void    TouchDown(int x, int y);
-        //void    TouchUp(int x, int y);
-        //void    TouchMoved(int x, int y);
-        //void    TouchCancelled(int x, int y);
+
         
     private:
         StateManager();
@@ -59,4 +55,3 @@ namespace FEngine
 
 };
 
-#endif /* defined(__WordGame__StateManager__) */

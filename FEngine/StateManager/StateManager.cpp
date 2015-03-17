@@ -7,8 +7,10 @@
 //
 
 #include "StateManager.h"
+
+#include "../Common.h"
 #include "State.h"
-//#include "../ProcessManager/ProcessManager.h"
+#include "../ProcessScheduler/ProcessScheduler.h"
 //#include "../EventManager/EventManager.h"
 
 
@@ -93,7 +95,7 @@ namespace FEngine
         if (!_statesList.empty())
         {
             _statesList.back()->Update(dt);
-            //_statesList.back()->_processMgr->Update(dt);
+            _statesList.back()->_processScheduler->Update(dt);
             //_statesList.back()->_eventMgr->Update(dt);
         }
     }
@@ -105,52 +107,20 @@ namespace FEngine
             _statesList.back()->Render(dt);
         }
     }
-/*
-    void StateManager::TouchDown(int x, int y)
+    
+    ProcessSchedulerPtr StateManager::GetProcessScheduler()
     {
         if (!_statesList.empty())
         {
-            _statesList.back()->TouchDown(x, y);
-        }
-    }
-
-    void StateManager::TouchUp(int x, int y)
-    {
-        if (!_statesList.empty())
-        {
-            _statesList.back()->TouchUp(x, y);
-        }
-    }
-
-    void StateManager::TouchMoved(int x, int y)
-    {
-        if (!_statesList.empty())
-        {
-            _statesList.back()->TouchMoved(x, y);
-        }
-    }
-
-    void StateManager::TouchCancelled(int x, int y)
-    {
-        if (!_statesList.empty())
-        {
-            _statesList.back()->TouchCancelled(x, y);
-        }
-    }
-*/
-    /*
-    ProcessManagerPtr StateManager::GetProcessManager()
-    {
-        if (!_statesList.empty())
-        {
-            return _statesList.back()->_processMgr;
+            return _statesList.back()->_processScheduler;
         }
         
         // Return a NULL_PTR if there are no states to process...
         // This will RARELY happen though !!!
-        return boost::shared_ptr<Fakhir::ProcessManager>();
+        return boost::shared_ptr<FEngine::ProcessScheduler>();
     }
 
+    /*
     EventManagerPtr StateManager::GetEventManager()
     {
         if (!_statesList.empty())

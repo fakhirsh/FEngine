@@ -1,0 +1,45 @@
+//
+//  DefaultProcesses.h
+//  FEngine
+//
+//  Created by Fakhir Shaheen on 17/03/2015.
+//  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
+//
+
+#pragma once
+
+#include "Process.h"
+
+namespace FEngine
+{
+    class ProcessDelay : public Process
+    {
+    public:
+        ProcessDelay();
+        ~ProcessDelay();
+        
+        virtual void Update(float dt);
+        
+    private:
+        float _time;
+    };
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    class ProcessPrint : public Process
+    {
+    public:
+        ProcessPrint();
+        ~ProcessPrint();
+        
+        virtual void Update(float dt);
+        
+    };
+    
+    
+    
+}

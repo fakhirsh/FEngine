@@ -6,10 +6,9 @@
 //  Copyright (c) 2014 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __WordGame__State__
-#define __WordGame__State__
+#pragma once
 
-//#include "../Common.h"
+#include "../PointerDefs.h"
 
 namespace FEngine
 {
@@ -42,7 +41,7 @@ namespace FEngine
     protected:
         
         bool                _isPaused;
-        //ProcessManagerPtr  _processMgr;
+        ProcessSchedulerPtr  _processScheduler;
         //EventManagerPtr    _eventMgr;
         //class SceneNode *   _rootSceneNode;
         //ScreenElementList _screenElements;
@@ -51,4 +50,4 @@ namespace FEngine
 
 };
 
-#endif /* defined(__WordGame__State__) */
+
