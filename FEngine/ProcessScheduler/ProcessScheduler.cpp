@@ -24,14 +24,14 @@ namespace FEngine
     
     }
     
-    bool ProcessScheduler::Add(ProcessPtr process)
+    bool ProcessScheduler::AddChild(ProcessPtr process)
     {
         _processList.push_back(process);
         
         return true;
     }
     
-    bool ProcessScheduler::Remove(ProcessPtr process)
+    bool ProcessScheduler::RemoveChild(ProcessPtr process)
     {
         std::list<ProcessPtr>::iterator i = _processList.begin();
         while (i != _processList.end())

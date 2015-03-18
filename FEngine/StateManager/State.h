@@ -40,9 +40,9 @@ namespace FEngine
         
     protected:
         
-        bool                _isPaused;
-        ProcessSchedulerPtr  _processScheduler;
-        //EventManagerPtr    _eventMgr;
+        bool                    _isPaused;
+        ProcessSchedulerPtr     _processScheduler;
+        EventDispatcherPtr      _eventDispatcher;
         //class SceneNode *   _rootSceneNode;
         //ScreenElementList _screenElements;
         

@@ -23,8 +23,8 @@ namespace FEngine
         ProcessScheduler();
         ~ProcessScheduler();
         
-        bool Add(ProcessPtr process);
-        bool Remove(ProcessPtr process);
+        bool AddChild(ProcessPtr process);
+        bool RemoveChild(ProcessPtr process);
 
         void Update(float dt);
         

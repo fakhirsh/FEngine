@@ -8,6 +8,10 @@
 
 #include "DefaultProcesses.h"
 
+#include "../EventDispatcher/DefaultEvents.h"
+#include "../EventDispatcher/EventDispatcher.h"
+#include "../StateManager/StateManager.h"
+
 #include <iostream>
 
 namespace FEngine
@@ -30,6 +34,13 @@ namespace FEngine
         if(_time >= 3.5)
         {
             std::cout << "Process Finished with ID: " << GetID() << " after " << _time << " seconds..." << std::endl;
+            
+            EventDispatcherPtr ed = StateManager::Get()->GetEventDispatcher();
+            boost::shared_ptr<EventTest1> e = boost::make_shared<EventTest1>();
+            e->someData = GetID();
+            e->someMoreData = _time;
+            
+            ed->DispatchEvent(e);
             
             Succeed();
         }

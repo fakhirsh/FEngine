@@ -11,7 +11,7 @@
 #include "../Common.h"
 #include "State.h"
 #include "../ProcessScheduler/ProcessScheduler.h"
-//#include "../EventManager/EventManager.h"
+#include "../EventDispatcher/EventDispatcher.h"
 
 
 namespace FEngine
@@ -96,7 +96,7 @@ namespace FEngine
         {
             _statesList.back()->Update(dt);
             _statesList.back()->_processScheduler->Update(dt);
-            //_statesList.back()->_eventMgr->Update(dt);
+            _statesList.back()->_eventDispatcher->Update(dt);
         }
     }
 
@@ -120,20 +120,20 @@ namespace FEngine
         return boost::shared_ptr<FEngine::ProcessScheduler>();
     }
 
-    /*
-    EventManagerPtr StateManager::GetEventManager()
+    EventDispatcherPtr StateManager::GetEventDispatcher()
     {
         if (!_statesList.empty())
         {
-            return _statesList.back()->_eventMgr;
+            return _statesList.back()->_eventDispatcher;
         }
         
         // Return a NULL_PTR if there are no states to process...
         // This will RARELY happen though !!!
-        return boost::shared_ptr<Fakhir::EventManager>();
+        return boost::shared_ptr<FEngine::EventDispatcher>();
 
     }
     
+    /*
     SceneNode * StateManager::GetRootSceneNode()
     {
         if (!_statesList.empty())

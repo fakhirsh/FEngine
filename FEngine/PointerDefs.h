@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include <FastDelegate.h>
 #include <boost/smart_ptr/shared_ptr.hpp>
 #include <boost/smart_ptr/make_shared.hpp>
 #include <boost/smart_ptr/weak_ptr.hpp>
@@ -25,7 +26,7 @@ namespace FEngine
     //    class SpriteBatch;
     //    class Sprite;
     class Event;
-    class EventManager;
+    class EventDispatcher;
     //    class FontAtlas;
 };
 
@@ -33,7 +34,7 @@ namespace FEngine
 typedef boost::shared_ptr<FEngine::State>             StatePtr;
 
 typedef boost::shared_ptr<FEngine::Process>           ProcessPtr;
-//typedef boost::weak_ptr  <FEngine::Process>           ProcessWeakPtr;
+typedef boost::weak_ptr  <FEngine::Process>           ProcessWeakPtr;
 typedef boost::shared_ptr<FEngine::ProcessScheduler>  ProcessSchedulerPtr;
 
 //typedef boost::shared_ptr<FEngine::Texture>           TexturePtr;
@@ -42,14 +43,14 @@ typedef boost::shared_ptr<FEngine::ProcessScheduler>  ProcessSchedulerPtr;
 //typedef boost::shared_ptr<FEngine::SpriteBatch>       SpriteBatchPtr;
 //typedef boost::shared_ptr<FEngine::Sprite>            SpritePtr;
 
-//typedef boost::shared_ptr<FEngine::Event>             EventPtr;
-//typedef boost::weak_ptr  <FEngine::Event>             EventWeakPtr;
-//typedef boost::shared_ptr<FEngine::EventManager>      EventManagerPtr;
+typedef boost::shared_ptr<FEngine::Event>             EventPtr;
+typedef boost::weak_ptr  <FEngine::Event>             EventWeakPtr;
+typedef boost::shared_ptr<FEngine::EventDispatcher>   EventDispatcherPtr;
 
 //typedef boost::shared_ptr<FEngine::FontAtlas>         FontAtlasPtr;
 
 // Consider this as a "Function Pointer" for class member functions
-//typedef fastdelegate::FastDelegate1<EventPtr>      EventListenerDelegate;
+typedef fastdelegate::FastDelegate1<EventPtr>         EventListenerDelegate;
 
 ///////////////////////////////////////////////////////////////////
 

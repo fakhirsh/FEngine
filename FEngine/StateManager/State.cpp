@@ -10,7 +10,7 @@
 
 #include "../Common.h"
 #include "../ProcessScheduler/ProcessScheduler.h"
-//#include "../EventManager/EventManager.h"
+#include "../EventDispatcher/EventDispatcher.h"
 
 //#include "../Graphics2D/RootSceneNode.h"
 
@@ -19,9 +19,9 @@ namespace FEngine
 
     State::State()
     {
-        _isPaused   =   false;
-        _processScheduler =   boost::make_shared<FEngine::ProcessScheduler>();
-        //_eventMgr   =   boost::make_shared<Fakhir::EventManager>();
+        _isPaused           =   false;
+        _processScheduler   =   boost::make_shared<FEngine::ProcessScheduler>();
+        _eventDispatcher    =   boost::make_shared<FEngine::EventDispatcher>();
         //_rootSceneNode = new RootSceneNode();
     }
 

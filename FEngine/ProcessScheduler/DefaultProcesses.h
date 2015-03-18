@@ -16,7 +16,7 @@ namespace FEngine
     {
     public:
         ProcessDelay();
-        ~ProcessDelay();
+        virtual ~ProcessDelay();
         
         virtual void Update(float dt);
         
@@ -34,7 +34,7 @@ namespace FEngine
     {
     public:
         ProcessPrint();
-        ~ProcessPrint();
+        virtual ~ProcessPrint();
         
         virtual void Update(float dt);
         

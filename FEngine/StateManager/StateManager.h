@@ -39,8 +39,8 @@ namespace FEngine
         void    Update(float dt);
         void    Render(float dt = 0.0f);
         
-        ProcessSchedulerPtr  GetProcessScheduler();
-        //EventManagerPtr    GetEventManager();
+        ProcessSchedulerPtr     GetProcessScheduler();
+        EventDispatcherPtr      GetEventDispatcher();
         //class SceneNode *    GetRootSceneNode();
 
         
