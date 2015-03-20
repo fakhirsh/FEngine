@@ -34,7 +34,7 @@ namespace FEngine
          *  LoadConfiguration
          *  @param  buffer    A memory buffer containing entire config XML file.
          */
-        bool        LoadConfig(vector<char> & buffer);
+        bool        LoadConfig      (vector<char> & buffer);
         
         string      className;
         string      windowTitle;

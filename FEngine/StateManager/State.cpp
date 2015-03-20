@@ -12,7 +12,7 @@
 #include "../ProcessScheduler/ProcessScheduler.h"
 #include "../EventDispatcher/EventDispatcher.h"
 
-//#include "../Graphics2D/RootSceneNode.h"
+#include "../2D/RootSceneNode2D.h"
 
 namespace FEngine
 {
@@ -22,7 +22,7 @@ namespace FEngine
         _isPaused           =   false;
         _processScheduler   =   boost::make_shared<FEngine::ProcessScheduler>();
         _eventDispatcher    =   boost::make_shared<FEngine::EventDispatcher>();
-        //_rootSceneNode = new RootSceneNode();
+        _rootSceneNode2D    =   boost::make_shared<FEngine::RootSceneNode2D>();
     }
 
     State::~State()

@@ -26,41 +26,41 @@
 namespace FEngine
 {
     
-    App::App()
+    App::App ()
     {
-        _frameBufferWidth   =   -1.0f;
-        _frameBufferHeight  =   -1.0f;
-        _logicalWidth   =   -1.0f;
-        _logicalHeight  =   -1.0f;
-        _viewportWidth  =   -1.0f;
-        _viewportHeight =   -1.0f;
-        _logicalWidth   =   -1.0f;
-        _logicalHeight  =   -1.0f;
-        _designWidth    =   -1.0f;
-        _designHeight   =   -1.0f;
+        _frameBufferWidth           =   -1.0f;
+        _frameBufferHeight          =   -1.0f;
+        _logicalWidth               =   -1.0f;
+        _logicalHeight              =   -1.0f;
+        _viewportWidth              =   -1.0f;
+        _viewportHeight             =   -1.0f;
+        _logicalWidth               =   -1.0f;
+        _logicalHeight              =   -1.0f;
+        _designWidth                =   -1.0f;
+        _designHeight               =   -1.0f;
         
         _deviceContentScaleFactor   =   -1.0f;
         _contentScaleFactor         =   -1.0f;
         _deviceAspectRatio          =   -1.0f;
         
-        _availableRAM   =   0.0f;
-        _availableStorage = 0.0f;
-        _cpuSpeed       =   0.0f;
+        _availableRAM               =   0.0f;
+        _availableStorage           =   0.0f;
+        _cpuSpeed                   =   0.0f;
         
-        _elapsed        =   0.0f;
-        _currentFPS     =   0.0f;
-        _maxFPS         =   60.0f;
-        _origin.x       =   -1.0f;
-        _origin.y       =   -1.0f;
-        _ioManager    =   NULL;
+        _elapsed                    =   0.0f;
+        _currentFPS                 =   0.0f;
+        _maxFPS                     =   60.0f;
+        _origin.x                   =   -1.0f;
+        _origin.y                   =   -1.0f;
+        _ioManager                  =   NULL;
     }
 
-    App::~App()
+    App::~App ()
     {
         
     }
     
-    bool App::Init(const SystemConfig * sysConfig)
+    bool App::Init (const SystemConfig * sysConfig)
     {
         
         // Renderer MUST be set BEFORE calling Init
@@ -97,8 +97,8 @@ namespace FEngine
         
         ComputeLetterBoxPolicy();
         
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glEnable    (GL_BLEND);
+        glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         
         //_renderer->EnableBlend();
@@ -116,36 +116,35 @@ namespace FEngine
         
     }
     
-    void App::Tick(float dt)
+    void App::Tick (float dt)
     {
-        static float basetime = 0.0f;
-        static int frames = 0;
+        static float    basetime    =   0.0f;
+        static int      frames      =   0;
         
         _elapsed += dt;
         
-        
         if ((_elapsed - basetime) > 1.0)
         {
-            _currentFPS = frames*1.0/(_elapsed - basetime);
+            _currentFPS =   frames*1.0/(_elapsed - basetime);
             //std::cout << "FPS: " << _currentFPS << std::endl;
-            basetime = _elapsed;
-            frames=0;
+            basetime    =   _elapsed;
+            frames      =   0;
         }
         
         frames++;
         
-        Update(dt);
-        Render(dt);
+        Update (dt);
+        Render (dt);
     }
 
-    void App::Update(float dt)
+    void App::Update (float dt)
     {
         StateManager::Get()->Update(dt);
     }
 
-    void App::Render(float dt)
+    void App::Render (float dt)
     {
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear (GL_COLOR_BUFFER_BIT);
         //_renderer->Clear();
 
         StateManager::Get()->Render(dt);
@@ -155,7 +154,7 @@ namespace FEngine
     //////////////////////////////////////////////////////////////////
     //   Input handling
 
-    void App::TouchDown(int x, int y)
+    void App::TouchDown (int x, int y)
     {
         /*
         boost::shared_ptr<Fakhir::EventTouchDown> touchDownEvent = boost::make_shared<Fakhir::EventTouchDown>();
@@ -170,7 +169,7 @@ namespace FEngine
         */
     }
 
-    void App::TouchUp(int x, int y)
+    void App::TouchUp (int x, int y)
     {
         /*
         boost::shared_ptr<Fakhir::EventTouchUp> touchUpEvent = boost::make_shared<Fakhir::EventTouchUp>();
@@ -185,7 +184,7 @@ namespace FEngine
         */
     }
 
-    void App::TouchMoved(int x, int y)
+    void App::TouchMoved (int x, int y)
     {
         /*
         boost::shared_ptr<Fakhir::EventTouchMoved> touchMovedEvent = boost::make_shared<Fakhir::EventTouchMoved>();
@@ -200,7 +199,7 @@ namespace FEngine
         */
     }
 
-    void App::TouchCancelled(int x, int y)
+    void App::TouchCancelled (int x, int y)
     {
         //FStateManager::Get()->TouchCancelled(x, y);
     }
@@ -208,7 +207,7 @@ namespace FEngine
     //////////////////////////////////////////////////////////////////////////////////////
 
 
-    void App::ComputeLetterBoxPolicy()
+    void App::ComputeLetterBoxPolicy ()
     {
         
         // Asset aspect ratio
@@ -277,7 +276,7 @@ namespace FEngine
 
     //////////////////////////////////////////////////////////////////////////////////////
 
-    Point2D App::DesignSpaceToViewportSpace(const Point2D & designSpace)
+    Point2D App::DesignSpaceToViewportSpace (const Point2D & designSpace)
     {
         struct BOX
         {
@@ -303,7 +302,7 @@ namespace FEngine
         return vpSpace;
     }
 
-    Point2D App::ViewportSpaceToDesignSpace(const Point2D & vpSpace)
+    Point2D App::ViewportSpaceToDesignSpace (const Point2D & vpSpace)
     {
         struct BOX
         {
@@ -337,7 +336,7 @@ namespace FEngine
      
      */
     
-    Point2D App::DesignSpaceToSafeZone(const Point2D & designSpace)
+    Point2D App::DesignSpaceToSafeZone (const Point2D & designSpace)
     {
         struct BOX
         {
@@ -366,7 +365,7 @@ namespace FEngine
     
     /// BUGGY... PLEASE FIX.....
     
-    Point2D App::SafeZoneToDesignSpace(const Point2D & safeZone)
+    Point2D App::SafeZoneToDesignSpace (const Point2D & safeZone)
     {
         struct BOX
         {
@@ -396,138 +395,138 @@ namespace FEngine
     //////////////////////////////////////////////////////////////////////////////////////
 
 
-    void App::SetDeviceContentScaleFactor(float deviceContentScaleFactor)
+    void App::SetDeviceContentScaleFactor (float deviceContentScaleFactor)
     {
         _deviceContentScaleFactor = deviceContentScaleFactor;
     }
 
-    float App::GetDeviceContentScaleFactor()
+    float App::GetDeviceContentScaleFactor ()
     {
         return _deviceContentScaleFactor;
     }
     
     
-    void App::SetIOManager(IOManager * fileManager)
+    void App::SetIOManager (IOManager * fileManager)
     {
         _ioManager = fileManager;
     }
     
-    IOManager * App::GetIOManager()
+    IOManager * App::GetIOManager ()
     {
         return _ioManager;
     }
     
-    IRenderer * App::GetRenderer()
+    IRenderer * App::GetRenderer ()
     {
         return _renderer;
     }
 
-    void App::SetAssetPath(const char * path)
+    void App::SetAssetPath (const char * path)
     {
         _assetPath = std::string(path);
     }
 
-    std::string App::GetAssetPath()
+    std::string App::GetAssetPath ()
     {
         return _assetPath;
     }
 
-    void App::SetFrameBufferWidth(float val)
+    void App::SetFrameBufferWidth (float val)
     {
         _frameBufferWidth = val;
     }
 
-    void App::SetFrameBufferHeight(float val)
+    void App::SetFrameBufferHeight (float val)
     {
         _frameBufferHeight = val;
     }
 
-    //void App::SetGameScreenWidth(float val)
+    //void App::SetGameScreenWidth (float val)
     //{
     //    _screenWidth = val;
     //}
 
-    //void App::SetGameScreenHeight(float val)
+    //void App::SetGameScreenHeight (float val)
     //{
     //    _screenHeight = val;
     //}
 
-    void App::SetLogicalWidth(float val)
+    void App::SetLogicalWidth (float val)
     {
         _logicalWidth = val;
     }
 
-    void App::SetLogicalHeight(float val)
+    void App::SetLogicalHeight (float val)
     {
         _logicalHeight = val;
     }
 
-    float App::GetFrameBufferWidth()
+    float App::GetFrameBufferWidth ()
     {
         return _frameBufferWidth;
     }
 
-    float App::GetFrameBufferHeight()
+    float App::GetFrameBufferHeight ()
     {
         return _frameBufferHeight;
     }
 
-    float App::GetViewportWidth()
+    float App::GetViewportWidth ()
     {
         return _viewportWidth;
     }
 
-    float App::GetViewportHeight()
+    float App::GetViewportHeight ()
     {
         return _viewportHeight;
     }
 
-    float App::GetLogicalWidth()
+    float App::GetLogicalWidth ()
     {
         return _logicalWidth;
     }
 
-    float App::GetLogicalHeight()
+    float App::GetLogicalHeight ()
     {
         return _logicalHeight;
     }
 
-    float App::GetDesignWidth()
+    float App::GetDesignWidth ()
     {
         return _designWidth;
     }
 
-    float App::GetDesignHeight()
+    float App::GetDesignHeight ()
     {
         return _designHeight;
     }
 
-    float App::GetContentScaleFactor()
+    float App::GetContentScaleFactor ()
     {
         return _contentScaleFactor;
     }
 
-    Point2D App::GetOrigin()
+    Point2D App::GetOrigin ()
     {
         return _origin;
     }
 
-    float App::GetSafeWidth()
+    float App::GetSafeWidth ()
     {
         return _safeZoneRect.width;
     }
     
-    float App::GetSafeHeight()
+    float App::GetSafeHeight ()
     {
         return _safeZoneRect.height;
     }
     
-    float App::GetFPS()
+    float App::GetFPS ()
     {
         return _currentFPS;
     }
     
-    float App::GetMaxFPS()
+    float App::GetMaxFPS ()
     {
         return _maxFPS;
     }

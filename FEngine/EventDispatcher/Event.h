@@ -29,12 +29,12 @@ namespace FEngine
         Event();
         virtual ~Event();
         
-        std::string GetName();
+        std::string                 GetName();
         
-        virtual const unsigned int GetID() = 0;
+        virtual const unsigned int  GetID()     =   0;
         
     protected:
-        std::string _name;
+        std::string                 _name;
     };
     
 }

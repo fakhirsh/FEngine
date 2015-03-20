@@ -26,29 +26,29 @@ namespace FEngine
         
         enum State{CREATED = 1, READY, RUNNING, WAITING, SUCCEEDED, FAILED, TERMINATED};
         
-        unsigned long GetID();
-        void SetID(unsigned long pPID);
+        unsigned long   GetID       ();
+        void            SetID       (unsigned long pPID);
         
-        bool    IsFinished();
+        bool            IsFinished  ();
         
-        void    Pause();
-        void    Resume();
-        void    Succeed();
-        void    Fail();
-        void    Terminate();
+        void            Pause       ();
+        void            Resume      ();
+        void            Succeed     ();
+        void            Fail        ();
+        void            Terminate   ();
         
-        State   GetState();
+        State           GetState    ();
         
-        virtual void Update(float dt) = 0;
+        virtual void    Update      (float dt)  =   0;
         
-        void        AddChild(ProcessPtr pChild);
-        ProcessPtr  RemoveChild();
+        void            AddChild    (ProcessPtr pChild);
+        ProcessPtr      RemoveChild ();
         
     protected:
         unsigned int    _pID;
         State           _state;
 
-        ProcessPtr _child;
+        ProcessPtr      _child;
         
     };
     

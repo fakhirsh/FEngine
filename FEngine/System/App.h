@@ -38,108 +38,103 @@ namespace FEngine
          * Function: Init(...)
          * Pre-conditions: File manager MUST be initialized and set BEFORE calling Init
          */
-        bool Init(const SystemConfig * sysConfig);
+        bool        Init                        (const SystemConfig * sysConfig);
         
-        void    Tick(float dt);
+        void        Tick                        (float dt);
         
-        void    SetDeviceContentScaleFactor(float deviceContentScaleFactor);
-        float   GetDeviceContentScaleFactor();
+        void        SetDeviceContentScaleFactor (float deviceContentScaleFactor);
+        float       GetDeviceContentScaleFactor ();
     
-        void        SetIOManager(IOManager * fileManager);
-        IOManager * GetIOManager();
+        void        SetIOManager                (IOManager * fileManager);
+        IOManager * GetIOManager                ();
         
-        IRenderer * GetRenderer();
+        IRenderer * GetRenderer                 ();
         
-        void   SetFrameBufferWidth(float val);
-        void   SetFrameBufferHeight(float val);
-        //void    SetViewportWidth(float val);
-        //void    SetViewportHeight(float val);
-        void    SetLogicalWidth(float val);
-        void    SetLogicalHeight(float val);
+        void        SetFrameBufferWidth         (float val);
+        void        SetFrameBufferHeight        (float val);
+        //void      SetViewportWidth            (float val);
+        //void      SetViewportHeight           (float val);
+        void        SetLogicalWidth             (float val);
+        void        SetLogicalHeight            (float val);
     
-        float   GetFrameBufferWidth();
-        float   GetFrameBufferHeight();
-        float   GetViewportWidth();
-        float   GetViewportHeight();
-        float   GetLogicalWidth();
-        float   GetLogicalHeight();
-        float   GetDesignWidth();
-        float   GetDesignHeight();
-        float   GetContentScaleFactor();
+        float       GetFrameBufferWidth         ();
+        float       GetFrameBufferHeight        ();
+        float       GetViewportWidth            ();
+        float       GetViewportHeight           ();
+        float       GetLogicalWidth             ();
+        float       GetLogicalHeight            ();
+        float       GetDesignWidth              ();
+        float       GetDesignHeight             ();
+        float       GetContentScaleFactor       ();
         
-        float   GetFPS();
-        float   GetMaxFPS();
+        float       GetFPS                      ();
+        float       GetMaxFPS                   ();
         
-        Point2D     GetOrigin();
-        float       GetSafeWidth();
-        float       GetSafeHeight();
+        Point2D     GetOrigin                   ();
+        float       GetSafeWidth                ();
+        float       GetSafeHeight               ();
         
-        Point2D   DesignSpaceToViewportSpace(const Point2D & designSpace);
-        Point2D   ViewportSpaceToDesignSpace(const Point2D & vpSpace);
-        Point2D   DesignSpaceToSafeZone(const Point2D & designSpace);
-        Point2D   SafeZoneToDesignSpace(const Point2D & safeZone);
+        Point2D     DesignSpaceToViewportSpace  (const Point2D & designSpace);
+        Point2D     ViewportSpaceToDesignSpace  (const Point2D & vpSpace);
+        Point2D     DesignSpaceToSafeZone       (const Point2D & designSpace);
+        Point2D     SafeZoneToDesignSpace       (const Point2D & safeZone);
 
         //void    SetResourceLoader(FIResourceLoader * resourceLoader);
         
         // Rename these to "***AssetPath()"
-        void        SetAssetPath(const char * path);
-        std::string GetAssetPath();
+        void        SetAssetPath                (const char * path);
+        std::string GetAssetPath                ();
         
-        void    TouchDown(int x, int y);
-        void    TouchUp(int x, int y);
-        void    TouchMoved(int x, int y);
-        void    TouchCancelled(int x, int y);
+        void        TouchDown                   (int x, int y);
+        void        TouchUp                     (int x, int y);
+        void        TouchMoved                  (int x, int y);
+        void        TouchCancelled              (int x, int y);
         
     private:
 
-        void    Update(float dt);
-        void    Render(float dt = 0.0f);
+        void        Update                      (float dt);
+        void        Render                      (float dt = 0.0f);
 
-        void    ComputeLetterBoxPolicy();
+        void        ComputeLetterBoxPolicy      ();
         
         // Width and Height of the device framebuffer / actual screen
-        float   _frameBufferWidth;
-        float   _frameBufferHeight;
+        float       _frameBufferWidth;
+        float       _frameBufferHeight;
 
         // Logical width and height which esp iOS uses for downward compatibility
-        float   _logicalWidth;
-        float   _logicalHeight;
+        float       _logicalWidth;
+        float       _logicalHeight;
 
         // Width and Height of the final "Letter-boxed" gameplay area.
-        float   _viewportWidth;
-        float   _viewportHeight;
+        float       _viewportWidth;
+        float       _viewportHeight;
         
         // Actual content scale factor of the device
-        float   _deviceContentScaleFactor;
+        float       _deviceContentScaleFactor;
         // Actual aspect ratio of the device
-        float   _deviceAspectRatio;
+        float       _deviceAspectRatio;
         // "Logical" content scale factor used while rescaling content in Letter box mode
-        float   _contentScaleFactor;
+        float       _contentScaleFactor;
 
         // "Logical" or "Design" width and height
-        float   _designWidth;
-        float   _designHeight;
+        float       _designWidth;
+        float       _designHeight;
         
         // Width and height for which the assets have been optimized...
-        float   _assetDesignWidth;
-        float   _assetDesignHeight;
+        float       _assetDesignWidth;
+        float       _assetDesignHeight;
         
-        Point2D   _origin;
+        Point2D     _origin;
         // The "safe zone" within which you can draw sprites without any fear of being cropped.
-        struct RECT
-        {
-            float x, y;
-            float width, height;
-        };
-        RECT  _safeZoneRect;
+        Rect        _safeZoneRect;
         
-        float   _availableRAM;
-        float   _availableStorage;
-        float   _cpuSpeed;
+        float       _availableRAM;
+        float       _availableStorage;
+        float       _cpuSpeed;
         
-        float   _elapsed;
-        float   _currentFPS;
-        float   _maxFPS;
+        float       _elapsed;
+        float       _currentFPS;
+        float       _maxFPS;
         
         // rename this to "_assetPath"
         std::string  _assetPath;

@@ -23,28 +23,32 @@ namespace FEngine
         State();
         virtual ~State();
         // Loads game assets and sounds etc
-        virtual bool Load()     =   0;
-        virtual bool UnLoad()   =   0;
+        virtual bool    Load    ()  =   0;
+        virtual bool    UnLoad  ()  =   0;
         
         // Initialises important data structures.
-        virtual bool Init()     =   0;
-        virtual void Free()     =   0;
+        virtual bool    Init    ()  =   0;
+        virtual void    Free    ()  =   0;
         
-        virtual void Pause()    =   0;
-        virtual void Resume()   =   0;
+        virtual void    Pause   ()  =   0;
+        virtual void    Resume  ()  =   0;
         
-        virtual void Update(float dt)           =   0;
-        virtual void Render(float dt = 0.0f)    =   0;
+        virtual void    Update  (float dt)           =   0;
+        virtual void    Render  (float dt = 0.0f)    =   0;
 
-        bool    IsPaused();
+        bool            IsPaused    ();
         
     protected:
         
         bool                    _isPaused;
         ProcessSchedulerPtr     _processScheduler;
         EventDispatcherPtr      _eventDispatcher;
-        //class SceneNode *   _rootSceneNode;
-        //ScreenElementList _screenElements;
+        SceneNode2DPtr          _rootSceneNode2D;
+        
+        // 3D Scene graph
+        //SceneNodePtr          _rootSceneNode;
+        
+        //ScreenElementList     _screenElements;
         
     };
 

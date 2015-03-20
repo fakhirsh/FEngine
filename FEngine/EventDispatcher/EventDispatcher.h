@@ -29,10 +29,17 @@ namespace FEngine
         bool AddListener    (unsigned int eID, EventListenerDelegate lfn);
         bool RemoveListener (unsigned int eID, EventListenerDelegate lfn);
         
+        /*
+         *...... WARNING WARNING WARNING .......
+         * 
+         * Dispatching an Event is VERY SLOW as compared to Triggering an Event.
+         * Please fing the bottleneck and optimize.
+         *
+         */
         bool DispatchEvent  (EventPtr e);
         bool TriggerEvent   (EventPtr e);
         
-        void Update(float dt);
+        void Update         (float dt);
         
     private:
        

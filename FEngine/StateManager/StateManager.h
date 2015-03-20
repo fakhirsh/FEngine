@@ -13,6 +13,7 @@
 
 #include "../PointerDefs.h"
 
+
 namespace FEngine
 {
 
@@ -27,29 +28,33 @@ namespace FEngine
     public:
         ~StateManager();
         
-        static StateManager * Get();
+        static StateManager * const Get         ();
         
-        bool    Init();
+        bool                Init                ();
         
-        void    ChangeState(StatePtr newState);
+        void                ChangeState         (StatePtr newState);
+        
         // Push the current state and Load new state on top of it
-        void    PushState(StatePtr newState);
-        void    PopState();
+        void                PushState           (StatePtr newState);
+        void                PopState            ();
 
-        void    Update(float dt);
-        void    Render(float dt = 0.0f);
+        void                Update              (float dt);
+        void                Render              (float dt = 0.0f);
         
-        ProcessSchedulerPtr     GetProcessScheduler();
-        EventDispatcherPtr      GetEventDispatcher();
-        //class SceneNode *    GetRootSceneNode();
-
+        ProcessSchedulerPtr GetProcessScheduler ();
+        EventDispatcherPtr  GetEventDispatcher  ();
+        
+        SceneNode2DPtr      GetRootSceneNode2D  ();
+        
+        // 3D Scene graph ... To be implemented later
+        //SceneNodePtr        GetRootSceneNode    ();
         
     private:
         StateManager();
         
-        static StateManager *  _instance;
+        static StateManager *   _instance;
         
-        std::vector<StatePtr>  _statesList;
+        std::vector<StatePtr>   _statesList;
 
     };
 

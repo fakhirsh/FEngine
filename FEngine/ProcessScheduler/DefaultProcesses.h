@@ -18,10 +18,10 @@ namespace FEngine
         ProcessDelay();
         virtual ~ProcessDelay();
         
-        virtual void Update(float dt);
+        virtual void    Update  (float dt);
         
     private:
-        float _time;
+        float           _time;
     };
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,7 +36,7 @@ namespace FEngine
         ProcessPrint();
         virtual ~ProcessPrint();
         
-        virtual void Update(float dt);
+        virtual void    Update  (float dt);
         
     };
     

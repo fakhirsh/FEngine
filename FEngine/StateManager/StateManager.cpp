@@ -17,7 +17,7 @@
 namespace FEngine
 {
 
-    StateManager * StateManager::_instance = (StateManager *)0;
+    StateManager * StateManager::_instance = NULL;
 
 
     StateManager::StateManager()
@@ -27,15 +27,17 @@ namespace FEngine
 
     StateManager::~StateManager()
     {
-        if(_instance) delete _instance;
-        _instance = NULL;
+        //if(_instance) delete _instance;
+        //_instance = NULL;
     }
 
-    StateManager * StateManager::Get()
+    StateManager * const StateManager::Get()
     {
         if(!_instance)
         {
             _instance = new StateManager();
+            //_instance = boost::make_shared<FEngine::StateManager>();
+            
             _instance->Init();
         }
         return _instance;
@@ -133,16 +135,15 @@ namespace FEngine
 
     }
     
-    /*
-    SceneNode * StateManager::GetRootSceneNode()
+    SceneNode2DPtr StateManager::GetRootSceneNode2D()
     {
         if (!_statesList.empty())
         {
-            return _statesList.back()->_rootSceneNode;
+            return _statesList.back()->_rootSceneNode2D;
         }
         
-        return NULL;
+        return boost::shared_ptr<FEngine::SceneNode2D>();
     }
-*/
+
     
 };

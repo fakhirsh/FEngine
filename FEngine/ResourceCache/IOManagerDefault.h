@@ -26,7 +26,7 @@ namespace FEngine
          */
         //virtual bool GetFileStream(std::string inFile, std::string & dataStream);
         
-        virtual bool GetAssetStream(std::string assetPath, std::vector<char> & buffer);
+        virtual bool GetAssetStream (std::string assetPath, std::vector<char> & buffer);
         
         //virtual unsigned int GetGLTextureFromPngFile(std::string pngFile);
         

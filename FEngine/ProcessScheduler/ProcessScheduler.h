@@ -23,12 +23,12 @@ namespace FEngine
         ProcessScheduler();
         ~ProcessScheduler();
         
-        bool AddChild(ProcessPtr process);
-        bool RemoveChild(ProcessPtr process);
+        bool    AddChild    (ProcessPtr process);
+        bool    RemoveChild (ProcessPtr process);
 
-        void Update(float dt);
+        void    Update      (float dt);
         
-        void RemoveAll();
+        void    RemoveAll   ();
         
     private:
         
