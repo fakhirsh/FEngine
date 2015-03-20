@@ -98,7 +98,6 @@ namespace FEngine
         if (!_statesList.empty())
         {
             _statesList.back()->Update(dt);
-            _statesList.back()->_rootSceneNode2D->Update(dt);
             _statesList.back()->_processScheduler->Update(dt);
             _statesList.back()->_eventDispatcher->Update(dt);
         }

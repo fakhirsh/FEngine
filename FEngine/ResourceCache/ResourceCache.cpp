@@ -8,7 +8,7 @@
 
 #include "ResourceCache.h"
 
-#include "../Graphics2D/Texture.h"
+//#include "../Graphics2D/Texture.h"
 #include "../Renderer/GLES20/Program.h"
 //#include "../Renderer/VBO.h"
 
@@ -42,46 +42,12 @@ namespace FEngine
         
     }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    /////////////  TEXTURE RELATED  /////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////
-
-    bool ResourceCache::AddTexture(Texture * texture)
-    {
-        // CHeck if the textue is already loaded
-        if(_textureMap[texture->GetName()]) return false;
-        
-        _textureMap[texture->GetName()] = texture;
-        
-        return true;
-    }
-
-    Texture * ResourceCache::GetTexture(std::string textureName)
-    {
-        return _textureMap[textureName];
-    }
-
-    void ResourceCache::RemoveTexture(std::string textureName)
-    {
-        Texture * tmpTex = _textureMap[textureName];
-        if(tmpTex)
-        {
-            std::map<std::string, Texture *>::iterator it;
-            it = _textureMap.find(textureName);
-            _textureMap.erase(it);
-            
-            tmpTex->Unload();
-            
-            delete tmpTex;
-        }
-    }
-
-
+    
     /////////////////////////////////////////////////////////////////////////////////
     /////////////  PROGRAM RELATED  /////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////
 
-    bool ResourceCache::AddProgram(Program * program)
+    bool ResourceCache::AddProgram(ProgramPtr program)
     {
         if(_programMap[program->GetProgramName()]) return false;
         
@@ -90,45 +56,24 @@ namespace FEngine
         return true;
     }
 
-    Program * ResourceCache::GetProgram(std::string programName)
+    ProgramPtr ResourceCache::GetProgram(std::string programName)
     {
         return _programMap[programName];
     }
 
     void ResourceCache::RemoveProgram(std::string programName)
     {
-        Program * p = _programMap[programName];
+        ProgramPtr p = _programMap[programName];
         if(p)
         {
-            std::map<std::string, Program *>::iterator it;
+            std::map<std::string, ProgramPtr>::iterator it;
             it = _programMap.find(programName);
             _programMap.erase(it);
             
             p->Unload();
-            
-            delete p;
         }
     }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    /////////////////  VBO RELATED  /////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////
-/*
-    bool ResourceCache::AddVBO(VBO * vbo)
-    {
-        return true;
-    }
 
-    VBO * ResourceCache::GetVBO(std::string vboName)
-    {
-        return NULL;
-    }
-
-    void ResourceCache::RemoveVBO(std::string vboName)
-    {
-        
-    }
-*/
-    
 };
 

@@ -31,7 +31,7 @@ namespace FEngine
         unsigned long       GetActorID      ();
         void                SetActorID      (unsigned int actorID);
         
-        virtual void        Update          (float dt);
+        //virtual void        Update          (float dt);
         
         virtual bool        PreRender       (float dt = 0.0f);
         virtual bool        Render          (float dt = 0.0f)   =   0;

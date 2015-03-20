@@ -8,58 +8,42 @@
 
 #pragma once
 
+#include "../PointerDefs.h"
 
 #include <string>
 #include <map>
 
+
 namespace FEngine
 {
-    // PLEASE ADD COMMENTS About how to use this class
-
-    class Program;
-    class Texture;
-    //class VBO;
 
     class ResourceCache
     {
     public:
-        ~ResourceCache(void);
+        ~ResourceCache();
         
-        static ResourceCache * Get();
-        void		Init();
+        static ResourceCache * Get          ();
         
-        /**
-         * @param	texture			Actual pre-initialised texture object
-         */
-        bool		AddTexture(Texture * texture);
-        Texture *	GetTexture(std::string textureName);
-        void		RemoveTexture(std::string textureName);
+        void            Init                ();
         
         /**
          * @param	program			Actual pre-initialised program object
          */
-        bool		AddProgram(Program * program);
-        Program *	GetProgram(std::string programName);
-        void		RemoveProgram(std::string programName);
-        
-        /**
-         * @param	VBO				Actual pre-loaded VBO
-         */
-        //bool		AddVBO(VBO * vbo);
-        //VBO	*	GetVBO(std::string vboName);
-        //void		RemoveVBO(std::string vboName);
+        bool            AddProgram          (ProgramPtr program);
+        ProgramPtr      GetProgram          (std::string programName);
+        void            RemoveProgram       (std::string programName);
         
         
     private:
-        ResourceCache(void);
+        ResourceCache();
         
-        static ResourceCache * _instance;
+        static ResourceCache *              _instance;
         
         // Dictionary of all textures
-        std::map<std::string, Texture * >	_textureMap;
+        //std::map<std::string, Texture * >	_textureMap;
         
         // Dictionary of all Shaders
-        std::map<std::string, Program * >	_programMap;
+        std::map<std::string, ProgramPtr >	_programMap;
         
         // Dictionary of all VBOs
         //std::map<std::string, VBO * >		_vboMap;

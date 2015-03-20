@@ -30,6 +30,9 @@
 		0C8C24E21ABBF61A00C77AAF /* SceneNode2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24E01ABBF61A00C77AAF /* SceneNode2D.cpp */; };
 		0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24E31ABC715900C77AAF /* SpriteNode.cpp */; };
 		0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24F11ABC74FD00C77AAF /* SceneNodeProperties2D.cpp */; };
+		0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24F41ABC994200C77AAF /* ResourceCache.cpp */; };
+		0C8C24FE1ABC9AC100C77AAF /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FA1ABC9AC100C77AAF /* Program.cpp */; };
+		0C8C24FF1ABC9AC100C77AAF /* TexturedVertexProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +187,12 @@
 		0C8C24E41ABC715900C77AAF /* SpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteNode.h; sourceTree = "<group>"; };
 		0C8C24F11ABC74FD00C77AAF /* SceneNodeProperties2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneNodeProperties2D.cpp; sourceTree = "<group>"; };
 		0C8C24F21ABC74FD00C77AAF /* SceneNodeProperties2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneNodeProperties2D.h; sourceTree = "<group>"; };
+		0C8C24F41ABC994200C77AAF /* ResourceCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceCache.cpp; sourceTree = "<group>"; };
+		0C8C24F51ABC994200C77AAF /* ResourceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceCache.h; sourceTree = "<group>"; };
+		0C8C24FA1ABC9AC100C77AAF /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		0C8C24FB1ABC9AC100C77AAF /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexturedVertexProgram.cpp; sourceTree = "<group>"; };
+		0C8C24FD1ABC9AC100C77AAF /* TexturedVertexProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexturedVertexProgram.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +384,9 @@
 		0C79514A1AB85EF80010DA81 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				0C8C24F71ABC9AC100C77AAF /* DX11 */,
+				0C8C24F81ABC9AC100C77AAF /* GL31 */,
+				0C8C24F91ABC9AC100C77AAF /* GLES20 */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -385,6 +397,8 @@
 				0C79514C1AB85EF80010DA81 /* IOManager.h */,
 				0C79514F1AB85EF80010DA81 /* IOManagerDefault.cpp */,
 				0C7951501AB85EF80010DA81 /* IOManagerDefault.h */,
+				0C8C24F41ABC994200C77AAF /* ResourceCache.cpp */,
+				0C8C24F51ABC994200C77AAF /* ResourceCache.h */,
 			);
 			path = ResourceCache;
 			sourceTree = "<group>";
@@ -426,6 +440,31 @@
 				0C7951651AB85EF80010DA81 /* SmartPtr.h */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		0C8C24F71ABC9AC100C77AAF /* DX11 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DX11;
+			sourceTree = "<group>";
+		};
+		0C8C24F81ABC9AC100C77AAF /* GL31 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GL31;
+			sourceTree = "<group>";
+		};
+		0C8C24F91ABC9AC100C77AAF /* GLES20 */ = {
+			isa = PBXGroup;
+			children = (
+				0C8C24FA1ABC9AC100C77AAF /* Program.cpp */,
+				0C8C24FB1ABC9AC100C77AAF /* Program.h */,
+				0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */,
+				0C8C24FD1ABC9AC100C77AAF /* TexturedVertexProgram.h */,
+			);
+			path = GLES20;
 			sourceTree = "<group>";
 		};
 		0CE399E91AB9EAFE00350E8C /* ActorManager */ = {
@@ -608,6 +647,7 @@
 				0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */,
 				0C7951931AB8A4F10010DA81 /* EventDispatcher.cpp in Sources */,
 				0C8C24DB1ABBF60C00C77AAF /* RootSceneNode2D.cpp in Sources */,
+				0C8C24FF1ABC9AC100C77AAF /* TexturedVertexProgram.cpp in Sources */,
 				0C7951671AB85EF80010DA81 /* Process.cpp in Sources */,
 				0C7951901AB8A4DE0010DA81 /* Event.cpp in Sources */,
 				0C7951701AB85EF80010DA81 /* App.cpp in Sources */,
@@ -616,8 +656,10 @@
 				0C8C24E21ABBF61A00C77AAF /* SceneNode2D.cpp in Sources */,
 				0C7951711AB85EF80010DA81 /* SystemConfig.cpp in Sources */,
 				0C7951961AB8A5020010DA81 /* DefaultEvents.cpp in Sources */,
+				0C8C24FE1ABC9AC100C77AAF /* Program.cpp in Sources */,
 				0C79516F1AB85EF80010DA81 /* StateManager.cpp in Sources */,
 				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
+				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,
 				0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */,
 				0C79516E1AB85EF80010DA81 /* State.cpp in Sources */,
 			);

@@ -61,6 +61,7 @@ namespace FEngine
         return _parent;
     }
     
+/*
     void SceneNode2D::Update (float dt)
     {
         std::list<SceneNode2DPtr>::iterator it = _children.begin();
@@ -74,7 +75,8 @@ namespace FEngine
             it++;
         }
     }
-    
+ */   
+ 
     bool SceneNode2D::PreRender (float dt)
     {
         return true;

@@ -27,7 +27,7 @@ namespace FEngine
     
     bool SpriteNode::Render (float dt)
     {
-        
+        //std::cout << "SpriteNode " << _sceneNodeProperties2D->name << " just got Rendered(" << dt << ")" << std::endl;
         return true;
     }
     

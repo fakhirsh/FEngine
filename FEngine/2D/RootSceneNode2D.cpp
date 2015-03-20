@@ -21,11 +21,6 @@ namespace FEngine
         
     }
     
-    //void RootSceneNode2D::Update (float dt)
-    //{
-    //    SceneNode2D::Update(dt);
-    //}
-    
     bool RootSceneNode2D::Render (float dt)
     {
         
