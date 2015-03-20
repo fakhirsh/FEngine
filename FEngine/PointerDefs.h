@@ -30,6 +30,7 @@ namespace FEngine
     class   EventDispatcher;
     class   SceneNode;
     class   SceneNode2D;
+    class   RootSceneNode2D;
     class   SceneNodeProperties2D;
     //class FontAtlas;
 };
@@ -43,6 +44,8 @@ typedef boost::weak_ptr     <FEngine::SceneNode>                SceneNodeWeakPtr
 
 typedef boost::shared_ptr   <FEngine::SceneNode2D>              SceneNode2DPtr;
 typedef boost::weak_ptr     <FEngine::SceneNode2D>              SceneNode2DWeakPtr;
+typedef boost::shared_ptr   <FEngine::RootSceneNode2D>          RootSceneNode2DPtr;
+typedef boost::weak_ptr     <FEngine::RootSceneNode2D>          RootSceneNode2DWeakPtr;
 typedef boost::shared_ptr   <FEngine::SceneNodeProperties2D>    SceneNodeProperties2DPtr;
 
 typedef boost::shared_ptr   <FEngine::Process>                  ProcessPtr;

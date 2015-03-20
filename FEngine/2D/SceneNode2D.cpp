@@ -8,6 +8,9 @@
 
 #include "SceneNode2D.h"
 
+#include "../Common.h"
+#include "../PointerDefs.h"
+
 
 namespace FEngine
 {
@@ -66,7 +69,7 @@ namespace FEngine
         {
             SceneNode2DPtr child  =   *it;
             
-            child->Update           (dt);
+            child->Update (dt);
             
             it++;
         }
@@ -89,10 +92,10 @@ namespace FEngine
             
             if(child->PreRender (dt))
             {
-                child->Render           (dt);
-                child->RenderChildren   (dt);
+                child->Render (dt);
+                child->RenderChildren (dt);
             }
-            child->PostRender   (dt);
+            child->PostRender (dt);
             
             it++;
         }
@@ -103,6 +106,16 @@ namespace FEngine
     bool SceneNode2D::PostRender (float dt)
     {
         return true;
+    }
+    
+    SceneNodeProperties2DPtr SceneNode2D::GetSceneNodeProperties ()
+    {
+        return _sceneNodeProperties2D;
+    }
+    
+    void SceneNode2D::SetSceneNodeProperties(SceneNodeProperties2DPtr snp)
+    {
+        _sceneNodeProperties2D = snp;
     }
     
 }

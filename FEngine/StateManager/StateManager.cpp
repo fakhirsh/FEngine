@@ -12,6 +12,7 @@
 #include "State.h"
 #include "../ProcessScheduler/ProcessScheduler.h"
 #include "../EventDispatcher/EventDispatcher.h"
+#include "../2D/RootSceneNode2D.h"
 
 
 namespace FEngine
@@ -27,8 +28,8 @@ namespace FEngine
 
     StateManager::~StateManager()
     {
-        //if(_instance) delete _instance;
-        //_instance = NULL;
+        if(_instance) delete _instance;
+        _instance = NULL;
     }
 
     StateManager * const StateManager::Get()
@@ -97,6 +98,7 @@ namespace FEngine
         if (!_statesList.empty())
         {
             _statesList.back()->Update(dt);
+            _statesList.back()->_rootSceneNode2D->Update(dt);
             _statesList.back()->_processScheduler->Update(dt);
             _statesList.back()->_eventDispatcher->Update(dt);
         }
@@ -106,7 +108,9 @@ namespace FEngine
     {
         if (!_statesList.empty())
         {
+            _statesList.back()->_rootSceneNode2D->Render(dt);
             _statesList.back()->Render(dt);
+            
         }
     }
     

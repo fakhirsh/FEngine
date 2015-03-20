@@ -1,11 +1,10 @@
 //
-//  RootSceneNode2D.h
+//  SpriteNode.h
 //  FEngine
 //
 //  Created by Fakhir Shaheen on 20/03/2015.
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
-
 
 #pragma once
 
@@ -13,11 +12,11 @@
 
 namespace FEngine
 {
-    class RootSceneNode2D : public SceneNode2D
+    class SpriteNode : public SceneNode2D
     {
     public:
-        RootSceneNode2D();
-        ~RootSceneNode2D();
+        SpriteNode();
+        ~SpriteNode();
         
         virtual bool        Render          (float dt = 0.0f);
         

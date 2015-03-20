@@ -12,7 +12,7 @@
 #include <list>
 
 #include "../PointerDefs.h"
-#include "SceneNodeProperties2D.h"
+
 
 namespace FEngine
 {

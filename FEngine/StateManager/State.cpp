@@ -35,4 +35,20 @@ namespace FEngine
         return _isPaused;
     }
 
+    void State::PushTransform2D (glm::mat4  transformMatrix)
+    {
+        _matrixStack2D.push(transformMatrix);
+    }
+    
+    glm::mat4 State::PeekTransform2D ()
+    {
+        return _matrixStack2D.top();
+    }
+    
+    void State::PopTransform2D ()
+    {
+        _matrixStack2D.pop();
+    }
+
+    
 };

@@ -8,8 +8,9 @@
 
 #pragma once
 
-#include "../Common.h"
 
+#include <string>
+#include "../../3rdParty/glm-0.9.6.3/glm/glm.hpp"
 
 namespace FEngine
 {

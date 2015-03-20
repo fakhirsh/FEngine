@@ -21,48 +21,18 @@ namespace FEngine
         
     }
     
-    void RootSceneNode2D::Update (float dt)
-    {
-        _rootSceneNode2D->Update(dt);
-    }
-    
-    bool RootSceneNode2D::PreRender (float dt)
-    {
-        _rootSceneNode2D->PreRender(dt);
-        return true;
-    }
+    //void RootSceneNode2D::Update (float dt)
+    //{
+    //    SceneNode2D::Update(dt);
+    //}
     
     bool RootSceneNode2D::Render (float dt)
     {
-        _rootSceneNode2D->Render(dt);
+        
+        this->RenderChildren(dt);
+        
         return true;
     }
     
-    bool RootSceneNode2D::RenderChildren (float dt)
-    {
-        _rootSceneNode2D->RenderChildren(dt);
-        return true;
-    }
-    
-    bool RootSceneNode2D::PostRender (float dt)
-    {
-        _rootSceneNode2D->PostRender(dt);
-        return true;
-    }
-    
-    void RootSceneNode2D::PushTransform (glm::mat4  transformMatrix)
-    {
-        _matrixStack.push(transformMatrix);
-    }
-    
-    glm::mat4 RootSceneNode2D::PeekTransform ()
-    {
-        return _matrixStack.top();
-    }
-    
-    void RootSceneNode2D::PopTransform ()
-    {
-        _matrixStack.pop();
-    }
-    
+        
 }

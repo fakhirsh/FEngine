@@ -14,7 +14,6 @@
 		0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A2C1AB4125900F18283 /* libPennerEasing.a */; };
 		0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A491AB4140900F18283 /* OpenGLES.framework */; };
 		0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A4B1AB4141000F18283 /* OpenAL.framework */; };
-		0C7696531ABAF557006895AA /* SceneNodeProperties2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7696511ABAF557006895AA /* SceneNodeProperties2D.cpp */; };
 		0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */; };
 		0C7951671AB85EF80010DA81 /* Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951461AB85EF80010DA81 /* Process.cpp */; };
 		0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951481AB85EF80010DA81 /* ProcessScheduler.cpp */; };
@@ -29,6 +28,8 @@
 		0C7951961AB8A5020010DA81 /* DefaultEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951941AB8A5020010DA81 /* DefaultEvents.cpp */; };
 		0C8C24DB1ABBF60C00C77AAF /* RootSceneNode2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24D91ABBF60C00C77AAF /* RootSceneNode2D.cpp */; };
 		0C8C24E21ABBF61A00C77AAF /* SceneNode2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24E01ABBF61A00C77AAF /* SceneNode2D.cpp */; };
+		0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24E31ABC715900C77AAF /* SpriteNode.cpp */; };
+		0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24F11ABC74FD00C77AAF /* SceneNodeProperties2D.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,8 +148,6 @@
 		0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PennerEasing.xcodeproj; path = 3rdParty/PennerEasing/PennerEasing.xcodeproj; sourceTree = "<group>"; };
 		0C275A491AB4140900F18283 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0C275A4B1AB4141000F18283 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
-		0C7696511ABAF557006895AA /* SceneNodeProperties2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneNodeProperties2D.cpp; path = ../3D/SceneNodeProperties2D.cpp; sourceTree = "<group>"; };
-		0C7696521ABAF557006895AA /* SceneNodeProperties2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneNodeProperties2D.h; path = ../3D/SceneNodeProperties2D.h; sourceTree = "<group>"; };
 		0C79513F1AB85EF80010DA81 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		0C7951421AB85EF80010DA81 /* PointerDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerDefs.h; sourceTree = "<group>"; };
 		0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultProcesses.cpp; sourceTree = "<group>"; };
@@ -181,6 +180,10 @@
 		0C8C24DA1ABBF60C00C77AAF /* RootSceneNode2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSceneNode2D.h; sourceTree = "<group>"; };
 		0C8C24E01ABBF61A00C77AAF /* SceneNode2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneNode2D.cpp; sourceTree = "<group>"; };
 		0C8C24E11ABBF61A00C77AAF /* SceneNode2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneNode2D.h; sourceTree = "<group>"; };
+		0C8C24E31ABC715900C77AAF /* SpriteNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteNode.cpp; sourceTree = "<group>"; };
+		0C8C24E41ABC715900C77AAF /* SpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteNode.h; sourceTree = "<group>"; };
+		0C8C24F11ABC74FD00C77AAF /* SceneNodeProperties2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneNodeProperties2D.cpp; sourceTree = "<group>"; };
+		0C8C24F21ABC74FD00C77AAF /* SceneNodeProperties2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneNodeProperties2D.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,12 +327,14 @@
 		0C79513D1AB85EF80010DA81 /* 2D */ = {
 			isa = PBXGroup;
 			children = (
-				0C7696511ABAF557006895AA /* SceneNodeProperties2D.cpp */,
-				0C7696521ABAF557006895AA /* SceneNodeProperties2D.h */,
+				0C8C24F11ABC74FD00C77AAF /* SceneNodeProperties2D.cpp */,
+				0C8C24F21ABC74FD00C77AAF /* SceneNodeProperties2D.h */,
 				0C8C24D91ABBF60C00C77AAF /* RootSceneNode2D.cpp */,
 				0C8C24DA1ABBF60C00C77AAF /* RootSceneNode2D.h */,
 				0C8C24E01ABBF61A00C77AAF /* SceneNode2D.cpp */,
 				0C8C24E11ABBF61A00C77AAF /* SceneNode2D.h */,
+				0C8C24E31ABC715900C77AAF /* SpriteNode.cpp */,
+				0C8C24E41ABC715900C77AAF /* SpriteNode.h */,
 			);
 			path = 2D;
 			sourceTree = "<group>";
@@ -600,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */,
+				0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */,
 				0C7951931AB8A4F10010DA81 /* EventDispatcher.cpp in Sources */,
 				0C8C24DB1ABBF60C00C77AAF /* RootSceneNode2D.cpp in Sources */,
 				0C7951671AB85EF80010DA81 /* Process.cpp in Sources */,
@@ -611,8 +617,8 @@
 				0C7951711AB85EF80010DA81 /* SystemConfig.cpp in Sources */,
 				0C7951961AB8A5020010DA81 /* DefaultEvents.cpp in Sources */,
 				0C79516F1AB85EF80010DA81 /* StateManager.cpp in Sources */,
+				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
 				0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */,
-				0C7696531ABAF557006895AA /* SceneNodeProperties2D.cpp in Sources */,
 				0C79516E1AB85EF80010DA81 /* State.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
