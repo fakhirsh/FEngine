@@ -148,5 +148,20 @@ namespace FEngine
         return boost::shared_ptr<FEngine::SceneNode2D>();
     }
 
+    void StateManager::PushTransform2D (glm::mat4  transformMatrix)
+    {
+        _matrixStack2D.push(transformMatrix);
+    }
+    
+    glm::mat4 StateManager::PeekTransform2D ()
+    {
+        return _matrixStack2D.top();
+    }
+    
+    void StateManager::PopTransform2D ()
+    {
+        _matrixStack2D.pop();
+    }
+
     
 };

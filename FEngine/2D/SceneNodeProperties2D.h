@@ -8,7 +8,7 @@
 
 #pragma once
 
-
+#include "../PointerDefs.h"
 #include <string>
 #include "../../3rdParty/glm-0.9.6.3/glm/glm.hpp"
 
@@ -39,9 +39,10 @@ namespace FEngine
         float           width;
         float           height;
         
-        
         float           u, v, uW, vH;
 
+        TextureAtlasPtr textureAtlas;
+        ProgramPtr      program;
     };
     
 }

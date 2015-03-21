@@ -211,7 +211,7 @@ namespace FEngine
     {
         
         // Asset aspect ratio
-        float assetAspectRatio  =   float(_assetDesignWidth) / float(_assetDesignHeight);
+        //float assetAspectRatio  =   float(_assetDesignWidth) / float(_assetDesignHeight);
         
         // Design aspect ratio
         float designAspectRatio =   _designWidth / _designHeight;
@@ -246,8 +246,8 @@ namespace FEngine
         _safeZoneRect.x = _origin.x;
         _safeZoneRect.y = _origin.y;
         
-        _viewportWidth  =   _frameBufferWidth;
-        _viewportHeight =   _frameBufferHeight;
+        _viewportWidth  =   _safeZoneRect.width;
+        _viewportHeight =   _safeZoneRect.height;
         //_renderer->SetViewPort(0.0f, 0.0f, _viewportWidth, _viewportHeight);
         glViewport(0.0f, 0.0f, _viewportWidth, _viewportHeight);
         //glViewport(_safeZoneRect.x, _safeZoneRect.y, _safeZoneRect.width, _safeZoneRect.height);
@@ -265,25 +265,19 @@ namespace FEngine
                     << "\nSafe Zone Width: " << _safeZoneRect.width
                     << "\nSafe Zone Height: " << _safeZoneRect.height
                     << "\nCSF: " << _contentScaleFactor << std::endl;
-        
-        
-        if(_contentScaleFactor < 0)
-        {
-            int g = 0.0f;
-        }
 
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
 
-    Point2D App::DesignSpaceToViewportSpace (const Point2D & designSpace)
+    Math::Point2D App::DesignSpaceToViewportSpace (const Math::Point2D & designSpace)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        Point2D vpSpace;
+        Math::Point2D vpSpace;
         BOX V, D;
         
         V.l = 0.0f;
@@ -302,14 +296,14 @@ namespace FEngine
         return vpSpace;
     }
 
-    Point2D App::ViewportSpaceToDesignSpace (const Point2D & vpSpace)
+    Math::Point2D App::ViewportSpaceToDesignSpace (const Math::Point2D & vpSpace)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        Point2D designSpace;
+        Math::Point2D designSpace;
         BOX V, D;
         
         V.l = 0.0f;
@@ -336,14 +330,14 @@ namespace FEngine
      
      */
     
-    Point2D App::DesignSpaceToSafeZone (const Point2D & designSpace)
+    Math::Point2D App::DesignSpaceToSafeZone (const Math::Point2D & designSpace)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        Point2D safeZone;
+        Math::Point2D safeZone;
         BOX V, D;
         
         V.l = _safeZoneRect.x;
@@ -365,14 +359,14 @@ namespace FEngine
     
     /// BUGGY... PLEASE FIX.....
     
-    Point2D App::SafeZoneToDesignSpace (const Point2D & safeZone)
+    Math::Point2D App::SafeZoneToDesignSpace (const Math::Point2D & safeZone)
     {
         struct BOX
         {
             float l,r,b,t;
         };
         
-        Point2D designSpace;
+        Math::Point2D designSpace;
         BOX V, D;
         
         V.l = _safeZoneRect.x;
@@ -506,7 +500,7 @@ namespace FEngine
         return _contentScaleFactor;
     }
 
-    Point2D App::GetOrigin ()
+    Math::Point2D App::GetOrigin ()
     {
         return _origin;
     }

@@ -11,7 +11,6 @@
 #include "../PointerDefs.h"
 
 #include "../../3rdParty/glm-0.9.6.3/glm/glm.hpp"
-#include <stack>
 
 namespace FEngine
 {
@@ -43,10 +42,6 @@ namespace FEngine
 
         bool            IsPaused        ();
         
-        void            PushTransform2D (glm::mat4  transformMatrix);
-        glm::mat4       PeekTransform2D ();
-        void            PopTransform2D  ();
-        
     protected:
         
         bool                    _isPaused;
@@ -54,7 +49,7 @@ namespace FEngine
         EventDispatcherPtr      _eventDispatcher;
         SceneNode2DPtr          _rootSceneNode2D;
         
-        std::stack<glm::mat4>   _matrixStack2D;
+        //std::stack<glm::mat4>   _matrixStack2D;
         
         // 3D Scene graph
         //SceneNodePtr          _rootSceneNode;

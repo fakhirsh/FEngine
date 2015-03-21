@@ -70,14 +70,14 @@ namespace FEngine
         float       GetFPS                      ();
         float       GetMaxFPS                   ();
         
-        Point2D     GetOrigin                   ();
+        Math::Point2D GetOrigin                 ();
         float       GetSafeWidth                ();
         float       GetSafeHeight               ();
         
-        Point2D     DesignSpaceToViewportSpace  (const Point2D & designSpace);
-        Point2D     ViewportSpaceToDesignSpace  (const Point2D & vpSpace);
-        Point2D     DesignSpaceToSafeZone       (const Point2D & designSpace);
-        Point2D     SafeZoneToDesignSpace       (const Point2D & safeZone);
+        Math::Point2D DesignSpaceToViewportSpace  (const Math::Point2D & designSpace);
+        Math::Point2D ViewportSpaceToDesignSpace  (const Math::Point2D & vpSpace);
+        Math::Point2D DesignSpaceToSafeZone       (const Math::Point2D & designSpace);
+        Math::Point2D SafeZoneToDesignSpace       (const Math::Point2D & safeZone);
 
         //void    SetResourceLoader(FIResourceLoader * resourceLoader);
         
@@ -124,9 +124,9 @@ namespace FEngine
         float       _assetDesignWidth;
         float       _assetDesignHeight;
         
-        Point2D     _origin;
+        Math::Point2D     _origin;
         // The "safe zone" within which you can draw sprites without any fear of being cropped.
-        Rect        _safeZoneRect;
+        Math::Rect        _safeZoneRect;
         
         float       _availableRAM;
         float       _availableStorage;

@@ -10,8 +10,10 @@
 #pragma once
 
 #include <vector>
+#include <stack>
 
 #include "../PointerDefs.h"
+#include "../../3rdParty/glm-0.9.6.3/glm/glm.hpp"
 
 
 namespace FEngine
@@ -49,6 +51,10 @@ namespace FEngine
         // 3D Scene graph ... To be implemented later
         //SceneNodePtr        GetRootSceneNode    ();
         
+        void                PushTransform2D     (glm::mat4  transformMatrix);
+        glm::mat4           PeekTransform2D     ();
+        void                PopTransform2D      ();
+        
     private:
         StateManager();
         
@@ -56,6 +62,8 @@ namespace FEngine
         
         std::vector<StatePtr>   _statesList;
 
+        std::stack<glm::mat4>   _matrixStack2D;
+        
     };
 
 };

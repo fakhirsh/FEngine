@@ -51,55 +51,54 @@ namespace FEngine
     {
         std::list<ProcessPtr>::iterator i = _processList.begin();
         
-        for(; i != _processList.end(); )
-        {
+        for(; i != _processList.end(); ){
             // Get current process in process list
-            ProcessPtr p = *i;
-            
-            Process::State state = p->GetState();
-            
-            switch (state)
-            {
-                case Process::State::CREATED :
-                {
-                    p->Resume();
-                }
-                break;
-                    
-                case Process::State::RUNNING :
-                {
-                    p->Update(dt);
-                }
-                break;
+            if(*i){
+
+                ProcessPtr      p       =   *i;
+                Process::State  state   =   p->GetState();
                 
-                case Process::State::SUCCEEDED :
+                switch (state)
                 {
-                    ProcessPtr child = p->RemoveChild();
-                    if(child)
+                    case Process::State::CREATED :
                     {
-                        _processList.push_back(child);
+                        p->Resume();
                     }
-                    p->Terminate();
-                }
-                break;
-                
-                case Process::State::FAILED :
-                {
-                    p->Terminate();
-                }
-                break;
-                    
-                case Process::State::TERMINATED :
-                {
-                    _processList.erase(i);
-                }
-                break;
-                    
-                    
-                default:
                     break;
+                        
+                    case Process::State::RUNNING :
+                    {
+                        p->Update(dt);
+                    }
+                    break;
+                    
+                    case Process::State::SUCCEEDED :
+                    {
+                        ProcessPtr child = p->RemoveChild();
+                        if(child)
+                        {
+                            _processList.push_back(child);
+                        }
+                        p->Terminate();
+                    }
+                    break;
+                    
+                    case Process::State::FAILED :
+                    {
+                        p->Terminate();
+                    }
+                    break;
+                        
+                    case Process::State::TERMINATED :
+                    {
+                        _processList.erase(i);
+                    }
+                    break;
+                        
+                    default:
+                        break;
+                }
             }
-            
             // Incrementing the iterator outside for loop so that it
             //    properly updates BEFORE checking the terminating condition...
             i++;

@@ -36,6 +36,10 @@ namespace FEngine
         uW          =   0.0f;
         vH          =   0.0f;
         
+        tintColor.r =   1.0f;
+        tintColor.g =   1.0f;
+        tintColor.b =   1.0f;
+
     }
     
     SceneNodeProperties2D::~SceneNodeProperties2D()

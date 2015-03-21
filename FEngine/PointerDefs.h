@@ -23,8 +23,8 @@ namespace FEngine
     class   Process;
     class   ProcessScheduler;
     class   Program;
-    //class Texture;
-    //class TextureAtlas;
+    class   Texture;
+    class   TextureAtlas;
     //class SpriteBatch;
     //class Sprite;
     class   Event;
@@ -56,8 +56,10 @@ typedef boost::shared_ptr   <FEngine::ProcessScheduler>         ProcessScheduler
 typedef boost::shared_ptr   <FEngine::Program>                  ProgramPtr;
 typedef boost::weak_ptr     <FEngine::Program>                  ProgramWeakPtr;
 
-//typedef boost::shared_ptr <FEngine::Texture>                  TexturePtr;
-//typedef boost::shared_ptr <FEngine::TextureAtlas>             TextureAtlasPtr;
+typedef boost::shared_ptr   <FEngine::Texture>                  TexturePtr;
+typedef boost::weak_ptr     <FEngine::Texture>                  TextureWeakPtr;
+typedef boost::shared_ptr   <FEngine::TextureAtlas>             TextureAtlasPtr;
+typedef boost::weak_ptr     <FEngine::TextureAtlas>             TextureAtlasWeakPtr;
 
 //typedef boost::shared_ptr <FEngine::SpriteBatch>              SpriteBatchPtr;
 //typedef boost::shared_ptr <FEngine::Sprite>                   SpritePtr;

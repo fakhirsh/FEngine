@@ -148,11 +148,16 @@ namespace FEngine
         return shaderID;
     }
 
-    unsigned int Program::GetProgramID()
+    unsigned int Program::GetID()
     {
         return _programID;
     }
 
+    std::string Program::GetName()
+    {
+        return _name;
+    }
+    
     void Program::Bind()
     {
         glUseProgram(_programID);
@@ -170,10 +175,6 @@ namespace FEngine
         glDeleteProgram (_programID);
     }
 
-    std::string Program::GetProgramName()
-    {
-        return _name;
-    }
 
 };
 

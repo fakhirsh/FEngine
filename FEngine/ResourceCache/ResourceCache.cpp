@@ -8,7 +8,7 @@
 
 #include "ResourceCache.h"
 
-//#include "../Graphics2D/Texture.h"
+#include "../2D/TextureAtlas.h"
 #include "../Renderer/GLES20/Program.h"
 //#include "../Renderer/VBO.h"
 
@@ -49,9 +49,9 @@ namespace FEngine
 
     bool ResourceCache::AddProgram(ProgramPtr program)
     {
-        if(_programMap[program->GetProgramName()]) return false;
+        if(_programMap[program->GetName()]) return false;
         
-        _programMap[program->GetProgramName()] = program;
+        _programMap[program->GetName()] = program;
         
         return true;
     }
@@ -74,6 +74,39 @@ namespace FEngine
         }
     }
 
+    /////////////////////////////////////////////////////////////////////////////////
+    /////////////  TEXTURE ATLAS RELATED  ///////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+
+    
+    bool ResourceCache::AddTextureAtlas (TextureAtlasPtr textureAtlas)
+    {
+        if(_textureAtlasMap[textureAtlas->GetName()]) return false;
+        
+        _textureAtlasMap[textureAtlas->GetName()] = textureAtlas;
+        
+        return true;
+    }
+    
+    TextureAtlasPtr ResourceCache::GetTextureAtlas (std::string textureAtlasName)
+    {
+        return _textureAtlasMap[textureAtlasName];
+    }
+    
+    void ResourceCache::RemoveTextureAtlas (std::string textureAtlasName)
+    {
+        TextureAtlasPtr t = _textureAtlasMap[textureAtlasName];
+        if(t)
+        {
+            std::map<std::string, TextureAtlasPtr>::iterator it;
+            it = _textureAtlasMap.find(textureAtlasName);
+            _textureAtlasMap.erase(it);
+            
+            //
+            //t->UnLoad();
+            
+        }
+    }
 
 };
 

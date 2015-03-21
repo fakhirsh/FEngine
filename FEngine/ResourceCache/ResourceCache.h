@@ -33,14 +33,17 @@ namespace FEngine
         ProgramPtr      GetProgram          (std::string programName);
         void            RemoveProgram       (std::string programName);
         
+        /**
+         * @param	TextureAtlas			Actual pre-initialised Texture Atlas object
+         */
+        bool            AddTextureAtlas     (TextureAtlasPtr textureAtlas);
+        TextureAtlasPtr GetTextureAtlas     (std::string textureAtlasName);
+        void            RemoveTextureAtlas  (std::string textureAtlasName);
         
     private:
         ResourceCache();
         
         static ResourceCache *              _instance;
-        
-        // Dictionary of all textures
-        //std::map<std::string, Texture * >	_textureMap;
         
         // Dictionary of all Shaders
         std::map<std::string, ProgramPtr >	_programMap;
@@ -48,6 +51,9 @@ namespace FEngine
         // Dictionary of all VBOs
         //std::map<std::string, VBO * >		_vboMap;
         
+        // Dictionary of all Textures Atlases
+        std::map<std::string, TextureAtlasPtr >	_textureAtlasMap;
+
     };
 
 };

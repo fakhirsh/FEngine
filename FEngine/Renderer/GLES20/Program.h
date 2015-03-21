@@ -21,8 +21,8 @@ namespace FEngine
         
         virtual bool    Init            ()  =   0;
 
-        unsigned int    GetProgramID    ();
-        std::string     GetProgramName  ();
+        unsigned int    GetID           ();
+        std::string     GetName         ();
         
         void            Bind            ();
         void            UnBind          ();
