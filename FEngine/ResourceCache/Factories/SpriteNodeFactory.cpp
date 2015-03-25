@@ -41,83 +41,38 @@ namespace FEngine
         
     }
 
-    SceneNode2DPtr SpriteNodeFactory::CreateSpriteNode(const XMLElement * sceneNodeElement)
+    SpriteNodePtr SpriteNodeFactory::CreateSpriteNode(const XMLElement * viewElement)
     {
         
-        SceneNode2DPtr snPtr;
-        
-        // Get the xml Resource file for this view
-        string xmlFile = sceneNodeElement->Attribute("xmlFile");
-        
-        // Load view xml file
-        std::vector<char> viewMetaData;
-        
-        // Get full path to meta data
-        std::string fullMetaPath = gApp->GetAssetPath() + "Views/" + xmlFile;
-        // Read raw byte stream from the source file
-        IOManager * ioMgr = gApp->GetIOManager();
-        ioMgr->GetAssetStream(fullMetaPath, viewMetaData);
-        
-        std::string viewMetaString;
-        for (int i = 0; i < viewMetaData.size(); i++)
-        {
-            viewMetaString += viewMetaData[i];
-        }
-
-        XMLDocument coordXMLdoc;
-        XMLError xmlErr;
-        
-        xmlErr = coordXMLdoc.Parse(viewMetaString.c_str());
-        
-        if(xmlErr != XML_SUCCESS)
-        {
-            std::cout << "SpriteNodeFactory::CreateSpriteNode -> Failed to parse view XML" << xmlFile << std::endl;
-            return snPtr;
-        }
-        
-        XMLNode * rootnode = coordXMLdoc.FirstChild();
-        XMLNode * childNode = rootnode->FirstChild();
-        const XMLElement * e = childNode->ToElement();
-    
-        snPtr = CreateView(e);
-        
-        return snPtr;
-        
-    }
-    
-    SceneNode2DPtr SpriteNodeFactory::CreateView(const tinyxml2::XMLElement * viewElement)
-    {
         SpriteNodePtr snPtr = boost::make_shared<SpriteNode>();
-
-        string name = viewElement->Value();
+        
+        string name = viewElement->Attribute("spriteName");
+        snPtr->GetSceneNodeProperties()->name = name;
+        
+        ProgramFactory pf;
+        name = viewElement->Attribute("programName");
+        snPtr->GetSceneNodeProperties()->program = pf.CreateProgram(name);
+        
+        TextureAtlasFactory taf;
+        name = viewElement->Attribute("atlasName");
+        TextureAtlasPtr taPtr = taf.CreateTextureAtlas(name);
+        
+        string spriteName = snPtr->GetSceneNodeProperties()->name;
+        
+        snPtr->GetSceneNodeProperties()->width         =   taPtr->GetWidth(spriteName);
+        snPtr->GetSceneNodeProperties()->height        =   taPtr->GetHeight(spriteName);
+        snPtr->GetSceneNodeProperties()->u             =   taPtr->GetU(spriteName);
+        snPtr->GetSceneNodeProperties()->v             =   taPtr->GetV(spriteName);
+        snPtr->GetSceneNodeProperties()->uW            =   taPtr->GetUWidth(spriteName);
+        snPtr->GetSceneNodeProperties()->vH            =   taPtr->GetVHeight(spriteName);
+        
+        snPtr->GetSceneNodeProperties()->textureAtlas = taPtr;
+        
+        viewElement = viewElement->FirstChildElement();
         
         while(viewElement)
         {
-            if (string(viewElement->Value()) == "Sprite") {
-                
-                string name = viewElement->Attribute("spriteName");
-                snPtr->GetSceneNodeProperties()->name = name;
-                
-                ProgramFactory pf;
-                name = viewElement->Attribute("programName");
-                snPtr->GetSceneNodeProperties()->program = pf.CreateProgram(name);
-                
-                TextureAtlasFactory taf;
-                name = viewElement->Attribute("atlasName");
-                TextureAtlasPtr taPtr = taf.CreateTextureAtlas(name);
-                
-                string spriteName = snPtr->GetSceneNodeProperties()->name;
-                
-                snPtr->GetSceneNodeProperties()->width         =   taPtr->GetWidth(spriteName);
-                snPtr->GetSceneNodeProperties()->height        =   taPtr->GetHeight(spriteName);
-                snPtr->GetSceneNodeProperties()->u             =   taPtr->GetU(spriteName);
-                snPtr->GetSceneNodeProperties()->v             =   taPtr->GetV(spriteName);
-                snPtr->GetSceneNodeProperties()->uW            =   taPtr->GetUWidth(spriteName);
-                snPtr->GetSceneNodeProperties()->vH            =   taPtr->GetVHeight(spriteName);
-                
-                snPtr->GetSceneNodeProperties()->textureAtlas = taPtr;
-            }
-            else if(string(viewElement->Value()) == "Position")
+            if(string(viewElement->Value()) == "Position")
             {
                 string sX = viewElement->Attribute("x");
                 string sY = viewElement->Attribute("y");
@@ -153,16 +108,12 @@ namespace FEngine
                 snPtr->GetSceneNodeProperties()->tintColor.g = atof(g.c_str());
                 snPtr->GetSceneNodeProperties()->tintColor.b = atof(b.c_str());
             }
-            else if(string(viewElement->Value()) == "View")
-            {
-                SceneNode2DPtr childSnPtr = CreateView(viewElement->FirstChildElement());
-                snPtr->AddChild(childSnPtr);
-            }
             
             viewElement = viewElement->NextSiblingElement();
         }
-
+        
         return snPtr;
+        
     }
     
 }

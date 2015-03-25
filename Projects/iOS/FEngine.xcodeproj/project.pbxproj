@@ -39,6 +39,7 @@
 		0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24F41ABC994200C77AAF /* ResourceCache.cpp */; };
 		0C8C24FE1ABC9AC100C77AAF /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FA1ABC9AC100C77AAF /* Program.cpp */; };
 		0C8C24FF1ABC9AC100C77AAF /* TexturedVertexProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */; };
+		0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB103F1AC3216F000217A8 /* View2DFactory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,8 @@
 		0C8C24FB1ABC9AC100C77AAF /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexturedVertexProgram.cpp; sourceTree = "<group>"; };
 		0C8C24FD1ABC9AC100C77AAF /* TexturedVertexProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexturedVertexProgram.h; sourceTree = "<group>"; };
+		0CFB103F1AC3216F000217A8 /* View2DFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View2DFactory.cpp; sourceTree = "<group>"; };
+		0CFB10401AC3216F000217A8 /* View2DFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View2DFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +342,8 @@
 				0C3F26181ABD1ADC002DCB5A /* ProgramFactory.h */,
 				0C3F261A1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp */,
 				0C3F261B1ABD1AEF002DCB5A /* SpriteNodeFactory.h */,
+				0CFB103F1AC3216F000217A8 /* View2DFactory.cpp */,
+				0CFB10401AC3216F000217A8 /* View2DFactory.h */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -702,6 +707,7 @@
 				0C79516F1AB85EF80010DA81 /* StateManager.cpp in Sources */,
 				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
 				0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */,
+				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,
 				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,
 				0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */,
 				0C3F26161ABD1ACD002DCB5A /* TextureAtlasFactory.cpp in Sources */,

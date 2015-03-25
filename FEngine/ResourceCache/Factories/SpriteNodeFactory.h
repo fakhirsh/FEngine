@@ -21,10 +21,7 @@ namespace FEngine
         SpriteNodeFactory();
         ~SpriteNodeFactory();
         
-        SceneNode2DPtr CreateSpriteNode(const tinyxml2::XMLElement * sceneNodeElement);
-        
-    private:
-        SceneNode2DPtr CreateView(const tinyxml2::XMLElement * viewElement);
+        SpriteNodePtr CreateSpriteNode(const tinyxml2::XMLElement * sceneNodeElement);
         
     };
 }
