@@ -42,6 +42,8 @@ namespace FEngine
         
         void        Tick                        (float dt);
         
+        static unsigned int GetNextGUID         ();
+        
         void        SetDeviceContentScaleFactor (float deviceContentScaleFactor);
         float       GetDeviceContentScaleFactor ();
     
@@ -96,6 +98,8 @@ namespace FEngine
         void        Render                      (float dt = 0.0f);
 
         void        ComputeLetterBoxPolicy      ();
+        
+        static unsigned int _GUID;
         
         // Width and Height of the device framebuffer / actual screen
         float       _frameBufferWidth;

@@ -6,9 +6,21 @@
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __FEngine__ProgramFactory__
-#define __FEngine__ProgramFactory__
+#pragma once
 
-#include <stdio.h>
+#include "../../PointerDefs.h"
 
-#endif /* defined(__FEngine__ProgramFactory__) */
+#include <string>
+
+namespace FEngine
+{
+    class ProgramFactory
+    {
+    public:
+        ProgramFactory();
+        ~ProgramFactory();
+        
+        ProgramPtr CreateProgram(const std::string & name);
+        
+    };
+}

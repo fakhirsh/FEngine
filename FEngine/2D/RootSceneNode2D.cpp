@@ -18,12 +18,12 @@ namespace FEngine
     RootSceneNode2D::RootSceneNode2D ()
     {
         _sceneNodeProperties2D          =   boost::make_shared<SceneNodeProperties2D>();
-        _sceneNodeProperties2D->x       =   300;
+        _sceneNodeProperties2D->x       =   0;
         _sceneNodeProperties2D->y       =   0;
         _sceneNodeProperties2D->alpha   =   1.0f;
         _sceneNodeProperties2D->scaleX  =   1.0f;
         _sceneNodeProperties2D->scaleY  =   1.0f;
-        _sceneNodeProperties2D->angle   =   Math::DegToRad(45.0f);
+        _sceneNodeProperties2D->angle   =   Math::DegToRad(0.0f);
         
         glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f),
                                                       glm::vec3(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y, 0.0f));

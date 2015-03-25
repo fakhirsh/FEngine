@@ -6,9 +6,23 @@
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __FEngine__TextureAtlasFactory__
-#define __FEngine__TextureAtlasFactory__
+#pragma once
 
-#include <stdio.h>
+#include "../../PointerDefs.h"
 
-#endif /* defined(__FEngine__TextureAtlasFactory__) */
+#include <string>
+
+namespace FEngine
+{
+    class TextureAtlasFactory
+    {
+    public:
+        TextureAtlasFactory();
+        ~TextureAtlasFactory();
+        
+        TextureAtlasPtr CreateTextureAtlas(const std::string & atlasName);
+        
+    private:
+        
+    };
+}

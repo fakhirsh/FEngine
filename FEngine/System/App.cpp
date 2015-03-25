@@ -25,6 +25,7 @@
 
 namespace FEngine
 {
+    unsigned int App::_GUID = 0;
     
     App::App ()
     {
@@ -137,6 +138,12 @@ namespace FEngine
         Render (dt);
     }
 
+    unsigned int App::GetNextGUID()
+    {
+        _GUID++;
+        return _GUID;
+    }
+    
     void App::Update (float dt)
     {
         StateManager::Get()->Update(dt);

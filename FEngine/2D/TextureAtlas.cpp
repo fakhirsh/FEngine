@@ -100,6 +100,8 @@ namespace FEngine
             }
         }
         
+        _textureAtlasName = atlasName;
+        
         return true;
     }
 
