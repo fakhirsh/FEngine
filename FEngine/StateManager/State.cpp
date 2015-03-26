@@ -11,6 +11,7 @@
 #include "../Common.h"
 #include "../ProcessScheduler/ProcessScheduler.h"
 #include "../EventDispatcher/EventDispatcher.h"
+#include "../ActorManager/ActorManager.h"
 
 #include "../2D/RootSceneNode2D.h"
 
@@ -20,6 +21,7 @@ namespace FEngine
     State::State()
     {
         _isPaused           =   false;
+        _actorManager       =   boost::make_shared<FEngine::ActorManager>();
         _processScheduler   =   boost::make_shared<FEngine::ProcessScheduler>();
         _eventDispatcher    =   boost::make_shared<FEngine::EventDispatcher>();
         _rootSceneNode2D    =   boost::make_shared<FEngine::RootSceneNode2D>();

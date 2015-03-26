@@ -18,6 +18,9 @@
 
 namespace FEngine
 {
+    class   Actor;
+    class   ActorComponent;
+    class   ActorManager;
     class   State;
     class   StateManager;
     class   Process;
@@ -34,9 +37,18 @@ namespace FEngine
     class   SpriteNode;
     class   RootSceneNode2D;
     class   SceneNodeProperties2D;
+    class   TransformComponent;
+    class   PhysicsComponent;
+    class   ViewComponent;
     //class FontAtlas;
 };
 
+typedef boost::shared_ptr   <FEngine::Actor>                    ActorPtr;
+typedef boost::weak_ptr     <FEngine::Actor>                    ActorWeakPtr;
+typedef boost::shared_ptr   <FEngine::ActorComponent>           ActorComponentPtr;
+typedef boost::weak_ptr     <FEngine::ActorComponent>           ActorComponentWeakPtr;
+typedef boost::shared_ptr   <FEngine::ActorManager>             ActorManagerPtr;
+typedef boost::weak_ptr     <FEngine::ActorManager>             ActorManagerWeakPtr;
 
 typedef boost::shared_ptr   <FEngine::State>                    StatePtr;
 typedef boost::shared_ptr   <FEngine::StateManager>             StateManagerPtr;
@@ -70,6 +82,13 @@ typedef boost::weak_ptr     <FEngine::TextureAtlas>             TextureAtlasWeak
 typedef boost::shared_ptr   <FEngine::Event>                    EventPtr;
 typedef boost::weak_ptr     <FEngine::Event>                    EventWeakPtr;
 typedef boost::shared_ptr   <FEngine::EventDispatcher>          EventDispatcherPtr;
+
+typedef boost::shared_ptr   <FEngine::TransformComponent>       TransformComponentPtr;
+typedef boost::weak_ptr     <FEngine::TransformComponent>       TransformComponentWeakPtr;
+typedef boost::shared_ptr   <FEngine::PhysicsComponent>         PhysicsComponentPtr;
+typedef boost::weak_ptr     <FEngine::PhysicsComponent>         PhysicsComponentWeakPtr;
+typedef boost::shared_ptr   <FEngine::ViewComponent>            ViewComponentPtr;
+typedef boost::weak_ptr     <FEngine::ViewComponent>            ViewComponentWeakPtr;
 
 //typedef boost::shared_ptr <FEngine::FontAtlas>                FontAtlasPtr;
 

@@ -12,6 +12,8 @@
 
 #include "../../../3rdParty/tinyxml2-master/tinyxml2.h"
 
+#include <string>
+
 namespace FEngine
 {
     class View2DFactory
@@ -20,7 +22,7 @@ namespace FEngine
         View2DFactory();
         ~View2DFactory();
         
-        SceneNode2DPtr CreateView(const tinyxml2::XMLElement * sceneNodeElement);
+        SceneNode2DPtr CreateView(const std::string & xmlFile);
 
     private:
         SceneNode2DPtr CreateViewNode(const tinyxml2::XMLElement * sceneNodeElement);

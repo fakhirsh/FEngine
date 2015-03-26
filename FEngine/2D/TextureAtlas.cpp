@@ -184,6 +184,15 @@ namespace FEngine
         return _id;
     }
     
+    bool TextureAtlas::IsSpriteValid(std::string spriteName)
+    {
+        if ( _atlasData.find(spriteName.c_str()) == _atlasData.end() ) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
 };
 
 

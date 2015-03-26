@@ -12,6 +12,7 @@
 #include "State.h"
 #include "../ProcessScheduler/ProcessScheduler.h"
 #include "../EventDispatcher/EventDispatcher.h"
+#include "../ActorManager/ActorManager.h"
 #include "../2D/RootSceneNode2D.h"
 
 
@@ -98,6 +99,7 @@ namespace FEngine
         if (!_statesList.empty())
         {
             _statesList.back()->Update(dt);
+            _statesList.back()->_actorManager->Update(dt);
             _statesList.back()->_processScheduler->Update(dt);
             _statesList.back()->_eventDispatcher->Update(dt);
         }
@@ -122,7 +124,7 @@ namespace FEngine
         
         // Return a NULL_PTR if there are no states to process...
         // This will RARELY happen though !!!
-        return boost::shared_ptr<FEngine::ProcessScheduler>();
+        return ProcessSchedulerPtr();
     }
 
     EventDispatcherPtr StateManager::GetEventDispatcher()
@@ -134,20 +136,30 @@ namespace FEngine
         
         // Return a NULL_PTR if there are no states to process...
         // This will RARELY happen though !!!
-        return boost::shared_ptr<FEngine::EventDispatcher>();
+        return EventDispatcherPtr();
 
     }
     
-    SceneNode2DPtr StateManager::GetRootSceneNode2D()
+    SceneNode2DPtr StateManager::GetRootSceneNode2D ()
     {
         if (!_statesList.empty())
         {
             return _statesList.back()->_rootSceneNode2D;
         }
         
-        return boost::shared_ptr<FEngine::SceneNode2D>();
+        return SceneNode2DPtr();
     }
 
+    ActorManagerPtr StateManager::GetActorManager ()
+    {
+        if (!_statesList.empty())
+        {
+            return _statesList.back()->_actorManager;
+        }
+        
+        return ActorManagerPtr();
+    }
+    
     void StateManager::PushTransform2D (glm::mat4  transformMatrix)
     {
         _matrixStack2D.push(transformMatrix);

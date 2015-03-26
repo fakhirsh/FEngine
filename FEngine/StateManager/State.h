@@ -45,6 +45,7 @@ namespace FEngine
     protected:
         
         bool                    _isPaused;
+        ActorManagerPtr         _actorManager;
         ProcessSchedulerPtr     _processScheduler;
         EventDispatcherPtr      _eventDispatcher;
         SceneNode2DPtr          _rootSceneNode2D;

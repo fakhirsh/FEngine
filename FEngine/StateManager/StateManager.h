@@ -43,9 +43,9 @@ namespace FEngine
         void                Update              (float dt);
         void                Render              (float dt = 0.0f);
         
+        ActorManagerPtr     GetActorManager     ();
         ProcessSchedulerPtr GetProcessScheduler ();
         EventDispatcherPtr  GetEventDispatcher  ();
-        
         SceneNode2DPtr      GetRootSceneNode2D  ();
         
         // 3D Scene graph ... To be implemented later

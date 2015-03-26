@@ -59,6 +59,11 @@ namespace FEngine
         
         string spriteName = snPtr->GetSceneNodeProperties()->name;
         
+        if(!taPtr->IsSpriteValid(spriteName)){
+            cout << "SpriteNodeFactory::CreateSpriteNode: Invalid sprite name -> " << spriteName << endl;
+            return SpriteNodePtr();
+        }
+        
         snPtr->GetSceneNodeProperties()->width         =   taPtr->GetWidth(spriteName);
         snPtr->GetSceneNodeProperties()->height        =   taPtr->GetHeight(spriteName);
         snPtr->GetSceneNodeProperties()->u             =   taPtr->GetU(spriteName);

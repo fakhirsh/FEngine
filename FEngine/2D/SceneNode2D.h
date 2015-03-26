@@ -28,9 +28,6 @@ namespace FEngine
         void                SetParent       (SceneNode2DWeakPtr parent);
         SceneNode2DWeakPtr  GetParent       ();
         
-        unsigned long       GetActorID      ();
-        void                SetActorID      (unsigned int actorID);
-        
         //virtual void        Update          (float dt);
         
         virtual bool        PreRender       (float dt = 0.0f);
@@ -41,9 +38,8 @@ namespace FEngine
         SceneNodeProperties2DPtr GetSceneNodeProperties ();
         void                SetSceneNodeProperties(SceneNodeProperties2DPtr snp);
         
-        //virtual void        Destroy         ();
-        
     protected:
+        
         std::list<SceneNode2DPtr>           _children;
         
         SceneNode2DWeakPtr                  _parent;

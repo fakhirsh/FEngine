@@ -42,18 +42,18 @@ namespace FEngine
     
     }
         
-    SceneNode2DPtr View2DFactory::CreateView(const tinyxml2::XMLElement * viewElement)
+    SceneNode2DPtr View2DFactory::CreateView(const string & xmlFile)
     {
         SceneNode2DPtr snPtr;
         
         // Get the xml Resource file for this view
-        string xmlFile = viewElement->Attribute("xmlFile");
+        //string xmlFile = viewElement->Attribute("xmlFile");
         
         // Load view xml file
         std::vector<char> viewMetaData;
         
         // Get full path to meta data
-        std::string fullMetaPath = gApp->GetAssetPath() + "Views/" + xmlFile;
+        std::string fullMetaPath = gApp->GetAssetPath() + xmlFile;
         // Read raw byte stream from the source file
         IOManager * ioMgr = gApp->GetIOManager();
         ioMgr->GetAssetStream(fullMetaPath, viewMetaData);
@@ -80,6 +80,7 @@ namespace FEngine
         
         snPtr = CreateViewNode(e);
         
+        
         return snPtr;
 
     }
@@ -96,6 +97,8 @@ namespace FEngine
                 
                 SpriteNodeFactory sf;
                 snPtr = sf.CreateSpriteNode(viewElement);
+                
+                cout << snPtr->GetSceneNodeProperties()->width << endl;
             }
             else if(string(viewElement->Value()) == "View")
             {

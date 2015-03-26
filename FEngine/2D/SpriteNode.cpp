@@ -20,6 +20,8 @@
 #include "../System/App.h"
 #include "../StateManager/StateManager.h"
 
+#include "../Utility/Math.h"
+
 #include <iostream>
 
 
@@ -68,7 +70,7 @@ namespace FEngine
         glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(newP.x, newP.y, 0.0f));
         
         glm::mat4 rotate    = glm::rotate   <GLfloat>(glm::mat4(1.0f),
-                                                      _sceneNodeProperties2D->angle,
+                                                      Math::DegToRad(_sceneNodeProperties2D->angle),
                                                       glm::vec3(0.0f, 0.0f, 1.0f));
         
         glm::mat4 scale     = glm::scale    <GLfloat>(glm::mat4(1.0f), glm::vec3(_sceneNodeProperties2D->scaleX * CSF,
@@ -110,6 +112,8 @@ namespace FEngine
         
         glBindTexture(GL_TEXTURE_2D, textureID);
         
+        // Maybe use template functions to make it a bit generic? Saw that trick on GCC page 166.
+        // Or maybe read in Game Engine Architecture on how to make a generic Render interface and mateirals etc.
         boost::shared_ptr <FEngine::TexturedVertexProgram> program = boost::static_pointer_cast<FEngine::TexturedVertexProgram>(_sceneNodeProperties2D->program);
         
         int posLoc      =   program->GetPositionAttribLocation();

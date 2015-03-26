@@ -60,6 +60,8 @@ namespace FEngine
         std::string     GetName         ();
         unsigned int    GetID           ();
         
+        bool            IsSpriteValid   (std::string spriteName);
+        
     private:
         
         unsigned int    _id;
