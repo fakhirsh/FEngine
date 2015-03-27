@@ -21,15 +21,16 @@ namespace FEngine
         Actor();
         ~Actor();
         
-        unsigned long       GetID();
+        unsigned long       GetID                       ();
         
-        void                Update(float dt);
+        void                Update                      (float dt);
         
-        ActorComponentPtr   GetViewComponent();
-        ActorComponentPtr   GetPhysicsComponent();
-        ActorComponentPtr   GetTransformComponent();
+        ActorComponentPtr   GetViewComponent            ();
+        ActorComponentPtr   GetPhysicsComponent         ();
+        ActorComponentPtr   GetTransformComponent       ();
+        ActorComponentPtr   GetInputComponent           ();
         
-        SceneNode2DPtr      GetViewComponentSceneNode2D();
+        SceneNode2DPtr      GetViewComponentSceneNode2D ();
         
     private:
         
@@ -38,6 +39,7 @@ namespace FEngine
         ActorComponentPtr   _physicsComponent;
         ActorComponentPtr   _transformComponent;
         ActorComponentPtr   _viewComponent;
+        ActorComponentPtr   _inputComponent;
         
     };
 }

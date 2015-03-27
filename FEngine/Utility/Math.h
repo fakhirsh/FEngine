@@ -21,6 +21,7 @@ namespace FEngine
         {
         public:
             Point2D(){x = y = 0.0f;}
+            Point2D(float pX, float pY){x = pX; y = pY;}
             ~Point2D(){}
             
             float x, y;

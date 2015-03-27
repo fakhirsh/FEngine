@@ -49,6 +49,11 @@ namespace FEngine
     {
         return _transformComponent;
     }
+
+    ActorComponentPtr Actor::GetInputComponent ()
+    {
+        return _inputComponent;
+    }
     
     SceneNode2DPtr Actor::GetViewComponentSceneNode2D()
     {
@@ -56,5 +61,6 @@ namespace FEngine
         
         return vPtr->GetSceneNode2D();
     }
+    
     
 }

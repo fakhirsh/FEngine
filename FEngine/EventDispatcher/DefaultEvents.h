@@ -12,6 +12,81 @@
 
 namespace FEngine
 {
+    
+    //----------------------------------------------------------------------------------------------------
+    // EventTouchDown - sent when the player first touches on the screen
+    ///----------------------------------------------------------------------------------------------------
+    class EventTouchDown : public Event
+    {
+    public:
+        static const unsigned long eventID;
+        virtual const unsigned long GetID() const { return eventID; }
+        
+        EventTouchDown(){}
+        ~EventTouchDown(){}
+        
+        std::string GetName()
+        {
+            return "Touch Down";
+        }
+        
+        //private:
+        int x, y;
+    };
+    
+    
+    
+    //----------------------------------------------------------------------------------------------------
+    // EventTouchMoved - sent when the player drags his finger on the screen
+    //----------------------------------------------------------------------------------------------------
+    class EventTouchMoved : public Event
+    {
+    public:
+        static const unsigned long eventID;
+        virtual const unsigned long GetID() const { return eventID; }
+        
+        EventTouchMoved(){}
+        ~EventTouchMoved(){}
+        
+        std::string GetName()
+        {
+            return "Touch Moved";
+        }
+        
+        //private:
+        int x, y;
+    };
+    
+    //----------------------------------------------------------------------------------------------------
+    // EventTouchUp - sent when the player lifts his finger from the screen
+    //----------------------------------------------------------------------------------------------------
+    class EventTouchUp : public Event
+    {
+    public:
+        static const unsigned long eventID;
+        virtual const unsigned long GetID() const { return eventID; }
+        
+        EventTouchUp(){}
+        ~EventTouchUp(){}
+        
+        std::string GetName()
+        {
+            return "Touch Up";
+        }
+        
+        //private:
+        int x, y;
+    };
+
+    
+    //----------------------------------------------------------------------------------------------------
+    // 
+    //----------------------------------------------------------------------------------------------------
+    
+    
+    
+    
+    
     class EventTest1 : public Event
     {
     public:
@@ -20,8 +95,8 @@ namespace FEngine
         }
         virtual ~EventTest1(){}
     
-        virtual const unsigned int  GetID() { return eventID; };
-        static const unsigned int   eventID;
+        virtual const unsigned long GetID() const { return eventID; };
+        static const unsigned long  eventID;
         
         int someData;
         int someMoreData;
@@ -29,4 +104,10 @@ namespace FEngine
     private:
         
     };
+    
+    
+    
+    
+    
+    
 }

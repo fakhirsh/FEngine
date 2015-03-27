@@ -40,6 +40,7 @@ namespace FEngine
     class   TransformComponent;
     class   PhysicsComponent;
     class   ViewComponent;
+    class   InputComponent;
     //class FontAtlas;
 };
 
@@ -89,6 +90,8 @@ typedef boost::shared_ptr   <FEngine::PhysicsComponent>         PhysicsComponent
 typedef boost::weak_ptr     <FEngine::PhysicsComponent>         PhysicsComponentWeakPtr;
 typedef boost::shared_ptr   <FEngine::ViewComponent>            ViewComponentPtr;
 typedef boost::weak_ptr     <FEngine::ViewComponent>            ViewComponentWeakPtr;
+typedef boost::shared_ptr   <FEngine::InputComponent>           InputComponentPtr;
+typedef boost::weak_ptr     <FEngine::InputComponent>           InputComponentWeakPtr;
 
 //typedef boost::shared_ptr <FEngine::FontAtlas>                FontAtlasPtr;
 

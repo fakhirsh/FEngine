@@ -31,7 +31,7 @@ namespace FEngine
         
         std::string                 GetName();
         
-        virtual const unsigned int  GetID()     =   0;
+        virtual const unsigned long GetID() const   =   0;
         
     protected:
         std::string                 _name;

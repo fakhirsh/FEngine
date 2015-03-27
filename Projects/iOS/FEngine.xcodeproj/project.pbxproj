@@ -39,6 +39,7 @@
 		0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24F41ABC994200C77AAF /* ResourceCache.cpp */; };
 		0C8C24FE1ABC9AC100C77AAF /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FA1ABC9AC100C77AAF /* Program.cpp */; };
 		0C8C24FF1ABC9AC100C77AAF /* TexturedVertexProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */; };
+		0CA375881AC5230C001C8EDE /* InputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA375861AC5230C001C8EDE /* InputComponent.cpp */; };
 		0CA778F21AC3E9EE00CB5FA5 /* ActorFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA778F01AC3E9EE00CB5FA5 /* ActorFactory.cpp */; };
 		0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA778F71AC41FEA00CB5FA5 /* ActorManager.cpp */; };
 		0CA778FC1AC41FF900CB5FA5 /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA778FA1AC41FF900CB5FA5 /* Actor.cpp */; };
@@ -219,6 +220,8 @@
 		0C8C24FB1ABC9AC100C77AAF /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexturedVertexProgram.cpp; sourceTree = "<group>"; };
 		0C8C24FD1ABC9AC100C77AAF /* TexturedVertexProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexturedVertexProgram.h; sourceTree = "<group>"; };
+		0CA375861AC5230C001C8EDE /* InputComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InputComponent.cpp; path = Components/InputComponent.cpp; sourceTree = "<group>"; };
+		0CA375871AC5230C001C8EDE /* InputComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputComponent.h; path = Components/InputComponent.h; sourceTree = "<group>"; };
 		0CA778F01AC3E9EE00CB5FA5 /* ActorFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorFactory.cpp; sourceTree = "<group>"; };
 		0CA778F11AC3E9EE00CB5FA5 /* ActorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorFactory.h; sourceTree = "<group>"; };
 		0CA778F71AC41FEA00CB5FA5 /* ActorManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorManager.cpp; sourceTree = "<group>"; };
@@ -542,6 +545,8 @@
 				0CA779051AC467A000CB5FA5 /* TransformComponent.h */,
 				0CA779071AC46C0700CB5FA5 /* ViewComponent.cpp */,
 				0CA779081AC46C0700CB5FA5 /* ViewComponent.h */,
+				0CA375861AC5230C001C8EDE /* InputComponent.cpp */,
+				0CA375871AC5230C001C8EDE /* InputComponent.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -733,6 +738,7 @@
 				0CA778FC1AC41FF900CB5FA5 /* Actor.cpp in Sources */,
 				0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */,
 				0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */,
+				0CA375881AC5230C001C8EDE /* InputComponent.cpp in Sources */,
 				0C7951931AB8A4F10010DA81 /* EventDispatcher.cpp in Sources */,
 				0C8C24DB1ABBF60C00C77AAF /* RootSceneNode2D.cpp in Sources */,
 				0C8C24FF1ABC9AC100C77AAF /* TexturedVertexProgram.cpp in Sources */,

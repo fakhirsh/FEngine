@@ -13,8 +13,8 @@
 
 #include "../StateManager/StateManager.h"
 //#include "../SoundManager/SoundManager.h"
-//#include "../EventManager/DefaultEvents.h"
-//#include "../EventManager/EventManager.h"
+#include "../EventDispatcher/DefaultEvents.h"
+#include "../EventDispatcher/EventDispatcher.h"
 //#include "../Renderer/IRenderer.h"
 
 
@@ -163,47 +163,49 @@ namespace FEngine
 
     void App::TouchDown (int x, int y)
     {
-        /*
-        boost::shared_ptr<Fakhir::EventTouchDown> touchDownEvent = boost::make_shared<Fakhir::EventTouchDown>();
+        
+        boost::shared_ptr<FEngine::EventTouchDown> touchDownEvent = boost::make_shared<FEngine::EventTouchDown>();
         // Adjust coordinates according to new viewport origin
-        glm::vec2 viewportSpace(x - _origin.x, y - _origin.y);
-        glm::vec2 designSpace = ViewportSpaceToDesignSpace(viewportSpace);
+    
+        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
+        
+        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
         touchDownEvent->x = designSpace.x;
         touchDownEvent->y = designSpace.y;
         
-        EventManagerPtr eventMgr = StateManager::Get()->GetEventManager();
-        eventMgr->TriggetEvent(touchDownEvent);
-        */
+        EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
+        eventMgr->TriggerEvent(touchDownEvent);
+        
     }
 
     void App::TouchUp (int x, int y)
     {
-        /*
-        boost::shared_ptr<Fakhir::EventTouchUp> touchUpEvent = boost::make_shared<Fakhir::EventTouchUp>();
+        
+        boost::shared_ptr<FEngine::EventTouchUp> touchUpEvent = boost::make_shared<FEngine::EventTouchUp>();
         // Adjust coordinates according to new viewport origin
-        glm::vec2 viewportSpace(x - _origin.x, y - _origin.y);
-        glm::vec2 designSpace = ViewportSpaceToDesignSpace(viewportSpace);
+        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
+        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
         touchUpEvent->x = designSpace.x;
         touchUpEvent->y = designSpace.y;
         
-        EventManagerPtr eventMgr = StateManager::Get()->GetEventManager();
-        eventMgr->TriggetEvent(touchUpEvent);
-        */
+        EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
+        eventMgr->TriggerEvent(touchUpEvent);
+        
     }
 
     void App::TouchMoved (int x, int y)
     {
-        /*
-        boost::shared_ptr<Fakhir::EventTouchMoved> touchMovedEvent = boost::make_shared<Fakhir::EventTouchMoved>();
+        
+        boost::shared_ptr<FEngine::EventTouchMoved> touchMovedEvent = boost::make_shared<FEngine::EventTouchMoved>();
         // Adjust coordinates according to new viewport origin
-        glm::vec2 viewportSpace(x - _origin.x, y - _origin.y);
-        glm::vec2 designSpace = ViewportSpaceToDesignSpace(viewportSpace);
+        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
+        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
         touchMovedEvent->x = designSpace.x;
         touchMovedEvent->y = designSpace.y;
         
-        EventManagerPtr eventMgr = StateManager::Get()->GetEventManager();
-        eventMgr->TriggetEvent(touchMovedEvent);
-        */
+        EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
+        eventMgr->TriggerEvent(touchMovedEvent);
+        
     }
 
     void App::TouchCancelled (int x, int y)
