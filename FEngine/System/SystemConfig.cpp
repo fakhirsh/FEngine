@@ -27,6 +27,8 @@ namespace FEngine
         assetDesignWidth    =   -1;
         assetDesignHeight   =   -1;
         
+        debugMode           =   false;
+        
         deviceContentScaleFactor  =   -1.0f;
         
         allowFullScreen     =   false;
@@ -45,7 +47,7 @@ namespace FEngine
         tinyxml2::XMLDocument configXML;
         tinyxml2::XMLError xmlErr;
         
-        xmlErr = configXML.Parse((const char*)&buffer[0]);
+        xmlErr = configXML.Parse((const char*)&buffer[0], buffer.size());
         if(xmlErr != tinyxml2::XML_SUCCESS)
         {
             return false;
@@ -95,6 +97,18 @@ namespace FEngine
         sscanf(child->Attribute("sfxVolume"), "%f", &sfxVolume);
         sscanf(child->Attribute("musicVolume"), "%f", &musicVolume);
         
+        
+        child = child->NextSiblingElement( "Physics" );
+        std::string debugModeStr = child->Attribute("debugMode");
+        if(debugModeStr == "false")
+        {
+            debugMode = false;
+        }
+        else
+        {
+            debugMode = true;
+        }
+
         
         return true;
     }

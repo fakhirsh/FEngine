@@ -25,8 +25,11 @@ namespace FEngine
         bool                AddChild        (SceneNode2DPtr child);
         bool                RemoveChild     (SceneNode2DPtr child);
         
-        void                SetParent       (SceneNode2DWeakPtr parent);
-        SceneNode2DWeakPtr  GetParent       ();
+        // Finds the node amongst children
+        //SceneNode2DPtr      FindNode        (unsigned int nodeID);
+        
+        void                SetParent       (SceneNode2DPtr parent);
+        SceneNode2DPtr      GetParent       ();
         
         //virtual void        Update          (float dt);
         
@@ -38,14 +41,22 @@ namespace FEngine
         SceneNodeProperties2DPtr GetSceneNodeProperties ();
         void                SetSceneNodeProperties(SceneNodeProperties2DPtr snp);
         
+        unsigned int GetID();
+        void SetID(unsigned int nodeID);
+        
+        std::list<SceneNode2DPtr> GetChildrenList(){return _children;}
+        
     protected:
+        
+        //SceneNode2DPtr FindChild(SceneNode2DPtr node, unsigned int nodeID);
         
         std::list<SceneNode2DPtr>           _children;
         
-        SceneNode2DWeakPtr                  _parent;
+        SceneNode2DPtr                      _parent;
         
         SceneNodeProperties2DPtr            _sceneNodeProperties2D;
 
+        unsigned int _nodeID;
         
     };
     

@@ -14,6 +14,12 @@
 		0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A2C1AB4125900F18283 /* libPennerEasing.a */; };
 		0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A491AB4140900F18283 /* OpenGLES.framework */; };
 		0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C275A4B1AB4141000F18283 /* OpenAL.framework */; };
+		0C2F3E831AC6DA8600D66B2C /* SimpleVertex2DProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F3E811AC6DA8600D66B2C /* SimpleVertex2DProgram.cpp */; };
+		0C2F3E861AC6F46300D66B2C /* DebugBoxNode2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F3E841AC6F46300D66B2C /* DebugBoxNode2D.cpp */; };
+		0C2F3E891AC6F47400D66B2C /* DebugCircleNode2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F3E871AC6F47400D66B2C /* DebugCircleNode2D.cpp */; };
+		0C2F3F851AC70B9B00D66B2C /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2F3EEE1AC70B4E00D66B2C /* libBox2D.a */; };
+		0C2F3F881AC71FDB00D66B2C /* PhysicsFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F3F861AC71FDB00D66B2C /* PhysicsFactory.cpp */; };
+		0C2F3F981AC72B3200D66B2C /* PhysicsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F3F961AC72B3200D66B2C /* PhysicsManager.cpp */; };
 		0C3F260D1ABD078F002DCB5A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F26091ABD078F002DCB5A /* Texture.cpp */; };
 		0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F260B1ABD078F002DCB5A /* TextureAtlas.cpp */; };
 		0C3F26161ABD1ACD002DCB5A /* TextureAtlasFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F26141ABD1ACD002DCB5A /* TextureAtlasFactory.cpp */; };
@@ -142,6 +148,27 @@
 			remoteGlobalIDString = 0C275A0B1AB4125700F18283;
 			remoteInfo = PennerEasing;
 		};
+		0C2F3EED1AC70B4E00D66B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2F3EE81AC70B4D00D66B2C /* Box2D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C2F3ECE1AC70B4C00D66B2C;
+			remoteInfo = Box2D;
+		};
+		0C2F3EEF1AC70B4E00D66B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2F3EE81AC70B4D00D66B2C /* Box2D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C2F3ED91AC70B4D00D66B2C;
+			remoteInfo = Box2DTests;
+		};
+		0C2F3F831AC70B9500D66B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C2F3EE81AC70B4D00D66B2C /* Box2D.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C2F3ECD1AC70B4C00D66B2C;
+			remoteInfo = Box2D;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -166,6 +193,17 @@
 		0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PennerEasing.xcodeproj; path = 3rdParty/PennerEasing/PennerEasing.xcodeproj; sourceTree = "<group>"; };
 		0C275A491AB4140900F18283 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0C275A4B1AB4141000F18283 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		0C2F3E811AC6DA8600D66B2C /* SimpleVertex2DProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleVertex2DProgram.cpp; sourceTree = "<group>"; };
+		0C2F3E821AC6DA8600D66B2C /* SimpleVertex2DProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleVertex2DProgram.h; sourceTree = "<group>"; };
+		0C2F3E841AC6F46300D66B2C /* DebugBoxNode2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugBoxNode2D.cpp; sourceTree = "<group>"; };
+		0C2F3E851AC6F46300D66B2C /* DebugBoxNode2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugBoxNode2D.h; sourceTree = "<group>"; };
+		0C2F3E871AC6F47400D66B2C /* DebugCircleNode2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugCircleNode2D.cpp; sourceTree = "<group>"; };
+		0C2F3E881AC6F47400D66B2C /* DebugCircleNode2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugCircleNode2D.h; sourceTree = "<group>"; };
+		0C2F3EE81AC70B4D00D66B2C /* Box2D.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Box2D.xcodeproj; path = 3rdParty/Box2D/Box2D.xcodeproj; sourceTree = "<group>"; };
+		0C2F3F861AC71FDB00D66B2C /* PhysicsFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsFactory.cpp; sourceTree = "<group>"; };
+		0C2F3F871AC71FDB00D66B2C /* PhysicsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsFactory.h; sourceTree = "<group>"; };
+		0C2F3F961AC72B3200D66B2C /* PhysicsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsManager.cpp; path = PhysicsManager/PhysicsManager.cpp; sourceTree = "<group>"; };
+		0C2F3F971AC72B3200D66B2C /* PhysicsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsManager.h; path = PhysicsManager/PhysicsManager.h; sourceTree = "<group>"; };
 		0C3F26091ABD078F002DCB5A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		0C3F260A1ABD078F002DCB5A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		0C3F260B1ABD078F002DCB5A /* TextureAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlas.cpp; sourceTree = "<group>"; };
@@ -245,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2F3F851AC70B9B00D66B2C /* libBox2D.a in Frameworks */,
 				0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */,
 				0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */,
 				0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */,
@@ -304,6 +343,7 @@
 		0C2758641AB40FD400F18283 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				0C2F3EE81AC70B4D00D66B2C /* Box2D.xcodeproj */,
 				0C2758881AB410B500F18283 /* png.xcodeproj */,
 				0C2758E01AB410D300F18283 /* vorbis.xcodeproj */,
 				0C2759381AB410EF00F18283 /* tinyxml2.xcodeproj */,
@@ -357,6 +397,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0C2F3E951AC7094200D66B2C /* PhysicsManager */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F3F961AC72B3200D66B2C /* PhysicsManager.cpp */,
+				0C2F3F971AC72B3200D66B2C /* PhysicsManager.h */,
+			);
+			name = PhysicsManager;
+			sourceTree = "<group>";
+		};
+		0C2F3EE91AC70B4D00D66B2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F3EEE1AC70B4E00D66B2C /* libBox2D.a */,
+				0C2F3EF01AC70B4E00D66B2C /* Box2DTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		0C3F26131ABD1AB7002DCB5A /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +428,8 @@
 				0CFB10401AC3216F000217A8 /* View2DFactory.h */,
 				0CA778F01AC3E9EE00CB5FA5 /* ActorFactory.cpp */,
 				0CA778F11AC3E9EE00CB5FA5 /* ActorFactory.h */,
+				0C2F3F861AC71FDB00D66B2C /* PhysicsFactory.cpp */,
+				0C2F3F871AC71FDB00D66B2C /* PhysicsFactory.h */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -383,6 +443,7 @@
 				0C79513E1AB85EF80010DA81 /* 3D */,
 				0CE399E91AB9EAFE00350E8C /* ActorManager */,
 				0C7951411AB85EF80010DA81 /* EventDispatcher */,
+				0C2F3E951AC7094200D66B2C /* PhysicsManager */,
 				0C7951431AB85EF80010DA81 /* ProcessScheduler */,
 				0C79514A1AB85EF80010DA81 /* Renderer */,
 				0C79514B1AB85EF80010DA81 /* ResourceCache */,
@@ -410,6 +471,10 @@
 				0C3F260A1ABD078F002DCB5A /* Texture.h */,
 				0C3F260B1ABD078F002DCB5A /* TextureAtlas.cpp */,
 				0C3F260C1ABD078F002DCB5A /* TextureAtlas.h */,
+				0C2F3E841AC6F46300D66B2C /* DebugBoxNode2D.cpp */,
+				0C2F3E851AC6F46300D66B2C /* DebugBoxNode2D.h */,
+				0C2F3E871AC6F47400D66B2C /* DebugCircleNode2D.cpp */,
+				0C2F3E881AC6F47400D66B2C /* DebugCircleNode2D.h */,
 			);
 			path = 2D;
 			sourceTree = "<group>";
@@ -532,6 +597,8 @@
 				0C8C24FB1ABC9AC100C77AAF /* Program.h */,
 				0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */,
 				0C8C24FD1ABC9AC100C77AAF /* TexturedVertexProgram.h */,
+				0C2F3E811AC6DA8600D66B2C /* SimpleVertex2DProgram.cpp */,
+				0C2F3E821AC6DA8600D66B2C /* SimpleVertex2DProgram.h */,
 			);
 			path = GLES20;
 			sourceTree = "<group>";
@@ -579,6 +646,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0C2F3F841AC70B9500D66B2C /* PBXTargetDependency */,
 				0C275A461AB4128500F18283 /* PBXTargetDependency */,
 				0C2759FF1AB4123400F18283 /* PBXTargetDependency */,
 				0C2759FD1AB4123100F18283 /* PBXTargetDependency */,
@@ -635,6 +703,10 @@
 			productRefGroup = 0C2758471AB40DEE00F18283 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 0C2F3EE91AC70B4D00D66B2C /* Products */;
+					ProjectRef = 0C2F3EE81AC70B4D00D66B2C /* Box2D.xcodeproj */;
+				},
 				{
 					ProductGroup = 0C275A271AB4125800F18283 /* Products */;
 					ProjectRef = 0C275A261AB4125800F18283 /* PennerEasing.xcodeproj */;
@@ -717,6 +789,20 @@
 			remoteRef = 0C275A2D1AB4125900F18283 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		0C2F3EEE1AC70B4E00D66B2C /* libBox2D.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBox2D.a;
+			remoteRef = 0C2F3EED1AC70B4E00D66B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C2F3EF01AC70B4E00D66B2C /* Box2DTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Box2DTests.xctest;
+			remoteRef = 0C2F3EEF1AC70B4E00D66B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -737,12 +823,14 @@
 				0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */,
 				0CA778FC1AC41FF900CB5FA5 /* Actor.cpp in Sources */,
 				0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */,
+				0C2F3E891AC6F47400D66B2C /* DebugCircleNode2D.cpp in Sources */,
 				0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */,
 				0CA375881AC5230C001C8EDE /* InputComponent.cpp in Sources */,
 				0C7951931AB8A4F10010DA81 /* EventDispatcher.cpp in Sources */,
 				0C8C24DB1ABBF60C00C77AAF /* RootSceneNode2D.cpp in Sources */,
 				0C8C24FF1ABC9AC100C77AAF /* TexturedVertexProgram.cpp in Sources */,
 				0C3F260D1ABD078F002DCB5A /* Texture.cpp in Sources */,
+				0C2F3F881AC71FDB00D66B2C /* PhysicsFactory.cpp in Sources */,
 				0CA779031AC4382100CB5FA5 /* PhysicsComponent.cpp in Sources */,
 				0C7951671AB85EF80010DA81 /* Process.cpp in Sources */,
 				0C7951901AB8A4DE0010DA81 /* Event.cpp in Sources */,
@@ -754,7 +842,9 @@
 				0C8C24E21ABBF61A00C77AAF /* SceneNode2D.cpp in Sources */,
 				0C7951711AB85EF80010DA81 /* SystemConfig.cpp in Sources */,
 				0C7951961AB8A5020010DA81 /* DefaultEvents.cpp in Sources */,
+				0C2F3E861AC6F46300D66B2C /* DebugBoxNode2D.cpp in Sources */,
 				0C3F26191ABD1ADC002DCB5A /* ProgramFactory.cpp in Sources */,
+				0C2F3E831AC6DA8600D66B2C /* SimpleVertex2DProgram.cpp in Sources */,
 				0C8C24FE1ABC9AC100C77AAF /* Program.cpp in Sources */,
 				0C79516F1AB85EF80010DA81 /* StateManager.cpp in Sources */,
 				0CA779061AC467A000CB5FA5 /* TransformComponent.cpp in Sources */,
@@ -763,6 +853,7 @@
 				0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */,
 				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,
 				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,
+				0C2F3F981AC72B3200D66B2C /* PhysicsManager.cpp in Sources */,
 				0CA779091AC46C0700CB5FA5 /* ViewComponent.cpp in Sources */,
 				0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */,
 				0CA778FF1AC4200A00CB5FA5 /* ActorComponent.cpp in Sources */,
@@ -805,6 +896,11 @@
 			isa = PBXTargetDependency;
 			name = PennerEasing;
 			targetProxy = 0C275A451AB4128500F18283 /* PBXContainerItemProxy */;
+		};
+		0C2F3F841AC70B9500D66B2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Box2D;
+			targetProxy = 0C2F3F831AC70B9500D66B2C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -895,6 +991,7 @@
 					../../3rdParty/boost_1_56_0,
 					"../../3rdParty/libpng-1.6.15",
 					../../../,
+					../../3rdParty/Box2D_v2.3.0/Box2D,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -914,6 +1011,7 @@
 					../../3rdParty/boost_1_56_0,
 					"../../3rdParty/libpng-1.6.15",
 					../../../,
+					../../3rdParty/Box2D_v2.3.0/Box2D,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

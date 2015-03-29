@@ -12,9 +12,10 @@
 namespace FEngine
 {
     
-    const unsigned long EventTouchDown::eventID (0xb3cdac7a);
-    const unsigned long EventTouchMoved::eventID(0xb3cdaedc);
-    const unsigned long EventTouchUp::eventID   (0xb3cdb030);
+    const unsigned long EventTouchDown::eventID     (0xb3cdac7a);
+    const unsigned long EventTouchMoved::eventID    (0xb3cdaedc);
+    const unsigned long EventTouchUp::eventID       (0xb3cdb030);
+    const unsigned long EventSetDebugNode::eventID  (0xb3cdba6c);
     
     const unsigned long EventTest1::eventID = 0x00F;
     

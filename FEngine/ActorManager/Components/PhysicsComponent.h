@@ -8,17 +8,28 @@
 
 #pragma once
 
+#include <Box2D/Box2D.h>
+
 #include "../ActorComponent.h"
+
 
 namespace FEngine
 {
+
     class PhysicsComponent : public ActorComponent
     {
+        friend class PhysicsFactory;
+        
     public:
         PhysicsComponent();
         ~PhysicsComponent();
         
-        virtual void Update(float dt);
+        virtual void    Update          (float dt);
         
+        b2Body * const GetBody();
+        
+    private:
+        
+        b2Body * _body;
     };
 }

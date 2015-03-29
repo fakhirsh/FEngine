@@ -25,6 +25,7 @@ namespace FEngine
         _processScheduler   =   boost::make_shared<FEngine::ProcessScheduler>();
         _eventDispatcher    =   boost::make_shared<FEngine::EventDispatcher>();
         _rootSceneNode2D    =   boost::make_shared<FEngine::RootSceneNode2D>();
+        _debugNode2D        =   boost::make_shared<FEngine::RootSceneNode2D>();
     }
 
     State::~State()

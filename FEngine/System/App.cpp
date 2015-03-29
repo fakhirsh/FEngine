@@ -15,10 +15,8 @@
 //#include "../SoundManager/SoundManager.h"
 #include "../EventDispatcher/DefaultEvents.h"
 #include "../EventDispatcher/EventDispatcher.h"
+#include "../PhysicsManager/PhysicsManager.h"
 //#include "../Renderer/IRenderer.h"
-
-
-
 
 #include <GameLogic/Screens/Test/Test.h>
 
@@ -47,6 +45,8 @@ namespace FEngine
         _availableRAM               =   0.0f;
         _availableStorage           =   0.0f;
         _cpuSpeed                   =   0.0f;
+        
+        _debugMode                  =   false;
         
         _elapsed                    =   0.0f;
         _currentFPS                 =   0.0f;
@@ -86,6 +86,8 @@ namespace FEngine
         _designHeight       =   sysConfig->designHeight;
         _assetDesignWidth   =   sysConfig->assetDesignWidth;
         _assetDesignHeight  =   sysConfig->assetDesignHeight;
+        
+        _debugMode          =   sysConfig->debugMode;
         
         _deviceAspectRatio  = (float)_frameBufferWidth / (float)_frameBufferHeight;
         _deviceContentScaleFactor =   sysConfig->deviceContentScaleFactor;
@@ -146,6 +148,7 @@ namespace FEngine
     
     void App::Update (float dt)
     {
+        PhysicsManager::Get()->Update(dt);
         StateManager::Get()->Update(dt);
     }
 
@@ -534,7 +537,10 @@ namespace FEngine
         return _maxFPS;
     }
 
-
+    bool App::IsDebugModeOn ()
+    {
+        return _debugMode;
+    }
 };
 
 

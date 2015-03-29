@@ -14,6 +14,8 @@ namespace FEngine
 {
     class ViewComponent : public ActorComponent
     {
+        friend class ActorFactory;
+        
     public:
         ViewComponent();
         ~ViewComponent();
@@ -21,11 +23,9 @@ namespace FEngine
         virtual void    Update(float dt);
         
         SceneNode2DPtr  GetSceneNode2D  ();
-        void            SetSceneNode2D  (SceneNode2DPtr nodePtr);
-
+        
     private:
         
         SceneNode2DPtr  _sceneNode2D;
-        
     };
 }

@@ -34,6 +34,7 @@ namespace FEngine
         _sceneNode2D->GetSceneNodeProperties()->x = tPtr->x;
         _sceneNode2D->GetSceneNodeProperties()->y = tPtr->y;
         _sceneNode2D->GetSceneNodeProperties()->angle = tPtr->angle;
+        
     }
         
     SceneNode2DPtr ViewComponent::GetSceneNode2D ()
@@ -41,9 +42,4 @@ namespace FEngine
         return _sceneNode2D;
     }
     
-    void ViewComponent::SetSceneNode2D (SceneNode2DPtr nodePtr)
-    {
-        _sceneNode2D = nodePtr;
-    }
-
 }

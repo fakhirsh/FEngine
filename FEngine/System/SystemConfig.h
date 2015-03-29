@@ -50,6 +50,7 @@ namespace FEngine
         
         float       deviceContentScaleFactor;
         
+        bool        debugMode;
         
         bool        allowFullScreen;
         bool        runFullSpeed;

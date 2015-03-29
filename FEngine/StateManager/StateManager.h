@@ -47,6 +47,7 @@ namespace FEngine
         ProcessSchedulerPtr GetProcessScheduler ();
         EventDispatcherPtr  GetEventDispatcher  ();
         SceneNode2DPtr      GetRootSceneNode2D  ();
+        SceneNode2DPtr      GetDebugNode2D      ();
         
         // 3D Scene graph ... To be implemented later
         //SceneNodePtr        GetRootSceneNode    ();

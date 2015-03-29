@@ -11,16 +11,21 @@
 #include "TransformComponent.h"
 #include "../../Utility/Math.h"
 
+#include "../../2D/SceneNode2D.h"
+#include "../../2D/SceneNodeProperties2D.h"
+
+#include "../../PhysicsManager/PhysicsManager.h"
+#include "../../ActorManager/Components/ViewComponent.h"
+
 #include <iostream>
+
 
 namespace FEngine
 {
-
-    float VEL = 100.0f;
     
     PhysicsComponent::PhysicsComponent()
     {
-    
+        _body = NULL;
     }
     
     PhysicsComponent::~PhysicsComponent()
@@ -30,13 +35,17 @@ namespace FEngine
         
     void PhysicsComponent::Update(float dt)
     {
-        TransformComponentPtr tPtr = boost::static_pointer_cast<TransformComponent>(_owner->GetTransformComponent());
+        TransformComponentPtr tcPtr = boost::static_pointer_cast<TransformComponent>(_owner->GetTransformComponent());
         
-        tPtr->x += VEL*dt;
-        tPtr->y += VEL*dt;
-        //tPtr->angle = 60;
+        tcPtr->x = _body->GetPosition().x * PhysicsManager::PTM_RATIO;
+        tcPtr->y = _body->GetPosition().y * PhysicsManager::PTM_RATIO;
+        tcPtr->angle = _body->GetAngle();
         
-        ///std::cout << tPtr->x << "  " << tPtr->y << std::endl;
+    }
+    
+    b2Body * const PhysicsComponent::GetBody()
+    {
+        return _body;
     }
     
 }

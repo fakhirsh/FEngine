@@ -9,6 +9,7 @@
 #pragma once
 
 #include "Event.h"
+#include "../PointerDefs.h"
 
 namespace FEngine
 {
@@ -76,6 +77,26 @@ namespace FEngine
         
         //private:
         int x, y;
+    };
+
+    //----------------------------------------------------------------------------------------------------
+    // EventSetDebugNode - Sets up debug node while initializing the Physics component
+    //----------------------------------------------------------------------------------------------------
+    class EventSetDebugNode : public Event
+    {
+    public:
+        static const unsigned long eventID;
+        virtual const unsigned long GetID() const { return eventID; }
+        
+        EventSetDebugNode(){}
+        ~EventSetDebugNode(){}
+        
+        std::string GetName()
+        {
+            return "Touch Up";
+        }
+        
+        SceneNode2DPtr _debugNode;
     };
 
     

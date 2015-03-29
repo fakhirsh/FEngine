@@ -27,6 +27,9 @@ namespace FEngine
     
     bool SceneNode2D::AddChild (SceneNode2DPtr child)
     {
+        
+        child->SetParent(boost::shared_ptr<SceneNode2D>(this));
+        
         _children.push_back(child);
         
         return true;
@@ -51,12 +54,12 @@ namespace FEngine
         return false;
     }
     
-    void SceneNode2D::SetParent (SceneNode2DWeakPtr parent)
+    void SceneNode2D::SetParent (SceneNode2DPtr parent)
     {
         _parent     =   parent;
     }
     
-    SceneNode2DWeakPtr SceneNode2D::GetParent ()
+    SceneNode2DPtr SceneNode2D::GetParent ()
     {
         return _parent;
     }
@@ -119,5 +122,44 @@ namespace FEngine
     {
         _sceneNodeProperties2D = snp;
     }
+    
+    unsigned int SceneNode2D::GetID()
+    {
+        return _nodeID;
+    }
+    
+    void SceneNode2D::SetID(unsigned int nodeID)
+    {
+        _nodeID = nodeID;
+    }
+
+    /*
+    SceneNode2DPtr SceneNode2D::FindNode (unsigned int nodeID)
+    {
+        SceneNode2DPtr current = boost::shared_ptr<SceneNode2D>(this);
+        
+        return FindChild(current, nodeID);
+    }
+    
+    SceneNode2DPtr SceneNode2D::FindChild(SceneNode2DPtr node, unsigned int nodeID)
+    {
+        // Current node found. Just cast it properly and return...
+        if(nodeID == _nodeID) return node;
+        if(!node) return SceneNode2DPtr();
+        
+        std::list<SceneNode2DPtr>::iterator it = _children.begin();
+        
+        SceneNode2DPtr ptr;
+        
+        while (it != _children.end()) {
+            ptr = FindChild(*it, nodeID);
+            if(ptr) return ptr;
+        
+            it++;
+        }
+        
+        return SceneNode2DPtr();
+    }
+     */
     
 }

@@ -92,6 +92,8 @@ namespace FEngine
         void        TouchMoved                  (int x, int y);
         void        TouchCancelled              (int x, int y);
         
+        bool        IsDebugModeOn               ();
+        
     private:
 
         void        Update                      (float dt);
@@ -139,6 +141,8 @@ namespace FEngine
         float       _elapsed;
         float       _currentFPS;
         float       _maxFPS;
+        
+        bool        _debugMode;
         
         // rename this to "_assetPath"
         std::string  _assetPath;

@@ -45,6 +45,7 @@ namespace FEngine
     {
         
         SpriteNodePtr snPtr = boost::make_shared<SpriteNode>();
+        snPtr->SetID(gApp->GetNextGUID());
         
         string name = viewElement->Attribute("spriteName");
         snPtr->GetSceneNodeProperties()->name = name;

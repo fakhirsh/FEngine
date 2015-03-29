@@ -49,6 +49,7 @@ namespace FEngine
         ProcessSchedulerPtr     _processScheduler;
         EventDispatcherPtr      _eventDispatcher;
         SceneNode2DPtr          _rootSceneNode2D;
+        SceneNode2DPtr          _debugNode2D;
         
         //std::stack<glm::mat4>   _matrixStack2D;
         

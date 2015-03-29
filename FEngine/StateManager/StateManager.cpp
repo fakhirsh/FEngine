@@ -111,7 +111,7 @@ namespace FEngine
         {
             _statesList.back()->_rootSceneNode2D->Render(dt);
             _statesList.back()->Render(dt);
-            
+            _statesList.back()->_debugNode2D->Render(dt);
         }
     }
     
@@ -150,6 +150,16 @@ namespace FEngine
         return SceneNode2DPtr();
     }
 
+    SceneNode2DPtr StateManager::GetDebugNode2D ()
+    {
+        if (!_statesList.empty())
+        {
+            return _statesList.back()->_debugNode2D;
+        }
+        
+        return SceneNode2DPtr();
+    }
+    
     ActorManagerPtr StateManager::GetActorManager ()
     {
         if (!_statesList.empty())

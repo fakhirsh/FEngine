@@ -19,6 +19,12 @@ namespace FEngine
         ~ActorFactory();
         
         ActorPtr CreateActor(std::string xmlFilePath);
+    
+    private:
+        
+        ActorPtr actor;
+        
+        void SetDebugNodeListener(EventPtr e);
         
     };
 }

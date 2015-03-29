@@ -14,6 +14,7 @@
 #include "../ResourceCache.h"
 
 #include "../../Renderer/GLES20/TexturedVertexProgram.h"
+#include "../../Renderer/GLES20/SimpleVertex2DProgram.h"
 
 namespace FEngine
 {
@@ -44,6 +45,10 @@ namespace FEngine
         if(name == "TintedTexture")
         {
             progPtr = boost::make_shared<TexturedVertexProgram>();
+        }
+        if (name == "SimpleVertex2D")
+        {
+            progPtr = boost::make_shared<SimpleVertex2DProgram>();
         }
         
         progPtr->Init();

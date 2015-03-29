@@ -21,6 +21,8 @@ namespace FEngine
         
         virtual bool        Render          (float dt = 0.0f);
         
+        SceneNode2DPtr      FindNode        (unsigned int nodeID);
+        
     private:
 
     };

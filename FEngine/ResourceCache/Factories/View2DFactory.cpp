@@ -34,20 +34,17 @@ namespace FEngine
     
     View2DFactory::View2DFactory()
     {
-    
+        
     }
     
     View2DFactory::~View2DFactory()
     {
-    
+        
     }
         
     SceneNode2DPtr View2DFactory::CreateView(const string & xmlFile)
     {
         SceneNode2DPtr snPtr;
-        
-        // Get the xml Resource file for this view
-        //string xmlFile = viewElement->Attribute("xmlFile");
         
         // Load view xml file
         std::vector<char> viewMetaData;
@@ -97,8 +94,6 @@ namespace FEngine
                 
                 SpriteNodeFactory sf;
                 snPtr = sf.CreateSpriteNode(viewElement);
-                
-                cout << snPtr->GetSceneNodeProperties()->width << endl;
             }
             else if(string(viewElement->Value()) == "View")
             {
@@ -111,5 +106,5 @@ namespace FEngine
         
         return snPtr;
     }
-
+    
 }

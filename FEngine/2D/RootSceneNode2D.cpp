@@ -10,6 +10,8 @@
 
 #include "../Common.h"
 #include "../Utility/Math.h"
+#include "../2D/SceneNode2D.h"
+#include "../2D/RootSceneNode2D.h"
 #include "../2D/SceneNodeProperties2D.h"
 #include "../StateManager/StateManager.h"
 
@@ -54,5 +56,43 @@ namespace FEngine
         return true;
     }
     
+    SceneNode2DPtr FindNodeInScene (SceneNode2DPtr currentNode, unsigned int nodeID)
+    {
+        if(!currentNode)
+        {
+            return SceneNode2DPtr();
+        }
+        if (currentNode->GetID() == nodeID) {
+            return currentNode;
+        }
         
+        std::list<SceneNode2DPtr>::iterator it = currentNode->GetChildrenList().begin();
+        
+        while (it != currentNode->GetChildrenList().end()) {
+            
+            SceneNode2DPtr p = FindNodeInScene((*it), nodeID);
+            if(p) return p;
+            
+            it++;
+        }
+        
+        return SceneNode2DPtr();
+    }
+    
+    SceneNode2DPtr RootSceneNode2D::FindNode (unsigned int nodeID)
+    {
+        std::list<SceneNode2DPtr>::iterator it = _children.begin();
+        
+        while (it != _children.end()) {
+            
+            SceneNode2DPtr p = FindNodeInScene((*it), nodeID);
+            if(p) return p;
+            
+            it++;
+        }
+        
+        return SceneNode2DPtr();
+    }
+    
+
 }

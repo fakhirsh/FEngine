@@ -19,6 +19,10 @@
 #include "../../ActorManager/Components/ViewComponent.h"
 #include "../../ActorManager/Components/InputComponent.h"
 
+#include "../../EventDispatcher/EventDispatcher.h"
+#include "../../EventDispatcher/DefaultEvents.h"
+#include "../../StateManager/StateManager.h"
+
 #include "../../2D/SpriteNode.h"
 
 #include "../../Utility/Math.h"
@@ -26,6 +30,7 @@
 #include "../../System/App.h"
 
 #include "View2DFactory.h"
+#include "PhysicsFactory.h"
 
 
 extern FEngine::App * gApp;
@@ -37,18 +42,20 @@ namespace FEngine
     
     ActorFactory::ActorFactory()
     {
-    
+        EventListenerDelegate setDbgNodeDelegateFn   = fastdelegate::MakeDelegate(this, &ActorFactory::SetDebugNodeListener);
+        EventDispatcherPtr ed = StateManager::Get()->GetEventDispatcher();
+        ed->AddListener(EventSetDebugNode::eventID, setDbgNodeDelegateFn);
     }
     
     ActorFactory::~ActorFactory()
     {
-    
+        EventListenerDelegate setDbgNodeDelegateFn   = fastdelegate::MakeDelegate(this, &ActorFactory::SetDebugNodeListener);
+        EventDispatcherPtr ed = StateManager::Get()->GetEventDispatcher();
+        ed->RemoveListener(EventSetDebugNode::eventID, setDbgNodeDelegateFn);
     }
         
     ActorPtr ActorFactory::CreateActor(std::string xmlFilePath)
     {
-        ActorPtr actor;
-        
         IOManager * ioMgr = gApp->GetIOManager();
 
         std::vector<char> metaData;
@@ -97,8 +104,12 @@ namespace FEngine
                         SceneNode2DPtr n = vf.CreateView(viewXml);
                         ViewComponentPtr vPtr = boost::static_pointer_cast<ViewComponent>(actor->_viewComponent);
                         vPtr = boost::make_shared<ViewComponent>();
-                        vPtr->SetSceneNode2D(n);
+                        vPtr->_sceneNode2D = n;
                         vPtr->SetOwner(actor);
+                        
+                        SceneNode2DPtr root =   StateManager::Get()->GetRootSceneNode2D();
+                        root->AddChild(n);
+                        
                         actor->_viewComponent = vPtr;
                     }
                     else if(string(comp->Value()) == string("Transform"))
@@ -120,7 +131,8 @@ namespace FEngine
                     }
                     else if(string(comp->Value()) == string("Physics"))
                     {
-                        actor->_physicsComponent = boost::make_shared<PhysicsComponent>();
+                        PhysicsFactory pf;
+                        actor->_physicsComponent = pf.CreatePhysicsComponent(comp->Attribute("xmlFile"));
                         PhysicsComponentPtr pcPtr = boost::static_pointer_cast<PhysicsComponent>(actor->_physicsComponent);
                         
                         pcPtr->SetOwner(actor);
@@ -142,4 +154,14 @@ namespace FEngine
         return actor;
     }
 
+    void ActorFactory::SetDebugNodeListener(EventPtr e)
+    {
+        boost::shared_ptr<EventSetDebugNode> sdnEvent = boost::static_pointer_cast<EventSetDebugNode>(e);
+        
+        //ViewComponentPtr vcPtr = boost::static_pointer_cast<ViewComponent>(actor->GetViewComponent());
+        //vcPtr->SetDebugNode2D(sdnEvent->_debugNode);
+        
+        //vcPtr->GetSceneNode2D()->AddChild(sdnEvent->_debugNode);
+    }
+    
 }
