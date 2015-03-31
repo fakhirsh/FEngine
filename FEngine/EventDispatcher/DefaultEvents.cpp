@@ -16,8 +16,8 @@ namespace FEngine
     const unsigned long EventTouchMoved::eventID    (0xb3cdaedc);
     const unsigned long EventTouchUp::eventID       (0xb3cdb030);
     const unsigned long EventSetDebugNode::eventID  (0xb3cdba6c);
+    const unsigned long EventSetActorPosition::eventID  (0xb3cdbc7e);
     
     const unsigned long EventTest1::eventID = 0x00F;
-    
 
 }

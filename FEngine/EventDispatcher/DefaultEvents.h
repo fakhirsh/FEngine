@@ -93,12 +93,35 @@ namespace FEngine
         
         std::string GetName()
         {
-            return "Touch Up";
+            return "SetDebugNode";
         }
         
         SceneNode2DPtr _debugNode;
     };
 
+    //----------------------------------------------------------------------------------------------------
+    // EventSetActorPosition - Sets up debug node while initializing the Physics component
+    //----------------------------------------------------------------------------------------------------
+    class EventSetActorPosition : public Event
+    {
+    public:
+        static const unsigned long eventID;
+        virtual const unsigned long GetID() const { return eventID; }
+        
+        EventSetActorPosition(){}
+        ~EventSetActorPosition(){}
+        
+        std::string GetName()
+        {
+            return "Set Actor Position";
+        }
+        
+        ActorPtr actor;
+        
+        float x, y;
+    };
+
+    
     
     //----------------------------------------------------------------------------------------------------
     // 

@@ -26,6 +26,8 @@
 		0C3F26191ABD1ADC002DCB5A /* ProgramFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F26171ABD1ADC002DCB5A /* ProgramFactory.cpp */; };
 		0C3F261C1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F261A1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp */; };
 		0C3F261F1ABD82A4002DCB5A /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F261E1ABD82A4002DCB5A /* Math.cpp */; };
+		0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C68A7AC1ACA669E0087A197 /* MemoryManager.cpp */; };
+		0C68A7B11ACA66D70087A197 /* ActorPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C68A7AF1ACA66D70087A197 /* ActorPool.cpp */; };
 		0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */; };
 		0C7951671AB85EF80010DA81 /* Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951461AB85EF80010DA81 /* Process.cpp */; };
 		0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951481AB85EF80010DA81 /* ProcessScheduler.cpp */; };
@@ -216,6 +218,10 @@
 		0C3F261B1ABD1AEF002DCB5A /* SpriteNodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteNodeFactory.h; sourceTree = "<group>"; };
 		0C3F261D1ABD580F002DCB5A /* VertexDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexDefinitions.h; sourceTree = "<group>"; };
 		0C3F261E1ABD82A4002DCB5A /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
+		0C68A7AC1ACA669E0087A197 /* MemoryManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MemoryManager.cpp; path = MemoryManager/MemoryManager.cpp; sourceTree = "<group>"; };
+		0C68A7AD1ACA669E0087A197 /* MemoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemoryManager.h; path = MemoryManager/MemoryManager.h; sourceTree = "<group>"; };
+		0C68A7AF1ACA66D70087A197 /* ActorPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ActorPool.cpp; path = MemoryManager/ActorPool.cpp; sourceTree = "<group>"; };
+		0C68A7B01ACA66D70087A197 /* ActorPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActorPool.h; path = MemoryManager/ActorPool.h; sourceTree = "<group>"; };
 		0C79513F1AB85EF80010DA81 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		0C7951421AB85EF80010DA81 /* PointerDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerDefs.h; sourceTree = "<group>"; };
 		0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultProcesses.cpp; sourceTree = "<group>"; };
@@ -434,6 +440,17 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		0C68A7A61ACA66850087A197 /* MemoryManager */ = {
+			isa = PBXGroup;
+			children = (
+				0C68A7AC1ACA669E0087A197 /* MemoryManager.cpp */,
+				0C68A7AD1ACA669E0087A197 /* MemoryManager.h */,
+				0C68A7AF1ACA66D70087A197 /* ActorPool.cpp */,
+				0C68A7B01ACA66D70087A197 /* ActorPool.h */,
+			);
+			name = MemoryManager;
+			sourceTree = "<group>";
+		};
 		0C79513C1AB85EF80010DA81 /* FEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +460,7 @@
 				0C79513E1AB85EF80010DA81 /* 3D */,
 				0CE399E91AB9EAFE00350E8C /* ActorManager */,
 				0C7951411AB85EF80010DA81 /* EventDispatcher */,
+				0C68A7A61ACA66850087A197 /* MemoryManager */,
 				0C2F3E951AC7094200D66B2C /* PhysicsManager */,
 				0C7951431AB85EF80010DA81 /* ProcessScheduler */,
 				0C79514A1AB85EF80010DA81 /* Renderer */,
@@ -844,12 +862,14 @@
 				0C7951961AB8A5020010DA81 /* DefaultEvents.cpp in Sources */,
 				0C2F3E861AC6F46300D66B2C /* DebugBoxNode2D.cpp in Sources */,
 				0C3F26191ABD1ADC002DCB5A /* ProgramFactory.cpp in Sources */,
+				0C68A7B11ACA66D70087A197 /* ActorPool.cpp in Sources */,
 				0C2F3E831AC6DA8600D66B2C /* SimpleVertex2DProgram.cpp in Sources */,
 				0C8C24FE1ABC9AC100C77AAF /* Program.cpp in Sources */,
 				0C79516F1AB85EF80010DA81 /* StateManager.cpp in Sources */,
 				0CA779061AC467A000CB5FA5 /* TransformComponent.cpp in Sources */,
 				0CA778F21AC3E9EE00CB5FA5 /* ActorFactory.cpp in Sources */,
 				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
+				0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */,
 				0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */,
 				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,
 				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,

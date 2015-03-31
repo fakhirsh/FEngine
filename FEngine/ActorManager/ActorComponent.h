@@ -18,12 +18,14 @@ namespace FEngine
         ActorComponent();
         virtual ~ActorComponent();
         
-        virtual void Update(float dt) = 0;
+        virtual void Update     (float dt) = 0;
         
-        unsigned int GetID();
+        unsigned int GetID      ();
         
-        ActorPtr    GetOwner();
-        void        SetOwner(ActorPtr owner);
+        ActorPtr    GetOwner    ();
+        void        SetOwner    (ActorPtr owner);
+        
+        virtual void        Destroy ();
         
     protected:
         unsigned int _componentID;

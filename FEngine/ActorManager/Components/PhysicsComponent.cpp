@@ -17,6 +17,8 @@
 #include "../../PhysicsManager/PhysicsManager.h"
 #include "../../ActorManager/Components/ViewComponent.h"
 
+#include "../../StateManager/StateManager.h"
+
 #include <iostream>
 
 
@@ -30,7 +32,24 @@ namespace FEngine
     
     PhysicsComponent::~PhysicsComponent()
     {
+        Destroy();
+    }
     
+    void PhysicsComponent::Destroy ()
+    {
+        if(!_body) return;
+        
+        SceneNode2D * ptr = (SceneNode2D * )_body->GetUserData();
+        if(ptr)
+        {
+            SceneNode2DPtr sPtr;
+            sPtr.reset(ptr);
+            SceneNode2DPtr dRoot = StateManager::Get()->GetDebugNode2D();
+            dRoot->RemoveChild(sPtr);
+        }
+        
+        PhysicsManager::Get()->GetWorld()->DestroyBody(_body);
+        _body = NULL;
     }
         
     void PhysicsComponent::Update(float dt)
@@ -39,7 +58,7 @@ namespace FEngine
         
         tcPtr->x = _body->GetPosition().x * PhysicsManager::PTM_RATIO;
         tcPtr->y = _body->GetPosition().y * PhysicsManager::PTM_RATIO;
-        tcPtr->angle = _body->GetAngle();
+        tcPtr->angle = Math::RadToDeg(_body->GetAngle());
         
     }
     

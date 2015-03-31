@@ -132,9 +132,9 @@ namespace FEngine
         glm::mat4 mat = StateManager::Get()->PeekTransform2D();
         
         float W, H;
-        W       = _sceneNodeProperties2D->width;
-        H       = _sceneNodeProperties2D->height;
-        
+        W       =   _sceneNodeProperties2D->width;
+        H       =   _sceneNodeProperties2D->height;
+
         glm::vec4 vec = mat * glm::vec4(-W / 2.0f, -H / 2.0f, 0.0f, 1.0f);
         
         float theta = 0;

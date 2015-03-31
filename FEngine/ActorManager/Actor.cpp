@@ -21,7 +21,7 @@ namespace FEngine
     
     Actor::~Actor()
     {
-    
+        float g = 0;
     }
         
     unsigned long Actor::GetID()
@@ -62,5 +62,14 @@ namespace FEngine
         return vPtr->GetSceneNode2D();
     }
     
-    
+    void Actor::Destroy()
+    {
+        if(_physicsComponent)
+            _physicsComponent->Destroy();
+        if(_viewComponent)
+            _viewComponent->Destroy();
+        
+        _physicsComponent = ActorComponentPtr();
+        _viewComponent = ActorComponentPtr();
+    }
 }

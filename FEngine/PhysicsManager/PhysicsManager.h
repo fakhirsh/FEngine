@@ -33,7 +33,5 @@ namespace FEngine
     private:
         static PhysicsManager *         _instance;
         b2World *                       _world;
-        
-        std::map<b2Body *, SceneNode2DPtr>    _debugViewMap;
     };
 }

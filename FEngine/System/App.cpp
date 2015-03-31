@@ -129,7 +129,7 @@ namespace FEngine
         if ((_elapsed - basetime) > 1.0)
         {
             _currentFPS =   frames*1.0/(_elapsed - basetime);
-            //std::cout << "FPS: " << _currentFPS << std::endl;
+            std::cout << "FPS: " << _currentFPS << std::endl;
             basetime    =   _elapsed;
             frames      =   0;
         }

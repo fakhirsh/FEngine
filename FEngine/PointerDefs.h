@@ -21,6 +21,7 @@ namespace FEngine
     class   Actor;
     class   ActorComponent;
     class   ActorManager;
+    class   ActorPool;
     class   State;
     class   StateManager;
     class   Process;
@@ -51,6 +52,8 @@ typedef boost::shared_ptr   <FEngine::ActorComponent>           ActorComponentPt
 typedef boost::weak_ptr     <FEngine::ActorComponent>           ActorComponentWeakPtr;
 typedef boost::shared_ptr   <FEngine::ActorManager>             ActorManagerPtr;
 typedef boost::weak_ptr     <FEngine::ActorManager>             ActorManagerWeakPtr;
+typedef boost::shared_ptr   <FEngine::ActorPool>                ActorPoolPtr;
+typedef boost::weak_ptr     <FEngine::ActorPool>                ActorPoolWeakPtr;
 
 typedef boost::shared_ptr   <FEngine::State>                    StatePtr;
 typedef boost::shared_ptr   <FEngine::StateManager>             StateManagerPtr;

@@ -73,8 +73,6 @@ namespace FEngine
         
         for ( b2Body* b = _world->GetBodyList(); b; b = b->GetNext())
         {
-            std::cout << b->GetPosition().x << " -- " << b->GetPosition().y << std::endl;
-            
             if(gApp->IsDebugModeOn())
             {
                 SceneNode2D * ptr = (SceneNode2D * )b->GetUserData();

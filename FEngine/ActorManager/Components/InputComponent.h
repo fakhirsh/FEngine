@@ -16,7 +16,7 @@ namespace FEngine
     {
     public:
         InputComponent();
-        ~InputComponent();
+        virtual ~InputComponent();
         
         virtual void    Update              (float dt);
         

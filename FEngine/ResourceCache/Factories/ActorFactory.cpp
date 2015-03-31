@@ -14,6 +14,7 @@
 
 
 #include "../../ActorManager/Actor.h"
+#include "../../ActorManager/ActorManager.h"
 #include "../../ActorManager/Components/PhysicsComponent.h"
 #include "../../ActorManager/Components/TransformComponent.h"
 #include "../../ActorManager/Components/ViewComponent.h"

@@ -32,6 +32,8 @@ namespace FEngine
         
         SceneNode2DPtr      GetViewComponentSceneNode2D ();
         
+        void                Destroy                     ();
+        
     private:
         
         unsigned long       _actorID;

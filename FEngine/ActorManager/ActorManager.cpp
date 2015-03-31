@@ -36,9 +36,11 @@ namespace FEngine
     {
         if (!_actorMap[actorID]) return false;
         
-        _actorMap[actorID] = ActorPtr();
+        //_actorMap[actorID]->Destroy();
         
-        return false;
+        _actorMap.erase(actorID);
+        
+        return true;
     }
     
     ActorPtr ActorManager::GetActor (unsigned int actorID)

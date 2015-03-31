@@ -18,7 +18,7 @@ namespace FEngine
         
     public:
         ViewComponent();
-        ~ViewComponent();
+        virtual ~ViewComponent();
         
         virtual void    Update(float dt);
         

@@ -16,7 +16,7 @@ namespace FEngine
     {
     public:
         TransformComponent();
-        ~TransformComponent();
+        virtual ~TransformComponent();
         
         virtual void Update(float dt);
         

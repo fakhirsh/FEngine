@@ -22,9 +22,10 @@ namespace FEngine
         
     public:
         PhysicsComponent();
-        ~PhysicsComponent();
+        virtual ~PhysicsComponent();
         
         virtual void    Update          (float dt);
+        virtual void    Destroy         ();
         
         b2Body * const GetBody();
         

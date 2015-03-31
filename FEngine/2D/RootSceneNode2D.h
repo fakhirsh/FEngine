@@ -19,7 +19,9 @@ namespace FEngine
         RootSceneNode2D();
         ~RootSceneNode2D();
         
+        virtual bool        PreRender       (float dt = 0.0f);
         virtual bool        Render          (float dt = 0.0f);
+        virtual bool        PostRender      (float dt = 0.0f);
         
         SceneNode2DPtr      FindNode        (unsigned int nodeID);
         

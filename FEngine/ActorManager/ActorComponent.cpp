@@ -12,29 +12,34 @@
 namespace FEngine
 {
 
-    ActorComponent::ActorComponent()
+    ActorComponent::ActorComponent ()
     {
         _componentID = 0;
     }
     
-    ActorComponent::~ActorComponent()
+    ActorComponent::~ActorComponent ()
     {
     
     }
         
-    unsigned int ActorComponent::GetID()
+    unsigned int ActorComponent::GetID ()
     {
         return _componentID;
     }
 
-    ActorPtr ActorComponent::GetOwner()
+    ActorPtr ActorComponent::GetOwner ()
     {
         return _owner;
     }
     
-    void ActorComponent::SetOwner(ActorPtr owner)
+    void ActorComponent::SetOwner (ActorPtr owner)
     {
         _owner = owner;
     }
 
+    void ActorComponent::Destroy ()
+    {
+        _owner = ActorPtr();
+    }
+    
 }
