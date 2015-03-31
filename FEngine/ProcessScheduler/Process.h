@@ -37,6 +37,8 @@ namespace FEngine
         void            Fail        ();
         void            Terminate   ();
         
+        bool            IsDead      ();
+        
         State           GetState    ();
         
         virtual void    Update      (float dt)  =   0;

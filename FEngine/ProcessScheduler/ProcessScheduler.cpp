@@ -56,52 +56,46 @@ namespace FEngine
             if(*i){
 
                 ProcessPtr      p       =   *i;
-                Process::State  state   =   p->GetState();
                 
-                switch (state)
+                // Save the iterator and increment the old one in case if the process has to be removed.
+                std::list<ProcessPtr>::iterator tempIt = i;
+                ++i;
+                
+                if(p->GetState() == Process::State::CREATED)
                 {
-                    case Process::State::CREATED :
+                    p->Resume();
+                }
+                
+                if(p->GetState() == Process::State::RUNNING)
+                {
+                    p->Update(dt);
+                }
+                
+                if(p->GetState() == Process::State::READY)
+                {
+                    p->Pause();
+                }
+                
+                if(p->GetState() == Process::State::SUCCEEDED)
+                {
+                    ProcessPtr child = p->RemoveChild();
+                    if(child)
                     {
-                        p->Resume();
+                        _processList.push_back(child);
                     }
-                    break;
-                        
-                    case Process::State::RUNNING :
-                    {
-                        p->Update(dt);
-                    }
-                    break;
-                    
-                    case Process::State::SUCCEEDED :
-                    {
-                        ProcessPtr child = p->RemoveChild();
-                        if(child)
-                        {
-                            _processList.push_back(child);
-                        }
-                        p->Terminate();
-                    }
-                    break;
-                    
-                    case Process::State::FAILED :
-                    {
-                        p->Terminate();
-                    }
-                    break;
-                        
-                    case Process::State::TERMINATED :
-                    {
-                        _processList.erase(i);
-                    }
-                    break;
-                        
-                    default:
-                        break;
+                    p->Terminate();
+                }
+
+                if(p->GetState() == Process::State::FAILED)
+                {
+                    p->Terminate();
+                }
+                            
+                if(p->GetState() == Process::State::TERMINATED)
+                {
+                    _processList.erase(tempIt);
                 }
             }
-            // Incrementing the iterator outside for loop so that it
-            //    properly updates BEFORE checking the terminating condition...
-            i++;
             
         }
         

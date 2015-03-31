@@ -63,6 +63,11 @@ namespace FEngine
         _state = State::TERMINATED;
     }
     
+    bool Process::IsDead()
+    {
+        return (_state == SUCCEEDED || _state == FAILED || _state == TERMINATED);
+    }
+    
     Process::State Process::GetState()
     {
         return _state;
