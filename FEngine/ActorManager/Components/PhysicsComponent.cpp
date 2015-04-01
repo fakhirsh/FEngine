@@ -48,7 +48,7 @@ namespace FEngine
             dRoot->RemoveChild(sPtr);
         }
         
-        PhysicsManager::Get()->GetWorld()->DestroyBody(_body);
+        StateManager::Get()->GetPhysicsManager()->GetWorld()->DestroyBody(_body);
         _body = NULL;
     }
         

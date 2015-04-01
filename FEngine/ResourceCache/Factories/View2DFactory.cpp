@@ -76,15 +76,14 @@ namespace FEngine
         const XMLElement * e = rootnode->FirstChildElement();
         
         snPtr = CreateViewNode(e);
-        
-        
+
         return snPtr;
 
     }
     
     SceneNode2DPtr View2DFactory::CreateViewNode(const tinyxml2::XMLElement * viewElement)
     {
-        SpriteNodePtr snPtr = boost::make_shared<SpriteNode>();
+        SpriteNodePtr snPtr;
         
         string name = viewElement->Value();
         
@@ -98,6 +97,12 @@ namespace FEngine
             else if(string(viewElement->Value()) == "View")
             {
                 SceneNode2DPtr childSnPtr = CreateViewNode(viewElement->FirstChildElement());
+
+                // What if there were empty views within views. Need to handle that case.
+                if(!snPtr)
+                {
+                    snPtr = boost::make_shared<SpriteNode>();
+                }
                 snPtr->AddChild(childSnPtr);
             }
             

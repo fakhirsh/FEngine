@@ -136,7 +136,7 @@ namespace FEngine
             //myFixtureDef.restitution = 1.0f;
             
             
-            physicsComponent->_body = PhysicsManager::Get()->GetWorld()->CreateBody(&myBodyDef);
+            physicsComponent->_body = StateManager::Get()->GetPhysicsManager()->GetWorld()->CreateBody(&myBodyDef);
             
             physicsComponent->_body->CreateFixture(&myFixtureDef); //add a fixture to the body
             
@@ -188,7 +188,7 @@ namespace FEngine
             myFixtureDef.friction = 0.9f;
             //myFixtureDef.restitution = 1.0f;
             
-            physicsComponent->_body = PhysicsManager::Get()->GetWorld()->CreateBody(&myBodyDef);
+            physicsComponent->_body = StateManager::Get()->GetPhysicsManager()->GetWorld()->CreateBody(&myBodyDef);
             
             physicsComponent->_body->CreateFixture(&myFixtureDef); //add a fixture to the body
             

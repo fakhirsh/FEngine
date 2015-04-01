@@ -28,7 +28,7 @@ namespace FEngine
     bool SceneNode2D::AddChild (SceneNode2DPtr child)
     {
         
-        child->SetParent(boost::shared_ptr<SceneNode2D>(this));
+        child->SetParent(this);
         
         _children.push_back(child);
         
@@ -37,7 +37,6 @@ namespace FEngine
     
     bool SceneNode2D::RemoveChild (SceneNode2DPtr child)
     {
-        
         std::list<SceneNode2DPtr>::iterator it = _children.begin();
         
         while (it != _children.end())
@@ -47,19 +46,47 @@ namespace FEngine
                 _children.erase(it);
                 return true;
             }
-            
             it++;
         }
         
         return false;
     }
     
-    void SceneNode2D::SetParent (SceneNode2DPtr parent)
+    bool SceneNode2D::DestroySelf ()
+    {
+        if(_children.size() > 0)
+        {
+            _children.clear();
+        }
+
+        _parent = NULL;
+        _sceneNodeProperties2D = SceneNodeProperties2DPtr();
+        
+        return true;
+    }
+    
+    bool SceneNode2D::TearDown()
+    {
+        if(_children.size() > 0)
+        {
+            std::list<SceneNode2DPtr>::iterator it = _children.begin();
+        
+            while (it != _children.end()) {
+                (*it)->TearDown();
+            }
+        }
+        
+        DestroySelf();
+        
+        return true;
+    }
+    
+    void SceneNode2D::SetParent (SceneNode2D * parent)
     {
         _parent     =   parent;
     }
     
-    SceneNode2DPtr SceneNode2D::GetParent ()
+    const SceneNode2D * SceneNode2D::GetParent ()
     {
         return _parent;
     }

@@ -28,8 +28,8 @@ namespace FEngine
         // Finds the node amongst children
         //SceneNode2DPtr      FindNode        (unsigned int nodeID);
         
-        void                SetParent       (SceneNode2DPtr parent);
-        SceneNode2DPtr      GetParent       ();
+        void                SetParent       (SceneNode2D * parent);
+        const SceneNode2D * GetParent       ();
         
         //virtual void        Update          (float dt);
         
@@ -48,11 +48,21 @@ namespace FEngine
         
     protected:
         
+        bool                DestroySelf     ();
+        bool                TearDown        ();
+        
         //SceneNode2DPtr FindChild(SceneNode2DPtr node, unsigned int nodeID);
         
         std::list<SceneNode2DPtr>           _children;
         
-        SceneNode2DPtr                      _parent;
+        
+        // FOLLOWING CAUSES CRASH :
+        // *** memory being deleted that was not allocated ***
+        // Be VERY VERY CAREFULL when creating smart pointers from raw ptr.
+        // Better use a Naked pointer for the parent. Setting 'this' in smart pointers
+        //    was resulting in crash!
+        // Or maybe use weak_ptr ???
+        SceneNode2D *                       _parent;
         
         SceneNodeProperties2DPtr            _sceneNodeProperties2D;
 

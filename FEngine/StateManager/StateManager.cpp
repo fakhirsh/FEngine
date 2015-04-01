@@ -13,6 +13,8 @@
 #include "../ProcessScheduler/ProcessScheduler.h"
 #include "../EventDispatcher/EventDispatcher.h"
 #include "../ActorManager/ActorManager.h"
+#include "../PhysicsManager/PhysicsManager.h"
+
 #include "../2D/RootSceneNode2D.h"
 
 
@@ -51,7 +53,7 @@ namespace FEngine
     }
 
     void StateManager::ChangeState(StatePtr newState)
-    {
+    {        
         if (!_statesList.empty()) {
             _statesList.back()->Free();
             _statesList.back()->UnLoad();
@@ -102,6 +104,7 @@ namespace FEngine
             _statesList.back()->_actorManager->Update(dt);
             _statesList.back()->_processScheduler->Update(dt);
             _statesList.back()->_eventDispatcher->Update(dt);
+            _statesList.back()->_physicsManager->Update(dt);
         }
     }
 
@@ -138,6 +141,18 @@ namespace FEngine
         // This will RARELY happen though !!!
         return EventDispatcherPtr();
 
+    }
+    
+    PhysicsManagerPtr StateManager::GetPhysicsManager ()
+    {
+        if (!_statesList.empty())
+        {
+            return _statesList.back()->_physicsManager;
+        }
+        
+        // Return a NULL_PTR if there are no states to process...
+        // This will RARELY happen though !!!
+        return PhysicsManagerPtr();
     }
     
     SceneNode2DPtr StateManager::GetRootSceneNode2D ()

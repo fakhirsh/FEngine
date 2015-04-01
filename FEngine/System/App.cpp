@@ -148,7 +148,6 @@ namespace FEngine
     
     void App::Update (float dt)
     {
-        PhysicsManager::Get()->Update(dt);
         StateManager::Get()->Update(dt);
     }
 

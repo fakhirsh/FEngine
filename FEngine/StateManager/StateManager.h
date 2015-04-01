@@ -46,6 +46,7 @@ namespace FEngine
         ActorManagerPtr     GetActorManager     ();
         ProcessSchedulerPtr GetProcessScheduler ();
         EventDispatcherPtr  GetEventDispatcher  ();
+        PhysicsManagerPtr   GetPhysicsManager   ();
         SceneNode2DPtr      GetRootSceneNode2D  ();
         SceneNode2DPtr      GetDebugNode2D      ();
         

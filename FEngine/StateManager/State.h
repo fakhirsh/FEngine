@@ -48,6 +48,7 @@ namespace FEngine
         ActorManagerPtr         _actorManager;
         ProcessSchedulerPtr     _processScheduler;
         EventDispatcherPtr      _eventDispatcher;
+        PhysicsManagerPtr       _physicsManager;
         SceneNode2DPtr          _rootSceneNode2D;
         SceneNode2DPtr          _debugNode2D;
         

@@ -9,16 +9,21 @@
 #include "EventDispatcher.h"
 #include "Event.h"
 
+#include <iostream>
+
 namespace FEngine
 {
     EventDispatcher::EventDispatcher()
     {
+        std::cout << "EventDispatcher::EventDispatcher()" << std::endl;
         _activeQueue = 0;
     }
     
     EventDispatcher::~EventDispatcher()
     {
-    
+        std::cout << "EventDispatcher::~EventDispatcher()" << std::endl;
+        RemoveAllEvents();
+        RemoveAllListeners();
     }
     
     bool EventDispatcher::AddListener(unsigned int eID, EventListenerDelegate lfn)
@@ -119,4 +124,20 @@ namespace FEngine
         
     }
 
+    bool EventDispatcher::RemoveAllListeners()
+    {
+        _listenerMap.clear();
+        
+        return true;
+    }
+    
+    bool EventDispatcher::RemoveAllEvents()
+    {
+        for(int i = 0; i < MAX_QUEUES; i++)
+        {
+            _queues[i].clear();
+        }
+        return true;
+    }
+    
 }

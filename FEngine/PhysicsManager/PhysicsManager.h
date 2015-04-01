@@ -24,14 +24,13 @@ namespace FEngine
         PhysicsManager();
         ~PhysicsManager();
         
-        static PhysicsManager * const   Get();
         bool                            Init();
         b2World * const                 GetWorld();
         
         void                            Update(float dt);
         
     private:
-        static PhysicsManager *         _instance;
+
         b2World *                       _world;
     };
 }

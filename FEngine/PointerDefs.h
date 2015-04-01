@@ -27,6 +27,7 @@ namespace FEngine
     class   Process;
     class   ProcessScheduler;
     class   Program;
+    class   PhysicsManager;
     class   Texture;
     class   TextureAtlas;
     //class SpriteBatch;
@@ -54,6 +55,9 @@ typedef boost::shared_ptr   <FEngine::ActorManager>             ActorManagerPtr;
 typedef boost::weak_ptr     <FEngine::ActorManager>             ActorManagerWeakPtr;
 typedef boost::shared_ptr   <FEngine::ActorPool>                ActorPoolPtr;
 typedef boost::weak_ptr     <FEngine::ActorPool>                ActorPoolWeakPtr;
+
+typedef boost::shared_ptr   <FEngine::PhysicsManager>           PhysicsManagerPtr;
+typedef boost::weak_ptr     <FEngine::PhysicsManager>           PhysicsManagerWeakPtr;
 
 typedef boost::shared_ptr   <FEngine::State>                    StatePtr;
 typedef boost::shared_ptr   <FEngine::StateManager>             StateManagerPtr;

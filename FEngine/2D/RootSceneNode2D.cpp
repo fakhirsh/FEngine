@@ -19,6 +19,8 @@ namespace FEngine
 {
     RootSceneNode2D::RootSceneNode2D ()
     {
+        std::cout << "RootSceneNode2D::RootSceneNode2D" << std::endl;
+        
         _sceneNodeProperties2D          =   boost::make_shared<SceneNodeProperties2D>();
         _sceneNodeProperties2D->x       =   320;
         _sceneNodeProperties2D->y       =   480;
@@ -32,7 +34,10 @@ namespace FEngine
     
     RootSceneNode2D::~RootSceneNode2D ()
     {
-        StateManager::Get()->PopTransform2D();
+        std::cout << "RootSceneNode2D::~RootSceneNode2D" << std::endl;
+        
+        //TearDown();
+        
     }
     
     bool RootSceneNode2D::PreRender(float dt)

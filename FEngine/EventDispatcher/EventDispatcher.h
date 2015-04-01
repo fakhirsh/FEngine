@@ -26,8 +26,8 @@ namespace FEngine
         EventDispatcher();
         ~EventDispatcher();
         
-        bool AddListener    (unsigned int eID, EventListenerDelegate lfn);
-        bool RemoveListener (unsigned int eID, EventListenerDelegate lfn);
+        bool AddListener        (unsigned int eID, EventListenerDelegate lfn);
+        bool RemoveListener     (unsigned int eID, EventListenerDelegate lfn);
         
         /*
          *...... WARNING WARNING WARNING .......
@@ -36,13 +36,16 @@ namespace FEngine
          * Please fing the bottleneck and optimize.
          *
          */
-        bool DispatchEvent  (EventPtr e);
-        bool TriggerEvent   (EventPtr e);
+        bool DispatchEvent      (EventPtr e);
+        bool TriggerEvent       (EventPtr e);
         
-        void Update         (float dt);
+        void Update             (float dt);
         
     private:
-       
+        
+        bool RemoveAllListeners ();
+        bool RemoveAllEvents    ();
+
         std::list<EventPtr> _queues[MAX_QUEUES];
         int                 _activeQueue;
         

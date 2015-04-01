@@ -16,12 +16,12 @@ namespace FEngine
 {
     ProcessScheduler::ProcessScheduler()
     {
-    
+        std::cout << "ProcessScheduler::ProcessScheduler()" << std::endl;
     }
     
     ProcessScheduler::~ProcessScheduler()
     {
-    
+        std::cout << "ProcessScheduler::~ProcessScheduler()" << std::endl;
     }
     
     bool ProcessScheduler::AddChild(ProcessPtr process)

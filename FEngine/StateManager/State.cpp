@@ -12,6 +12,7 @@
 #include "../ProcessScheduler/ProcessScheduler.h"
 #include "../EventDispatcher/EventDispatcher.h"
 #include "../ActorManager/ActorManager.h"
+#include "../PhysicsManager/PhysicsManager.h"
 
 #include "../2D/RootSceneNode2D.h"
 
@@ -24,6 +25,7 @@ namespace FEngine
         _actorManager       =   boost::make_shared<FEngine::ActorManager>();
         _processScheduler   =   boost::make_shared<FEngine::ProcessScheduler>();
         _eventDispatcher    =   boost::make_shared<FEngine::EventDispatcher>();
+        _physicsManager     =   boost::make_shared<FEngine::PhysicsManager>();
         _rootSceneNode2D    =   boost::make_shared<FEngine::RootSceneNode2D>();
         _debugNode2D        =   boost::make_shared<FEngine::RootSceneNode2D>();
     }

@@ -33,7 +33,7 @@ namespace FEngine
     
     SpriteNode::SpriteNode ()
     {
-        _sceneNodeProperties2D = boost::make_shared<FEngine::SceneNodeProperties2D>();
+        _sceneNodeProperties2D = boost::make_shared<SceneNodeProperties2D>();
         
         // 6 vertices per Sprite
         for(int i = 0; i < 6; i++)
