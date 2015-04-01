@@ -48,9 +48,22 @@ namespace FEngine
     using namespace tinyxml2;
     using namespace std;
     
+    
+    PhysicsFactory::PhysicsShape::PhysicsShape()
+    {
+        fixtureShape = NULL;
+    }
+    
+    PhysicsFactory::PhysicsShape::~PhysicsShape()
+    {
+        //if(fixtureShape) delete fixtureShape;
+        fixtureShape = NULL;
+    }
+    
+    
     PhysicsFactory::PhysicsFactory()
     {
-    
+
     }
     
     PhysicsFactory::~PhysicsFactory()
@@ -88,134 +101,178 @@ namespace FEngine
             return PhysicsComponentPtr();
         }
         
-        // Root node (Actor)
+        // Root node (Physics)
         XMLNode * rootNode = coordXMLdoc.FirstChild();
         
         const XMLElement * e = rootNode->FirstChildElement();
         
-        b2BodyType bodyType = b2_staticBody;
-        string bodyTypeStr = e->Attribute("value");
-        if(bodyTypeStr == "Dynamic")
-        {
-            bodyType = b2_dynamicBody;
-        }
-        else if(bodyTypeStr == "Static")
-        {
-            bodyType = b2_staticBody;
-        }
-        else if(bodyTypeStr == "Kinematic")
-        {
-            bodyType = b2_kinematicBody;
-        }
-
-        e = e->NextSiblingElement();
-        
         PhysicsComponentPtr physicsComponent = boost::make_shared<PhysicsComponent>();
-        
-        if(string(e->Attribute("value")) == string("Circle"))
-        {
-            float x, y, radius, angle;
-            sscanf(e->Attribute("x"), "%f", &x);
-            sscanf(e->Attribute("y"), "%f", &y);
-            sscanf(e->Attribute("radius"), "%f", &radius);
-            sscanf(e->Attribute("angle"), "%f", &angle);
-            
-            b2BodyDef myBodyDef;
-            myBodyDef.type  =   bodyType;
-            myBodyDef.position.Set(x / PhysicsManager::PTM_RATIO, y / PhysicsManager::PTM_RATIO);
-            myBodyDef.angle =  Math::DegToRad(angle);
-            
-            b2CircleShape circleShape;
-            circleShape.m_p.Set(0, 0); //position, relative to body position
-            circleShape.m_radius = radius / PhysicsManager::PTM_RATIO; //radius
-            
-            b2FixtureDef myFixtureDef;
-            myFixtureDef.shape = &circleShape; //this is a pointer to the shape above
-            myFixtureDef.density = 1.0f;
-            myFixtureDef.friction = 0.9f;
-            //myFixtureDef.restitution = 1.0f;
-            
-            
-            physicsComponent->_body = StateManager::Get()->GetPhysicsManager()->GetWorld()->CreateBody(&myBodyDef);
-            
-            physicsComponent->_body->CreateFixture(&myFixtureDef); //add a fixture to the body
-            
-            if(gApp->IsDebugModeOn())
-            {
-                ProgramFactory pf;
-            
-                SceneNode2DPtr pdnPtr = boost::make_shared<DebugCircleNode2D>();
-                pdnPtr->GetSceneNodeProperties()->program = pf.CreateProgram("SimpleVertex2D");
-                pdnPtr->GetSceneNodeProperties()->width = radius;
-                pdnPtr->GetSceneNodeProperties()->height = radius;
-                pdnPtr->GetSceneNodeProperties()->x = x;
-                pdnPtr->GetSceneNodeProperties()->y = y;
-                pdnPtr->GetSceneNodeProperties()->alpha = 0.4;
 
-                pdnPtr->SetID(gApp->GetNextGUID());
-                
-                SceneNode2DPtr dRoot = StateManager::Get()->GetDebugNode2D();
-                dRoot->AddChild(pdnPtr);
-                
-                // ---- WARNING ----
-                // Send raw pointer in userdata. The local smart pointers will be destroyed
-                //    right after exiting this scope...
-                physicsComponent->_body->SetUserData((void *)pdnPtr.get());
-            }
+        b2BodyDef body;
+        std::vector<PhysicsShape> shapesArray;
         
+        while(e)
+        {
+            if(string(e->Value()) == string("Type"))
+            {
+                b2BodyType bodyType = b2_staticBody;
+                string bodyTypeStr = e->Attribute("value");
+                if(bodyTypeStr == "Dynamic")
+                {
+                    bodyType = b2_dynamicBody;
+                }
+                else if(bodyTypeStr == "Static")
+                {
+                    bodyType = b2_staticBody;
+                }
+                else if(bodyTypeStr == "Kinematic")
+                {
+                    bodyType = b2_kinematicBody;
+                }
+                
+                body.type = bodyType;
+            }
+            else if(string(e->Value()) == string("Transform"))
+            {
+                float x, y, angle;
+                sscanf(e->Attribute("x"), "%f", &x);
+                sscanf(e->Attribute("y"), "%f", &y);
+                sscanf(e->Attribute("angle"), "%f", &angle);
+                
+                body.position.Set(x / PhysicsManager::PTM_RATIO, y / PhysicsManager::PTM_RATIO);
+                body.angle =  Math::DegToRad(angle);
+            }
+            else if(string(e->Value()) == string("Shape"))
+            {
+                shapesArray.push_back(CreateShape(e));
+            }
+            else if(string(e->Value()) == string("Bullet"))
+            {
+                if(string(e->Attribute("value")) == string("true")){
+                    body.bullet = true;
+                }
+            }
+            
+            e = e->NextSiblingElement();
         }
-        else if(string(e->Attribute("value")) == string("Box"))
-        {
-            float x, y, width, height, angle;
-            sscanf(e->Attribute("x"), "%f", &x);
-            sscanf(e->Attribute("y"), "%f", &y);
-            sscanf(e->Attribute("width"), "%f", &width);
-            sscanf(e->Attribute("height"), "%f", &height);
-            sscanf(e->Attribute("angle"), "%f", &angle);
-            
-            b2BodyDef myBodyDef;
-            myBodyDef.type  =   bodyType;
-            myBodyDef.position.Set(0.0f, 0.0f);
-            myBodyDef.angle =   Math::DegToRad(angle);
-
-            b2PolygonShape polygonShape;
-            polygonShape.SetAsBox(width / 2.0f / PhysicsManager::PTM_RATIO, height / 2.0f / PhysicsManager::PTM_RATIO);
-            myBodyDef.position.Set(x / PhysicsManager::PTM_RATIO, y / PhysicsManager::PTM_RATIO);
-            
-            b2FixtureDef myFixtureDef;
-            myFixtureDef.shape = &polygonShape; //this is a pointer to the shape above
-            myFixtureDef.density = 1.0f;
-            myFixtureDef.friction = 0.9f;
-            //myFixtureDef.restitution = 1.0f;
-            
-            physicsComponent->_body = StateManager::Get()->GetPhysicsManager()->GetWorld()->CreateBody(&myBodyDef);
-            
-            physicsComponent->_body->CreateFixture(&myFixtureDef); //add a fixture to the body
-            
-            if(gApp->IsDebugModeOn())
-            {
-                ProgramFactory pf;
-                
-                SceneNode2DPtr pdnPtr = boost::make_shared<DebugBoxNode2D>();
-                pdnPtr->GetSceneNodeProperties()->program = pf.CreateProgram("SimpleVertex2D");
-                pdnPtr->GetSceneNodeProperties()->width = width;
-                pdnPtr->GetSceneNodeProperties()->height = height;
-                pdnPtr->GetSceneNodeProperties()->x = x;
-                pdnPtr->GetSceneNodeProperties()->y = y;
-                pdnPtr->GetSceneNodeProperties()->alpha = 0.4;
-                
-                SceneNode2DPtr dRoot = StateManager::Get()->GetDebugNode2D();
-                dRoot->AddChild(pdnPtr);
-                
-                // ---- WARNING ----
-                // Send raw pointer in userdata. The local smart pointers will be destroyed
-                //    right after exiting this scope...
-                physicsComponent->_body->SetUserData((void *)pdnPtr.get());
-            }
-
+        
+        physicsComponent->_body = StateManager::Get()->GetPhysicsManager()->GetWorld()->CreateBody(&body);
+        
+        for (int i = 0; i < shapesArray.size(); i++) {
+            physicsComponent->_body->CreateFixture(&((shapesArray[i]).fixtureDef));
         }
         
         return physicsComponent;
+    }
+    
+    PhysicsFactory::PhysicsShape PhysicsFactory::CreateShape(const tinyxml2::XMLElement * physicsElement)
+    {
+        PhysicsShape pShape;
+        
+        if(string(physicsElement->Attribute("value")) == string("Box"))
+        {
+            pShape.shapeType = "Box";
+            CreateBox(physicsElement, pShape);
+        }
+        else if(string(physicsElement->Attribute("value")) == string("Circle"))
+        {
+            pShape.shapeType = "Circle";
+            CreateCircle(physicsElement, pShape);
+        }
+        
+        return pShape;
+    }
+    /*
+    b2FixtureDef PhysicsFactory::CreateShape(const tinyxml2::XMLElement * physicsElement)
+    {
+        b2FixtureDef shape;
+        
+        if(string(physicsElement->Attribute("value")) == string("Box"))
+        {
+            //CreateBox(physicsElement, shape);
+        }
+        else if(string(physicsElement->Attribute("value")) == string("Circle"))
+        {
+            //CreateCircle(physicsElement, shape);
+        }
+        
+        return shape;
+    }
+    */
+    void PhysicsFactory::CreateBox(const tinyxml2::XMLElement * physicsElement, PhysicsShape & fixture)
+    {
+        const XMLElement * e = physicsElement->FirstChildElement();
+        
+        while (e) {
+            if(string(e->Value()) == string("Dimensions"))
+            {
+                float width, height;
+                sscanf(e->Attribute("width"), "%f", &width);
+                sscanf(e->Attribute("height"), "%f", &height);
+                
+                fixture.fixtureShape = new b2PolygonShape();
+                ((b2PolygonShape *)fixture.fixtureShape)->SetAsBox(width / 2.0f / PhysicsManager::PTM_RATIO, height / 2.0f / PhysicsManager::PTM_RATIO);
+                fixture.fixtureDef.shape = fixture.fixtureShape;
+            }
+            else if(string(e->Value()) == string("Properties"))
+            {
+                float density, friction, restitution;
+                sscanf(e->Attribute("density"), "%f", &density);
+                sscanf(e->Attribute("friction"), "%f", &friction);
+                sscanf(e->Attribute("restitution"), "%f", &restitution);
+                
+                fixture.fixtureDef.density = density;
+                fixture.fixtureDef.friction = friction;
+                fixture.fixtureDef.restitution = restitution;
+            }
+            else if(string(e->Value()) == string("Sensor"))
+            {
+                if(string(e->Attribute("value")) == string("true")){
+                    fixture.fixtureDef.isSensor = true;
+                }
+            }
+            
+            e = e->NextSiblingElement();
+        }
+        
+    }
+    
+    void PhysicsFactory::CreateCircle(const tinyxml2::XMLElement * physicsElement, PhysicsShape & fixture)
+    {
+        const XMLElement * e = physicsElement->FirstChildElement();
+     
+        while (e) {
+            if(string(e->Value()) == string("Dimensions"))
+            {
+                float radius;
+                sscanf(e->Attribute("radius"), "%f", &radius);
+
+                fixture.fixtureShape = new b2CircleShape();
+                ((b2CircleShape *)(fixture.fixtureShape))->m_p.Set(0, 0); //position, relative to body position
+                ((b2CircleShape *)(fixture.fixtureShape))->m_radius = radius / PhysicsManager::PTM_RATIO; //radius
+                fixture.fixtureDef.shape = fixture.fixtureShape;
+            }
+            else if(string(e->Value()) == string("Properties"))
+            {
+                float density, friction, restitution;
+                sscanf(e->Attribute("density"), "%f", &density);
+                sscanf(e->Attribute("friction"), "%f", &friction);
+                sscanf(e->Attribute("restitution"), "%f", &restitution);
+                
+                fixture.fixtureDef.density = density;
+                fixture.fixtureDef.friction = friction;
+                fixture.fixtureDef.restitution = restitution;
+            }
+            else if(string(e->Value()) == string("Sensor"))
+            {
+                if(string(e->Attribute("value")) == string("true")){
+                    fixture.fixtureDef.isSensor = true;
+                }
+            }
+            
+            e = e->NextSiblingElement();
+        }
+
     }
     
 }

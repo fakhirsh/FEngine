@@ -64,10 +64,11 @@ namespace FEngine
                 if(gApp->IsDebugModeOn())
                 {
                     SceneNode2D * ptr = (SceneNode2D * )b->GetUserData();
-                
-                    ptr->GetSceneNodeProperties()->x = b->GetPosition().x * PTM_RATIO;
-                    ptr->GetSceneNodeProperties()->y = b->GetPosition().y * PTM_RATIO;
-                    ptr->GetSceneNodeProperties()->angle = Math::RadToDeg(b->GetAngle());
+                    if(ptr){
+                        ptr->GetSceneNodeProperties()->x = b->GetPosition().x * PTM_RATIO;
+                        ptr->GetSceneNodeProperties()->y = b->GetPosition().y * PTM_RATIO;
+                        ptr->GetSceneNodeProperties()->angle = Math::RadToDeg(b->GetAngle());
+                    }
                 }
             }
         }
