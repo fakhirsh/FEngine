@@ -51,13 +51,13 @@ namespace FEngine
     
     PhysicsFactory::PhysicsShape::PhysicsShape()
     {
-        fixtureShape = NULL;
+        //fixtureShape = NULL;
     }
     
     PhysicsFactory::PhysicsShape::~PhysicsShape()
     {
         //if(fixtureShape) delete fixtureShape;
-        fixtureShape = NULL;
+        //fixtureShape = NULL;
     }
     
     
@@ -210,9 +210,11 @@ namespace FEngine
                 sscanf(e->Attribute("width"), "%f", &width);
                 sscanf(e->Attribute("height"), "%f", &height);
                 
-                fixture.fixtureShape = new b2PolygonShape();
-                ((b2PolygonShape *)fixture.fixtureShape)->SetAsBox(width / 2.0f / PhysicsManager::PTM_RATIO, height / 2.0f / PhysicsManager::PTM_RATIO);
-                fixture.fixtureDef.shape = fixture.fixtureShape;
+                //fixture.fixtureShape = new b2PolygonShape();
+                fixture.fixtureShape = boost::make_shared<b2PolygonShape>();
+                boost::shared_ptr<b2PolygonShape> p = boost::static_pointer_cast<b2PolygonShape>(fixture.fixtureShape);
+                p->SetAsBox(width / 2.0f / PhysicsManager::PTM_RATIO, height / 2.0f / PhysicsManager::PTM_RATIO);
+                fixture.fixtureDef.shape = (b2Shape *)p.get();
             }
             else if(string(e->Value()) == string("Properties"))
             {
@@ -247,10 +249,11 @@ namespace FEngine
                 float radius;
                 sscanf(e->Attribute("radius"), "%f", &radius);
 
-                fixture.fixtureShape = new b2CircleShape();
-                ((b2CircleShape *)(fixture.fixtureShape))->m_p.Set(0, 0); //position, relative to body position
-                ((b2CircleShape *)(fixture.fixtureShape))->m_radius = radius / PhysicsManager::PTM_RATIO; //radius
-                fixture.fixtureDef.shape = fixture.fixtureShape;
+                fixture.fixtureShape = boost::make_shared<b2CircleShape>();
+                boost::shared_ptr<b2CircleShape> p = boost::static_pointer_cast<b2CircleShape>(fixture.fixtureShape);
+                p->m_p.Set(0, 0); //position, relative to body position
+                p->m_radius = radius / PhysicsManager::PTM_RATIO; //radius
+                fixture.fixtureDef.shape = (b2Shape *)p.get();
             }
             else if(string(e->Value()) == string("Properties"))
             {

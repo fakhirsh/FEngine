@@ -31,7 +31,9 @@ namespace FEngine
             PhysicsShape();
             ~PhysicsShape();
             
-            b2Shape * fixtureShape;
+            //b2Shape * fixtureShape;
+            boost::shared_ptr<b2Shape> fixtureShape;
+            
             b2FixtureDef fixtureDef;
             std::string shapeType;
             
