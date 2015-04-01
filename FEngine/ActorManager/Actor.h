@@ -29,6 +29,8 @@ namespace FEngine
         ActorComponentPtr   GetPhysicsComponent         ();
         ActorComponentPtr   GetTransformComponent       ();
         ActorComponentPtr   GetInputComponent           ();
+        ActorComponentPtr   GetAIComponent              ();
+        ActorComponentPtr   GetAnimationComponent       ();
         
         SceneNode2DPtr      GetViewComponentSceneNode2D ();
         
@@ -42,6 +44,7 @@ namespace FEngine
         ActorComponentPtr   _transformComponent;
         ActorComponentPtr   _viewComponent;
         ActorComponentPtr   _inputComponent;
-        
+        ActorComponentPtr   _aiComponent;
+        ActorComponentPtr   _animationComponent;
     };
 }

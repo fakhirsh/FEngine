@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */; };
 		0C2758521AB40DEF00F18283 /* libFEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758461AB40DEE00F18283 /* libFEngine.a */; };
 		0C275A001AB4123900F18283 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758E61AB410D400F18283 /* libvorbis.a */; };
 		0C275A011AB4123D00F18283 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C27588E1AB410B600F18283 /* libpng.a */; };
@@ -186,6 +187,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLES2DebugDraw.cpp; path = PhysicsManager/GLES2DebugDraw.cpp; sourceTree = "<group>"; };
+		0C02FAC31ACC294D0052884B /* GLES2DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLES2DebugDraw.h; path = PhysicsManager/GLES2DebugDraw.h; sourceTree = "<group>"; };
 		0C2758461AB40DEE00F18283 /* libFEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2758511AB40DEF00F18283 /* FEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2758571AB40DEF00F18283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -408,6 +411,8 @@
 			children = (
 				0C2F3F961AC72B3200D66B2C /* PhysicsManager.cpp */,
 				0C2F3F971AC72B3200D66B2C /* PhysicsManager.h */,
+				0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */,
+				0C02FAC31ACC294D0052884B /* GLES2DebugDraw.h */,
 			);
 			name = PhysicsManager;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */,
 				0C2F3E891AC6F47400D66B2C /* DebugCircleNode2D.cpp in Sources */,
 				0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */,
+				0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */,
 				0CA375881AC5230C001C8EDE /* InputComponent.cpp in Sources */,
 				0C7951931AB8A4F10010DA81 /* EventDispatcher.cpp in Sources */,
 				0C8C24DB1ABBF60C00C77AAF /* RootSceneNode2D.cpp in Sources */,

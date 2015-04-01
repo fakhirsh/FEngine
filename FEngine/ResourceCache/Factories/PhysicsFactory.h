@@ -30,17 +30,15 @@ namespace FEngine
         {
             PhysicsShape();
             ~PhysicsShape();
-            
-            //b2Shape * fixtureShape;
+    
             boost::shared_ptr<b2Shape> fixtureShape;
-            
             b2FixtureDef fixtureDef;
             std::string shapeType;
             
+            SceneNode2DPtr debugNode;
         };
 
         PhysicsShape CreateShape(const tinyxml2::XMLElement * physicsElement);
-        
         void CreateBox(const tinyxml2::XMLElement * physicsElement, PhysicsShape & fixture);
         void CreateCircle(const tinyxml2::XMLElement * physicsElement, PhysicsShape & fixture);
         

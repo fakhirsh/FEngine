@@ -10,6 +10,8 @@
 
 #include "Common.h"
 
+#include "../../3rdParty/glm-0.9.6.3/glm/gtx/transform2.hpp"
+
 #include "SceneNodeProperties2D.h"
 #include "RootSceneNode2D.h"
 #include "TextureAtlas.h"
@@ -61,8 +63,8 @@ namespace FEngine
         glm::vec2 oldP(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y);
         glm::vec2 newP;
         Math::Point2D p;
-        p.x     =   oldP.x;
-        p.y     =   oldP.y;
+        p.x     =   oldP.x + _sceneNodeProperties2D->anchor.x;
+        p.y     =   oldP.y + _sceneNodeProperties2D->anchor.y;
         p       =   gApp->DesignSpaceToSafeZone(p);
         newP.x  =   p.x;
         newP.y  =   p.y;
@@ -160,7 +162,7 @@ namespace FEngine
         
         glm::mat4 mat = StateManager::Get()->PeekTransform2D();
         
-        float W, H, u, v, uW, vH, angle, scaleX, scaleY, alpha;
+        float W, H, u, v, uW, vH, angle, scaleX, scaleY, alpha, shearX, shearY;
         W       = _sceneNodeProperties2D->width;
         H       = _sceneNodeProperties2D->height;
         u       = _sceneNodeProperties2D->u;
@@ -171,7 +173,8 @@ namespace FEngine
         scaleX  = _sceneNodeProperties2D->scaleX;
         scaleY  = _sceneNodeProperties2D->scaleX;
         alpha   = _sceneNodeProperties2D->alpha;
-        
+        shearX  = _sceneNodeProperties2D->shearX;
+        shearY  = _sceneNodeProperties2D->shearY;
         
         //glm::vec2 oldP(snpStack.x, snpStack.y);
         //glm::vec2 newP = gApp->DesignSpaceToSafeZone(oldP);
@@ -204,7 +207,7 @@ namespace FEngine
         _renderBatch[i * VERTS_PER_SPRITE + 1].b	=	_sceneNodeProperties2D->tintColor.b;
         _renderBatch[i * VERTS_PER_SPRITE + 1].a	=	alpha;
         
-        vec = mat * glm::vec4(W / 2.0f, H / 2.0f, 0.0f, 1.0f);
+        vec = mat * glm::vec4(W / 2.0f + shearX, H / 2.0f + shearY, 0.0f, 1.0f);
         _renderBatch[i * VERTS_PER_SPRITE + 2].x	=	vec.x;
         _renderBatch[i * VERTS_PER_SPRITE + 2].y	=	vec.y;
         _renderBatch[i * VERTS_PER_SPRITE + 2].u	=	uW;
@@ -224,7 +227,7 @@ namespace FEngine
         _renderBatch[i * VERTS_PER_SPRITE + 3].b	=	_sceneNodeProperties2D->tintColor.b;
         _renderBatch[i * VERTS_PER_SPRITE + 3].a	=	alpha;
         
-        vec = mat * glm::vec4(W / 2.0f, H / 2.0f, 0.0f, 1.0f);
+        vec = mat * glm::vec4(W / 2.0f + shearX, H / 2.0f + shearY, 0.0f, 1.0f);
         _renderBatch[i * VERTS_PER_SPRITE + 4].x	=	vec.x;
         _renderBatch[i * VERTS_PER_SPRITE + 4].y	=	vec.y;
         _renderBatch[i * VERTS_PER_SPRITE + 4].u	=	uW;
@@ -234,7 +237,7 @@ namespace FEngine
         _renderBatch[i * VERTS_PER_SPRITE + 4].b	=	_sceneNodeProperties2D->tintColor.b;
         _renderBatch[i * VERTS_PER_SPRITE + 4].a	=	alpha;
         
-        vec = mat * glm::vec4(-W / 2.0f, H / 2.0f, 0.0f, 1.0f);
+        vec = mat * glm::vec4(-W / 2.0f + shearX, H / 2.0f + shearY, 0.0f, 1.0f);
         _renderBatch[i * VERTS_PER_SPRITE + 5].x	=	vec.x;
         _renderBatch[i * VERTS_PER_SPRITE + 5].y	=	vec.y;
         _renderBatch[i * VERTS_PER_SPRITE + 5].u	=	u;

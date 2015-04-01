@@ -7,6 +7,7 @@
 //
 
 #include "PhysicsManager.h"
+//#include "GLES2DebugDraw.h"
 
 #include <iostream>
 
@@ -41,6 +42,13 @@ namespace FEngine
         
         _world = new b2World(gravity);
         _world->SetAllowSleeping(doSleep);
+        
+        //if(gApp->IsDebugModeOn())
+        //{
+        //    GLES2DebugDraw debugDraw;
+        //    _world->SetDebugDraw( &debugDraw );
+        //    debugDraw.SetFlags( b2Draw::e_shapeBit );
+        //}
         
         return true;
     }

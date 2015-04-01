@@ -25,6 +25,8 @@ namespace FEngine
         
         scaleX      =   1.0f;
         scaleY      =   1.0f;
+        shearX      =   0.0f;
+        shearY      =   0.0f;
         
         width       =   0.0f;
         height      =   0.0f;
@@ -40,6 +42,8 @@ namespace FEngine
         tintColor.g =   1.0f;
         tintColor.b =   1.0f;
 
+        anchor.x    =   0.0f;
+        anchor.y    =   0.0f;
     }
     
     SceneNodeProperties2D::~SceneNodeProperties2D()

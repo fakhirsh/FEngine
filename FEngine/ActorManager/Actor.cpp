@@ -21,7 +21,7 @@ namespace FEngine
     
     Actor::~Actor()
     {
-        float g = 0;
+
     }
         
     unsigned long Actor::GetID()
@@ -33,6 +33,8 @@ namespace FEngine
     {
         if(_physicsComponent)   _physicsComponent->Update(dt);
         if(_viewComponent)      _viewComponent->Update(dt);
+        if(_aiComponent)        _aiComponent->Update(dt);
+        if(_animationComponent) _animationComponent->Update(dt);
     }
  
     ActorComponentPtr Actor::GetViewComponent()
@@ -53,6 +55,16 @@ namespace FEngine
     ActorComponentPtr Actor::GetInputComponent ()
     {
         return _inputComponent;
+    }
+    
+    ActorComponentPtr Actor::GetAIComponent ()
+    {
+        return _aiComponent;
+    }
+    
+    ActorComponentPtr Actor::GetAnimationComponent ()
+    {
+        return _animationComponent;
     }
     
     SceneNode2DPtr Actor::GetViewComponentSceneNode2D()

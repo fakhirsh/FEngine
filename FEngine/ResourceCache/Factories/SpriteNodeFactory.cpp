@@ -114,6 +114,24 @@ namespace FEngine
                 snPtr->GetSceneNodeProperties()->tintColor.g = atof(g.c_str());
                 snPtr->GetSceneNodeProperties()->tintColor.b = atof(b.c_str());
             }
+            else if(string(viewElement->Value()) == "Anchor")
+            {
+                float x, y;
+                sscanf(viewElement->Attribute("x"), "%f", &x);
+                sscanf(viewElement->Attribute("y"), "%f", &y);
+                
+                snPtr->GetSceneNodeProperties()->anchor.x = x;
+                snPtr->GetSceneNodeProperties()->anchor.y = y;
+            }
+            else if(string(viewElement->Value()) == "Shear")
+            {
+                float x, y;
+                sscanf(viewElement->Attribute("x"), "%f", &x);
+                sscanf(viewElement->Attribute("y"), "%f", &y);
+                
+                snPtr->GetSceneNodeProperties()->shearX = x;
+                snPtr->GetSceneNodeProperties()->shearY = y;
+            }
             
             viewElement = viewElement->NextSiblingElement();
         }

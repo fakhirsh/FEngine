@@ -12,6 +12,7 @@
 #include <iostream>
 //#include <cstdlib>
 
+#include "../../../../GameLogic/Components/PlayerAnimation.h"
 
 #include "../../ActorManager/Actor.h"
 #include "../../ActorManager/ActorManager.h"
@@ -144,6 +145,17 @@ namespace FEngine
                         InputComponentPtr icPtr = boost::static_pointer_cast<InputComponent>(actor->_inputComponent);
                         
                         icPtr->SetOwner(actor);
+                    }
+                    else if(string(comp->Value()) == string("Animation"))
+                    {
+                        actor->_animationComponent = boost::make_shared<PlayerAnimation>();
+                        boost::shared_ptr<PlayerAnimation> paPtr = boost::static_pointer_cast<PlayerAnimation>(actor->_animationComponent);
+                        
+                        paPtr->SetOwner(actor);
+                    }
+                    else if(string(comp->Value()) == string("AI"))
+                    {
+                        
                     }
                     
                     comp = comp->NextSiblingElement();

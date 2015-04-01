@@ -22,11 +22,11 @@ namespace FEngine
         std::cout << "RootSceneNode2D::RootSceneNode2D" << std::endl;
         
         _sceneNodeProperties2D          =   boost::make_shared<SceneNodeProperties2D>();
-        _sceneNodeProperties2D->x       =   320;
-        _sceneNodeProperties2D->y       =   480;
+        _sceneNodeProperties2D->x       =   0;
+        _sceneNodeProperties2D->y       =   0;
         _sceneNodeProperties2D->alpha   =   1.0f;
-        _sceneNodeProperties2D->scaleX  =   0.2f;
-        _sceneNodeProperties2D->scaleY  =   0.2f;
+        _sceneNodeProperties2D->scaleX  =   1.0f;
+        _sceneNodeProperties2D->scaleY  =   1.0f;
         
         _sceneNodeProperties2D->angle   =   Math::DegToRad(0.0f);
         
