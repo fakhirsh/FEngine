@@ -61,22 +61,22 @@ namespace FEngine
                 std::list<ProcessPtr>::iterator tempIt = i;
                 ++i;
                 
-                if(p->GetState() == Process::State::CREATED)
+                if(p->GetState() == Process::CREATED)
                 {
                     p->Resume();
                 }
                 
-                if(p->GetState() == Process::State::RUNNING)
+                if(p->GetState() == Process::RUNNING)
                 {
                     p->Update(dt);
                 }
                 
-                if(p->GetState() == Process::State::READY)
+                if(p->GetState() == Process::READY)
                 {
                     p->Pause();
                 }
                 
-                if(p->GetState() == Process::State::SUCCEEDED)
+                if(p->GetState() == Process::SUCCEEDED)
                 {
                     ProcessPtr child = p->RemoveChild();
                     if(child)
@@ -86,12 +86,12 @@ namespace FEngine
                     p->Terminate();
                 }
 
-                if(p->GetState() == Process::State::FAILED)
+                if(p->GetState() == Process::FAILED)
                 {
                     p->Terminate();
                 }
                             
-                if(p->GetState() == Process::State::TERMINATED)
+                if(p->GetState() == Process::TERMINATED)
                 {
                     _processList.erase(tempIt);
                 }

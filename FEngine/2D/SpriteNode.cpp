@@ -8,7 +8,7 @@
 
 #include "SpriteNode.h"
 
-#include "Common.h"
+#include "../Common.h"
 
 #include "../../3rdParty/glm-0.9.6.3/glm/gtx/transform2.hpp"
 

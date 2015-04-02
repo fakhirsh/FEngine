@@ -9,7 +9,7 @@
 #include "DebugCircleNode2D.h"
 
 
-#include "Common.h"
+#include "../Common.h"
 
 #include "SceneNodeProperties2D.h"
 #include "RootSceneNode2D.h"
