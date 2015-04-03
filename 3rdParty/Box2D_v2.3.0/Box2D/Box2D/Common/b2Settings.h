@@ -23,6 +23,8 @@
 #include <assert.h>
 #include <float.h>
 
+#include <cstring>
+
 #define B2_NOT_USED(x) ((void)(x))
 #define b2Assert(A) assert(A)
 

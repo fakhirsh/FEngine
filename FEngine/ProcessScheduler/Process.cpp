@@ -35,37 +35,37 @@ namespace FEngine
     
     bool Process::IsFinished()
     {
-        return (_state == State::SUCCEEDED || _state == State::FAILED);
+        return (_state == Process::SUCCEEDED || _state == Process::FAILED);
     }
     
     void Process::Pause()
     {
-        _state = State::READY;
+        _state = Process::READY;
     }
     
     void Process::Resume()
     {
-        _state = State::RUNNING;
+        _state = Process::RUNNING;
     }
     
     void Process::Succeed()
     {
-        _state = State::SUCCEEDED;
+        _state = Process::SUCCEEDED;
     }
     
     void Process::Fail()
     {
-        _state = State::FAILED;
+        _state = Process::FAILED;
     }
     
     void Process::Terminate()
     {
-        _state = State::TERMINATED;
+        _state = Process::TERMINATED;
     }
     
     bool Process::IsDead()
     {
-        return (_state == SUCCEEDED || _state == FAILED || _state == TERMINATED);
+        return (_state == Process::SUCCEEDED || _state == Process::FAILED || _state == Process::TERMINATED);
     }
     
     Process::State Process::GetState()

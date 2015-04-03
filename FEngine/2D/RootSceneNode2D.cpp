@@ -15,6 +15,10 @@
 #include "../2D/SceneNodeProperties2D.h"
 #include "../StateManager/StateManager.h"
 
+#include "../System/App.h"
+
+extern FEngine::App * gApp;
+
 namespace FEngine
 {
     RootSceneNode2D::RootSceneNode2D ()
@@ -22,8 +26,8 @@ namespace FEngine
         std::cout << "RootSceneNode2D::RootSceneNode2D" << std::endl;
         
         _sceneNodeProperties2D          =   boost::make_shared<SceneNodeProperties2D>();
-        _sceneNodeProperties2D->x       =   0;
-        _sceneNodeProperties2D->y       =   0;
+        _sceneNodeProperties2D->x       =   0.0f;
+        _sceneNodeProperties2D->y       =   0.0f;
         _sceneNodeProperties2D->alpha   =   1.0f;
         _sceneNodeProperties2D->scaleX  =   1.0f;
         _sceneNodeProperties2D->scaleY  =   1.0f;
