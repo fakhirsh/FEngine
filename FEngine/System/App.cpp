@@ -207,7 +207,7 @@ namespace FEngine
         
         EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
         eventMgr->TriggerEvent(touchMovedEvent);
-        
+
     }
 
     void App::TouchCancelled (int x, int y)
@@ -279,8 +279,14 @@ namespace FEngine
 
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 
+    // The following two functions appear to be buggy. Please fix:
+    //
+    // 1. DesignSpaceToViewportSpace()
+    // 2. ViewportSpaceToDesignSpace()
+    //
+    
     Math::Point2D App::DesignSpaceToViewportSpace (const Math::Point2D & designSpace)
     {
         struct BOX
@@ -333,13 +339,8 @@ namespace FEngine
         return designSpace;
     }
     
+/////////////////////////////////////////////////////////////////////////////////
     
-    /*
-     
-            THE FOLLOWING TWO FUNCTIONS APPEAR TO BE BUGGY.... PLEASE FIX THEM ASAP.
-            They appear to break if device aspect ratio/resolution is NOT equal to design space.
-     
-     */
     
     Math::Point2D App::DesignSpaceToSafeZone (const Math::Point2D & designSpace)
     {
@@ -367,8 +368,6 @@ namespace FEngine
         return safeZone;
 
     }
-    
-    /// BUGGY... PLEASE FIX.....
     
     Math::Point2D App::SafeZoneToDesignSpace (const Math::Point2D & safeZone)
     {

@@ -59,13 +59,10 @@ namespace FEngine
         //glm::mat4 matStack = root->transformationStack.back();
         
         glm::mat4 mat = StateManager::Get()->PeekTransform2D();
-        
-        glm::vec2 oldP(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y);
+
+        Math::Point2D p       =   gApp->DesignSpaceToSafeZone(Math::Point2D(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y));
+
         glm::vec2 newP;
-        Math::Point2D p;
-        p.x     =   oldP.x + _sceneNodeProperties2D->anchor.x;
-        p.y     =   oldP.y + _sceneNodeProperties2D->anchor.y;
-        p       =   gApp->DesignSpaceToSafeZone(p);
         newP.x  =   p.x;
         newP.y  =   p.y;
         
@@ -79,7 +76,15 @@ namespace FEngine
                                                                                  _sceneNodeProperties2D->scaleY * CSF,
                                                                                  1.0f));
         
-        glm::mat4 localMat = translate * rotate * scale;
+        glm::mat4 translateAnchor = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(_sceneNodeProperties2D->anchor.x,
+                                                                                       _sceneNodeProperties2D->anchor.y
+                                                                                       , 0.0f));
+        
+        glm::mat4 shearX    = glm::mat4(1.0f);
+        shearX[1][0] = _sceneNodeProperties2D->shearX;
+        
+        
+        glm::mat4 localMat = translate * rotate * scale * translateAnchor;
         
         StateManager::Get()->PushTransform2D(mat * localMat);
         
@@ -152,13 +157,6 @@ namespace FEngine
     
     void SpriteNode::UpdateSpriteBatch()
     {
-        //float CSF = gApp->GetContentScaleFactor();
-        
-        //SpritePtr s = _spriteList[i];
-        
-        //RootSceneNode * root = (RootSceneNode *)StateManager::Get()->GetRootSceneNode();
-        //SceneNodeProperties snpStack = root->snpStack.back();
-        //glm::mat4 mat = root->transformationStack.back();
         
         glm::mat4 mat = StateManager::Get()->PeekTransform2D();
         
@@ -175,14 +173,10 @@ namespace FEngine
         alpha   = _sceneNodeProperties2D->alpha;
         shearX  = _sceneNodeProperties2D->shearX;
         shearY  = _sceneNodeProperties2D->shearY;
+        //shearX  = 0.0f;
+        //shearY  = 0.0f;
         
-        //glm::vec2 oldP(snpStack.x, snpStack.y);
-        //glm::vec2 newP = gApp->DesignSpaceToSafeZone(oldP);
-        
-        //glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(newP.x, newP.y, 0.0f));
-        //glm::mat4 rotate    = glm::rotate<GLfloat>(glm::mat4(1.0f), angle, glm::vec3(0.0f, 0.0f, 1.0f));
-        //glm::mat4 scale     = glm::scale<GLfloat>(glm::mat4(1.0f), glm::vec3(scaleX * CSF, scaleY * CSF, 1.0f));
-        
+
         int i = 0;
         const int VERTS_PER_SPRITE = 6;
         //glm::vec4 vec = translate * rotate * scale * glm::vec4(-W / 2.0f, -H / 2.0f, 0.0f, 1.0f);
