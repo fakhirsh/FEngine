@@ -257,13 +257,13 @@ namespace FEngine
         _safeZoneRect.x = _origin.x;
         _safeZoneRect.y = _origin.y;
         
-        _viewportWidth  =   _safeZoneRect.width;
-        _viewportHeight =   _safeZoneRect.height;
+        _viewportWidth  =   _frameBufferWidth;
+        _viewportHeight =   _frameBufferHeight;
         //_renderer->SetViewPort(0.0f, 0.0f, _viewportWidth, _viewportHeight);
         glViewport(0.0f, 0.0f, _viewportWidth, _viewportHeight);
         //glViewport(_safeZoneRect.x, _safeZoneRect.y, _safeZoneRect.width, _safeZoneRect.height);
         
-        _contentScaleFactor = _viewportWidth / _assetDesignWidth;
+        _contentScaleFactor = _safeZoneRect.width / _assetDesignWidth;
         //_contentScaleFactor = 1.0f;
         
         // Output message ONLY for testing:
@@ -352,9 +352,9 @@ namespace FEngine
         BOX V, D;
         
         V.l = _safeZoneRect.x;
-        V.r = _safeZoneRect.width;
+        V.r = _safeZoneRect.width + V.l;
         V.b = _safeZoneRect.y;
-        V.t = _safeZoneRect.height;
+        V.t = _safeZoneRect.height + V.b;
         
         D.l = 0.0f;
         D.r = _designWidth;
@@ -381,9 +381,9 @@ namespace FEngine
         BOX V, D;
         
         V.l = _safeZoneRect.x;
-        V.r = _safeZoneRect.width;
+        V.r = _safeZoneRect.width + V.l;
         V.b = _safeZoneRect.y;
-        V.t = _safeZoneRect.height;
+        V.t = _safeZoneRect.height + V.b;
         
         D.l = 0.0f;
         D.r = _designWidth;
