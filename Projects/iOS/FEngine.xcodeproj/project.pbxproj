@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */; };
+		0C27449C1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C27449A1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm */; };
 		0C2758521AB40DEF00F18283 /* libFEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758461AB40DEE00F18283 /* libFEngine.a */; };
 		0C275A001AB4123900F18283 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758E61AB410D400F18283 /* libvorbis.a */; };
 		0C275A011AB4123D00F18283 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C27588E1AB410B600F18283 /* libpng.a */; };
@@ -56,6 +57,12 @@
 		0CA779031AC4382100CB5FA5 /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA779011AC4382100CB5FA5 /* PhysicsComponent.cpp */; };
 		0CA779061AC467A000CB5FA5 /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA779041AC467A000CB5FA5 /* TransformComponent.cpp */; };
 		0CA779091AC46C0700CB5FA5 /* ViewComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA779071AC46C0700CB5FA5 /* ViewComponent.cpp */; };
+		0CCC4C7E1ACFAF7700CA2203 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C7D1ACFAF7700CA2203 /* UIKit.framework */; };
+		0CCC4C801ACFAF7E00CA2203 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C7F1ACFAF7E00CA2203 /* Foundation.framework */; };
+		0CCC4C821ACFAF8400CA2203 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C811ACFAF8400CA2203 /* StoreKit.framework */; };
+		0CCC4C841ACFAF8D00CA2203 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C831ACFAF8D00CA2203 /* CoreGraphics.framework */; };
+		0CCC4C881ACFD19800CA2203 /* StubAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC4C861ACFD19800CA2203 /* StubAds.cpp */; };
+		0CCC4C8F1ACFD47E00CA2203 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C8E1ACFD47E00CA2203 /* Chartboost.framework */; };
 		0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB103F1AC3216F000217A8 /* View2DFactory.cpp */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +196,9 @@
 /* Begin PBXFileReference section */
 		0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLES2DebugDraw.cpp; path = PhysicsManager/GLES2DebugDraw.cpp; sourceTree = "<group>"; };
 		0C02FAC31ACC294D0052884B /* GLES2DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLES2DebugDraw.h; path = PhysicsManager/GLES2DebugDraw.h; sourceTree = "<group>"; };
+		0C2744981ACF20F300D1C4A7 /* Ads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ads.h; sourceTree = "<group>"; };
+		0C27449A1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChartBoostAdsiOS.mm; sourceTree = "<group>"; };
+		0C27449B1ACF214A00D1C4A7 /* ChartBoostAdsiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartBoostAdsiOS.h; sourceTree = "<group>"; };
 		0C2758461AB40DEE00F18283 /* libFEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2758511AB40DEF00F18283 /* FEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2758571AB40DEF00F18283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -283,6 +293,14 @@
 		0CA779051AC467A000CB5FA5 /* TransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransformComponent.h; path = Components/TransformComponent.h; sourceTree = "<group>"; };
 		0CA779071AC46C0700CB5FA5 /* ViewComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewComponent.cpp; path = Components/ViewComponent.cpp; sourceTree = "<group>"; };
 		0CA779081AC46C0700CB5FA5 /* ViewComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewComponent.h; path = Components/ViewComponent.h; sourceTree = "<group>"; };
+		0CCC4C761ACFAF2900CA2203 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../3rdParty/Monetize/Chartboost/Chartboost.framework; sourceTree = "<group>"; };
+		0CCC4C7D1ACFAF7700CA2203 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0CCC4C7F1ACFAF7E00CA2203 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0CCC4C811ACFAF8400CA2203 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0CCC4C831ACFAF8D00CA2203 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0CCC4C861ACFD19800CA2203 /* StubAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StubAds.cpp; sourceTree = "<group>"; };
+		0CCC4C871ACFD19800CA2203 /* StubAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubAds.h; sourceTree = "<group>"; };
+		0CCC4C8E1ACFD47E00CA2203 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../3rdParty/Monetize/Chartboost/iOS/Chartboost.framework; sourceTree = "<group>"; };
 		0CFB103F1AC3216F000217A8 /* View2DFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View2DFactory.cpp; sourceTree = "<group>"; };
 		0CFB10401AC3216F000217A8 /* View2DFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View2DFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -292,6 +310,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CCC4C8F1ACFD47E00CA2203 /* Chartboost.framework in Frameworks */,
+				0CCC4C841ACFAF8D00CA2203 /* CoreGraphics.framework in Frameworks */,
+				0CCC4C821ACFAF8400CA2203 /* StoreKit.framework in Frameworks */,
+				0CCC4C801ACFAF7E00CA2203 /* Foundation.framework in Frameworks */,
+				0CCC4C7E1ACFAF7700CA2203 /* UIKit.framework in Frameworks */,
 				0C2F3F851AC70B9B00D66B2C /* libBox2D.a in Frameworks */,
 				0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */,
 				0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */,
@@ -313,6 +336,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C27448F1ACF209D00D1C4A7 /* Monetize */ = {
+			isa = PBXGroup;
+			children = (
+				0C2744901ACF209D00D1C4A7 /* Ads */,
+				0C2744911ACF209D00D1C4A7 /* IAP */,
+				0C2744981ACF20F300D1C4A7 /* Ads.h */,
+			);
+			path = Monetize;
+			sourceTree = "<group>";
+		};
+		0C2744901ACF209D00D1C4A7 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				0C27449A1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm */,
+				0C27449B1ACF214A00D1C4A7 /* ChartBoostAdsiOS.h */,
+				0CCC4C861ACFD19800CA2203 /* StubAds.cpp */,
+				0CCC4C871ACFD19800CA2203 /* StubAds.h */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		0C2744911ACF209D00D1C4A7 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 		0C27583D1AB40DEE00F18283 = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +451,12 @@
 		0C275A481AB413F700F18283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CCC4C8E1ACFD47E00CA2203 /* Chartboost.framework */,
+				0CCC4C831ACFAF8D00CA2203 /* CoreGraphics.framework */,
+				0CCC4C811ACFAF8400CA2203 /* StoreKit.framework */,
+				0CCC4C7F1ACFAF7E00CA2203 /* Foundation.framework */,
+				0CCC4C7D1ACFAF7700CA2203 /* UIKit.framework */,
+				0CCC4C761ACFAF2900CA2203 /* Chartboost.framework */,
 				0C275A4B1AB4141000F18283 /* OpenAL.framework */,
 				0C275A491AB4140900F18283 /* OpenGLES.framework */,
 			);
@@ -466,6 +523,7 @@
 				0CE399E91AB9EAFE00350E8C /* ActorManager */,
 				0C7951411AB85EF80010DA81 /* EventDispatcher */,
 				0C68A7A61ACA66850087A197 /* MemoryManager */,
+				0C27448F1ACF209D00D1C4A7 /* Monetize */,
 				0C2F3E951AC7094200D66B2C /* PhysicsManager */,
 				0C7951431AB85EF80010DA81 /* ProcessScheduler */,
 				0C79514A1AB85EF80010DA81 /* Renderer */,
@@ -861,6 +919,7 @@
 				0C7951701AB85EF80010DA81 /* App.cpp in Sources */,
 				0C3F261F1ABD82A4002DCB5A /* Math.cpp in Sources */,
 				0C79516A1AB85EF80010DA81 /* IOManagerDefault.cpp in Sources */,
+				0C27449C1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm in Sources */,
 				0C7951721AB85EF80010DA81 /* SmartPtr.cpp in Sources */,
 				0C3F261C1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp in Sources */,
 				0C8C24E21ABBF61A00C77AAF /* SceneNode2D.cpp in Sources */,
@@ -876,6 +935,7 @@
 				0CA778F21AC3E9EE00CB5FA5 /* ActorFactory.cpp in Sources */,
 				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
 				0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */,
+				0CCC4C881ACFD19800CA2203 /* StubAds.cpp in Sources */,
 				0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */,
 				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,
 				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,
@@ -1008,6 +1068,11 @@
 		0C27585B1AB40DEF00F18283 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost,
+					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost/iOS,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1028,6 +1093,11 @@
 		0C27585C1AB40DEF00F18283 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost,
+					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost/iOS,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

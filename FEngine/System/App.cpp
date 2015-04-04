@@ -16,6 +16,7 @@
 #include "../EventDispatcher/DefaultEvents.h"
 #include "../EventDispatcher/EventDispatcher.h"
 #include "../PhysicsManager/PhysicsManager.h"
+#include "../Monetize/Ads/StubAds.h"
 //#include "../Renderer/IRenderer.h"
 
 #include <GameLogic/Screens/Test/Test.h>
@@ -76,6 +77,12 @@ namespace FEngine
         if(_ioManager == NULL)
         {
             return false;
+        }
+        
+        _ads = sysConfig->ads;
+        if(_ads == NULL)
+        {
+            _ads = new StubAds();
         }
         
         _frameBufferWidth   =   sysConfig->frameBufferWidth;
@@ -425,6 +432,11 @@ namespace FEngine
         return _renderer;
     }
 
+    Ads * App::GetAdsObject ()
+    {
+        return _ads;
+    }
+    
     void App::SetAssetPath (const char * path)
     {
         _assetPath = std::string(path);

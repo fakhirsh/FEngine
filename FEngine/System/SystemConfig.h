@@ -24,6 +24,7 @@ namespace FEngine
 {
     class IOManager;
     class IRenderer;
+    class Ads;
     
     class SystemConfig
     {
@@ -63,8 +64,9 @@ namespace FEngine
 
         string      assetPath;
         
-        IOManager *   ioManager;
-        IRenderer *   renderer;
+        IOManager * ioManager;
+        IRenderer * renderer;
+        Ads *       ads;
         //SoundManager * sndManager;
         //Other System specific Crap * allCrapHere...
     };

@@ -29,9 +29,9 @@ namespace FEngine
         Event();
         virtual ~Event();
         
-        std::string                 GetName();
+        std::string                 GetName ();
         
-        virtual const unsigned long GetID() const   =   0;
+        virtual const unsigned int  GetID   () const   =   0;
         
     protected:
         std::string                 _name;

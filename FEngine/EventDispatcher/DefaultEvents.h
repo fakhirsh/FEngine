@@ -20,8 +20,8 @@ namespace FEngine
     class EventTouchDown : public Event
     {
     public:
-        static const unsigned long eventID;
-        virtual const unsigned long GetID() const { return eventID; }
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
         
         EventTouchDown(){}
         ~EventTouchDown(){}
@@ -43,8 +43,8 @@ namespace FEngine
     class EventTouchMoved : public Event
     {
     public:
-        static const unsigned long eventID;
-        virtual const unsigned long GetID() const { return eventID; }
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
         
         EventTouchMoved(){}
         ~EventTouchMoved(){}
@@ -64,8 +64,8 @@ namespace FEngine
     class EventTouchUp : public Event
     {
     public:
-        static const unsigned long eventID;
-        virtual const unsigned long GetID() const { return eventID; }
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
         
         EventTouchUp(){}
         ~EventTouchUp(){}
@@ -85,8 +85,8 @@ namespace FEngine
     class EventSetDebugNode : public Event
     {
     public:
-        static const unsigned long eventID;
-        virtual const unsigned long GetID() const { return eventID; }
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
         
         EventSetDebugNode(){}
         ~EventSetDebugNode(){}
@@ -105,8 +105,8 @@ namespace FEngine
     class EventSetActorPosition : public Event
     {
     public:
-        static const unsigned long eventID;
-        virtual const unsigned long GetID() const { return eventID; }
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
         
         EventSetActorPosition(){}
         ~EventSetActorPosition(){}
@@ -139,8 +139,8 @@ namespace FEngine
         }
         virtual ~EventTest1(){}
     
-        virtual const unsigned long GetID() const { return eventID; };
-        static const unsigned long  eventID;
+        virtual const unsigned int GetID() const { return eventID; };
+        static const unsigned int  eventID;
         
         int someData;
         int someMoreData;

@@ -27,6 +27,7 @@ namespace FEngine
     class Point;
     class Rect;
     class SystemConfig;
+    class Ads;
     
     class App
     {
@@ -51,6 +52,8 @@ namespace FEngine
         IOManager * GetIOManager                ();
         
         IRenderer * GetRenderer                 ();
+        
+        Ads *       GetAdsObject                ();
         
         void        SetFrameBufferWidth         (float val);
         void        SetFrameBufferHeight        (float val);
@@ -150,6 +153,8 @@ namespace FEngine
         //FIResourceLoader * _resourceLoader;
         IOManager * _ioManager;
         IRenderer * _renderer;
+        Ads *       _ads;
+        
         // And other system specific crap...
         
     /////////////////////////////////////////
