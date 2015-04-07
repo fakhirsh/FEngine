@@ -200,4 +200,23 @@ namespace FEngine
     }
      */
     
+    SceneNode2D * const SceneNode2D::FindNode (std::string nodeName)
+    {
+        if(_sceneNodeProperties2D->name == nodeName)
+        {
+            return this;
+        }
+        
+        std::list<SceneNode2DPtr>::iterator it = _children.begin();
+        while (it != _children.end())
+        {
+            SceneNode2D * p = (*it)->FindNode(nodeName);
+            if(p) return p;
+            
+            it++;
+        }
+        
+        return NULL;
+    }
+    
 }

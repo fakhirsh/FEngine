@@ -25,8 +25,8 @@ namespace FEngine
         bool                AddChild        (SceneNode2DPtr child);
         bool                RemoveChild     (SceneNode2DPtr child);
         
-        // Finds the node amongst children
-        //SceneNode2DPtr      FindNode        (unsigned int nodeID);
+        // Finds the node amongst itself and its children
+        SceneNode2D * const FindNode        (std::string nodeName);
         
         void                SetParent       (SceneNode2D * parent);
         const SceneNode2D * GetParent       ();

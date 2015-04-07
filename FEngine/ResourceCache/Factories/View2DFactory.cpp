@@ -168,18 +168,16 @@ namespace FEngine
             }
             else if(string(viewElement->Value()) == "Sprite")
             {
-                string name = viewElement->Attribute("name");
-                viewPtr->GetSceneNodeProperties()->name = name;
+                string spriteName = viewElement->Attribute("name");
+                //viewPtr->GetSceneNodeProperties()->name = spriteName;
                 
                 ProgramFactory pf;
-                name = viewElement->Attribute("programName");
-                viewPtr->GetSceneNodeProperties()->program = pf.CreateProgram(name);
+                string progName = viewElement->Attribute("programName");
+                viewPtr->GetSceneNodeProperties()->program = pf.CreateProgram(progName);
                 
                 TextureAtlasFactory taf;
-                name = viewElement->Attribute("atlasName");
-                TextureAtlasPtr taPtr = taf.CreateTextureAtlas(name);
-                
-                string spriteName = viewPtr->GetSceneNodeProperties()->name;
+                string texName = viewElement->Attribute("atlasName");
+                TextureAtlasPtr taPtr = taf.CreateTextureAtlas(texName);
                 
                 if(!taPtr->IsSpriteValid(spriteName)){
                     cout << "SpriteNodeFactory::CreateSpriteNode: Invalid sprite name -> " << spriteName << endl;

@@ -9,6 +9,7 @@
 #pragma once
 
 #include "Process.h"
+#include "../Utility/Math.h"
 
 namespace FEngine
 {
@@ -20,9 +21,79 @@ namespace FEngine
         
         virtual void    Update  (float dt);
         
+        float           DELAY;
+        
     private:
-        float           _time;
+        float           _elapsed;
     };
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    /*----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------
+     *             Gameplay Related Processes...
+     *----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------*/
+
+    class ProcessRotate : public Process
+    {
+    public:
+        ProcessRotate();
+        ~ProcessRotate();
+        
+        virtual void    Update  (float dt);
+        
+        float           ANGLE_START;
+        float           ANGLE_END;
+        float           DURATION;
+        SceneNode2D *   node;
+        
+    private:
+        float           _elapsed;
+    };
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    class ProcessTranslate : public Process
+    {
+    public:
+        ProcessTranslate();
+        ~ProcessTranslate();
+        
+        virtual void    Update  (float dt);
+        
+        Math::Point2D   POINT_START;
+        Math::Point2D   POINT_END;
+        float           DURATION;
+        SceneNode2D *   node;
+        
+    private:
+        float           _elapsed;
+    };
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    class ProcessScale : public Process
+    {
+    public:
+        ProcessScale();
+        ~ProcessScale();
+        
+        virtual void    Update  (float dt);
+        
+        Math::Point2D   SCALE_START;
+        Math::Point2D   SCALE_END;
+        float           DURATION;
+        SceneNode2D *   node;
+        
+    private:
+        float           _elapsed;
+    };
+
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
