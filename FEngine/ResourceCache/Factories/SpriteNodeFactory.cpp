@@ -82,9 +82,11 @@ namespace FEngine
             {
                 string sX = viewElement->Attribute("x");
                 string sY = viewElement->Attribute("y");
+                string sZ = viewElement->Attribute("z");
                 
                 snPtr->GetSceneNodeProperties()->x = atoi(sX.c_str());
                 snPtr->GetSceneNodeProperties()->y = atoi(sY.c_str());
+                snPtr->GetSceneNodeProperties()->zOrder = atoi(sZ.c_str());
             }
             else if(string(viewElement->Value()) == "Scale")
             {
@@ -102,7 +104,7 @@ namespace FEngine
             else if(string(viewElement->Value()) == "Angle")
             {
                 string a = viewElement->Attribute("value");
-                snPtr->GetSceneNodeProperties()->angle = Math::DegToRad(atof(a.c_str()));
+                snPtr->GetSceneNodeProperties()->angle = atof(a.c_str());
             }
             else if(string(viewElement->Value()) == "Tint")
             {

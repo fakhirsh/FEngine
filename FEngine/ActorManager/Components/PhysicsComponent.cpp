@@ -54,6 +54,9 @@ namespace FEngine
         
     void PhysicsComponent::Update(float dt)
     {
+        
+        // Instead of followng, PLEASE use an Event such as : EventUpdateTransform(ActorID, x, y, angle)...
+        
         TransformComponentPtr tcPtr = boost::static_pointer_cast<TransformComponent>(_owner->GetTransformComponent());
         
         tcPtr->x = _body->GetPosition().x * PhysicsManager::PTM_RATIO;

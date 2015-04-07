@@ -57,6 +57,7 @@
 		0CA779031AC4382100CB5FA5 /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA779011AC4382100CB5FA5 /* PhysicsComponent.cpp */; };
 		0CA779061AC467A000CB5FA5 /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA779041AC467A000CB5FA5 /* TransformComponent.cpp */; };
 		0CA779091AC46C0700CB5FA5 /* ViewComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA779071AC46C0700CB5FA5 /* ViewComponent.cpp */; };
+		0CB3E89A1AD3BF6700F75732 /* ViewNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CB3E8981AD3BF6700F75732 /* ViewNode.cpp */; };
 		0CCC4C7E1ACFAF7700CA2203 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C7D1ACFAF7700CA2203 /* UIKit.framework */; };
 		0CCC4C801ACFAF7E00CA2203 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C7F1ACFAF7E00CA2203 /* Foundation.framework */; };
 		0CCC4C821ACFAF8400CA2203 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C811ACFAF8400CA2203 /* StoreKit.framework */; };
@@ -293,6 +294,8 @@
 		0CA779051AC467A000CB5FA5 /* TransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransformComponent.h; path = Components/TransformComponent.h; sourceTree = "<group>"; };
 		0CA779071AC46C0700CB5FA5 /* ViewComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewComponent.cpp; path = Components/ViewComponent.cpp; sourceTree = "<group>"; };
 		0CA779081AC46C0700CB5FA5 /* ViewComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewComponent.h; path = Components/ViewComponent.h; sourceTree = "<group>"; };
+		0CB3E8981AD3BF6700F75732 /* ViewNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewNode.cpp; sourceTree = "<group>"; };
+		0CB3E8991AD3BF6700F75732 /* ViewNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewNode.h; sourceTree = "<group>"; };
 		0CCC4C761ACFAF2900CA2203 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../3rdParty/Monetize/Chartboost/Chartboost.framework; sourceTree = "<group>"; };
 		0CCC4C7D1ACFAF7700CA2203 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0CCC4C7F1ACFAF7E00CA2203 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -548,6 +551,8 @@
 				0C8C24E11ABBF61A00C77AAF /* SceneNode2D.h */,
 				0C8C24E31ABC715900C77AAF /* SpriteNode.cpp */,
 				0C8C24E41ABC715900C77AAF /* SpriteNode.h */,
+				0CB3E8981AD3BF6700F75732 /* ViewNode.cpp */,
+				0CB3E8991AD3BF6700F75732 /* ViewNode.h */,
 				0C3F26091ABD078F002DCB5A /* Texture.cpp */,
 				0C3F260A1ABD078F002DCB5A /* Texture.h */,
 				0C3F260B1ABD078F002DCB5A /* TextureAtlas.cpp */,
@@ -935,6 +940,7 @@
 				0CA778F21AC3E9EE00CB5FA5 /* ActorFactory.cpp in Sources */,
 				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
 				0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */,
+				0CB3E89A1AD3BF6700F75732 /* ViewNode.cpp in Sources */,
 				0CCC4C881ACFD19800CA2203 /* StubAds.cpp in Sources */,
 				0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */,
 				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,

@@ -10,6 +10,7 @@
 
 #include "../Common.h"
 #include "../PointerDefs.h"
+#include "SceneNodeProperties2D.h"
 
 
 namespace FEngine
@@ -112,9 +113,19 @@ namespace FEngine
         return true;
     }
     
+    struct SortAScending
+    {
+        bool operator()(const SceneNode2DPtr & c1, const SceneNode2DPtr & c2) const
+        {
+            return c1->GetSceneNodeProperties()->zOrder < c2->GetSceneNodeProperties()->zOrder;
+        }
+    };
+    
     bool SceneNode2D::RenderChildren (float dt)
     {
         if(_children.size() <= 0) return false;
+        
+        _children.sort(SortAScending());
         
         std::list<SceneNode2DPtr>::iterator it = _children.begin();
         
