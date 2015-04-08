@@ -27,7 +27,7 @@ namespace FEngine
     
     PhysicsComponent::PhysicsComponent()
     {
-        _body = NULL;
+        _bodyProperties = boost::make_shared<FEngine::BodyProperties>();
     }
     
     PhysicsComponent::~PhysicsComponent()
@@ -37,9 +37,10 @@ namespace FEngine
     
     void PhysicsComponent::Destroy ()
     {
-        if(!_body) return;
+        if(!_bodyProperties->body) return;
         
-        SceneNode2D * ptr = (SceneNode2D * )_body->GetUserData();
+        /*
+        SceneNode2D * ptr = (SceneNode2D * )_bodyProperties.body->GetUserData();
         if(ptr)
         {
             SceneNode2DPtr sPtr;
@@ -47,9 +48,10 @@ namespace FEngine
             SceneNode2DPtr dRoot = StateManager::Get()->GetDebugNode2D();
             dRoot->RemoveChild(sPtr);
         }
+        */
         
-        StateManager::Get()->GetPhysicsManager()->GetWorld()->DestroyBody(_body);
-        _body = NULL;
+        StateManager::Get()->GetPhysicsManager()->GetWorld()->DestroyBody(_bodyProperties->body);
+        _bodyProperties->body = NULL;
     }
         
     void PhysicsComponent::Update(float dt)
@@ -59,15 +61,15 @@ namespace FEngine
         
         TransformComponentPtr tcPtr = boost::static_pointer_cast<TransformComponent>(_owner->GetTransformComponent());
         
-        tcPtr->x = _body->GetPosition().x * PhysicsManager::PTM_RATIO;
-        tcPtr->y = _body->GetPosition().y * PhysicsManager::PTM_RATIO;
-        tcPtr->angle = Math::RadToDeg(_body->GetAngle());
+        tcPtr->x = _bodyProperties->body->GetPosition().x * PhysicsManager::PTM_RATIO;
+        tcPtr->y = _bodyProperties->body->GetPosition().y * PhysicsManager::PTM_RATIO;
+        tcPtr->angle = Math::RadToDeg(_bodyProperties->body->GetAngle());
         
     }
     
     b2Body * const PhysicsComponent::GetBody()
     {
-        return _body;
+        return _bodyProperties->body;
     }
     
 }

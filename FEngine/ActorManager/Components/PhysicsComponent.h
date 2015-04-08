@@ -12,6 +12,8 @@
 
 #include "../ActorComponent.h"
 
+#include <string>
+#include <list>
 
 namespace FEngine
 {
@@ -21,6 +23,7 @@ namespace FEngine
         friend class PhysicsFactory;
         
     public:
+        
         PhysicsComponent();
         virtual ~PhysicsComponent();
         
@@ -31,6 +34,13 @@ namespace FEngine
         
     private:
         
-        b2Body * _body;
+        // TODO:
+        // Store a list of bodies and list of joints
+        // OR maybe each body acts a single actor , wheels, car body are all separate actors
+        // Need to decide that, for now, let's just keep it a SINGLE body per Actor.
+        
+        BodyPropertiesPtr _bodyProperties;
+        
     };
 }
+

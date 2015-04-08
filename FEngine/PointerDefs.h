@@ -42,6 +42,8 @@ namespace FEngine
     class   SceneNodeProperties2D;
     class   TransformComponent;
     class   PhysicsComponent;
+    class   BodyProperties;
+    class   FixtureProperties;
     class   ViewComponent;
     class   InputComponent;
     //class FontAtlas;
@@ -102,6 +104,12 @@ typedef boost::shared_ptr   <FEngine::ViewComponent>            ViewComponentPtr
 typedef boost::weak_ptr     <FEngine::ViewComponent>            ViewComponentWeakPtr;
 typedef boost::shared_ptr   <FEngine::InputComponent>           InputComponentPtr;
 typedef boost::weak_ptr     <FEngine::InputComponent>           InputComponentWeakPtr;
+
+typedef boost::shared_ptr   <FEngine::BodyProperties>           BodyPropertiesPtr;
+typedef boost::weak_ptr     <FEngine::BodyProperties>           BodyPropertiesWeakPtr;
+typedef boost::shared_ptr   <FEngine::FixtureProperties>        FixturePropertiesPtr;
+typedef boost::weak_ptr     <FEngine::FixtureProperties>        FixturePropertiesWeakPtr;
+
 
 //typedef boost::shared_ptr <FEngine::FontAtlas>                FontAtlasPtr;
 

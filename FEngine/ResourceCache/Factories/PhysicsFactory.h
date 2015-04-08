@@ -12,6 +12,8 @@
 #include <string>
 
 #include "../../../3rdParty/tinyxml2-master/tinyxml2.h"
+#include "../../PhysicsManager/PhysicsManager.h"
+#include "../../Utility/Math.h"
 
 namespace FEngine
 {
@@ -35,12 +37,16 @@ namespace FEngine
             b2FixtureDef fixtureDef;
             std::string shapeType;
             
-            SceneNode2DPtr debugNode;
+            Math::Point2D offset;
+            
+            FixturePropertiesPtr fixtureProp;
         };
 
-        PhysicsShape CreateShape(const tinyxml2::XMLElement * physicsElement);
-        void CreateBox(const tinyxml2::XMLElement * physicsElement, PhysicsShape & fixture);
-        void CreateCircle(const tinyxml2::XMLElement * physicsElement, PhysicsShape & fixture);
+        boost::shared_ptr<PhysicsFactory::PhysicsShape> CreateShape(const tinyxml2::XMLElement * physicsElement);
+        
+        void CreateBox(const tinyxml2::XMLElement * physicsElement, boost::shared_ptr<PhysicsFactory::PhysicsShape> & fixture);
+        void CreateCircle(const tinyxml2::XMLElement * physicsElement, boost::shared_ptr<PhysicsFactory::PhysicsShape> & fixture);
         
     };
 }
+

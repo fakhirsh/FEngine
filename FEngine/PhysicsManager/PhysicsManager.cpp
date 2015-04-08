@@ -69,15 +69,21 @@ namespace FEngine
         {
             for ( b2Body* b = _world->GetBodyList(); b; b = b->GetNext())
             {
-                if(gApp->IsDebugModeOn())
+                /*
+                for (b2Fixture* f = b->GetFixtureList(); f; f = f->GetNext())
                 {
-                    SceneNode2D * ptr = (SceneNode2D * )b->GetUserData();
-                    if(ptr){
-                        ptr->GetSceneNodeProperties()->x = b->GetPosition().x * PTM_RATIO;
-                        ptr->GetSceneNodeProperties()->y = b->GetPosition().y * PTM_RATIO;
-                        ptr->GetSceneNodeProperties()->angle = Math::RadToDeg(b->GetAngle());
-                    }
+                    FixtureProperties * fPtr = (FixtureProperties *)f->GetUserData();
+                    b2Shape * shape = f->GetShape();
                 }
+                */
+                
+                SceneNode2D * ptr = (SceneNode2D * )b->GetUserData();
+                if(ptr){
+                    ptr->GetSceneNodeProperties()->x = b->GetPosition().x * PTM_RATIO;
+                    ptr->GetSceneNodeProperties()->y = b->GetPosition().y * PTM_RATIO;
+                    ptr->GetSceneNodeProperties()->angle = Math::RadToDeg(b->GetAngle());
+                }
+        
             }
         }
     }
