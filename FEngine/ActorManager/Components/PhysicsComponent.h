@@ -32,6 +32,8 @@ namespace FEngine
         
         b2Body * const GetBody();
         
+        BodyPropertiesPtr GetBodyProperties();
+        
     private:
         
         // TODO:

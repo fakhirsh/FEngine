@@ -143,6 +143,8 @@ namespace FEngine
         EventCandyConsumed(){}
         ~EventCandyConsumed(){}
         
+        ActorPtr candyActor;
+        
         std::string GetName()
         {
             return "Candy Consumed";

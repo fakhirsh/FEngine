@@ -176,9 +176,9 @@ namespace FEngine
             
             if(shapesArray[i]->fixtureProp->debugNode){
                 fPtr->debugNode = shapesArray[i]->fixtureProp->debugNode;
-                
-                physicsComponent->_bodyProperties->body->SetUserData((void *)shapesArray[i]->fixtureProp->debugNode.get());
             }
+            
+            physicsComponent->_bodyProperties->body->SetUserData((void *)physicsComponent.get());
             
             physicsComponent->_bodyProperties->fixtureList.push_back(fPtr);
         }
@@ -203,23 +203,7 @@ namespace FEngine
         
         return pShape;
     }
-    /*
-    b2FixtureDef PhysicsFactory::CreateShape(const tinyxml2::XMLElement * physicsElement)
-    {
-        b2FixtureDef shape;
-        
-        if(string(physicsElement->Attribute("value")) == string("Box"))
-        {
-            //CreateBox(physicsElement, shape);
-        }
-        else if(string(physicsElement->Attribute("value")) == string("Circle"))
-        {
-            //CreateCircle(physicsElement, shape);
-        }
-        
-        return shape;
-    }
-    */
+    
     void PhysicsFactory::CreateBox(const tinyxml2::XMLElement * physicsElement, boost::shared_ptr<PhysicsFactory::PhysicsShape> & fixture)
     {
         const XMLElement * e = physicsElement->FirstChildElement();
@@ -228,7 +212,7 @@ namespace FEngine
             if(string(e->Value()) == string("View"))
             {
                 // TODO: To be supported in the future
-                //fixture->fixtureProp->viewName = e->Attribute("nodeName");
+                fixture->fixtureProp->viewName = e->Attribute("nodeName");
             }
             else if(string(e->Value()) == string("Offset"))
             {
@@ -298,7 +282,21 @@ namespace FEngine
         const XMLElement * e = physicsElement->FirstChildElement();
      
         while (e) {
-            if(string(e->Value()) == string("Dimensions"))
+            if(string(e->Value()) == string("View"))
+            {
+                // TODO: To be supported in the future
+                fixture->fixtureProp->viewName = e->Attribute("nodeName");
+            }
+            else if(string(e->Value()) == string("Offset"))
+            {
+                float offX, offY;
+                sscanf(e->Attribute("x"), "%f", &offX);
+                sscanf(e->Attribute("y"), "%f", &offY);
+                
+                fixture->offset.x = offX;
+                fixture->offset.y = offY;
+            }
+            else if(string(e->Value()) == string("Dimensions"))
             {
                 float radius;
                 sscanf(e->Attribute("radius"), "%f", &radius);

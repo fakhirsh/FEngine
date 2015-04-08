@@ -151,8 +151,8 @@ namespace FEngine
     
     void ProcessPrint::Update(float dt)
     {
-        boost::shared_ptr<EventCandyConsumed> e = boost::make_shared<EventCandyConsumed>();
-        StateManager::Get()->GetEventDispatcher()->DispatchEvent(e);
+        //boost::shared_ptr<EventCandyConsumed> e = boost::make_shared<EventCandyConsumed>();
+        //StateManager::Get()->GetEventDispatcher()->DispatchEvent(e);
         
         Succeed();
     }

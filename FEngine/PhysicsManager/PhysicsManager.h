@@ -14,7 +14,7 @@
 
 #include <map>
 #include <string>
-#include <list>
+#include <vector>
 
 namespace FEngine
 {
@@ -39,7 +39,7 @@ namespace FEngine
         BodyProperties(){body=NULL;}
         std::string     name;
         b2Body *        body;
-        std::list<FixturePropertiesPtr> fixtureList;
+        std::vector<FixturePropertiesPtr> fixtureList;
     };
 
     

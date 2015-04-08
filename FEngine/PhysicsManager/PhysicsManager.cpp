@@ -15,6 +15,7 @@
 
 #include "../2D/SceneNodeProperties2D.h"
 #include "../2D/SceneNode2D.h"
+#include "../ActorManager/Components/PhysicsComponent.h"
 
 extern FEngine::App * gApp;
 
@@ -69,19 +70,14 @@ namespace FEngine
         {
             for ( b2Body* b = _world->GetBodyList(); b; b = b->GetNext())
             {
-                /*
-                for (b2Fixture* f = b->GetFixtureList(); f; f = f->GetNext())
-                {
-                    FixtureProperties * fPtr = (FixtureProperties *)f->GetUserData();
-                    b2Shape * shape = f->GetShape();
-                }
-                */
+                PhysicsComponent * pptr = (PhysicsComponent * )b->GetUserData();
+                BodyPropertiesPtr bptr = pptr->GetBodyProperties();
                 
-                SceneNode2D * ptr = (SceneNode2D * )b->GetUserData();
-                if(ptr){
-                    ptr->GetSceneNodeProperties()->x = b->GetPosition().x * PTM_RATIO;
-                    ptr->GetSceneNodeProperties()->y = b->GetPosition().y * PTM_RATIO;
-                    ptr->GetSceneNodeProperties()->angle = Math::RadToDeg(b->GetAngle());
+                if(bptr){
+                    FixturePropertiesPtr fptr = bptr->fixtureList[0];
+                    fptr->debugNode->GetSceneNodeProperties()->x = b->GetPosition().x * PTM_RATIO;
+                    fptr->debugNode->GetSceneNodeProperties()->y = b->GetPosition().y * PTM_RATIO;
+                    fptr->debugNode->GetSceneNodeProperties()->angle = Math::RadToDeg(b->GetAngle());
                 }
         
             }

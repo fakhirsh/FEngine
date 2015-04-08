@@ -72,4 +72,10 @@ namespace FEngine
         return _bodyProperties->body;
     }
     
+    BodyPropertiesPtr PhysicsComponent::GetBodyProperties()
+    {
+        return _bodyProperties;
+    }
+    
+    
 }
