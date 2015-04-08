@@ -49,6 +49,7 @@
 		0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24F41ABC994200C77AAF /* ResourceCache.cpp */; };
 		0C8C24FE1ABC9AC100C77AAF /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FA1ABC9AC100C77AAF /* Program.cpp */; };
 		0C8C24FF1ABC9AC100C77AAF /* TexturedVertexProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */; };
+		0C9EABF21AD576AF00A40098 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EABF01AD576AF00A40098 /* SoundManager.cpp */; };
 		0CA375881AC5230C001C8EDE /* InputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA375861AC5230C001C8EDE /* InputComponent.cpp */; };
 		0CA778F21AC3E9EE00CB5FA5 /* ActorFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA778F01AC3E9EE00CB5FA5 /* ActorFactory.cpp */; };
 		0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA778F71AC41FEA00CB5FA5 /* ActorManager.cpp */; };
@@ -278,6 +279,8 @@
 		0C8C24FB1ABC9AC100C77AAF /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		0C8C24FC1ABC9AC100C77AAF /* TexturedVertexProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexturedVertexProgram.cpp; sourceTree = "<group>"; };
 		0C8C24FD1ABC9AC100C77AAF /* TexturedVertexProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexturedVertexProgram.h; sourceTree = "<group>"; };
+		0C9EABF01AD576AF00A40098 /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundManager.cpp; sourceTree = "<group>"; };
+		0C9EABF11AD576AF00A40098 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		0CA375861AC5230C001C8EDE /* InputComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InputComponent.cpp; path = Components/InputComponent.cpp; sourceTree = "<group>"; };
 		0CA375871AC5230C001C8EDE /* InputComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputComponent.h; path = Components/InputComponent.h; sourceTree = "<group>"; };
 		0CA778F01AC3E9EE00CB5FA5 /* ActorFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorFactory.cpp; sourceTree = "<group>"; };
@@ -625,6 +628,8 @@
 		0C7951571AB85EF80010DA81 /* SoundManager */ = {
 			isa = PBXGroup;
 			children = (
+				0C9EABF01AD576AF00A40098 /* SoundManager.cpp */,
+				0C9EABF11AD576AF00A40098 /* SoundManager.h */,
 			);
 			path = SoundManager;
 			sourceTree = "<group>";
@@ -929,6 +934,7 @@
 				0C3F261C1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp in Sources */,
 				0C8C24E21ABBF61A00C77AAF /* SceneNode2D.cpp in Sources */,
 				0C7951711AB85EF80010DA81 /* SystemConfig.cpp in Sources */,
+				0C9EABF21AD576AF00A40098 /* SoundManager.cpp in Sources */,
 				0C7951961AB8A5020010DA81 /* DefaultEvents.cpp in Sources */,
 				0C2F3E861AC6F46300D66B2C /* DebugBoxNode2D.cpp in Sources */,
 				0C3F26191ABD1ADC002DCB5A /* ProgramFactory.cpp in Sources */,
@@ -1089,6 +1095,8 @@
 					"../../3rdParty/libpng-1.6.15",
 					../../../,
 					../../3rdParty/Box2D_v2.3.0/Box2D,
+					"../../3rdParty/libvorbis-1.3.4/include",
+					"../../3rdParty/libogg-1.3.2/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1114,6 +1122,8 @@
 					"../../3rdParty/libpng-1.6.15",
 					../../../,
 					../../3rdParty/Box2D_v2.3.0/Box2D,
+					"../../3rdParty/libvorbis-1.3.4/include",
+					"../../3rdParty/libogg-1.3.2/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
