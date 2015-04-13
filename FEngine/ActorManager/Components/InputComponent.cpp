@@ -20,10 +20,6 @@
 #include "../../EventDispatcher/DefaultEvents.h"
 #include "../../ActorManager/Actor.h"
 
-#include "../../ActorManager/Components/TransformComponent.h"
-#include "../../ActorManager/Components/PhysicsComponent.h"
-#include "../../PhysicsManager/PhysicsManager.h"
-#include "../../Utility/Math.h"
 
 #include <iostream>
 
@@ -65,23 +61,13 @@ namespace FEngine
     void InputComponent::TouchDownListener (EventPtr e)
     {
         boost::shared_ptr<FEngine::EventTouchDown> tdE = boost::static_pointer_cast<FEngine::EventTouchDown>(e);
-        TransformComponentPtr tcPtr = boost::static_pointer_cast<TransformComponent>(_owner->GetTransformComponent());
-        tcPtr->x = tdE->x;
-        //tcPtr->y = tdE->y;
         
-        PhysicsComponentPtr pcPtr = boost::static_pointer_cast<PhysicsComponent>(_owner->GetPhysicsComponent());
-        pcPtr->GetBody()->SetTransform(b2Vec2(tdE->x / PhysicsManager::PTM_RATIO, tcPtr->y / PhysicsManager::PTM_RATIO), Math::DegToRad(tcPtr->angle));
     }
     
     void InputComponent::TouchMovedListener (EventPtr e)
     {
         boost::shared_ptr<FEngine::EventTouchMoved> tmE = boost::static_pointer_cast<FEngine::EventTouchMoved>(e);
-        TransformComponentPtr tcPtr = boost::static_pointer_cast<TransformComponent>(_owner->GetTransformComponent());
-        tcPtr->x = tmE->x;
-        //tcPtr->y = tmE->y;
         
-        PhysicsComponentPtr pcPtr = boost::static_pointer_cast<PhysicsComponent>(_owner->GetPhysicsComponent());
-        pcPtr->GetBody()->SetTransform(b2Vec2(tmE->x / PhysicsManager::PTM_RATIO, tcPtr->y / PhysicsManager::PTM_RATIO), Math::DegToRad(tcPtr->angle));
     }
     
     void InputComponent::TouchUpListener (EventPtr e)

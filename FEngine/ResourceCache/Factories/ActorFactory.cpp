@@ -13,13 +13,14 @@
 //#include <cstdlib>
 
 #include "../../../../GameLogic/Components/PlayerAnimation.h"
+#include "../../../../GameLogic/Components/PlayerInput.h"
 
 #include "../../ActorManager/Actor.h"
 #include "../../ActorManager/ActorManager.h"
 #include "../../ActorManager/Components/PhysicsComponent.h"
 #include "../../ActorManager/Components/TransformComponent.h"
 #include "../../ActorManager/Components/ViewComponent.h"
-#include "../../ActorManager/Components/InputComponent.h"
+//#include "../../ActorManager/Components/InputComponent.h"
 
 #include "../../EventDispatcher/EventDispatcher.h"
 #include "../../EventDispatcher/DefaultEvents.h"
@@ -141,8 +142,8 @@ namespace FEngine
                     }
                     else if(string(comp->Value()) == string("Input"))
                     {
-                        actor->_inputComponent = boost::make_shared<InputComponent>();
-                        InputComponentPtr icPtr = boost::static_pointer_cast<InputComponent>(actor->_inputComponent);
+                        actor->_inputComponent = boost::make_shared<PlayerInput>();
+                        boost::shared_ptr<PlayerInput> icPtr = boost::static_pointer_cast<PlayerInput>(actor->_inputComponent);
                         
                         icPtr->SetOwner(actor);
                     }

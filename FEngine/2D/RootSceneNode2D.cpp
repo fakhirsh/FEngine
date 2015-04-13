@@ -16,6 +16,8 @@
 #include "../StateManager/StateManager.h"
 
 #include "../System/App.h"
+#include "../Debugging/Log.h"
+
 
 extern FEngine::App * gApp;
 
@@ -23,7 +25,7 @@ namespace FEngine
 {
     RootSceneNode2D::RootSceneNode2D ()
     {
-        std::cout << "RootSceneNode2D::RootSceneNode2D" << std::endl;
+        gApp->GetLog()->Print("RootSceneNode2D::RootSceneNode2D");
         
         _sceneNodeProperties2D          =   boost::make_shared<SceneNodeProperties2D>();
         _sceneNodeProperties2D->x       =   0.0f;
@@ -38,8 +40,7 @@ namespace FEngine
     
     RootSceneNode2D::~RootSceneNode2D ()
     {
-        std::cout << "RootSceneNode2D::~RootSceneNode2D" << std::endl;
-        
+        gApp->GetLog()->Print("RootSceneNode2D::~RootSceneNode2D");
         //TearDown();
         
     }

@@ -25,6 +25,7 @@ namespace FEngine
     class IOManager;
     class IRenderer;
     class Ads;
+    class Log;
     
     class SystemConfig
     {
@@ -67,6 +68,7 @@ namespace FEngine
         IOManager * ioManager;
         IRenderer * renderer;
         Ads *       ads;
+        Log *       log;
         //SoundManager * sndManager;
         //Other System specific Crap * allCrapHere...
     };

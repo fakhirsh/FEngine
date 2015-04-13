@@ -135,7 +135,7 @@ namespace FEngine
         body.type = bodyType;
         
         
-        std::vector<boost::shared_ptr<PhysicsFactory::PhysicsShape>> shapesArray;
+        std::vector<boost::shared_ptr<PhysicsFactory::PhysicsShape> > shapesArray;
         
         e = e->FirstChildElement();
         

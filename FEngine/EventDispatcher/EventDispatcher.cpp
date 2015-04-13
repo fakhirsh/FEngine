@@ -9,19 +9,23 @@
 #include "EventDispatcher.h"
 #include "Event.h"
 
-#include <iostream>
+#include "../System/App.h"
+#include "../Debugging/Log.h"
+
+using namespace FEngine;
+extern App * gApp;
 
 namespace FEngine
 {
     EventDispatcher::EventDispatcher()
     {
-        std::cout << "EventDispatcher::EventDispatcher()" << std::endl;
+        gApp->GetLog()->Print("EventDispatcher::EventDispatcher()");
         _activeQueue = 0;
     }
     
     EventDispatcher::~EventDispatcher()
     {
-        std::cout << "EventDispatcher::~EventDispatcher()" << std::endl;
+        gApp->GetLog()->Print("EventDispatcher::~EventDispatcher()");
         RemoveAllEvents();
         RemoveAllListeners();
     }

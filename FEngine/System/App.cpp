@@ -18,6 +18,7 @@
 #include "../PhysicsManager/PhysicsManager.h"
 #include "../Monetize/Ads/StubAds.h"
 //#include "../Renderer/IRenderer.h"
+#include "../Debugging/LogDefault.h"
 
 #include <GameLogic/Screens/Test/Test.h>
 
@@ -83,6 +84,12 @@ namespace FEngine
         if(_ads == NULL)
         {
             _ads = new StubAds();
+        }
+        
+        _logger = sysConfig->log;
+        if(_logger == NULL)
+        {
+            _logger = new LogDefault();
         }
         
         _frameBufferWidth   =   sysConfig->frameBufferWidth;
@@ -422,19 +429,24 @@ namespace FEngine
         _ioManager = fileManager;
     }
     
-    IOManager * App::GetIOManager ()
+    IOManager * const App::GetIOManager ()
     {
         return _ioManager;
     }
     
-    IRenderer * App::GetRenderer ()
+    IRenderer * const App::GetRenderer ()
     {
         return _renderer;
     }
 
-    Ads * App::GetAdsObject ()
+    Ads * const App::GetAds ()
     {
         return _ads;
+    }
+    
+    Log * const App::GetLog()
+    {
+        return _logger;
     }
     
     void App::SetAssetPath (const char * path)
@@ -550,6 +562,11 @@ namespace FEngine
     bool App::IsDebugModeOn ()
     {
         return _debugMode;
+    }
+    
+    float App::GetElapsedTime ()
+    {
+        return _elapsed;
     }
 };
 

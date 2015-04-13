@@ -22,6 +22,9 @@
 		0C2F3F851AC70B9B00D66B2C /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2F3EEE1AC70B4E00D66B2C /* libBox2D.a */; };
 		0C2F3F881AC71FDB00D66B2C /* PhysicsFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F3F861AC71FDB00D66B2C /* PhysicsFactory.cpp */; };
 		0C2F3F981AC72B3200D66B2C /* PhysicsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F3F961AC72B3200D66B2C /* PhysicsManager.cpp */; };
+		0C322CF41ADBFAE6000C857F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C322CF21ADBFAE6000C857F /* Camera.cpp */; };
+		0C322CFD1ADBFCE3000C857F /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C322CFC1ADBFCE3000C857F /* Log.cpp */; };
+		0C322D001ADBFE35000C857F /* LogDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C322CFE1ADBFE35000C857F /* LogDefault.cpp */; };
 		0C3F260D1ABD078F002DCB5A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F26091ABD078F002DCB5A /* Texture.cpp */; };
 		0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F260B1ABD078F002DCB5A /* TextureAtlas.cpp */; };
 		0C3F26161ABD1ACD002DCB5A /* TextureAtlasFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F26141ABD1ACD002DCB5A /* TextureAtlasFactory.cpp */; };
@@ -221,6 +224,12 @@
 		0C2F3F871AC71FDB00D66B2C /* PhysicsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsFactory.h; sourceTree = "<group>"; };
 		0C2F3F961AC72B3200D66B2C /* PhysicsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsManager.cpp; path = PhysicsManager/PhysicsManager.cpp; sourceTree = "<group>"; };
 		0C2F3F971AC72B3200D66B2C /* PhysicsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsManager.h; path = PhysicsManager/PhysicsManager.h; sourceTree = "<group>"; };
+		0C322CF21ADBFAE6000C857F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		0C322CF31ADBFAE6000C857F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		0C322CFB1ADBFC28000C857F /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Log.h; path = Debugging/Log.h; sourceTree = "<group>"; };
+		0C322CFC1ADBFCE3000C857F /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = Debugging/Log.cpp; sourceTree = "<group>"; };
+		0C322CFE1ADBFE35000C857F /* LogDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LogDefault.cpp; path = Debugging/LogDefault.cpp; sourceTree = "<group>"; };
+		0C322CFF1ADBFE35000C857F /* LogDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogDefault.h; path = Debugging/LogDefault.h; sourceTree = "<group>"; };
 		0C3F26091ABD078F002DCB5A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		0C3F260A1ABD078F002DCB5A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		0C3F260B1ABD078F002DCB5A /* TextureAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlas.cpp; sourceTree = "<group>"; };
@@ -489,6 +498,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0C322CFA1ADBFBCA000C857F /* Debugging */ = {
+			isa = PBXGroup;
+			children = (
+				0C322CFB1ADBFC28000C857F /* Log.h */,
+				0C322CFC1ADBFCE3000C857F /* Log.cpp */,
+				0C322CFE1ADBFE35000C857F /* LogDefault.cpp */,
+				0C322CFF1ADBFE35000C857F /* LogDefault.h */,
+			);
+			name = Debugging;
+			sourceTree = "<group>";
+		};
 		0C3F26131ABD1AB7002DCB5A /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +547,7 @@
 				0C79513D1AB85EF80010DA81 /* 2D */,
 				0C79513E1AB85EF80010DA81 /* 3D */,
 				0CE399E91AB9EAFE00350E8C /* ActorManager */,
+				0C322CFA1ADBFBCA000C857F /* Debugging */,
 				0C7951411AB85EF80010DA81 /* EventDispatcher */,
 				0C68A7A61ACA66850087A197 /* MemoryManager */,
 				0C27448F1ACF209D00D1C4A7 /* Monetize */,
@@ -564,6 +585,8 @@
 				0C2F3E851AC6F46300D66B2C /* DebugBoxNode2D.h */,
 				0C2F3E871AC6F47400D66B2C /* DebugCircleNode2D.cpp */,
 				0C2F3E881AC6F47400D66B2C /* DebugCircleNode2D.h */,
+				0C322CF21ADBFAE6000C857F /* Camera.cpp */,
+				0C322CF31ADBFAE6000C857F /* Camera.h */,
 			);
 			path = 2D;
 			sourceTree = "<group>";
@@ -914,6 +937,7 @@
 				0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */,
 				0CA778FC1AC41FF900CB5FA5 /* Actor.cpp in Sources */,
 				0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */,
+				0C322D001ADBFE35000C857F /* LogDefault.cpp in Sources */,
 				0C2F3E891AC6F47400D66B2C /* DebugCircleNode2D.cpp in Sources */,
 				0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */,
 				0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */,
@@ -947,11 +971,13 @@
 				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
 				0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */,
 				0CB3E89A1AD3BF6700F75732 /* ViewNode.cpp in Sources */,
+				0C322CF41ADBFAE6000C857F /* Camera.cpp in Sources */,
 				0CCC4C881ACFD19800CA2203 /* StubAds.cpp in Sources */,
 				0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */,
 				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,
 				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,
 				0C2F3F981AC72B3200D66B2C /* PhysicsManager.cpp in Sources */,
+				0C322CFD1ADBFCE3000C857F /* Log.cpp in Sources */,
 				0CA779091AC46C0700CB5FA5 /* ViewComponent.cpp in Sources */,
 				0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */,
 				0CA778FF1AC4200A00CB5FA5 /* ActorComponent.cpp in Sources */,

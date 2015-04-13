@@ -71,6 +71,8 @@ namespace FEngine
         {
             if((*it).isFree)
             {
+                _currentlyUsedActors++;
+                
                 (*it).isFree = false;
                 return (*it).actor;
             }
@@ -89,6 +91,8 @@ namespace FEngine
         {
             if((*it).actor == actor)
             {
+                _currentlyUsedActors--;
+                
                 (*it).isFree = true;
                 
                 // Reposition Actor, waaayyyy out of the visible area....

@@ -28,6 +28,7 @@ namespace FEngine
     class Rect;
     class SystemConfig;
     class Ads;
+    class Log;
     
     class App
     {
@@ -49,11 +50,10 @@ namespace FEngine
         float       GetDeviceContentScaleFactor ();
     
         void        SetIOManager                (IOManager * fileManager);
-        IOManager * GetIOManager                ();
-        
-        IRenderer * GetRenderer                 ();
-        
-        Ads *       GetAdsObject                ();
+        IOManager * const GetIOManager          ();
+        IRenderer * const GetRenderer           ();
+        Ads * const GetAds                      ();
+        Log * const GetLog                      ();
         
         void        SetFrameBufferWidth         (float val);
         void        SetFrameBufferHeight        (float val);
@@ -71,7 +71,7 @@ namespace FEngine
         float       GetDesignWidth              ();
         float       GetDesignHeight             ();
         float       GetContentScaleFactor       ();
-        
+        float       GetElapsedTime              ();
         float       GetFPS                      ();
         float       GetMaxFPS                   ();
         
@@ -154,7 +154,7 @@ namespace FEngine
         IOManager * _ioManager;
         IRenderer * _renderer;
         Ads *       _ads;
-        
+        Log *       _logger;
         // And other system specific crap...
         
     /////////////////////////////////////////

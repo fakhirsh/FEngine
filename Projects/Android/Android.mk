@@ -61,6 +61,7 @@ LOCAL_SRC_FILES := 	../../../GameEngine/FEngine/System/App.cpp		\
 			../../../GameEngine/FEngine/2D/SceneNode2D.cpp		\
 			../../../GameEngine/FEngine/2D/SceneNodeProperties2D.cpp	\
 			../../../GameEngine/FEngine/2D/SpriteNode.cpp		\
+			../../../GameEngine/FEngine/2D/ViewNode.cpp		\
 			../../../GameEngine/FEngine/2D/Texture.cpp		\
 			../../../GameEngine/FEngine/2D/TextureAtlas.cpp		\
 			../../../GameEngine/FEngine/ActorManager/Actor.cpp	\
@@ -95,6 +96,7 @@ LOCAL_SRC_FILES := 	../../../GameEngine/FEngine/System/App.cpp		\
 			../../../GameEngine/FEngine/ResourceCache/Factories/View2DFactory.cpp	\
 			../../../GameEngine/FEngine/StateManager/State.cpp			\
 			../../../GameEngine/FEngine/StateManager/StateManager.cpp		\
+			../../../GameEngine/FEngine/SoundManager/SoundManager.cpp		\
 			../../../GameEngine/FEngine/Utility/Math.cpp
 			
 

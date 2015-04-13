@@ -41,6 +41,7 @@ namespace FEngine
         ioManager           =   NULL;
         renderer            =   NULL;
         ads                 =   NULL;
+        log                 =   NULL;
     }
 
     bool SystemConfig::LoadConfig(vector<char> & buffer)

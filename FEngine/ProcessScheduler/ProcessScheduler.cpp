@@ -11,17 +11,22 @@
 #include "../Common.h"
 #include "Process.h"
 
+#include "../System/App.h"
+#include "../Debugging/Log.h"
+
+using namespace FEngine;
+extern App * gApp;
 
 namespace FEngine
 {
     ProcessScheduler::ProcessScheduler()
     {
-        std::cout << "ProcessScheduler::ProcessScheduler()" << std::endl;
+        gApp->GetLog()->Print("ProcessScheduler::ProcessScheduler()");
     }
     
     ProcessScheduler::~ProcessScheduler()
     {
-        std::cout << "ProcessScheduler::~ProcessScheduler()" << std::endl;
+        gApp->GetLog()->Print("ProcessScheduler::~ProcessScheduler()");
     }
     
     bool ProcessScheduler::AddChild(ProcessPtr process)

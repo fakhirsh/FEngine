@@ -13,6 +13,7 @@
 #include "../../2D/SceneNode2D.h"
 #include "../../2D/SceneNodeProperties2D.h"
 
+#include <iostream>
 
 namespace FEngine
 {
@@ -34,7 +35,6 @@ namespace FEngine
         _sceneNode2D->GetSceneNodeProperties()->x = tPtr->x;
         _sceneNode2D->GetSceneNodeProperties()->y = tPtr->y;
         _sceneNode2D->GetSceneNodeProperties()->angle = tPtr->angle;
-        
     }
         
     SceneNode2DPtr ViewComponent::GetSceneNode2D ()
