@@ -27,7 +27,7 @@ namespace FEngine
         
     void LogDefault::PrintToConsole (std::string message)
     {
-        cout << message << endl;
+        cout << message;
     }
     
     void LogDefault::PrintToNetwork  (std::string message)

@@ -36,7 +36,7 @@ namespace FEngine
     
     void Log::Print (string message, string function, int lineNo)
     {
-        string newStr = string("[FEngine|") + to_string(gApp->GetElapsedTime()) + string("]  ") + message;
+        string newStr = string("[Dela|") + to_string(gApp->GetElapsedTime()) + string("]  ") + message;
         if(function != "")
         {
             newStr += string(" {Fn:") + function;
@@ -47,7 +47,10 @@ namespace FEngine
             newStr += string("}");
         }
         
+        newStr += "\n";
+        
         PrintToConsole(newStr);
+        //PrintToMemory(newStr);
     }
     
     void Log::PrintToXML (std::string message)
@@ -55,9 +58,9 @@ namespace FEngine
     
     }
     
-    void Log::PrintToMem (std::string message)
+    void Log::PrintToMemory (std::string message)
     {
-    
+        _memoryLog += message;
     }
     
 }

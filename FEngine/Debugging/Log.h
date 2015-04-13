@@ -23,7 +23,7 @@ namespace FEngine
         
     private:
         // Internal buffer to redirect Log messages to game UI
-        void            PrintToMem      (std::string message);
+        void            PrintToMemory   (std::string message);
         void            PrintToXML      (std::string message);
         
         virtual void    PrintToNetwork  (std::string message)   =   0;
@@ -31,6 +31,6 @@ namespace FEngine
         
         //bool    _printToXML;
         
-        // char * huge_memory_buffer_for_logging;
+        std::string     _memoryLog;
     };
 }

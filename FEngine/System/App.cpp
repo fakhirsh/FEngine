@@ -180,6 +180,9 @@ namespace FEngine
     void App::TouchDown (int x, int y)
     {
         
+        string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
+        _logger->Print(newMsg);
+        
         boost::shared_ptr<FEngine::EventTouchDown> touchDownEvent = boost::make_shared<FEngine::EventTouchDown>();
         // Adjust coordinates according to new viewport origin
     
@@ -192,6 +195,25 @@ namespace FEngine
         EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
         eventMgr->TriggerEvent(touchDownEvent);
         
+    }
+    
+    void App::TouchMoved (int x, int y)
+    {
+     
+        string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
+        //_logger->Print(newMsg);
+
+        
+        boost::shared_ptr<FEngine::EventTouchMoved> touchMovedEvent = boost::make_shared<FEngine::EventTouchMoved>();
+        // Adjust coordinates according to new viewport origin
+        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
+        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
+        touchMovedEvent->x = designSpace.x;
+        touchMovedEvent->y = designSpace.y;
+        
+        EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
+        eventMgr->TriggerEvent(touchMovedEvent);
+
     }
 
     void App::TouchUp (int x, int y)
@@ -209,21 +231,7 @@ namespace FEngine
         
     }
 
-    void App::TouchMoved (int x, int y)
-    {
-        
-        boost::shared_ptr<FEngine::EventTouchMoved> touchMovedEvent = boost::make_shared<FEngine::EventTouchMoved>();
-        // Adjust coordinates according to new viewport origin
-        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
-        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
-        touchMovedEvent->x = designSpace.x;
-        touchMovedEvent->y = designSpace.y;
-        
-        EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
-        eventMgr->TriggerEvent(touchMovedEvent);
-
-    }
-
+    
     void App::TouchCancelled (int x, int y)
     {
         //FStateManager::Get()->TouchCancelled(x, y);
@@ -281,16 +289,17 @@ namespace FEngine
         //_contentScaleFactor = 1.0f;
         
         // Output message ONLY for testing:
-        std::cout   << "DEBUG ==> \nScreen Width: " << _frameBufferWidth
-                    << "\nScreen Height: " << _frameBufferHeight
-                    << "\nViewport Width: " << _viewportWidth
-                    << "\nViewport Height: " << _viewportHeight
-                    << "\nSafe Zone x: " << _safeZoneRect.x
-                    << "\nSafe Zone y: " << _safeZoneRect.y
-                    << "\nSafe Zone Width: " << _safeZoneRect.width
-                    << "\nSafe Zone Height: " << _safeZoneRect.height
-                    << "\nCSF: " << _contentScaleFactor << std::endl;
-
+        std::string newMsg =    std::string("DEBUG ==> \nScreen Width: ") + std::to_string(int(_frameBufferWidth))
+                                + std::string("\nScreen Height: ") + std::to_string(int(_frameBufferHeight))
+                                + std::string("\nViewport Width: ") + std::to_string(int(_viewportWidth))
+                                + std::string("\nViewport Height: ") + std::to_string(int(_viewportHeight))
+                                + std::string("\nSafe Zone x: ") + std::to_string(int(_safeZoneRect.x))
+                                + std::string("\nSafe Zone y: ") + std::to_string(int(_safeZoneRect.y))
+                                + std::string("\nSafe Zone Width: ") + std::to_string(int(_safeZoneRect.width))
+                                + std::string("\nSafe Zone Height: ") + std::to_string(int(_safeZoneRect.height))
+                                + std::string("\nCSF: ") + std::to_string(_contentScaleFactor);
+        _logger->Print(newMsg);
+        
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
