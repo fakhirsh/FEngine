@@ -43,25 +43,22 @@ namespace FEngine
         
         glm::mat4 mat = StateManager::Get()->PeekTransform2D();
         
-        Math::Point2D p       =   gApp->DesignSpaceToSafeZone(Math::Point2D(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y));
+        glm::vec2 oldP(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y);
+        Math::Point2D p        =   gApp->DesignToSafeZone(Math::Point2D(oldP.x, oldP.y));
         
-        glm::vec2 newP;
-        newP.x  =   p.x;
-        newP.y  =   p.y;
-        
-        glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(newP.x, newP.y, 0.0f));
+        glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(p.x, p.y, 0.0f));
         
         glm::mat4 rotate    = glm::rotate   <GLfloat>(glm::mat4(1.0f),
                                                       Math::DegToRad(_sceneNodeProperties2D->angle),
                                                       glm::vec3(0.0f, 0.0f, 1.0f));
         
-        glm::mat4 scale     = glm::scale    <GLfloat>(glm::mat4(1.0f), glm::vec3(_sceneNodeProperties2D->scaleX * CSF,
-                                                                                 _sceneNodeProperties2D->scaleY * CSF,
+        glm::mat4 scale     = glm::scale    <GLfloat>(glm::mat4(1.0f), glm::vec3(_sceneNodeProperties2D->scaleX,
+                                                                                 _sceneNodeProperties2D->scaleY,
                                                                                  1.0f));
         
         glm::mat4 translateAnchor = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(_sceneNodeProperties2D->anchor.x,
-                                                                                       _sceneNodeProperties2D->anchor.y
-                                                                                       , 0.0f));
+                                                                                       _sceneNodeProperties2D->anchor.y,
+                                                                                       0.0f));
         
         glm::mat4 shearX    = glm::mat4(1.0f);
         shearX[1][0] = _sceneNodeProperties2D->shearX;

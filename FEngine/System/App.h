@@ -79,11 +79,16 @@ namespace FEngine
         float       GetSafeWidth                ();
         float       GetSafeHeight               ();
         
-        Math::Point2D DesignSpaceToViewportSpace  (const Math::Point2D & designSpace);
-        Math::Point2D ViewportSpaceToDesignSpace  (const Math::Point2D & vpSpace);
-        Math::Point2D DesignSpaceToSafeZone       (const Math::Point2D & designSpace);
-        Math::Point2D SafeZoneToDesignSpace       (const Math::Point2D & safeZone);
+        Math::Point2D DesignSpaceToViewportSpace(const Math::Point2D & designSpace);
+        Math::Point2D ViewportSpaceToDesignSpace(const Math::Point2D & vpSpace);
+        Math::Point2D DesignSpaceToSafeZone     (const Math::Point2D & designSpace);
+        Math::Point2D SafeZoneToDesignSpace     (const Math::Point2D & safeZone);
 
+        Math::Point2D ScreenToSafeZone          (const Math::Point2D & screenSpace);
+        Math::Point2D SafeZoneToScreen          (const Math::Point2D & safeZone);
+        Math::Point2D SafeZoneToDesign          (const Math::Point2D & safeZone);
+        Math::Point2D DesignToSafeZone          (const Math::Point2D & designSpace);
+        
         //void    SetResourceLoader(FIResourceLoader * resourceLoader);
         
         // Rename these to "***AssetPath()"

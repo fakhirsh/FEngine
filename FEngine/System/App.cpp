@@ -143,7 +143,9 @@ namespace FEngine
         if ((_elapsed - basetime) > 1.0)
         {
             _currentFPS =   frames*1.0/(_elapsed - basetime);
-            //std::cout << "FPS: " << _currentFPS << std::endl;
+            //std::string newMsg = string("FPS: ") + std::to_string(_currentFPS);
+            //GetLog()->Print(newMsg);
+            
             basetime    =   _elapsed;
             frames      =   0;
         }
@@ -179,37 +181,33 @@ namespace FEngine
 
     void App::TouchDown (int x, int y)
     {
+        //string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
+        //GetLog()->Print(newMsg);
         
-        string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
-        _logger->Print(newMsg);
+        Math::Point2D sz = ScreenToSafeZone(Math::Point2D(x, y));
+        Math::Point2D ds = SafeZoneToDesign(sz);
         
         boost::shared_ptr<FEngine::EventTouchDown> touchDownEvent = boost::make_shared<FEngine::EventTouchDown>();
-        // Adjust coordinates according to new viewport origin
-    
-        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
-        
-        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
-        touchDownEvent->x = designSpace.x;
-        touchDownEvent->y = designSpace.y;
+        touchDownEvent->x = ds.x;
+        touchDownEvent->y = ds.y;
         
         EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
         eventMgr->TriggerEvent(touchDownEvent);
-        
+
     }
     
     void App::TouchMoved (int x, int y)
     {
      
-        string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
+        //string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
         //_logger->Print(newMsg);
 
-        
+        Math::Point2D sz = ScreenToSafeZone(Math::Point2D(x, y));
+        Math::Point2D ds = SafeZoneToDesign(sz);
+
         boost::shared_ptr<FEngine::EventTouchMoved> touchMovedEvent = boost::make_shared<FEngine::EventTouchMoved>();
-        // Adjust coordinates according to new viewport origin
-        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
-        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
-        touchMovedEvent->x = designSpace.x;
-        touchMovedEvent->y = designSpace.y;
+        touchMovedEvent->x = ds.x;
+        touchMovedEvent->y = ds.y;
         
         EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
         eventMgr->TriggerEvent(touchMovedEvent);
@@ -218,13 +216,12 @@ namespace FEngine
 
     void App::TouchUp (int x, int y)
     {
+        Math::Point2D sz = ScreenToSafeZone(Math::Point2D(x, y));
+        Math::Point2D ds = SafeZoneToDesign(sz);
         
         boost::shared_ptr<FEngine::EventTouchUp> touchUpEvent = boost::make_shared<FEngine::EventTouchUp>();
-        // Adjust coordinates according to new viewport origin
-        Math::Point2D viewportSpace(x - _origin.x, y - _origin.y);
-        Math::Point2D designSpace = ViewportSpaceToDesignSpace(viewportSpace);
-        touchUpEvent->x = designSpace.x;
-        touchUpEvent->y = designSpace.y;
+        touchUpEvent->x = ds.x;
+        touchUpEvent->y = ds.y;
         
         EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
         eventMgr->TriggerEvent(touchUpEvent);
@@ -234,7 +231,7 @@ namespace FEngine
     
     void App::TouchCancelled (int x, int y)
     {
-        //FStateManager::Get()->TouchCancelled(x, y);
+        
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
@@ -289,19 +286,82 @@ namespace FEngine
         //_contentScaleFactor = 1.0f;
         
         // Output message ONLY for testing:
-        std::string newMsg =    std::string("DEBUG ==> \nScreen Width: ") + std::to_string(int(_frameBufferWidth))
-                                + std::string("\nScreen Height: ") + std::to_string(int(_frameBufferHeight))
-                                + std::string("\nViewport Width: ") + std::to_string(int(_viewportWidth))
-                                + std::string("\nViewport Height: ") + std::to_string(int(_viewportHeight))
-                                + std::string("\nSafe Zone x: ") + std::to_string(int(_safeZoneRect.x))
-                                + std::string("\nSafe Zone y: ") + std::to_string(int(_safeZoneRect.y))
-                                + std::string("\nSafe Zone Width: ") + std::to_string(int(_safeZoneRect.width))
-                                + std::string("\nSafe Zone Height: ") + std::to_string(int(_safeZoneRect.height))
-                                + std::string("\nCSF: ") + std::to_string(_contentScaleFactor);
-        _logger->Print(newMsg);
+        std::string newMsg =    std::string("DEBUG ==> \nScreen Width: ")   + std::to_string(int(_frameBufferWidth))
+                                + std::string("\nScreen Height: ")          + std::to_string(int(_frameBufferHeight))
+                                + std::string("\nViewport Width: ")         + std::to_string(int(_viewportWidth))
+                                + std::string("\nViewport Height: ")        + std::to_string(int(_viewportHeight))
+                                + std::string("\nSafe Zone x: ")            + std::to_string(int(_safeZoneRect.x))
+                                + std::string("\nSafe Zone y: ")            + std::to_string(int(_safeZoneRect.y))
+                                + std::string("\nSafe Zone Width: ")        + std::to_string(int(_safeZoneRect.width))
+                                + std::string("\nSafe Zone Height: ")       + std::to_string(int(_safeZoneRect.height))
+                                + std::string("\nCSF: ")                    + std::to_string(_contentScaleFactor);
+        GetLog()->Print(newMsg);
         
     }
 
+    
+    Math::Point2D App::ScreenToSafeZone (const Math::Point2D & screenSpace)
+    {
+        Math::Point2D safeZone;
+        
+        safeZone.x = screenSpace.x - GetOrigin().x;
+        safeZone.y = screenSpace.y - GetOrigin().y;
+        
+        return safeZone;
+    }
+    
+    Math::Point2D App::SafeZoneToScreen (const Math::Point2D & safeZone)
+    {
+        Math::Point2D screen;
+        
+        screen.x = safeZone.x + GetOrigin().x;
+        screen.y = safeZone.y + GetOrigin().y;
+        
+        return screen;
+    }
+    
+    Math::Point2D App::SafeZoneToDesign (const Math::Point2D & safeZone)
+    {
+        Math::Point2D design;
+        
+        design.x = safeZone.x / GetContentScaleFactor();
+        design.y = safeZone.y / GetContentScaleFactor();
+        
+        return design;
+    }
+    
+    Math::Point2D App::DesignToSafeZone (const Math::Point2D & designSpace)
+    {
+        Math::Point2D safeZone;
+        
+        safeZone.x = designSpace.x * GetContentScaleFactor();
+        safeZone.y = designSpace.y * GetContentScaleFactor();
+        
+        return safeZone;
+    }
+    
+    /*
+    Math::Point2D App::ScreenSpaceToDesignSpace  (const Math::Point2D & screenSpace)
+    {
+        Math::Point2D designSpace;
+        
+        // 1. Move screen space to the new origin:
+        Math::Point2D newScreenSpace(screenSpace.x - _origin.x, screenSpace.y - _origin.y);
+        
+        
+        return designSpace;
+    }
+    
+    Math::Point2D App::DesignSpaceToScreenSpace  (const Math::Point2D & designSpace)
+    {
+        Math::Point2D screenSpace;
+        
+        
+        
+        return screenSpace;
+    }
+    */
+     
 //////////////////////////////////////////////////////////////////////////////////////
 
     // The following two functions appear to be buggy. Please fix:
@@ -310,6 +370,7 @@ namespace FEngine
     // 2. ViewportSpaceToDesignSpace()
     //
     
+
     Math::Point2D App::DesignSpaceToViewportSpace (const Math::Point2D & designSpace)
     {
         struct BOX
@@ -335,7 +396,7 @@ namespace FEngine
         
         return vpSpace;
     }
-
+    
     Math::Point2D App::ViewportSpaceToDesignSpace (const Math::Point2D & vpSpace)
     {
         struct BOX
@@ -361,7 +422,7 @@ namespace FEngine
         
         return designSpace;
     }
-    
+
 /////////////////////////////////////////////////////////////////////////////////
     
     

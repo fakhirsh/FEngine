@@ -62,15 +62,9 @@ namespace FEngine
         glm::mat4 mat = StateManager::Get()->PeekTransform2D();
         
         glm::vec2 oldP(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y);
-        glm::vec2 newP;
-        Math::Point2D p;
-        p.x     =   oldP.x;
-        p.y     =   oldP.y;
-        p       =   gApp->DesignSpaceToSafeZone(p);
-        newP.x  =   p.x;
-        newP.y  =   p.y;
+        Math::Point2D p        =   gApp->DesignToSafeZone(Math::Point2D(oldP.x, oldP.y));
         
-        glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(newP.x, newP.y, 0.0f));
+        glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(p.x, p.y, 0.0f));
         
         glm::mat4 rotate    = glm::rotate   <GLfloat>(glm::mat4(1.0f),
                                                       Math::DegToRad(_sceneNodeProperties2D->angle),

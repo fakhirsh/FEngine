@@ -36,7 +36,13 @@ namespace FEngine
     
     void Log::Print (string message, string function, int lineNo)
     {
-        string newStr = string("[Dela|") + to_string(gApp->GetElapsedTime()) + string("]  ") + message;
+        int elapsedTimeINT = gApp->GetElapsedTime();
+        int sec = elapsedTimeINT % 60;
+        elapsedTimeINT /= 60;
+        int min = elapsedTimeINT % 60;
+        
+        string elapsedTimeStr = string("m:") + to_string(min) + string(" s:") + to_string(sec);
+        string newStr = string("[Dela|") + elapsedTimeStr + string("]  ") + message;
         if(function != "")
         {
             newStr += string(" {Fn:") + function;

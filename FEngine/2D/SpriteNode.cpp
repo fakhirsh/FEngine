@@ -36,7 +36,7 @@ namespace FEngine
     SpriteNode::SpriteNode ()
     {
         _sceneNodeProperties2D = boost::make_shared<SceneNodeProperties2D>();
-        
+             
         // 6 vertices per Sprite
         for(int i = 0; i < 6; i++)
         {
@@ -52,7 +52,21 @@ namespace FEngine
     
     bool SpriteNode::PreRender (float dt)
     {
-        return ViewNode::PreRender(dt);
+        static float prevScaleX = 1.0f;
+        static float prevScaleY = 1.0f;
+        
+        prevScaleX = _sceneNodeProperties2D->scaleX;
+        prevScaleY = _sceneNodeProperties2D->scaleY;
+        
+        _sceneNodeProperties2D->scaleX = prevScaleX * gApp->GetContentScaleFactor();
+        _sceneNodeProperties2D->scaleY = prevScaleY * gApp->GetContentScaleFactor();
+        
+        bool result = ViewNode::PreRender(dt);
+        
+        _sceneNodeProperties2D->scaleX = prevScaleX;
+        _sceneNodeProperties2D->scaleY = prevScaleY;
+        
+        return result;
     }
     
     bool SpriteNode::Render (float dt)
