@@ -19,13 +19,13 @@ namespace FEngine
 {
     EventDispatcher::EventDispatcher()
     {
-        gApp->GetLog()->Print("EventDispatcher::EventDispatcher()");
+        //gApp->GetLog()->Print("EventDispatcher::EventDispatcher()");
         _activeQueue = 0;
     }
     
     EventDispatcher::~EventDispatcher()
     {
-        gApp->GetLog()->Print("EventDispatcher::~EventDispatcher()");
+        //gApp->GetLog()->Print("EventDispatcher::~EventDispatcher()");
         RemoveAllEvents();
         RemoveAllListeners();
     }

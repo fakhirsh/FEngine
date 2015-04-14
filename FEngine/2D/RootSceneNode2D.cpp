@@ -25,7 +25,7 @@ namespace FEngine
 {
     RootSceneNode2D::RootSceneNode2D ()
     {
-        gApp->GetLog()->Print("RootSceneNode2D::RootSceneNode2D");
+        //gApp->GetLog()->Print("RootSceneNode2D::RootSceneNode2D");
         
         _sceneNodeProperties2D          =   boost::make_shared<SceneNodeProperties2D>();
         _sceneNodeProperties2D->x       =   gApp->GetOrigin().x;
@@ -40,9 +40,8 @@ namespace FEngine
     
     RootSceneNode2D::~RootSceneNode2D ()
     {
-        gApp->GetLog()->Print("RootSceneNode2D::~RootSceneNode2D");
+        //gApp->GetLog()->Print("RootSceneNode2D::~RootSceneNode2D");
         //TearDown();
-        
     }
     
     bool RootSceneNode2D::PreRender(float dt)

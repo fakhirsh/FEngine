@@ -21,12 +21,12 @@ namespace FEngine
 {
     ProcessScheduler::ProcessScheduler()
     {
-        gApp->GetLog()->Print("ProcessScheduler::ProcessScheduler()");
+        //gApp->GetLog()->Print("ProcessScheduler::ProcessScheduler()");
     }
     
     ProcessScheduler::~ProcessScheduler()
     {
-        gApp->GetLog()->Print("ProcessScheduler::~ProcessScheduler()");
+        //gApp->GetLog()->Print("ProcessScheduler::~ProcessScheduler()");
     }
     
     bool ProcessScheduler::AddChild(ProcessPtr process)
