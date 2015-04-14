@@ -11,6 +11,8 @@
 #include "../System/App.h"
 #include "../Debugging/Log.h"
 
+#include "../Utility/String.h"
+
 using namespace FEngine;
 extern App * gApp;
 
@@ -41,14 +43,14 @@ namespace FEngine
         elapsedTimeINT /= 60;
         int min = elapsedTimeINT % 60;
         
-        string elapsedTimeStr = string("m:") + to_string(min) + string(" s:") + to_string(sec);
+        string elapsedTimeStr = string("m:") + String::ToString(min) + string(" s:") + String::ToString(sec);
         string newStr = string("[Dela|") + elapsedTimeStr + string("]  ") + message;
         if(function != "")
         {
             newStr += string(" {Fn:") + function;
             
             if (lineNo != -1) {
-                newStr += string(" - Line:") + std::to_string(lineNo);
+                newStr += string(" - Line:") + String::ToString(lineNo);
             }
             newStr += string("}");
         }

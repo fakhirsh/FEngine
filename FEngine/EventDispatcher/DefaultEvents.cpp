@@ -17,6 +17,9 @@ namespace FEngine
     const unsigned int EventTouchUp::eventID        (0xb3cdb030);
     const unsigned int EventSetDebugNode::eventID   (0xb3cdba6c);
     const unsigned int EventSetActorPosition::eventID  (0xb3cdbc7e);
+    const unsigned int EventChangeScreen::eventID   (0xb3cdbe0e);
+    
+    
     
     const unsigned int EventTest1::eventID = 0x00F;
 

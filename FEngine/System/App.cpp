@@ -20,7 +20,10 @@
 //#include "../Renderer/IRenderer.h"
 #include "../Debugging/LogDefault.h"
 
+#include "../Utility/String.h"
+
 #include <GameLogic/Screens/Test/Test.h>
+#include <GameLogic/Screens/Splash1.h>
 
 
 namespace FEngine
@@ -123,7 +126,8 @@ namespace FEngine
         //_renderer->ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         
         // Initialize the singleton Game state manager class. Also change State.
-        StatePtr statePtr = boost::make_shared<Test>();
+        //StatePtr statePtr = boost::make_shared<Test>();
+        StatePtr statePtr = boost::make_shared<Splash1>();
         StateManager::Get()->ChangeState(statePtr);
         
         // Initialize the singleton Sound manager class.
@@ -143,7 +147,7 @@ namespace FEngine
         if ((_elapsed - basetime) > 1.0)
         {
             _currentFPS =   frames*1.0/(_elapsed - basetime);
-            //std::string newMsg = string("FPS: ") + std::to_string(_currentFPS);
+            //std::string newMsg = string("FPS: ") + String::ToString(_currentFPS);
             //GetLog()->Print(newMsg);
             
             basetime    =   _elapsed;
@@ -181,7 +185,7 @@ namespace FEngine
 
     void App::TouchDown (int x, int y)
     {
-        //string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
+        //string newMsg = string("Raw x: ") + String::to_string(x) + string(" -- y: ") + String::to_string(y);
         //GetLog()->Print(newMsg);
         
         Math::Point2D sz = ScreenToSafeZone(Math::Point2D(x, y));
@@ -199,7 +203,7 @@ namespace FEngine
     void App::TouchMoved (int x, int y)
     {
      
-        //string newMsg = string("Raw x: ") + to_string(x) + string(" -- y: ") + to_string(y);
+        //string newMsg = string("Raw x: ") + String::to_string(x) + string(" -- y: ") + String::to_string(y);
         //_logger->Print(newMsg);
 
         Math::Point2D sz = ScreenToSafeZone(Math::Point2D(x, y));
@@ -286,15 +290,15 @@ namespace FEngine
         //_contentScaleFactor = 1.0f;
         
         // Output message ONLY for testing:
-        std::string newMsg =    std::string("DEBUG ==> \nScreen Width: ")   + std::to_string(int(_frameBufferWidth))
-                                + std::string("\nScreen Height: ")          + std::to_string(int(_frameBufferHeight))
-                                + std::string("\nViewport Width: ")         + std::to_string(int(_viewportWidth))
-                                + std::string("\nViewport Height: ")        + std::to_string(int(_viewportHeight))
-                                + std::string("\nSafe Zone x: ")            + std::to_string(int(_safeZoneRect.x))
-                                + std::string("\nSafe Zone y: ")            + std::to_string(int(_safeZoneRect.y))
-                                + std::string("\nSafe Zone Width: ")        + std::to_string(int(_safeZoneRect.width))
-                                + std::string("\nSafe Zone Height: ")       + std::to_string(int(_safeZoneRect.height))
-                                + std::string("\nCSF: ")                    + std::to_string(_contentScaleFactor);
+        std::string newMsg =    std::string("DEBUG ==> \nScreen Width: ")   + String::ToString(int(_frameBufferWidth))
+                                + std::string("\nScreen Height: ")          + String::ToString(int(_frameBufferHeight))
+                                + std::string("\nViewport Width: ")         + String::ToString(int(_viewportWidth))
+                                + std::string("\nViewport Height: ")        + String::ToString(int(_viewportHeight))
+                                + std::string("\nSafe Zone x: ")            + String::ToString(int(_safeZoneRect.x))
+                                + std::string("\nSafe Zone y: ")            + String::ToString(int(_safeZoneRect.y))
+                                + std::string("\nSafe Zone Width: ")        + String::ToString(int(_safeZoneRect.width))
+                                + std::string("\nSafe Zone Height: ")       + String::ToString(int(_safeZoneRect.height))
+                                + std::string("\nCSF: ")                    + String::ToString(_contentScaleFactor);
         GetLog()->Print(newMsg);
         
     }

@@ -121,7 +121,25 @@ namespace FEngine
         float x, y;
     };
 
-    
+    //----------------------------------------------------------------------------------------------------
+    // EventSetActorPosition - Sets up debug node while initializing the Physics component
+    //----------------------------------------------------------------------------------------------------
+    class EventChangeScreen : public Event
+    {
+    public:
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
+        
+        EventChangeScreen(){}
+        ~EventChangeScreen(){}
+        
+        std::string GetName()
+        {
+            return "Change Screen";
+        }
+        
+        float x, y;
+    };
     
     /*----------------------------------------------------------------------------------------------------
      *----------------------------------------------------------------------------------------------------

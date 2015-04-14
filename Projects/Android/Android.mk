@@ -97,7 +97,11 @@ LOCAL_SRC_FILES := 	../../../GameEngine/FEngine/System/App.cpp		\
 			../../../GameEngine/FEngine/StateManager/State.cpp			\
 			../../../GameEngine/FEngine/StateManager/StateManager.cpp		\
 			../../../GameEngine/FEngine/SoundManager/SoundManager.cpp		\
-			../../../GameEngine/FEngine/Utility/Math.cpp
-			
+			../../../GameEngine/FEngine/Utility/Math.cpp				\
+			../../../GameEngine/FEngine/Utility/String.cpp				\
+			../../../GameEngine/FEngine/Debugging/Log.cpp				\
+			../../../GameEngine/FEngine/Debugging/LogDefault.cpp			\
+			../../../GameEngine/FEngine/Debugging/LogAndroid.cpp
+
 
 include $(BUILD_STATIC_LIBRARY)
