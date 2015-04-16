@@ -37,7 +37,7 @@ namespace FEngine
         boost::shared_ptr<EventSetActorPosition> e2 = boost::make_shared<EventSetActorPosition>();
         e2->actor    =   n.actor;
         e2->x =   0 + rand() / float(RAND_MAX) * 100.0f;
-        e2->y =   -800 - rand() / float(RAND_MAX) * 100.0f ;
+        e2->y =   -1800 - rand() / float(RAND_MAX) * 100.0f ;
         ed->DispatchEvent(e2);
         
     }
@@ -100,7 +100,7 @@ namespace FEngine
                 boost::shared_ptr<EventSetActorPosition> e2 = boost::make_shared<EventSetActorPosition>();
                 e2->actor    =   (*it).actor;
                 e2->x =   0 + rand() / float(RAND_MAX) * 100.0f;
-                e2->y =   -800 - rand() / float(RAND_MAX) * 100.0f ;
+                e2->y =   -1800 - rand() / float(RAND_MAX) * 100.0f ;
                 ed->DispatchEvent(e2);
                 
                 return;

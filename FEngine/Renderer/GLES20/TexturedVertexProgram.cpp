@@ -33,7 +33,7 @@ namespace FEngine
     bool TexturedVertexProgram::Init()
     {
         
-        _name = "TexturedVertexProgram";
+        _name = "TintedTexture";
         
         if (!LinkProgram(std::string(TexturedVertexVS), std::string(TexturedVertexFS))) {
             return false;

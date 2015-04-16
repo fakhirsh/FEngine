@@ -32,7 +32,7 @@ namespace FEngine
     bool SimpleVertex2DProgram::Init()
     {
         
-        _name = "SimpleVertex2DProgram";
+        _name = "SimpleVertex2D";
         
         if (!LinkProgram(std::string(SimpleVertex2DVS), std::string(SimpleVertex2DFS))) {
             return false;

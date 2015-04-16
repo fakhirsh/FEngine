@@ -46,7 +46,7 @@ namespace FEngine
         {
             progPtr = boost::make_shared<TexturedVertexProgram>();
         }
-        if (name == "SimpleVertex2D")
+        else if(name == "SimpleVertex2D")
         {
             progPtr = boost::make_shared<SimpleVertex2DProgram>();
         }

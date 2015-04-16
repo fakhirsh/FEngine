@@ -24,7 +24,8 @@
 
 #include <GameLogic/Screens/Test/Test.h>
 #include <GameLogic/Screens/Splash1.h>
-
+#include <GameLogic/Screens/Gameplay.h>
+#include <GameLogic/Screens/Loading.h>
 
 namespace FEngine
 {
@@ -127,7 +128,9 @@ namespace FEngine
         
         // Initialize the singleton Game state manager class. Also change State.
         //StatePtr statePtr = boost::make_shared<Test>();
-        StatePtr statePtr = boost::make_shared<Splash1>();
+        //StatePtr statePtr = boost::make_shared<Splash1>();
+        //StatePtr statePtr = boost::make_shared<Gameplay>();
+        StatePtr statePtr = boost::make_shared<Loading>();
         StateManager::Get()->ChangeState(statePtr);
         
         // Initialize the singleton Sound manager class.
