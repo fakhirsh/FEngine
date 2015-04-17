@@ -6,9 +6,22 @@
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __FEngine__FacebookAndroid__
-#define __FEngine__FacebookAndroid__
+#pragma once
 
-#include <stdio.h>
 
-#endif /* defined(__FEngine__FacebookAndroid__) */
+#include "Facebook.h"
+
+namespace FEngine
+{
+    class FacebookAndroid : public Facebook
+    {
+    public:
+        FacebookAndroid();
+        virtual ~FacebookAndroid();
+        
+        virtual bool    ShareURL            (std::string contentURL, std::string imgURL, std::string title, std::string description);
+        
+    private:
+
+    };
+}

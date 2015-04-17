@@ -7,3 +7,24 @@
 //
 
 #include "FacebookAndroid.h"
+
+
+namespace FEngine
+{
+    
+    FacebookAndroid::FacebookAndroid()
+    {
+    
+    }
+    
+    FacebookAndroid::~FacebookAndroid()
+    {
+    
+    }
+        
+    bool FacebookAndroid::ShareURL(std::string contentURL, std::string imgURL, std::string title, std::string description)
+    {
+        return true;
+    }
+    
+}

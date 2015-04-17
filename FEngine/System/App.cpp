@@ -141,9 +141,6 @@ namespace FEngine
         StatePtr statePtr = boost::make_shared<Loading>();
         StateManager::Get()->ChangeState(statePtr);
         
-        // Initialize the singleton Sound manager class.
-        //SoundManager::Get();
-        
         return true;
         
     }
