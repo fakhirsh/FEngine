@@ -28,11 +28,11 @@ namespace FEngine
         //gApp->GetLog()->Print("RootSceneNode2D::RootSceneNode2D");
         
         _sceneNodeProperties2D          =   boost::make_shared<SceneNodeProperties2D>();
-        _sceneNodeProperties2D->x       =   gApp->GetOrigin().x  +150;
-        _sceneNodeProperties2D->y       =   gApp->GetOrigin().y  +150;
+        _sceneNodeProperties2D->x       =   gApp->GetOrigin().x;
+        _sceneNodeProperties2D->y       =   gApp->GetOrigin().y;
         _sceneNodeProperties2D->alpha   =   1.0f;
-        _sceneNodeProperties2D->scaleX  =   0.5f;
-        _sceneNodeProperties2D->scaleY  =   0.5f;
+        _sceneNodeProperties2D->scaleX  =   1.0f;
+        _sceneNodeProperties2D->scaleY  =   1.0f;
         
         _sceneNodeProperties2D->angle   =   Math::DegToRad(0.0f);
         

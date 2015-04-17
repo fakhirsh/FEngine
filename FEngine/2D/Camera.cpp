@@ -42,36 +42,6 @@ namespace FEngine
     
     bool Camera::PreRender (float dt)
     {
-        float CSF = gApp->GetContentScaleFactor();
-        
-        //RootSceneNode * root = (RootSceneNode *)StateManager::Get()->GetRootSceneNode();
-        //SceneNodeProperties snpStack = root->snpStack.back();
-        //glm::mat4 matStack = root->transformationStack.back();
-        
-        glm::mat4 mat = StateManager::Get()->PeekTransform2D();
-        
-        glm::vec2 oldP(_sceneNodeProperties2D->x, _sceneNodeProperties2D->y);
-        glm::vec2 newP;
-        Math::Point2D p;
-        p.x     =   oldP.x;
-        p.y     =   oldP.y;
-        p       =   gApp->DesignSpaceToSafeZone(p);
-        newP.x  =   p.x;
-        newP.y  =   p.y;
-        
-        glm::mat4 translate = glm::translate<GLfloat>(glm::mat4(1.0f), glm::vec3(newP.x, newP.y, 0.0f));
-        
-        glm::mat4 rotate    = glm::rotate   <GLfloat>(glm::mat4(1.0f),
-                                                      Math::DegToRad(_sceneNodeProperties2D->angle),
-                                                      glm::vec3(0.0f, 0.0f, 1.0f));
-        
-        glm::mat4 scale     = glm::scale    <GLfloat>(glm::mat4(1.0f), glm::vec3(_sceneNodeProperties2D->scaleX * CSF,
-                                                                                 _sceneNodeProperties2D->scaleY * CSF,
-                                                                                 1.0f));
-        
-        glm::mat4 localMat = translate * rotate * scale;
-        
-        StateManager::Get()->PushTransform2D(mat * localMat);
         return true;
     }
     

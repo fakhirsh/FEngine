@@ -144,7 +144,7 @@ namespace FEngine
     {
         static float    basetime    =   0.0f;
         static int      frames      =   0;
-        
+    
         _elapsed += dt;
         
         if ((_elapsed - basetime) > 1.0)
@@ -377,7 +377,7 @@ namespace FEngine
     // 2. ViewportSpaceToDesignSpace()
     //
     
-
+/*
     Math::Point2D App::DesignSpaceToViewportSpace (const Math::Point2D & designSpace)
     {
         struct BOX
@@ -486,7 +486,7 @@ namespace FEngine
         return designSpace;
 
     }
-
+*/
     //////////////////////////////////////////////////////////////////////////////////////
 
 
