@@ -31,6 +31,12 @@
 		0C3F26191ABD1ADC002DCB5A /* ProgramFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F26171ABD1ADC002DCB5A /* ProgramFactory.cpp */; };
 		0C3F261C1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F261A1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp */; };
 		0C3F261F1ABD82A4002DCB5A /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F261E1ABD82A4002DCB5A /* Math.cpp */; };
+		0C5549031AE1477600CEB957 /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C5549011AE1477600CEB957 /* Facebook.cpp */; };
+		0C5549061AE1478800CEB957 /* FacebookiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C5549041AE1478800CEB957 /* FacebookiOS.mm */; };
+		0C55490D1AE148AE00CEB957 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55490A1AE148AE00CEB957 /* FBSDKCoreKit.framework */; };
+		0C55490E1AE148AE00CEB957 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55490B1AE148AE00CEB957 /* FBSDKLoginKit.framework */; };
+		0C55490F1AE148AE00CEB957 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55490C1AE148AE00CEB957 /* FBSDKShareKit.framework */; };
+		0C5549121AE14FDE00CEB957 /* FacebookStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C5549101AE14FDE00CEB957 /* FacebookStub.cpp */; };
 		0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C68A7AC1ACA669E0087A197 /* MemoryManager.cpp */; };
 		0C68A7B11ACA66D70087A197 /* ActorPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C68A7AF1ACA66D70087A197 /* ActorPool.cpp */; };
 		0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7951441AB85EF80010DA81 /* DefaultProcesses.cpp */; };
@@ -243,6 +249,15 @@
 		0C3F261B1ABD1AEF002DCB5A /* SpriteNodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteNodeFactory.h; sourceTree = "<group>"; };
 		0C3F261D1ABD580F002DCB5A /* VertexDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexDefinitions.h; sourceTree = "<group>"; };
 		0C3F261E1ABD82A4002DCB5A /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
+		0C5549011AE1477600CEB957 /* Facebook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Facebook.cpp; path = Social/Facebook.cpp; sourceTree = "<group>"; };
+		0C5549021AE1477600CEB957 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Facebook.h; path = Social/Facebook.h; sourceTree = "<group>"; };
+		0C5549041AE1478800CEB957 /* FacebookiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FacebookiOS.mm; path = Social/FacebookiOS.mm; sourceTree = "<group>"; };
+		0C5549051AE1478800CEB957 /* FacebookiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookiOS.h; path = Social/FacebookiOS.h; sourceTree = "<group>"; };
+		0C55490A1AE148AE00CEB957 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		0C55490B1AE148AE00CEB957 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		0C55490C1AE148AE00CEB957 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		0C5549101AE14FDE00CEB957 /* FacebookStub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FacebookStub.cpp; path = Social/FacebookStub.cpp; sourceTree = "<group>"; };
+		0C5549111AE14FDE00CEB957 /* FacebookStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookStub.h; path = Social/FacebookStub.h; sourceTree = "<group>"; };
 		0C68A7AC1ACA669E0087A197 /* MemoryManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MemoryManager.cpp; path = MemoryManager/MemoryManager.cpp; sourceTree = "<group>"; };
 		0C68A7AD1ACA669E0087A197 /* MemoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemoryManager.h; path = MemoryManager/MemoryManager.h; sourceTree = "<group>"; };
 		0C68A7AF1ACA66D70087A197 /* ActorPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ActorPool.cpp; path = MemoryManager/ActorPool.cpp; sourceTree = "<group>"; };
@@ -330,12 +345,15 @@
 			files = (
 				0CCC4C8F1ACFD47E00CA2203 /* Chartboost.framework in Frameworks */,
 				0CCC4C841ACFAF8D00CA2203 /* CoreGraphics.framework in Frameworks */,
+				0C55490F1AE148AE00CEB957 /* FBSDKShareKit.framework in Frameworks */,
 				0CCC4C821ACFAF8400CA2203 /* StoreKit.framework in Frameworks */,
 				0CCC4C801ACFAF7E00CA2203 /* Foundation.framework in Frameworks */,
+				0C55490E1AE148AE00CEB957 /* FBSDKLoginKit.framework in Frameworks */,
 				0CCC4C7E1ACFAF7700CA2203 /* UIKit.framework in Frameworks */,
 				0C2F3F851AC70B9B00D66B2C /* libBox2D.a in Frameworks */,
 				0C275A4C1AB4141000F18283 /* OpenAL.framework in Frameworks */,
 				0C275A4A1AB4140900F18283 /* OpenGLES.framework in Frameworks */,
+				0C55490D1AE148AE00CEB957 /* FBSDKCoreKit.framework in Frameworks */,
 				0C275A471AB4128800F18283 /* libPennerEasing.a in Frameworks */,
 				0C275A021AB4123F00F18283 /* libtinyxml2.a in Frameworks */,
 				0C275A011AB4123D00F18283 /* libpng.a in Frameworks */,
@@ -469,6 +487,9 @@
 		0C275A481AB413F700F18283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C55490A1AE148AE00CEB957 /* FBSDKCoreKit.framework */,
+				0C55490B1AE148AE00CEB957 /* FBSDKLoginKit.framework */,
+				0C55490C1AE148AE00CEB957 /* FBSDKShareKit.framework */,
 				0CCC4C8E1ACFD47E00CA2203 /* Chartboost.framework */,
 				0CCC4C831ACFAF8D00CA2203 /* CoreGraphics.framework */,
 				0CCC4C811ACFAF8400CA2203 /* StoreKit.framework */,
@@ -531,6 +552,19 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		0C5548FB1AE1474700CEB957 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				0C5549011AE1477600CEB957 /* Facebook.cpp */,
+				0C5549021AE1477600CEB957 /* Facebook.h */,
+				0C5549041AE1478800CEB957 /* FacebookiOS.mm */,
+				0C5549051AE1478800CEB957 /* FacebookiOS.h */,
+				0C5549101AE14FDE00CEB957 /* FacebookStub.cpp */,
+				0C5549111AE14FDE00CEB957 /* FacebookStub.h */,
+			);
+			name = Social;
+			sourceTree = "<group>";
+		};
 		0C68A7A61ACA66850087A197 /* MemoryManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +592,7 @@
 				0C7951431AB85EF80010DA81 /* ProcessScheduler */,
 				0C79514A1AB85EF80010DA81 /* Renderer */,
 				0C79514B1AB85EF80010DA81 /* ResourceCache */,
+				0C5548FB1AE1474700CEB957 /* Social */,
 				0C7951571AB85EF80010DA81 /* SoundManager */,
 				0C7951581AB85EF80010DA81 /* StateManager */,
 				0C79515D1AB85EF80010DA81 /* System */,
@@ -940,6 +975,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */,
+				0C5549061AE1478800CEB957 /* FacebookiOS.mm in Sources */,
 				0CA778FC1AC41FF900CB5FA5 /* Actor.cpp in Sources */,
 				0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */,
 				0C322D001ADBFE35000C857F /* LogDefault.cpp in Sources */,
@@ -958,11 +994,13 @@
 				0C7951701AB85EF80010DA81 /* App.cpp in Sources */,
 				0C3F261F1ABD82A4002DCB5A /* Math.cpp in Sources */,
 				0C79516A1AB85EF80010DA81 /* IOManagerDefault.cpp in Sources */,
+				0C5549121AE14FDE00CEB957 /* FacebookStub.cpp in Sources */,
 				0C27449C1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm in Sources */,
 				0C7951721AB85EF80010DA81 /* SmartPtr.cpp in Sources */,
 				0C3F261C1ABD1AEF002DCB5A /* SpriteNodeFactory.cpp in Sources */,
 				0C8C24E21ABBF61A00C77AAF /* SceneNode2D.cpp in Sources */,
 				0C7951711AB85EF80010DA81 /* SystemConfig.cpp in Sources */,
+				0C5549031AE1477600CEB957 /* Facebook.cpp in Sources */,
 				0C9EABF21AD576AF00A40098 /* SoundManager.cpp in Sources */,
 				0C7951961AB8A5020010DA81 /* DefaultEvents.cpp in Sources */,
 				0C2F3E861AC6F46300D66B2C /* DebugBoxNode2D.cpp in Sources */,
@@ -1116,6 +1154,7 @@
 					"$(inherited)",
 					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost,
 					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost/iOS,
+					/Users/fakhir/Documents/FacebookSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1143,6 +1182,7 @@
 					"$(inherited)",
 					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost,
 					/Users/fakhir/MyData/Work/ZombieTreat/Source/GameEngine/3rdParty/Monetize/Chartboost/iOS,
+					/Users/fakhir/Documents/FacebookSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

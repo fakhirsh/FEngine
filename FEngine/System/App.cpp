@@ -17,6 +17,7 @@
 #include "../EventDispatcher/EventDispatcher.h"
 #include "../PhysicsManager/PhysicsManager.h"
 #include "../Monetize/Ads/StubAds.h"
+#include "../Social/FacebookStub.h"
 //#include "../Renderer/IRenderer.h"
 #include "../Debugging/LogDefault.h"
 
@@ -95,6 +96,13 @@ namespace FEngine
         {
             _logger = new LogDefault();
         }
+        
+        _facebook = sysConfig->facebook;
+        if(_facebook == NULL)
+        {
+            _facebook = new FacebookStub();
+        }
+        
         
         _frameBufferWidth   =   sysConfig->frameBufferWidth;
         _frameBufferHeight  =   sysConfig->frameBufferHeight;
@@ -526,6 +534,11 @@ namespace FEngine
         return _logger;
     }
     
+    Facebook * const App::GetFacebook ()
+    {
+        return _facebook;
+    }
+    
     void App::SetAssetPath (const char * path)
     {
         _assetPath = std::string(path);
@@ -645,6 +658,8 @@ namespace FEngine
     {
         return _elapsed;
     }
+    
+    
 };
 
 

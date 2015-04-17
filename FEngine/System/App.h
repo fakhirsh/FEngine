@@ -29,6 +29,7 @@ namespace FEngine
     class SystemConfig;
     class Ads;
     class Log;
+    class Facebook;
     
     class App
     {
@@ -50,10 +51,11 @@ namespace FEngine
         float       GetDeviceContentScaleFactor ();
     
         void        SetIOManager                (IOManager * fileManager);
-        IOManager * const GetIOManager          ();
-        IRenderer * const GetRenderer           ();
-        Ads * const GetAds                      ();
-        Log * const GetLog                      ();
+        IOManager * const   GetIOManager        ();
+        IRenderer * const   GetRenderer         ();
+        Ads * const         GetAds              ();
+        Log * const         GetLog              ();
+        Facebook * const    GetFacebook         ();
         
         void        SetFrameBufferWidth         (float val);
         void        SetFrameBufferHeight        (float val);
@@ -159,6 +161,7 @@ namespace FEngine
         IOManager * _ioManager;
         IRenderer * _renderer;
         Ads *       _ads;
+        Facebook *  _facebook;
         Log *       _logger;
         // And other system specific crap...
         
