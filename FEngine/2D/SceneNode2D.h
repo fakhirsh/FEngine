@@ -13,6 +13,7 @@
 
 #include "../PointerDefs.h"
 
+#include "../Utility/Math.h"
 
 namespace FEngine
 {
@@ -32,6 +33,9 @@ namespace FEngine
         const SceneNode2D * GetParent       ();
         
         //virtual void        Update          (float dt);
+        
+        bool                IsVisible       ();
+        //Math::BBox          GetBBox         ();
         
         virtual bool        PreRender       (float dt = 0.0f);
         virtual bool        Render          (float dt = 0.0f)   =   0;

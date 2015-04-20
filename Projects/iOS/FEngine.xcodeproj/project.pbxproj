@@ -73,7 +73,7 @@
 		0CCC4C801ACFAF7E00CA2203 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C7F1ACFAF7E00CA2203 /* Foundation.framework */; };
 		0CCC4C821ACFAF8400CA2203 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C811ACFAF8400CA2203 /* StoreKit.framework */; };
 		0CCC4C841ACFAF8D00CA2203 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C831ACFAF8D00CA2203 /* CoreGraphics.framework */; };
-		0CCC4C881ACFD19800CA2203 /* StubAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC4C861ACFD19800CA2203 /* StubAds.cpp */; };
+		0CCC4C881ACFD19800CA2203 /* AdsStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC4C861ACFD19800CA2203 /* AdsStub.cpp */; };
 		0CCC4C8F1ACFD47E00CA2203 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC4C8E1ACFD47E00CA2203 /* Chartboost.framework */; };
 		0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB103F1AC3216F000217A8 /* View2DFactory.cpp */; };
 /* End PBXBuildFile section */
@@ -331,8 +331,8 @@
 		0CCC4C7F1ACFAF7E00CA2203 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0CCC4C811ACFAF8400CA2203 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0CCC4C831ACFAF8D00CA2203 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0CCC4C861ACFD19800CA2203 /* StubAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StubAds.cpp; sourceTree = "<group>"; };
-		0CCC4C871ACFD19800CA2203 /* StubAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubAds.h; sourceTree = "<group>"; };
+		0CCC4C861ACFD19800CA2203 /* AdsStub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdsStub.cpp; sourceTree = "<group>"; };
+		0CCC4C871ACFD19800CA2203 /* AdsStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdsStub.h; sourceTree = "<group>"; };
 		0CCC4C8E1ACFD47E00CA2203 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../3rdParty/Monetize/Chartboost/iOS/Chartboost.framework; sourceTree = "<group>"; };
 		0CFB103F1AC3216F000217A8 /* View2DFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View2DFactory.cpp; sourceTree = "<group>"; };
 		0CFB10401AC3216F000217A8 /* View2DFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View2DFactory.h; sourceTree = "<group>"; };
@@ -387,8 +387,8 @@
 			children = (
 				0C27449A1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm */,
 				0C27449B1ACF214A00D1C4A7 /* ChartBoostAdsiOS.h */,
-				0CCC4C861ACFD19800CA2203 /* StubAds.cpp */,
-				0CCC4C871ACFD19800CA2203 /* StubAds.h */,
+				0CCC4C861ACFD19800CA2203 /* AdsStub.cpp */,
+				0CCC4C871ACFD19800CA2203 /* AdsStub.h */,
 			);
 			path = Ads;
 			sourceTree = "<group>";
@@ -1016,7 +1016,7 @@
 				0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */,
 				0CB3E89A1AD3BF6700F75732 /* ViewNode.cpp in Sources */,
 				0C322CF41ADBFAE6000C857F /* Camera.cpp in Sources */,
-				0CCC4C881ACFD19800CA2203 /* StubAds.cpp in Sources */,
+				0CCC4C881ACFD19800CA2203 /* AdsStub.cpp in Sources */,
 				0C3F260E1ABD078F002DCB5A /* TextureAtlas.cpp in Sources */,
 				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,
 				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,

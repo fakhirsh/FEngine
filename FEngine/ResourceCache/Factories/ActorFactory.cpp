@@ -82,7 +82,7 @@ namespace FEngine
 
 
         if(xmlErr != XML_SUCCESS){
-            std::cout << "ActorFactory::CreateActor -> Failed to parse actor XML " << xmlFilePath << std::endl;
+            std::cout << "ERROR -> Failed to parse actor XML file: " << xmlFilePath << std::endl;
             // Return a NULL pointer
             return ActorPtr();
         }

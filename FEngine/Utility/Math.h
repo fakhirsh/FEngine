@@ -16,7 +16,9 @@ namespace FEngine
         
         float DegToRad(float a);        
         float RadToDeg(float a);
-
+        float Min(float a, float b);
+        float Max(float a, float b);
+        
         class Point2D
         {
         public:
@@ -35,7 +37,7 @@ namespace FEngine
             
             float x, y, z;
         };
-        
+
         class Rect
         {
         public:
@@ -44,6 +46,16 @@ namespace FEngine
             float x, y;
             float width, height;
         };
+        
+        class BBox
+        {
+        public:
+            BBox(){l = t = r = b = 0.0f;}
+            ~BBox(){}
+            float l, t, r, b;
+        };
+        
+        typedef BBox CollisionRect;
         
     }
 }

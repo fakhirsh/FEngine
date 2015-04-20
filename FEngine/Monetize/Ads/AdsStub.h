@@ -12,11 +12,11 @@
 
 namespace FEngine
 {
-    class StubAds : public Ads
+    class AdsStub : public Ads
     {
     public:
-        explicit StubAds();
-        virtual ~StubAds();
+        explicit AdsStub();
+        virtual ~AdsStub();
         
         virtual bool    Init                ();
         virtual bool    ShowBanner          ();

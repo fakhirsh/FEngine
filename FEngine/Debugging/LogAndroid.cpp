@@ -33,7 +33,7 @@ namespace FEngine
         LOGI(message.c_str());
     }
     
-    void LogAndroid::PrintToNetwork  (std::string message)
+    void LogAndroid::PrintToNetwork (std::string message)
     {
         // SendToNetwork(message);
     }

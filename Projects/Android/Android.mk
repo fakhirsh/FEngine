@@ -76,7 +76,7 @@ LOCAL_SRC_FILES := 	../../../GameEngine/FEngine/System/App.cpp		\
 			../../../GameEngine/FEngine/EventDispatcher/EventDispatcher.cpp		\
 			../../../GameEngine/FEngine/MemoryManager/ActorPool.cpp			\
 			../../../GameEngine/FEngine/MemoryManager/MemoryManager.cpp		\
-			../../../GameEngine/FEngine/Monetize/Ads/StubAds.cpp			\
+			../../../GameEngine/FEngine/Monetize/Ads/AdsStub.cpp			\
 			../../../GameEngine/FEngine/Monetize/Ads/ChartBoostAdsAndroid.cpp	\
 			../../../GameEngine/FEngine/PhysicsManager/PhysicsManager.cpp		\
 			../../../GameEngine/FEngine/ProcessScheduler/DefaultProcesses.cpp	\

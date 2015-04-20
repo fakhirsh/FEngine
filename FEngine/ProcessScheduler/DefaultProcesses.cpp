@@ -29,7 +29,6 @@ namespace FEngine
 {
     ProcessDelay::ProcessDelay()
     {
-        _pID        =   1;
         _elapsed    =   0.0f;
         DELAY       =   0.0f;
     }
@@ -47,23 +46,13 @@ namespace FEngine
     }
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /*----------------------------------------------------------------------------------------------------
-     *----------------------------------------------------------------------------------------------------
-     *----------------------------------------------------------------------------------------------------
-     *             Gameplay Related Processes...
-     *----------------------------------------------------------------------------------------------------
-     *----------------------------------------------------------------------------------------------------
-     *----------------------------------------------------------------------------------------------------*/
-
     
     ProcessRotate::ProcessRotate()
     {
-        _pID        =   1;
         _elapsed    =   0.0f;
         DURATION    =   0.0f;
-        ANGLE_START =   0.0f;
-        ANGLE_END   =   0.0f;
+        START       =   0.0f;
+        ROTATE_BY   =   0.0f;
     }
     
     ProcessRotate::~ProcessRotate(){}
@@ -72,7 +61,7 @@ namespace FEngine
     {
         _elapsed += dt;
         
-        float A = Elastic::easeOut(_elapsed, ANGLE_START, ANGLE_END, DURATION);
+        float A = Elastic::easeOut(_elapsed, START, ROTATE_BY, DURATION);
         
         node->GetSceneNodeProperties()->angle = A;
         
@@ -87,7 +76,6 @@ namespace FEngine
     
     ProcessTranslate::ProcessTranslate()
     {
-        _pID        =   1;
         _elapsed    =   0.0f;
         DURATION    =   0.0f;
     }
@@ -98,8 +86,8 @@ namespace FEngine
     {
         _elapsed += dt;
 
-        float X = Quad::easeIn(_elapsed, POINT_START.x, POINT_END.x, DURATION);
-        float Y = Quad::easeIn(_elapsed, POINT_START.y, POINT_END.y, DURATION);
+        float X = Quad::easeIn(_elapsed, START.x, TRANSLATE_BY.x, DURATION);
+        float Y = Quad::easeIn(_elapsed, START.y, TRANSLATE_BY.y, DURATION);
         
         node->GetSceneNodeProperties()->x = X;
         node->GetSceneNodeProperties()->y = Y;
@@ -114,7 +102,6 @@ namespace FEngine
     
     ProcessScale::ProcessScale()
     {
-        _pID        =   1;
         _elapsed    =   0.0f;
         DURATION    =   0.0f;
     }
@@ -125,8 +112,8 @@ namespace FEngine
     {
         _elapsed += dt;
         
-        float X = Elastic::easeOut(_elapsed, SCALE_START.x, SCALE_END.x, DURATION);
-        float Y = Elastic::easeOut(_elapsed, SCALE_START.y, SCALE_END.y, DURATION);
+        float X = Elastic::easeOut(_elapsed, START.x, SCALE_BY.x, DURATION);
+        float Y = Elastic::easeOut(_elapsed, START.y, SCALE_BY.y, DURATION);
         
         node->GetSceneNodeProperties()->scaleX = X;
         node->GetSceneNodeProperties()->scaleY = Y;
@@ -139,6 +126,37 @@ namespace FEngine
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    ProcessCallFn::ProcessCallFn()
+    {
+        _elapsed    =   0.0f;
+        DELAY       =   0.0f;
+    }
+    
+    ProcessCallFn::~ProcessCallFn(){}
+    
+    void ProcessCallFn::Update(float dt)
+    {
+        _elapsed += dt;
+
+        if(_elapsed >= DELAY)
+        {
+            pFn();
+            
+            Succeed();
+        }
+    }
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /*----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------
+     *             Gameplay Related Processes...
+     *----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------
+     *----------------------------------------------------------------------------------------------------*/
+
+    
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -16,7 +16,7 @@
 #include "../EventDispatcher/DefaultEvents.h"
 #include "../EventDispatcher/EventDispatcher.h"
 #include "../PhysicsManager/PhysicsManager.h"
-#include "../Monetize/Ads/StubAds.h"
+#include "../Monetize/Ads/AdsStub.h"
 #include "../Social/FacebookStub.h"
 //#include "../Renderer/IRenderer.h"
 #include "../Debugging/LogDefault.h"
@@ -88,7 +88,7 @@ namespace FEngine
         _ads = sysConfig->ads;
         if(_ads == NULL)
         {
-            _ads = new StubAds();
+            _ads = new AdsStub();
         }
         
         _logger = sysConfig->log;
@@ -129,6 +129,7 @@ namespace FEngine
         glEnable    (GL_BLEND);
         glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClear (GL_COLOR_BUFFER_BIT);
         
         //_renderer->EnableBlend();
         
@@ -147,25 +148,28 @@ namespace FEngine
     
     void App::Tick (float dt)
     {
-        static float    basetime    =   0.0f;
-        static int      frames      =   0;
+        static float    prevFPSElapsed  =   0.0f;   // Used in FPS display code
+        static int      frames          =   0;
     
         _elapsed += dt;
         
-        if ((_elapsed - basetime) > 1.0)
+        // Update current FPS after every second
+        if ((_elapsed - prevFPSElapsed) >= 1.0)
         {
-            _currentFPS =   frames*1.0/(_elapsed - basetime);
+            _currentFPS =   frames*1.0/(_elapsed - prevFPSElapsed);
+            
             //std::string newMsg = string("FPS: ") + String::ToString(_currentFPS);
             //GetLog()->Print(newMsg);
             
-            basetime    =   _elapsed;
+            prevFPSElapsed =   _elapsed;
             frames      =   0;
         }
-        
+
         frames++;
         
         Update (dt);
         Render (dt);
+        
     }
 
     unsigned int App::GetNextGUID()

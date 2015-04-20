@@ -9,7 +9,6 @@
 #include "View2DFactory.h"
 
 #include <string>
-#include <iostream>
 //#include <cstdlib>
 
 #include "../../2D/SpriteNode.h"
@@ -20,6 +19,8 @@
 #include "../../Utility/Math.h"
 #include "../../ResourceCache/IOManager.h"
 #include "../../System/App.h"
+
+#include "../../Debugging/Log.h"
 
 #include "TextureAtlasFactory.h"
 #include "ProgramFactory.h"
@@ -69,7 +70,9 @@ namespace FEngine
         
         if(xmlErr != XML_SUCCESS)
         {
-            std::cout << "SpriteNodeFactory::CreateSpriteNode -> Failed to parse view XML" << xmlFile << std::endl;
+            std::string newMsg = string("SpriteNodeFactory::CreateSpriteNode -> Failed to parse view XML") + xmlFile;
+            gApp->GetLog()->Print(newMsg);
+            
             return snPtr;
         }
         
@@ -180,7 +183,9 @@ namespace FEngine
                 TextureAtlasPtr taPtr = taf.CreateTextureAtlas(texName);
                 
                 if(!taPtr->IsSpriteValid(spriteName)){
-                    cout << "SpriteNodeFactory::CreateSpriteNode: Invalid sprite name -> " << spriteName << endl;
+                    std::string newMsg = string("SpriteNodeFactory::CreateSpriteNode: Invalid sprite name -> ") + spriteName;
+                    gApp->GetLog()->Print(newMsg);
+                    
                     return SpriteNodePtr();
                 }
                 
@@ -198,6 +203,13 @@ namespace FEngine
             {
                 SceneNode2DPtr childViewPtr = CreateViewNode(viewElement);
                 viewPtr->AddChild(childViewPtr);
+            }
+            else
+            {
+                std::string newMsg = string("[SpriteNodeFactory] ERROR: Invalid tag: ") + string(viewElement->Value());
+                gApp->GetLog()->Print(newMsg);
+                
+                return SpriteNodePtr();
             }
             
             viewElement = viewElement->NextSiblingElement();

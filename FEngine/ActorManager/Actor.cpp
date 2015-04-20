@@ -77,11 +77,15 @@ namespace FEngine
     void Actor::Destroy()
     {
         if(_physicsComponent)
+        {
             _physicsComponent->Destroy();
-        if(_viewComponent)
-            _viewComponent->Destroy();
+            _physicsComponent = ActorComponentPtr();
+        }
         
-        _physicsComponent = ActorComponentPtr();
-        _viewComponent = ActorComponentPtr();
+        if(_viewComponent){
+            _viewComponent->Destroy();
+            _viewComponent = ActorComponentPtr();
+        }
     }
+    
 }

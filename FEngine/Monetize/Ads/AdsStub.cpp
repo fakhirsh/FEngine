@@ -6,51 +6,51 @@
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
 
-#include "StubAds.h"
+#include "AdsStub.h"
 
 namespace FEngine
 {
-    StubAds::StubAds()
+    AdsStub::AdsStub()
     {
         
     }
     
-    StubAds::~StubAds()
+    AdsStub::~AdsStub()
     {
         
     }
     
-    bool StubAds::Init ()
+    bool AdsStub::Init ()
     {
         return true;
     }
     
-    bool StubAds::ShowBanner ()
+    bool AdsStub::ShowBanner ()
     {
         return true;
     }
     
-    bool StubAds::HideBanner ()
+    bool AdsStub::HideBanner ()
     {
         return true;
     }
     
-    bool StubAds::ShowInterstitial ()
+    bool AdsStub::ShowInterstitial ()
     {
         return true;
     }
     
-    bool StubAds::HideInterstitial ()
+    bool AdsStub::HideInterstitial ()
     {
         return true;
     }
     
-    bool StubAds::ShowMoreApps ()
+    bool AdsStub::ShowMoreApps ()
     {
         return true;
     }
     
-    bool StubAds::HideMoreApps ()
+    bool AdsStub::HideMoreApps ()
     {
         return true;
     }

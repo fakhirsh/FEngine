@@ -116,6 +116,8 @@ typedef boost::weak_ptr     <FEngine::FixtureProperties>        FixturePropertie
 // Consider this as a "Function Pointer" for class member functions
 typedef fastdelegate::FastDelegate1 <EventPtr>                  EventListenerDelegate;
 
+typedef fastdelegate::FastDelegate0 <>                          ProcessCallFnDelegate;
+
 ///////////////////////////////////////////////////////////////////
 
 

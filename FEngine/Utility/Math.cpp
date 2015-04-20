@@ -24,5 +24,16 @@ namespace FEngine
             return (a * 180.0f / PI);
         }
         
+        float Min(float a, float b)
+        {
+            if(a < b) return a;
+            else return b;
+        }
+        
+        float Max(float a, float b)
+        {
+            if(a > b) return a;
+            else return b;
+        }
     }
 }
