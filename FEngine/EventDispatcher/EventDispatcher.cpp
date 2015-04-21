@@ -52,7 +52,6 @@ namespace FEngine
     
     bool EventDispatcher::RemoveListener(unsigned int eID, EventListenerDelegate lfn)
     {
-        
         std::list<EventListenerDelegate>::iterator i = _listenerMap[eID].begin();
         
         // Iterate through all of the list elements
@@ -62,7 +61,6 @@ namespace FEngine
             if(*i == lfn)
             {
                 _listenerMap[eID].erase(i);
-                
                 return true;
             }
             
