@@ -6,9 +6,19 @@
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __FEngine__BasicShare__
-#define __FEngine__BasicShare__
+#pragma once
 
-#include <stdio.h>
+#include <string>
 
-#endif /* defined(__FEngine__BasicShare__) */
+namespace FEngine
+{
+    class BasicShare
+    {
+    public:
+        BasicShare(){}
+        virtual ~BasicShare(){}
+        
+        virtual bool Share() = 0;
+        
+    };
+}

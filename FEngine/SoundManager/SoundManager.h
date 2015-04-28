@@ -8,10 +8,11 @@
 
 #pragma once
 
+#include "../PointerDefs.h"
+
 #include <string>
 #include <vector>
 #include <map>
-
 
 #ifdef __APPLE__
 #include <OpenAL/al.h>
@@ -35,27 +36,36 @@ namespace FEngine
         
     /////////////////////////////////////////////////////////////////////////////////////
         
-        bool LoadOGGFromFile(std::string fileName);
+        bool    LoadOGGFromFile (std::string fileName);
         
-        bool LoadOGGFromMem(std::vector<char> & oggFileData, std::vector<char> & buffer);
+        bool    LoadOGGFromMem  (std::vector<char> & oggFileData, std::vector<char> & buffer);
         
-        void PlaySound(std::string fileName);
-        void SetVolume(std::string fileName, float newVolume);
+        void    PlaySound       (std::string fileName);
+        void    StopSound       (std::string fileName);
+        
+        void    SetVolume       (std::string fileName, float newVolume);
+        void    SetPitch        (std::string fileName, float newPitch);
+        
+        void    GamePauseListener   (EventPtr e);
+        void    GameResumeListener  (EventPtr e);
+        
+        void    PauseAllSounds  ();
+        void    ResumeAllSounds ();
         
     private:
         
+        SoundManager        ();
+        bool    Init        ();
         
+        static SoundManager *   _instance;
         
-        SoundManager();
-        bool Init();
-        
-        static SoundManager * _instance;
-        
-        ALCdevice * _deviceAL;
-        ALCcontext * _contextAL;
+        ALCdevice *             _deviceAL;
+        ALCcontext *            _contextAL;
         
         std::map<std::string, ALuint> _bufferMap;
         std::map<std::string, ALuint> _sourceMap;
+        
+        std::vector<ALuint>     _pausedSources;
         
 /////////////////////////////////////////////////////////////////////////////////////////////
         

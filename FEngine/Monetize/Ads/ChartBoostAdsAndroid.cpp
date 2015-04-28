@@ -35,6 +35,15 @@ namespace FEngine
         return true;
     }
     
+    bool ChartBoostAdsAndroid::PreLoad ()
+    {
+        jclass clazz = _env->FindClass("com/delagames/zombietreat/ChartboostAdsAndroid");
+        jmethodID methodID = _env->GetStaticMethodID(clazz, "PreLoad", "()V");
+        _env->CallStaticVoidMethod(clazz, methodID);
+        
+        return true;
+    }
+    
     bool ChartBoostAdsAndroid::ShowBanner ()
     {
         return true;
@@ -55,7 +64,7 @@ namespace FEngine
      */
     bool ChartBoostAdsAndroid::ShowInterstitial ()
     {
-    	jclass clazz = _env->FindClass("com/fakhir/Game/ChartboostAdsAndroid");
+    	jclass clazz = _env->FindClass("com/delagames/zombietreat/ChartboostAdsAndroid");
     	jmethodID methodID = _env->GetStaticMethodID(clazz, "ShowInterstitial", "()V");
     	_env->CallStaticVoidMethod(clazz, methodID);
     

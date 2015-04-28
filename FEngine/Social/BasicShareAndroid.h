@@ -6,9 +6,27 @@
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __FEngine__BasicShareAndroid__
-#define __FEngine__BasicShareAndroid__
+#pragma once
 
-#include <stdio.h>
+#include "BasicShare.h"
 
-#endif /* defined(__FEngine__BasicShareAndroid__) */
+#include <jni.h>
+#include <string>
+
+namespace FEngine
+{
+    class BasicShareAndroid : public BasicShare
+    {
+    public:
+        BasicShareAndroid(){}
+        virtual ~BasicShareAndroid(){}
+        
+        virtual bool    Share       ();
+
+        void			SetEnv		(JNIEnv * env);
+        
+    private:
+        
+        JNIEnv * _env;
+    };
+}

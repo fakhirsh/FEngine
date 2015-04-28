@@ -42,7 +42,8 @@ namespace FEngine
         renderer            =   NULL;
         ads                 =   NULL;
         log                 =   NULL;
-        facebook            =   NULL;
+        //facebook            =   NULL;
+        basicShare          =   NULL;
     }
 
     bool SystemConfig::LoadConfig(vector<char> & buffer)

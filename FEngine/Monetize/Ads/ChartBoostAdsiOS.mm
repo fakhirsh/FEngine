@@ -42,6 +42,13 @@ namespace FEngine
         return true;
     }
     
+    bool ChartBoostAdsiOS::PreLoad ()
+    {
+        [Chartboost cacheInterstitial:CBLocationHomeScreen];
+        
+        return true;
+    }
+    
     bool ChartBoostAdsiOS::ShowBanner ()
     {
         return true;

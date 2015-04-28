@@ -6,9 +6,21 @@
 //  Copyright (c) 2015 Fakhir Shaheen. All rights reserved.
 //
 
-#ifndef __FEngine__BasicShareiOS__
-#define __FEngine__BasicShareiOS__
+#pragma once
 
-#include <stdio.h>
+#include "BasicShare.h"
 
-#endif /* defined(__FEngine__BasicShareiOS__) */
+#include <string>
+
+namespace FEngine
+{
+    class BasicShareiOS : public BasicShare
+    {
+    public:
+        BasicShareiOS(){}
+        virtual ~BasicShareiOS(){}
+        
+        virtual bool Share();
+        
+    };
+}

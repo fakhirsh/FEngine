@@ -7,3 +7,22 @@
 //
 
 #include "BasicShareiOS.h"
+
+#include "../Debugging/LogDefault.h"
+#include "../System/App.h"
+
+extern FEngine::App * gApp;
+
+
+namespace FEngine
+{
+ 
+    bool BasicShareiOS::Share()
+    {
+        
+        gApp->GetLog()->Print("BasicShareiOS::Share()");
+        
+        return true;
+    }
+    
+}

@@ -25,6 +25,11 @@ namespace FEngine
         return true;
     }
     
+    bool AdsStub::PreLoad ()
+    {
+        return true;
+    }
+    
     bool AdsStub::ShowBanner ()
     {
         return true;

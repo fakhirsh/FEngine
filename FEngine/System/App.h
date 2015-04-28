@@ -29,7 +29,8 @@ namespace FEngine
     class SystemConfig;
     class Ads;
     class Log;
-    class Facebook;
+    //class Facebook;
+    class BasicShare;
     
     class App
     {
@@ -55,7 +56,8 @@ namespace FEngine
         IRenderer * const   GetRenderer         ();
         Ads * const         GetAds              ();
         Log * const         GetLog              ();
-        Facebook * const    GetFacebook         ();
+        //Facebook * const    GetFacebook         ();
+        BasicShare * const  GetBasicShare       ();
         
         void        SetFrameBufferWidth         (float val);
         void        SetFrameBufferHeight        (float val);
@@ -104,6 +106,12 @@ namespace FEngine
         
         bool        IsDebugModeOn               ();
         
+        void        SurfaceChanged              (int width, int height);
+        
+        bool        IsGamePaused                ();
+        void        PauseGame                   ();
+        void        ResumeGame                  ();
+        
     private:
 
         void        Update                      (float dt);
@@ -112,6 +120,8 @@ namespace FEngine
         void        ComputeLetterBoxPolicy      ();
         
         static unsigned int _GUID;
+        
+        bool        _isGamePaused;
         
         // Width and Height of the device framebuffer / actual screen
         float       _frameBufferWidth;
@@ -161,8 +171,9 @@ namespace FEngine
         IOManager * _ioManager;
         IRenderer * _renderer;
         Ads *       _ads;
-        Facebook *  _facebook;
+        //Facebook *  _facebook;
         Log *       _logger;
+        BasicShare* _basicShare;
         // And other system specific crap...
         
     /////////////////////////////////////////

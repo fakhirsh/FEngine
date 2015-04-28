@@ -141,6 +141,44 @@ namespace FEngine
         float x, y;
     };
     
+    //----------------------------------------------------------------------------------------------------
+    // EventGamePaused - Fires when the game pauses and goes into background
+    //----------------------------------------------------------------------------------------------------
+    class EventGamePaused : public Event
+    {
+    public:
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
+        
+        EventGamePaused(){}
+        ~EventGamePaused(){}
+        
+        std::string GetName()
+        {
+            return "Game Paused";
+        }
+        
+    };
+    
+    //----------------------------------------------------------------------------------------------------
+    // EventGameResumed - Fires when the game resumes and comes back into the foreground
+    //----------------------------------------------------------------------------------------------------
+    class EventGameResumed : public Event
+    {
+    public:
+        static const unsigned int eventID;
+        virtual const unsigned int GetID() const { return eventID; }
+        
+        EventGameResumed(){}
+        ~EventGameResumed(){}
+        
+        std::string GetName()
+        {
+            return "Game Resumed";
+        }
+        
+    };
+    
     /*----------------------------------------------------------------------------------------------------
      *----------------------------------------------------------------------------------------------------
      *----------------------------------------------------------------------------------------------------

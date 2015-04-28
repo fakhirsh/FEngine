@@ -7,3 +7,8 @@
 //
 
 #include "BasicShare.h"
+
+namespace FEngine
+{
+
+}

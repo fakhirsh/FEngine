@@ -19,6 +19,7 @@ namespace FEngine
         virtual ~AdsStub();
         
         virtual bool    Init                ();
+        virtual bool    PreLoad             ();
         virtual bool    ShowBanner          ();
         virtual bool    HideBanner          ();
         virtual bool    ShowInterstitial    ();

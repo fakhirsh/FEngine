@@ -12,12 +12,13 @@
 #include "SystemConfig.h"
 
 #include "../StateManager/StateManager.h"
-//#include "../SoundManager/SoundManager.h"
+#include "../SoundManager/SoundManager.h"
 #include "../EventDispatcher/DefaultEvents.h"
 #include "../EventDispatcher/EventDispatcher.h"
 #include "../PhysicsManager/PhysicsManager.h"
 #include "../Monetize/Ads/AdsStub.h"
-#include "../Social/FacebookStub.h"
+//#include "../Social/FacebookStub.h"
+
 //#include "../Renderer/IRenderer.h"
 #include "../Debugging/LogDefault.h"
 
@@ -61,6 +62,9 @@ namespace FEngine
         _origin.x                   =   -1.0f;
         _origin.y                   =   -1.0f;
         _ioManager                  =   NULL;
+        _basicShare                 =   NULL;
+        
+        _isGamePaused               =   false;
     }
 
     App::~App ()
@@ -97,12 +101,19 @@ namespace FEngine
             _logger = new LogDefault();
         }
         
+        /*
         _facebook = sysConfig->facebook;
         if(_facebook == NULL)
         {
             _facebook = new FacebookStub();
         }
+        */
         
+        _basicShare = sysConfig->basicShare;
+        if(_basicShare == NULL)
+        {
+            //_basicShare = new BasicShareStub();
+        }
         
         _frameBufferWidth   =   sysConfig->frameBufferWidth;
         _frameBufferHeight  =   sysConfig->frameBufferHeight;
@@ -114,8 +125,7 @@ namespace FEngine
         _assetDesignHeight  =   sysConfig->assetDesignHeight;
         
         _debugMode          =   sysConfig->debugMode;
-        
-        _deviceAspectRatio  = (float)_frameBufferWidth / (float)_frameBufferHeight;
+    
         _deviceContentScaleFactor =   sysConfig->deviceContentScaleFactor;
         
         _maxFPS             =   sysConfig->maxFPS;
@@ -124,7 +134,7 @@ namespace FEngine
         // Initialize random number generator
         srand((unsigned int)time(NULL));
         
-        ComputeLetterBoxPolicy();
+        SurfaceChanged(_frameBufferWidth, _frameBufferHeight);
         
         glEnable    (GL_BLEND);
         glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -192,6 +202,17 @@ namespace FEngine
 
     }
 
+    void App::SurfaceChanged (int width, int height)
+    {
+        _frameBufferWidth   =   width;
+        _frameBufferHeight  =   height;
+        
+        _deviceAspectRatio  = (float)_frameBufferWidth / (float)_frameBufferHeight;
+        
+        ComputeLetterBoxPolicy();
+
+    }
+    
     //////////////////////////////////////////////////////////////////
     //   Input handling
 
@@ -311,6 +332,7 @@ namespace FEngine
                                 + std::string("\nSafe Zone Width: ")        + String::ToString(int(_safeZoneRect.width))
                                 + std::string("\nSafe Zone Height: ")       + String::ToString(int(_safeZoneRect.height))
                                 + std::string("\nCSF: ")                    + String::ToString(_contentScaleFactor);
+        
         GetLog()->Print(newMsg);
         
     }
@@ -535,9 +557,16 @@ namespace FEngine
         return _logger;
     }
     
+    /*
     Facebook * const App::GetFacebook ()
     {
         return _facebook;
+    }
+    */
+    
+    BasicShare * const  App::GetBasicShare()
+    {
+        return _basicShare;
     }
     
     void App::SetAssetPath (const char * path)
@@ -570,6 +599,42 @@ namespace FEngine
     //    _screenHeight = val;
     //}
 
+    bool App::IsGamePaused ()
+    {
+        return _isGamePaused;
+    }
+    
+    void App::PauseGame ()
+    {
+        GetLog()->Print(string("------------------- App::PauseGame  -------------------"));
+        
+        _isGamePaused = true;
+        
+        SoundManager::Get()->PauseAllSounds();
+        
+        /*
+        boost::shared_ptr<FEngine::EventGamePaused> pauseEvent = boost::make_shared<FEngine::EventGamePaused>();
+        EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
+        eventMgr->TriggerEvent(pauseEvent);
+         */
+    }
+    
+    void App::ResumeGame ()
+    {
+        if(GetLog()){
+            GetLog()->Print(string("------------------- App::ResumeGame  -------------------"));
+            SoundManager::Get()->ResumeAllSounds();
+        }
+        
+        _isGamePaused = false;
+        
+        /*
+        boost::shared_ptr<FEngine::EventGameResumed> resumeEvent = boost::make_shared<FEngine::EventGameResumed>();
+        EventDispatcherPtr eventMgr = StateManager::Get()->GetEventDispatcher();
+        eventMgr->TriggerEvent(resumeEvent);
+         */
+    }
+    
     void App::SetLogicalWidth (float val)
     {
         _logicalWidth = val;

@@ -26,7 +26,8 @@ namespace FEngine
     class IRenderer;
     class Ads;
     class Log;
-    class Facebook;
+    //class Facebook;
+    class BasicShare;
     
     class SystemConfig
     {
@@ -70,7 +71,9 @@ namespace FEngine
         IRenderer * renderer;
         Ads *       ads;
         Log *       log;
-        Facebook *  facebook;
+        //Facebook *  facebook;
+        BasicShare * basicShare;
+        
         //SoundManager * sndManager;
         //Other System specific Crap * allCrapHere...
     };

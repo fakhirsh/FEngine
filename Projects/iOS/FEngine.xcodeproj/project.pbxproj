@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */; };
+		0C1D9E0A1AE9AFF50085251F /* BasicShare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D9E081AE9AFF50085251F /* BasicShare.cpp */; };
+		0C1D9E121AE9B0070085251F /* BasicShareiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D9E101AE9B0070085251F /* BasicShareiOS.mm */; };
 		0C27449C1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C27449A1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm */; };
 		0C2758521AB40DEF00F18283 /* libFEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758461AB40DEE00F18283 /* libFEngine.a */; };
 		0C275A001AB4123900F18283 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2758E61AB410D400F18283 /* libvorbis.a */; };
@@ -208,6 +210,10 @@
 /* Begin PBXFileReference section */
 		0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLES2DebugDraw.cpp; path = PhysicsManager/GLES2DebugDraw.cpp; sourceTree = "<group>"; };
 		0C02FAC31ACC294D0052884B /* GLES2DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLES2DebugDraw.h; path = PhysicsManager/GLES2DebugDraw.h; sourceTree = "<group>"; };
+		0C1D9E081AE9AFF50085251F /* BasicShare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicShare.cpp; path = Social/BasicShare.cpp; sourceTree = "<group>"; };
+		0C1D9E091AE9AFF50085251F /* BasicShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicShare.h; path = Social/BasicShare.h; sourceTree = "<group>"; };
+		0C1D9E101AE9B0070085251F /* BasicShareiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BasicShareiOS.mm; path = Social/BasicShareiOS.mm; sourceTree = "<group>"; };
+		0C1D9E111AE9B0070085251F /* BasicShareiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicShareiOS.h; path = Social/BasicShareiOS.h; sourceTree = "<group>"; };
 		0C2744981ACF20F300D1C4A7 /* Ads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ads.h; sourceTree = "<group>"; };
 		0C27449A1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChartBoostAdsiOS.mm; sourceTree = "<group>"; };
 		0C27449B1ACF214A00D1C4A7 /* ChartBoostAdsiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartBoostAdsiOS.h; sourceTree = "<group>"; };
@@ -561,6 +567,10 @@
 				0C5549051AE1478800CEB957 /* FacebookiOS.h */,
 				0C5549101AE14FDE00CEB957 /* FacebookStub.cpp */,
 				0C5549111AE14FDE00CEB957 /* FacebookStub.h */,
+				0C1D9E081AE9AFF50085251F /* BasicShare.cpp */,
+				0C1D9E091AE9AFF50085251F /* BasicShare.h */,
+				0C1D9E101AE9B0070085251F /* BasicShareiOS.mm */,
+				0C1D9E111AE9B0070085251F /* BasicShareiOS.h */,
 			);
 			name = Social;
 			sourceTree = "<group>";
@@ -976,6 +986,7 @@
 			files = (
 				0C7951661AB85EF80010DA81 /* DefaultProcesses.cpp in Sources */,
 				0C5549061AE1478800CEB957 /* FacebookiOS.mm in Sources */,
+				0C1D9E121AE9B0070085251F /* BasicShareiOS.mm in Sources */,
 				0CA778FC1AC41FF900CB5FA5 /* Actor.cpp in Sources */,
 				0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */,
 				0C322D001ADBFE35000C857F /* LogDefault.cpp in Sources */,
@@ -1014,6 +1025,7 @@
 				0CA778F21AC3E9EE00CB5FA5 /* ActorFactory.cpp in Sources */,
 				0C8C24E51ABC715900C77AAF /* SpriteNode.cpp in Sources */,
 				0C68A7AE1ACA669E0087A197 /* MemoryManager.cpp in Sources */,
+				0C1D9E0A1AE9AFF50085251F /* BasicShare.cpp in Sources */,
 				0CB3E89A1AD3BF6700F75732 /* ViewNode.cpp in Sources */,
 				0C322CF41ADBFAE6000C857F /* Camera.cpp in Sources */,
 				0CCC4C881ACFD19800CA2203 /* AdsStub.cpp in Sources */,

@@ -18,7 +18,8 @@ namespace FEngine
     const unsigned int EventSetDebugNode::eventID   (0xb3cdba6c);
     const unsigned int EventSetActorPosition::eventID  (0xb3cdbc7e);
     const unsigned int EventChangeScreen::eventID   (0xb3cdbe0e);
-    
+    const unsigned int EventGamePaused::eventID     (0xb3cdbf3a);
+    const unsigned int EventGameResumed::eventID    (0xb3cdc228);
     
     
     const unsigned int EventTest1::eventID = 0x00F;

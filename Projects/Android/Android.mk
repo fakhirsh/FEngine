@@ -104,7 +104,7 @@ LOCAL_SRC_FILES := 	../../../GameEngine/FEngine/System/App.cpp		\
 			../../../GameEngine/FEngine/Debugging/LogAndroid.cpp			\
 			../../../GameEngine/FEngine/Social/Facebook.cpp				\
 			../../../GameEngine/FEngine/Social/FacebookAndroid.cpp			\
-			../../../GameEngine/FEngine/Social/FacebookStub.cpp
-
+			../../../GameEngine/FEngine/Social/FacebookStub.cpp			\
+			../../../GameEngine/FEngine/Social/BasicShareAndroid.cpp
 
 include $(BUILD_STATIC_LIBRARY)

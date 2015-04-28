@@ -14,9 +14,11 @@
 #include "../EventDispatcher/EventDispatcher.h"
 #include "../ActorManager/ActorManager.h"
 #include "../PhysicsManager/PhysicsManager.h"
+#include "../System/App.h"
 
 #include "../2D/RootSceneNode2D.h"
 
+extern FEngine::App * gApp;
 
 namespace FEngine
 {
@@ -98,6 +100,8 @@ namespace FEngine
 
     void StateManager::Update(float dt)
     {
+        //if(gApp->IsGamePaused()) return;
+        
         if (!_statesList.empty())
         {
             _statesList.back()->Update(dt);

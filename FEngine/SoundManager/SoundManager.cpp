@@ -8,12 +8,18 @@
 
 #include "SoundManager.h"
 #include "../ResourceCache/IOManager.h"
+#include "../StateManager/StateManager.h"
+#include "../EventDispatcher/EventDispatcher.h"
+#include "../EventDispatcher/DefaultEvents.h"
+#include "../Debugging/Log.h"
 
+#include "../Utility/String.h"
 #include "../System/App.h"
 
 #include <vorbis/vorbisfile.h>
 
-#include <iostream>
+#include <string>
+//#include <iostream>
 
 // Custom callbacks to read ogg from memory.
 // Reference :
@@ -99,12 +105,24 @@ namespace FEngine
 
     SoundManager::SoundManager()
     {
-
+        /*
+        EventListenerDelegate gamePauseDelegateFn   =   fastdelegate::MakeDelegate(this, &SoundManager::GamePauseListener);
+        EventListenerDelegate gameResumeDelegateFn  =   fastdelegate::MakeDelegate(this, &SoundManager::GameResumeListener);
+        EventDispatcherPtr ed = StateManager::Get()->GetEventDispatcher();
+        ed->AddListener(EventGamePaused::eventID, gamePauseDelegateFn);
+        ed->AddListener(EventGameResumed::eventID, gameResumeDelegateFn);
+         */
     }
 
     SoundManager::~SoundManager()
     {
-
+        /*
+        EventListenerDelegate gamePauseDelegateFn   =   fastdelegate::MakeDelegate(this, &SoundManager::GamePauseListener);
+        EventListenerDelegate gameResumeDelegateFn  =   fastdelegate::MakeDelegate(this, &SoundManager::GameResumeListener);
+        EventDispatcherPtr ed = StateManager::Get()->GetEventDispatcher();
+        ed->RemoveListener(EventGamePaused::eventID, gamePauseDelegateFn);
+        ed->RemoveListener(EventGameResumed::eventID, gameResumeDelegateFn);
+         */
     }
 
     SoundManager * SoundManager::Get()
@@ -127,14 +145,14 @@ namespace FEngine
         _deviceAL = alcOpenDevice(NULL);
         if (_deviceAL == NULL)
         {
-            std::cout << "Failed to open OpenAL device..." << std::endl;
+            //std::cout << "Failed to open OpenAL device..." << std::endl;
             return false;
         }
         
         _contextAL = alcCreateContext(_deviceAL, NULL);
         if (_contextAL == NULL)
         {
-            std::cout << "Failed to create OpenAL context..." << std::endl;
+            gApp->GetLog()->Print("Failed to create OpenAL context...");
             return false;
         }
         
@@ -142,7 +160,7 @@ namespace FEngine
         ALenum err = alGetError();
         if (err != AL_NO_ERROR)
         {
-            std::cout << "Failed to make current context..." << std::endl;
+            gApp->GetLog()->Print("Failed to make current context...");
             return false;
         }
 /*
@@ -163,6 +181,8 @@ namespace FEngine
             return false;
         }
  */
+        
+        
         return true;
     }
 
@@ -177,11 +197,80 @@ namespace FEngine
         //}
     }
     
+    void SoundManager::StopSound(std::string fileName)
+    {
+        ALuint sourceID = _sourceMap[fileName];
+        alSourceStop(sourceID);
+    }
+    
     void SoundManager::SetVolume(std::string fileName, float newVolume)
     {
         ALuint sourceID = _sourceMap[fileName];
         alSourcef(sourceID, AL_GAIN, newVolume);
     }
+    
+    void SoundManager::SetPitch (std::string fileName, float newPitch)
+    {
+        ALuint sourceID = _sourceMap[fileName];
+        alSourcef(sourceID, AL_PITCH, newPitch);
+    }
+    
+    void SoundManager::PauseAllSounds ()
+    {
+        gApp->GetLog()->Print("------------------- SoundManager::PauseAllSounds  -------------------");
+        
+        std::map<std::string, ALuint>::iterator it = _sourceMap.begin();
+        
+        while(it != _sourceMap.end())
+        {
+            ALuint sourceID = it->second;
+            
+            ALint state;
+            alGetSourcei(sourceID, AL_SOURCE_STATE, &state);
+
+            if(state == AL_PLAYING)
+            {
+                std::string newMsg = std::string("Sound Paused: ") + it->first;
+                gApp->GetLog()->Print(newMsg);
+                
+                alSourcePause(sourceID);
+                _pausedSources.push_back(sourceID);
+            }
+            
+            it++;
+        }
+        
+    }
+    
+    void SoundManager::ResumeAllSounds ()
+    {
+        
+        gApp->GetLog()->Print("------------------- SoundManager::ResumeAllSounds  -------------------");
+        
+        for (int i = 0; i < _pausedSources.size(); i++) {
+            ALuint sourceID = _pausedSources[i];
+            
+            std::string newMsg = std::string("Sound Resumed: ") + String::ToString(sourceID);
+            gApp->GetLog()->Print(newMsg);
+            
+            alSourcePlay(sourceID);
+        }
+        
+        _pausedSources.clear();
+         
+    }
+    
+    
+    void SoundManager::GamePauseListener (EventPtr e)
+    {
+        PauseAllSounds();
+    }
+    
+    void SoundManager::GameResumeListener (EventPtr e)
+    {
+        ResumeAllSounds();
+    }
+
     
     bool SoundManager::LoadOGGFromFile(std::string fileName)
     {
@@ -197,7 +286,8 @@ namespace FEngine
         ioMgr->GetAssetStream(fullSoundPath, fileStream);
         if(fileStream.size() <= 0)
         {
-            std::cout << "SoundManager: Failed to load resource: " << fileName << std::endl;
+            std::string newMsg = std::string("SoundManager: Failed to load resource: ") + fileName;
+            gApp->GetLog()->Print(newMsg);
             return false;
         }
         
@@ -209,7 +299,8 @@ namespace FEngine
         ALenum error;
         if ((error = alGetError()) != AL_NO_ERROR)
         {
-            std::cout << "Failed to generate buffer : " << error << std::endl;
+            std::string newMsg = std::string("Failed to generate buffer : ") + String::ToString(error);
+            gApp->GetLog()->Print(newMsg);
             return false;
         }
 
@@ -218,7 +309,8 @@ namespace FEngine
         alGenSources(1, &sourceID);
         if ((error = alGetError()) != AL_NO_ERROR)
         {
-            std::cout << "Failed to generate source : " << error << std::endl;
+            std::string newMsg = std::string("Failed to generate source : ") + String::ToString(error);
+            gApp->GetLog()->Print(newMsg);
             return false;
         }
         

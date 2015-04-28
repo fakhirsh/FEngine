@@ -21,6 +21,7 @@ namespace FEngine
         virtual ~ChartBoostAdsAndroid();
         
         virtual bool    Init                ();
+        virtual bool    PreLoad             ();
         virtual bool    ShowBanner          ();
         virtual bool    HideBanner          ();
         virtual bool    ShowInterstitial    ();

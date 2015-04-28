@@ -17,6 +17,7 @@ namespace FEngine
         //virtual ~Ads();
         
         virtual bool    Init                ()  =   0;
+        virtual bool    PreLoad             ()  =   0;
         virtual bool    ShowBanner          ()  =   0;
         virtual bool    HideBanner          ()  =   0;
         virtual bool    ShowInterstitial    ()  =   0;
