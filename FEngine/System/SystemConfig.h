@@ -28,6 +28,7 @@ namespace FEngine
     class Log;
     //class Facebook;
     class BasicShare;
+    class Serialize;
     
     class SystemConfig
     {
@@ -73,7 +74,7 @@ namespace FEngine
         Log *       log;
         //Facebook *  facebook;
         BasicShare * basicShare;
-        
+        Serialize *  serialize;
         //SoundManager * sndManager;
         //Other System specific Crap * allCrapHere...
     };

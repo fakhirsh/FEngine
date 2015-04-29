@@ -44,6 +44,7 @@ namespace FEngine
         log                 =   NULL;
         //facebook            =   NULL;
         basicShare          =   NULL;
+        serialize           =   NULL;
     }
 
     bool SystemConfig::LoadConfig(vector<char> & buffer)

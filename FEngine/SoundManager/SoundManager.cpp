@@ -217,7 +217,7 @@ namespace FEngine
     
     void SoundManager::PauseAllSounds ()
     {
-        gApp->GetLog()->Print("------------------- SoundManager::PauseAllSounds  -------------------");
+        //gApp->GetLog()->Print("------------------- SoundManager::PauseAllSounds  -------------------");
         
         std::map<std::string, ALuint>::iterator it = _sourceMap.begin();
         
@@ -245,7 +245,7 @@ namespace FEngine
     void SoundManager::ResumeAllSounds ()
     {
         
-        gApp->GetLog()->Print("------------------- SoundManager::ResumeAllSounds  -------------------");
+        //gApp->GetLog()->Print("------------------- SoundManager::ResumeAllSounds  -------------------");
         
         for (int i = 0; i < _pausedSources.size(); i++) {
             ALuint sourceID = _pausedSources[i];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0077941AF0B6A60019CC10 /* SerializeStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0077911AF0B6A60019CC10 /* SerializeStub.cpp */; };
 		0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */; };
 		0C1D9E0A1AE9AFF50085251F /* BasicShare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D9E081AE9AFF50085251F /* BasicShare.cpp */; };
 		0C1D9E121AE9B0070085251F /* BasicShareiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D9E101AE9B0070085251F /* BasicShareiOS.mm */; };
@@ -208,6 +209,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C00778E1AF0B6A60019CC10 /* Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serialize.h; sourceTree = "<group>"; };
+		0C0077911AF0B6A60019CC10 /* SerializeStub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SerializeStub.cpp; sourceTree = "<group>"; };
+		0C0077921AF0B6A60019CC10 /* SerializeStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializeStub.h; sourceTree = "<group>"; };
 		0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLES2DebugDraw.cpp; path = PhysicsManager/GLES2DebugDraw.cpp; sourceTree = "<group>"; };
 		0C02FAC31ACC294D0052884B /* GLES2DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLES2DebugDraw.h; path = PhysicsManager/GLES2DebugDraw.h; sourceTree = "<group>"; };
 		0C1D9E081AE9AFF50085251F /* BasicShare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicShare.cpp; path = Social/BasicShare.cpp; sourceTree = "<group>"; };
@@ -378,6 +382,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C00778D1AF0B6A60019CC10 /* Serialize */ = {
+			isa = PBXGroup;
+			children = (
+				0C00778E1AF0B6A60019CC10 /* Serialize.h */,
+				0C0077911AF0B6A60019CC10 /* SerializeStub.cpp */,
+				0C0077921AF0B6A60019CC10 /* SerializeStub.h */,
+			);
+			path = Serialize;
+			sourceTree = "<group>";
+		};
 		0C27448F1ACF209D00D1C4A7 /* Monetize */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +616,7 @@
 				0C7951431AB85EF80010DA81 /* ProcessScheduler */,
 				0C79514A1AB85EF80010DA81 /* Renderer */,
 				0C79514B1AB85EF80010DA81 /* ResourceCache */,
+				0C00778D1AF0B6A60019CC10 /* Serialize */,
 				0C5548FB1AE1474700CEB957 /* Social */,
 				0C7951571AB85EF80010DA81 /* SoundManager */,
 				0C7951581AB85EF80010DA81 /* StateManager */,
@@ -1033,6 +1048,7 @@
 				0CFB10411AC3216F000217A8 /* View2DFactory.cpp in Sources */,
 				0C8C24F61ABC994200C77AAF /* ResourceCache.cpp in Sources */,
 				0C2F3F981AC72B3200D66B2C /* PhysicsManager.cpp in Sources */,
+				0C0077941AF0B6A60019CC10 /* SerializeStub.cpp in Sources */,
 				0C322CFD1ADBFCE3000C857F /* Log.cpp in Sources */,
 				0CA779091AC46C0700CB5FA5 /* ViewComponent.cpp in Sources */,
 				0C7951681AB85EF80010DA81 /* ProcessScheduler.cpp in Sources */,

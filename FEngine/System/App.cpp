@@ -18,6 +18,7 @@
 #include "../PhysicsManager/PhysicsManager.h"
 #include "../Monetize/Ads/AdsStub.h"
 //#include "../Social/FacebookStub.h"
+#include "../Serialize/SerializeStub.h"
 
 //#include "../Renderer/IRenderer.h"
 #include "../Debugging/LogDefault.h"
@@ -63,6 +64,7 @@ namespace FEngine
         _origin.y                   =   -1.0f;
         _ioManager                  =   NULL;
         _basicShare                 =   NULL;
+        _serialize                  =   NULL;
         
         _isGamePaused               =   false;
     }
@@ -113,6 +115,12 @@ namespace FEngine
         if(_basicShare == NULL)
         {
             //_basicShare = new BasicShareStub();
+        }
+        
+        _serialize = sysConfig->serialize;
+        if(_serialize == NULL)
+        {
+            _serialize = new SerializeStub();
         }
         
         _frameBufferWidth   =   sysConfig->frameBufferWidth;
@@ -564,9 +572,14 @@ namespace FEngine
     }
     */
     
-    BasicShare * const  App::GetBasicShare()
+    BasicShare * const App::GetBasicShare()
     {
         return _basicShare;
+    }
+    
+    Serialize *  const App::GetSerialize ()
+    {
+        return _serialize;
     }
     
     void App::SetAssetPath (const char * path)
@@ -621,8 +634,11 @@ namespace FEngine
     
     void App::ResumeGame ()
     {
+        // And can ANYONE please EXPLAIN WHAT THE HELL is going on here?
+        // Checking if Log is NULL and then calling Sound Manager? WTH ???
+        // Please REWRITE this SHIT...
         if(GetLog()){
-            GetLog()->Print(string("------------------- App::ResumeGame  -------------------"));
+            //GetLog()->Print(string("------------------- App::ResumeGame  -------------------"));
             SoundManager::Get()->ResumeAllSounds();
         }
         

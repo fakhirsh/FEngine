@@ -31,6 +31,7 @@ namespace FEngine
     class Log;
     //class Facebook;
     class BasicShare;
+    class Serialize;
     
     class App
     {
@@ -58,6 +59,7 @@ namespace FEngine
         Log * const         GetLog              ();
         //Facebook * const    GetFacebook         ();
         BasicShare * const  GetBasicShare       ();
+        Serialize *  const  GetSerialize        ();
         
         void        SetFrameBufferWidth         (float val);
         void        SetFrameBufferHeight        (float val);
@@ -174,6 +176,8 @@ namespace FEngine
         //Facebook *  _facebook;
         Log *       _logger;
         BasicShare* _basicShare;
+        Serialize * _serialize;
+        
         // And other system specific crap...
         
     /////////////////////////////////////////
