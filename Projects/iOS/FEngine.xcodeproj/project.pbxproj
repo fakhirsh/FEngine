@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C0077941AF0B6A60019CC10 /* SerializeStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0077911AF0B6A60019CC10 /* SerializeStub.cpp */; };
 		0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */; };
+		0C0F3AC61AF2243900D41FDF /* LogStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F3AC41AF2243900D41FDF /* LogStub.cpp */; };
 		0C1D9E0A1AE9AFF50085251F /* BasicShare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D9E081AE9AFF50085251F /* BasicShare.cpp */; };
 		0C1D9E121AE9B0070085251F /* BasicShareiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D9E101AE9B0070085251F /* BasicShareiOS.mm */; };
 		0C27449C1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C27449A1ACF214A00D1C4A7 /* ChartBoostAdsiOS.mm */; };
@@ -214,6 +215,8 @@
 		0C0077921AF0B6A60019CC10 /* SerializeStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializeStub.h; sourceTree = "<group>"; };
 		0C02FAC21ACC294D0052884B /* GLES2DebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLES2DebugDraw.cpp; path = PhysicsManager/GLES2DebugDraw.cpp; sourceTree = "<group>"; };
 		0C02FAC31ACC294D0052884B /* GLES2DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLES2DebugDraw.h; path = PhysicsManager/GLES2DebugDraw.h; sourceTree = "<group>"; };
+		0C0F3AC41AF2243900D41FDF /* LogStub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LogStub.cpp; path = Debugging/LogStub.cpp; sourceTree = "<group>"; };
+		0C0F3AC51AF2243900D41FDF /* LogStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogStub.h; path = Debugging/LogStub.h; sourceTree = "<group>"; };
 		0C1D9E081AE9AFF50085251F /* BasicShare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicShare.cpp; path = Social/BasicShare.cpp; sourceTree = "<group>"; };
 		0C1D9E091AE9AFF50085251F /* BasicShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicShare.h; path = Social/BasicShare.h; sourceTree = "<group>"; };
 		0C1D9E101AE9B0070085251F /* BasicShareiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BasicShareiOS.mm; path = Social/BasicShareiOS.mm; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 				0C322CFC1ADBFCE3000C857F /* Log.cpp */,
 				0C322CFE1ADBFE35000C857F /* LogDefault.cpp */,
 				0C322CFF1ADBFE35000C857F /* LogDefault.h */,
+				0C0F3AC41AF2243900D41FDF /* LogStub.cpp */,
+				0C0F3AC51AF2243900D41FDF /* LogStub.h */,
 			);
 			name = Debugging;
 			sourceTree = "<group>";
@@ -1005,6 +1010,7 @@
 				0CA778FC1AC41FF900CB5FA5 /* Actor.cpp in Sources */,
 				0CA778F91AC41FEA00CB5FA5 /* ActorManager.cpp in Sources */,
 				0C322D001ADBFE35000C857F /* LogDefault.cpp in Sources */,
+				0C0F3AC61AF2243900D41FDF /* LogStub.cpp in Sources */,
 				0C2F3E891AC6F47400D66B2C /* DebugCircleNode2D.cpp in Sources */,
 				0C8C24F31ABC74FD00C77AAF /* SceneNodeProperties2D.cpp in Sources */,
 				0C02FAC41ACC294D0052884B /* GLES2DebugDraw.cpp in Sources */,

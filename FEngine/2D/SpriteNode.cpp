@@ -130,9 +130,9 @@ namespace FEngine
         v       = _sceneNodeProperties2D->v;
         uW      = _sceneNodeProperties2D->uW;
         vH      = _sceneNodeProperties2D->vH;
-        angle   = _sceneNodeProperties2D->angle;
-        scaleX  = _sceneNodeProperties2D->scaleX;
-        scaleY  = _sceneNodeProperties2D->scaleX;
+        //angle   = _sceneNodeProperties2D->angle;
+        //scaleX  = _sceneNodeProperties2D->scaleX;
+        //scaleY  = _sceneNodeProperties2D->scaleX;
         alpha   = _sceneNodeProperties2D->alpha;
         //shearX  = _sceneNodeProperties2D->shearX;
         //shearY  = _sceneNodeProperties2D->shearY;

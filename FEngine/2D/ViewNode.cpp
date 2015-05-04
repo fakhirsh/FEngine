@@ -35,7 +35,7 @@ namespace FEngine
     
     bool ViewNode::PreRender (float dt)
     {
-        float CSF = gApp->GetContentScaleFactor();
+        //float CSF = gApp->GetContentScaleFactor();
         
         //RootSceneNode * root = (RootSceneNode *)StateManager::Get()->GetRootSceneNode();
         //SceneNodeProperties snpStack = root->snpStack.back();
