@@ -20,7 +20,7 @@ namespace FEngine
         
         
         // Why didn't I just declate the following function here and define it in another CPP file?
-        //    Because I don't know how to do it, it has comples function signature... :D
+        //    Because I don't know how to do it, it has complex function signature... :D
         
         template < class T >
         std::string ToString(const T & number)
